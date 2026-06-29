@@ -3,75 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QEONIX - Coming Soon</title>
+<title>QEONIX — Live tomorrow, today</title>
+<meta name="description" content="QEONIX is building intelligent futures. Something new is launching in 2026.">
+
+<meta property="og:title" content="QEONIX — Live tomorrow, today">
+<meta property="og:description" content="Something new is launching in 2026.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root{
+    --ink:#0a0a0f;
+    --muted:#5b5b66;
+    --faint:#9a9aa4;
+    --blue:#0a0aff;
+    --blue-soft:#e8e8ff;
+    --bg:#fafafb;
+    --line:rgba(10,10,15,0.08);
 }
 
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:#ffffff;
-    color:#111;
+    font-family:"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    min-height:100svh;
     display:flex;
-    justify-content:center;
+    flex-direction:column;
+    position:relative;
+    overflow-x:hidden;
+}
+
+/* Blueprint grid + ambient blue glow behind everything */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(circle at 50% 38%, #000 0%, transparent 72%);
+    mask-image:radial-gradient(circle at 50% 38%, #000 0%, transparent 72%);
+    pointer-events:none;
+}
+body::after{
+    content:"";
+    position:fixed;
+    left:50%;
+    top:34%;
+    width:120vmax;
+    height:120vmax;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(10,10,255,0.10) 0%, rgba(10,10,255,0) 55%);
+    pointer-events:none;
+    animation:drift 14s ease-in-out infinite alternate;
+}
+@keyframes drift{
+    from{ transform:translate(-52%,-50%) scale(1); }
+    to{   transform:translate(-48%,-48%) scale(1.08); }
+}
+
+main{
+    flex:1;
+    display:flex;
     align-items:center;
-    min-height:100vh;
-    text-align:center;
+    justify-content:center;
+    padding:48px 24px;
+    position:relative;
+    z-index:1;
 }
 
 .container{
-    max-width:800px;
-    padding:40px;
+    width:100%;
+    max-width:720px;
+    text-align:center;
+}
+
+/* Entrance animation */
+.reveal{ opacity:0; transform:translateY(14px); animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+.d1{ animation-delay:.05s; }
+.d2{ animation-delay:.15s; }
+.d3{ animation-delay:.25s; }
+.d4{ animation-delay:.35s; }
+.d5{ animation-delay:.45s; }
+@keyframes rise{ to{ opacity:1; transform:none; } }
+
+/* Status pill */
+.status{
+    display:flex;
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+    align-items:center;
+    gap:9px;
+    padding:7px 14px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(6px);
+    font-family:"Poppins", sans-serif;
+    font-weight:500;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:42px;
+}
+.dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--blue);
+    box-shadow:0 0 0 0 rgba(10,10,255,0.5);
+    animation:pulse 2s infinite;
+}
+@keyframes pulse{
+    0%{ box-shadow:0 0 0 0 rgba(10,10,255,0.45); }
+    70%{ box-shadow:0 0 0 8px rgba(10,10,255,0); }
+    100%{ box-shadow:0 0 0 0 rgba(10,10,255,0); }
 }
 
 .logo{
-    width:500px;
-    max-width:90%;
-    margin-bottom:50px;
+    width:440px;
+    max-width:84%;
+    height:auto;
+    margin-bottom:40px;
 }
 
 h1{
-    font-size:3rem;
-    letter-spacing:4px;
-    margin-bottom:20px;
+    font-family:"Poppins", sans-serif;
     font-weight:700;
+    /* 32px (mobile) → 48px (desktop) */
+    font-size:clamp(2rem, 6vw, 3rem);
+    line-height:1.1;
+    letter-spacing:-0.02em;
+    margin-bottom:20px;
 }
+h1 .accent{ color:var(--blue); }
 
 .tagline{
-    font-size:1.2rem;
-    color:#444;
-    margin-bottom:15px;
-}
-
-.message{
-    color:#666;
-    font-size:1rem;
+    color:var(--muted);
+    font-size:clamp(1rem, 2.4vw, 1.15rem);
     line-height:1.6;
+    max-width:30em;
+    margin:0 auto 40px;
 }
 
-.footer{
-    margin-top:60px;
-    color:#888;
-    font-size:0.9rem;
+footer{
+    position:relative;
+    z-index:1;
+    padding:28px 24px;
+    text-align:center;
+    color:var(--faint);
+    font-size:0.8rem;
+    letter-spacing:0.02em;
+}
+
+@media (max-width:480px){
+    .status{ margin-bottom:34px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+    .reveal,.dot,body::after{ animation:none; }
+    .reveal{ opacity:1; transform:none; }
 }
 </style>
 </head>
 
 <body>
-<div class="container">
+<main>
+    <div class="container">
 
-    <img src="assets/qeonix-logo.png" alt="QEONIX" class="logo">
+        <div class="status reveal d1">
+            <span class="dot"></span>
+            Launching soon
+        </div>
 
-    <h1>COMING SOON</h1>
+        <img src="assets/qeonix-hd-logo.png" alt="QEONIX" class="logo reveal d2">
 
-    <div class="footer">
-        © 2026 QEONIX. All rights reserved.
+        <h1 class="reveal d3">Live Tomorrow, <span class="accent">Today.</span></h1>
+
+        <p class="tagline reveal d4">
+            We're crafting something new. QEONIX goes live soon.
+        </p>
+
     </div>
+</main>
 
-</div>
+<footer>© 2026 QEONIX. All rights reserved.</footer>
 </body>
 </html>
