@@ -231,6 +231,9 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 @media(max-width:960px){
   .hero .wrap{grid-template-columns:1fr}
   .hero-figure{display:none}
+  /* hero stacks to one column here; the CTAs drop near the bottom and would
+     overlap the bottom-anchored scroll indicator, so hide it on mobile */
+  .scroll-hint{display:none}
 }
 @media (prefers-reduced-motion: reduce){.hero-figure img{animation:none}}
 
@@ -549,6 +552,13 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
     linear-gradient(var(--electric) 0 0) 50% 0/2px 100% no-repeat,
     linear-gradient(var(--electric) 0 0) 0 50%/100% 2px no-repeat;
   opacity:.85}
+/* Tighten the logo + language pill on phones so they don't crowd each other */
+@media(max-width:560px){
+  .logo img{height:16px}
+  .nav-right{gap:.5rem}
+  .lang-toggle{min-width:0;height:34px;padding:0 .6rem;font-size:.8rem;gap:.3rem}
+  .lang-toggle::before{width:12px;height:12px}
+}
 
 /* ============================================================
    RTL / Arabic
