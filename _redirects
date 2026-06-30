@@ -1,3 +1,3 @@
 # Serve the work-in-progress site at the branch root (preview deploy).
 # Visitors to preview--<sitename>.netlify.app see index2.html without the path.
-/    /index2.html    200
+/    /index2.html    200!
