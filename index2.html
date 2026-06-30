@@ -508,27 +508,29 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .cta .btn-blue:hover{background:var(--glacial);color:var(--obsidian)}
 
 /* contact form */
-.cta-form{background:rgba(248,248,254,.05);border:1px solid var(--on-dark-12);border-radius:22px;
-  padding:clamp(1.4rem,3vw,2.2rem);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);text-align:left}
+.cta-form{background:#FFFFFF;border:1px solid var(--ink-12);border-radius:22px;
+  padding:clamp(1.4rem,3vw,2.2rem);box-shadow:var(--shadow-l);text-align:left}
 .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .cta-field{margin-bottom:1rem}
 .cta-form label{display:block;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--on-dark-45);font-weight:600;margin-bottom:.45rem}
+  color:var(--ink-55);font-weight:600;margin-bottom:.45rem}
 .cta-form input,.cta-form select,.cta-form textarea{width:100%;font-family:var(--font);font-size:.95rem;
-  color:var(--arctic);background:rgba(248,248,254,.06);border:1px solid var(--on-dark-12);
+  color:var(--ink);background:var(--ink-06);border:1px solid var(--ink-12);
   border-radius:12px;padding:.8rem .95rem;transition:border-color .25s,background .25s}
 .cta-form textarea{resize:vertical;min-height:84px;line-height:1.5}
-.cta-form input::placeholder,.cta-form textarea::placeholder{color:var(--on-dark-45)}
-.cta-form input:focus,.cta-form select:focus,.cta-form textarea:focus{outline:none;border-color:var(--azure);background:rgba(248,248,254,.1)}
+.cta-form input::placeholder,.cta-form textarea::placeholder{color:var(--ink-40)}
+.cta-form input:focus,.cta-form select:focus,.cta-form textarea:focus{outline:none;border-color:var(--quantum);background-color:#FFFFFF}
 .cta-form select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:2.6rem;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23AEB8C9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right .95rem center}
 .cta-form select option{color:#11110F}
 .cta-submit{width:100%;justify-content:center;margin-top:.5rem}
-.cta-fineprint{margin-top:.9rem;font-size:.8rem;color:var(--on-dark-45);text-align:center}
+.cta-form .cta-submit{background:var(--quantum);color:#F8F8FE}
+.cta-form .cta-submit:hover{background:var(--quantum-lift);color:#F8F8FE}
+.cta-fineprint{margin-top:.9rem;font-size:.8rem;color:var(--ink-40);text-align:center}
 .cta-success{display:none;flex-direction:column;gap:.45rem;text-align:center;padding:1.6rem .5rem}
-.cta-success strong{font-size:1.18rem;color:var(--arctic)}
-.cta-success span{color:var(--on-dark-70)}
+.cta-success strong{font-size:1.18rem;color:var(--ink)}
+.cta-success span{color:var(--ink-55)}
 .cta-form.sent .cta-fields{display:none}
 .cta-form.sent .cta-success{display:flex}
 @media(max-width:860px){.cta-grid{grid-template-columns:1fr;gap:2.2rem}}
