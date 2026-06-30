@@ -491,10 +491,6 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .cta{position:relative;overflow:hidden;color:var(--arctic);background:var(--quantum)}
 /* eyebrow sits on the quantum fill now, so use white for contrast */
 .cta .eyebrow{color:var(--arctic)}
-/* signal / equalizer-lines brand pattern — varying-density vertical dashes (tile generated in JS) */
-.cta .dotfield{position:absolute;inset:0;opacity:.4;background-repeat:repeat;
-  -webkit-mask-image:radial-gradient(125% 125% at 82% 12%,#000 8%,transparent 72%);
-  mask-image:radial-gradient(125% 125% at 82% 12%,#000 8%,transparent 72%)}
 .cta .wrap{position:relative;z-index:1;max-width:1120px}
 .cta-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
 .cta-copy{text-align:left}
@@ -900,7 +896,6 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
 
 <!-- ===================== CTA ===================== -->
 <section class="section cta on-dark" id="contact">
-  <div class="dotfield" aria-hidden="true"></div>
   <div class="wrap">
     <div class="cta-grid">
       <div class="cta-copy">
@@ -1188,26 +1183,6 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
     var uri = svg.replace(/#/g,"%23").replace(/</g,"%3C").replace(/>/g,"%3E").replace(/"/g,"'");
     el.style.backgroundImage = 'url("data:image/svg+xml,'+uri+'")';
     el.style.backgroundSize = size+"px "+size+"px";
-  })();
-
-  /* ---- CTA: varying-density equalizer / signal lines (brand pattern) ---- */
-  (function(){
-    var el = document.querySelector(".cta .dotfield");
-    if(!el) return;
-    var cols = 18, colSp = 14, w = cols*colSp, H = 240, seg = 20, s = "";
-    for(var i=0;i<cols;i++){
-      var x = (i*colSp + colSp/2).toFixed(1);
-      var wv = 0.6*Math.sin(2*Math.PI*i/cols) + 0.4*Math.sin(2*Math.PI*2*i/cols);
-      var t = (wv+1)/2;                       /* 0..1 density */
-      var len = 4 + 13*t;                     /* dash length 4..17 within 20px period */
-      var sw = (1.2 + 1.5*t).toFixed(2);      /* stroke width 1.2..2.7 */
-      var off = (seg*((Math.sin(2*Math.PI*i/cols)+1)/2)).toFixed(1); /* stagger */
-      s += '<line x1="'+x+'" y1="0" x2="'+x+'" y2="'+H+'" stroke="%23F8F8FE" stroke-width="'+sw+'" stroke-dasharray="'+len.toFixed(1)+' '+(seg-len).toFixed(1)+'" stroke-dashoffset="'+off+'"/>';
-    }
-    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+H+'">'+s+'</svg>';
-    var uri = svg.replace(/#/g,"%23").replace(/</g,"%3C").replace(/>/g,"%3E").replace(/"/g,"'");
-    el.style.backgroundImage = 'url("data:image/svg+xml,'+uri+'")';
-    el.style.backgroundSize = w+"px "+H+"px";
   })();
 
   /* ---- Nav scroll state ---- */
