@@ -286,7 +286,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:transparent}
 .card .cc{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
 .card .ci{display:inline-flex;width:50px;height:50px;border-radius:14px;background:rgba(11,52,237,.08);align-items:center;justify-content:center}
-.card .ci i{display:block;width:12px;height:3px;background:var(--electric);box-shadow:0 6px 0 var(--electric),0 -6px 0 var(--electric)}
+.card .ci svg{width:24px;height:24px;fill:none;stroke:var(--electric);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .card h3{margin:1.5rem 0 .8rem;font-size:clamp(1.5rem,2.4vw,1.95rem);letter-spacing:-.025em}
 .card p{color:var(--ink-55);font-size:1.04rem;line-height:1.55;max-width:42ch}
 
@@ -302,7 +302,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
   radial-gradient(120% 80% at 80% 0%,rgba(102,171,241,.45),transparent 55%),
   linear-gradient(160deg,color-mix(in srgb, var(--obsidian) 82%, var(--electric)),var(--electric) 160%)}
 .c-auto .ci{background:rgba(248,248,254,.14);margin-bottom:auto}
-.c-auto .ci i{background:#F8F8FE;box-shadow:0 6px 0 #F8F8FE,0 -6px 0 #F8F8FE}
+.c-auto .ci svg{stroke:#F8F8FE}
 .c-auto p{color:var(--on-dark-70);max-width:38ch}
 .c-auto:hover{border-color:transparent;box-shadow:var(--shadow-l)}
 
@@ -372,7 +372,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
   radial-gradient(120% 90% at 25% 15%,rgba(255,110,91,.42),transparent 58%),
   linear-gradient(160deg,color-mix(in srgb, var(--mahogany) 62%, var(--obsidian)),var(--mahogany) 135%)}
 .c-mob .ci{background:rgba(248,248,254,.14);margin-bottom:auto}
-.c-mob .ci i{background:#F8F8FE;box-shadow:0 6px 0 #F8F8FE,0 -6px 0 #F8F8FE}
+.c-mob .ci svg{stroke:#F8F8FE}
 .c-mob h3{margin-top:1.5rem;font-size:1.3rem}
 .c-mob p{color:var(--on-dark-70);max-width:34ch;font-size:.98rem}
 .c-mob:hover{border-color:transparent;box-shadow:var(--shadow-l)}
@@ -462,7 +462,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 }
 .pillar:hover{transform:translateY(-5px);box-shadow:var(--shadow-m);border-color:transparent}
 .pillar .pi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(11,52,237,.07);margin-bottom:1.3rem}
-.pillar .pi i{width:11px;height:2.5px;background:var(--electric);display:block;box-shadow:0 5px 0 var(--electric),0 -5px 0 var(--electric)}
+.pillar .pi svg{width:22px;height:22px;fill:none;stroke:var(--electric);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .pillar h3{font-size:1.18rem;margin-bottom:.5rem}
 .pillar p{color:var(--ink-55);font-size:.94rem;line-height:1.55}
 @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
@@ -671,7 +671,7 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
       <!-- Left card: Intelligence & AI -->
       <article class="card c-ai reveal">
         <div class="cc">
-          <span class="ci" aria-hidden="true"><i></i></span>
+          <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg></span>
           <h3 data-i18n="sol.ai.h">Intelligence &amp; AI</h3>
           <p data-i18n="sol.ai.p">Turn fragmented information into clear decisions, automated workflows, and actionable operational insight.</p>
           <ol class="sol-list">
@@ -685,7 +685,7 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
       <article class="card c-auto reveal" data-d="1">
         <div class="imgslot filled" style="background-image:url('public/autonomous-system.png')" aria-hidden="true"></div>
         <div class="cc">
-          <span class="ci" aria-hidden="true"><i></i></span>
+          <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></span>
           <h3 data-i18n="sol.auto.h">Autonomous Systems</h3>
           <p data-i18n="sol.auto.p">Bring intelligence into physical operations through robotics, drones, and connected mobility systems.</p>
         </div>
@@ -699,7 +699,7 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
           <div class="sh-img" style="background-image:url('public/smart-environments.png')"></div>
         </div>
         <div class="sol-h-text">
-          <span class="ci" aria-hidden="true"><i></i></span>
+          <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></svg></span>
           <h3 data-i18n="sol.env.h">Smart Environments</h3>
           <p data-i18n="sol.env.p">Connect infrastructure, services, and operational systems to improve visibility, coordination, and response across cities and large-scale environments.</p>
           <div class="tags"><span data-i18n="sol.env.t1">Smart Cities</span><span data-i18n="sol.env.t2">IoT</span><span data-i18n="sol.env.t3">Connected Infrastructure</span></div>
@@ -759,7 +759,7 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
       <article class="card sub c-mob reveal" data-d="2">
         <div class="imgslot filled" style="background-image:url('public/connected-mobility.png')" aria-hidden="true"></div>
         <div class="cc">
-          <span class="ci" aria-hidden="true"><i></i></span>
+          <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span>
           <h3 data-i18n="sol.mob.h">Connected Mobility</h3>
           <p data-i18n="sol.mob.p">Improve the coordination and movement of people, vehicles, fleets, and goods through connected transport systems.</p>
         </div>
@@ -819,12 +819,12 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
       <p class="lead" style="margin-top:1.1rem" data-i18n="why.lead">We combine engineering depth, connected capabilities, and regional understanding to build systems that perform in real operating environments—and scale as needs change.</p>
     </div>
     <div class="why-grid">
-      <div class="pillar reveal"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p1h">Engineering Depth</h3><p data-i18n="why.p1p">Strong architecture, disciplined engineering, and reliable performance from design through deployment.</p></div>
-      <div class="pillar reveal" data-d="1"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p2h">Connected Capabilities</h3><p data-i18n="why.p2p">AI, autonomous systems, and infrastructure brought together within one integrated approach.</p></div>
-      <div class="pillar reveal" data-d="2"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p3h">Real-World Design</h3><p data-i18n="why.p3p">Solutions shaped around actual operating conditions, existing systems, and the people who use them.</p></div>
-      <div class="pillar reveal"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p4h">Secure &amp; Scalable</h3><p data-i18n="why.p4p">Technology built for demanding operations, long-term adoption, and future expansion.</p></div>
-      <div class="pillar reveal" data-d="1"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p5h">Regional Understanding</h3><p data-i18n="why.p5p">A UAE-based team with a clear understanding of regional priorities and operating environments.</p></div>
-      <div class="pillar reveal" data-d="2"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p6h">Outcome Focus</h3><p data-i18n="why.p6p">Every solution is developed around the practical result it needs to deliver.</p></div>
+      <div class="pillar reveal"><span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span><h3 data-i18n="why.p1h">Engineering Depth</h3><p data-i18n="why.p1p">Strong architecture, disciplined engineering, and reliable performance from design through deployment.</p></div>
+      <div class="pillar reveal" data-d="1"><span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg></span><h3 data-i18n="why.p2h">Connected Capabilities</h3><p data-i18n="why.p2p">AI, autonomous systems, and infrastructure brought together within one integrated approach.</p></div>
+      <div class="pillar reveal" data-d="2"><span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><h3 data-i18n="why.p3h">Real-World Design</h3><p data-i18n="why.p3p">Solutions shaped around actual operating conditions, existing systems, and the people who use them.</p></div>
+      <div class="pillar reveal"><span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span><h3 data-i18n="why.p4h">Secure &amp; Scalable</h3><p data-i18n="why.p4p">Technology built for demanding operations, long-term adoption, and future expansion.</p></div>
+      <div class="pillar reveal" data-d="1"><span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><h3 data-i18n="why.p5h">Regional Understanding</h3><p data-i18n="why.p5p">A UAE-based team with a clear understanding of regional priorities and operating environments.</p></div>
+      <div class="pillar reveal" data-d="2"><span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><h3 data-i18n="why.p6h">Outcome Focus</h3><p data-i18n="why.p6p">Every solution is developed around the practical result it needs to deliver.</p></div>
     </div>
   </div>
 </section>
