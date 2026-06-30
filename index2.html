@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- PREVIEW-ONLY: keep WIP out of search engines. Remove this line before promoting to production. -->
+<meta name="robots" content="noindex, nofollow" />
+<title>QEONIX — Live Tomorrow, Today.</title>
+<meta name="description" content="QEONIX brings the physical and digital worlds together to create smarter, more responsive systems for governments, organizations, and cities. AI · Robotics · Smart Cities · Future Technologies." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<script>
+/* Set language/direction ASAP to avoid a layout flash (text is swapped later) */
+(function(){try{var l=localStorage.getItem("qx-lang")||"en";var d=document.documentElement;d.lang=l;d.dir=l==="ar"?"rtl":"ltr";}catch(e){}})();
+</script>
+<style>
+/* ============================================================
+   QEONIX — Design Tokens
+   ============================================================ */
+:root{
+  /* Primary palette */
+  --arctic:      #F8F8FE;
+  --obsidian:    #111110;
+  --electric:    #0B34ED;
+  --quantum:     #0206DB;
+  /* Secondary */
+  --azure:       #66ABF1;
+  --glacial:     #BDDFFF;
+  --coral:       #FF6E5B;
+  --mahogany:    #541A1A;
+
+  /* Neutrals derived for UI */
+  --ink:         #111110;
+  --ink-70:      rgba(17,17,16,.70);
+  --ink-55:      rgba(17,17,16,.55);
+  --ink-40:      rgba(17,17,16,.40);
+  --ink-12:      rgba(17,17,16,.12);
+  --ink-06:      rgba(17,17,16,.06);
+  --paper:       #F8F8FE;
+  --paper-2:     color-mix(in srgb, var(--glacial) 22%, var(--arctic));  /* light surface: Glacial Mist tint of Arctic White */
+  --line:        rgba(17,17,16,.10);
+  --on-dark-70:  rgba(248,248,254,.66);
+  --on-dark-45:  rgba(248,248,254,.45);
+  --on-dark-12:  rgba(248,248,254,.12);
+
+  /* Type */
+  --font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-ar: "Cairo", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --h1: clamp(2rem, 5vw, 3rem);      /* 32px (mobile) → 48px (desktop) — per type scale */
+  --h2: clamp(1.5rem, 3vw, 2rem);    /* 24px (mobile) → 32px (desktop) — per type scale */
+  --h3: clamp(1.4rem, 2.4vw, 1.9rem);
+  --eyebrow: .78rem;
+
+  /* Layout */
+  --maxw: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --radius: 26px;
+  --radius-s: 16px;
+  --nav-h: 74px;
+
+  /* Shadows */
+  --shadow-s: 0 1px 2px rgba(17,17,16,.04), 0 8px 24px rgba(17,17,16,.05);
+  --shadow-m: 0 2px 6px rgba(17,17,16,.05), 0 18px 50px rgba(17,17,16,.09);
+  --shadow-l: 0 30px 80px rgba(11,52,237,.14), 0 12px 30px rgba(17,17,16,.10);
+
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+
+body{
+  font-family:var(--font);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--electric);color:#F8F8FE}
+
+/* ============================================================
+   Reusable atoms
+   ============================================================ */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.section{padding-block:clamp(5rem,11vw,9.5rem);position:relative}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:var(--eyebrow);font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--electric);
+}
+.eyebrow::before{
+  content:"";width:10px;height:9px;flex:none;
+  background:
+    linear-gradient(var(--electric) 0 0) 0 0/100% 2px no-repeat,
+    linear-gradient(var(--electric) 0 0) 0 50%/100% 2px no-repeat,
+    linear-gradient(var(--electric) 0 0) 0 100%/100% 2px no-repeat;
+}
+.on-dark .eyebrow{color:var(--azure)}
+.on-dark .eyebrow::before{background:
+    linear-gradient(var(--azure) 0 0) 0 0/100% 2px no-repeat,
+    linear-gradient(var(--azure) 0 0) 0 50%/100% 2px no-repeat,
+    linear-gradient(var(--azure) 0 0) 0 100%/100% 2px no-repeat;}
+
+h1,h2,h3{font-weight:700;line-height:1.08;letter-spacing:-.02em}
+.h1{font-size:var(--h1);font-weight:700;line-height:1.1;letter-spacing:-.035em}        /* Poppins Bold · 110% — per type scale */
+.h2{font-size:var(--h2);font-weight:600;letter-spacing:-.025em;line-height:1.2}         /* Poppins Semibold · 120% — per type scale */
+.h3{font-size:var(--h3);letter-spacing:-.02em}
+.lead{font-size:clamp(1.05rem,1.5vw,1.28rem);color:var(--ink-70);font-weight:400;line-height:1.55;max-width:46ch}
+.muted{color:var(--ink-55)}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-weight:500;font-size:.98rem;letter-spacing:-.01em;
+  padding:.85rem 1.5rem;border-radius:100px;border:1px solid transparent;
+  cursor:pointer;transition:transform .4s var(--ease-out), background .3s, box-shadow .4s, color .3s;
+  will-change:transform;
+}
+.btn .arr{transition:transform .4s var(--ease-out)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-primary{background:var(--obsidian);color:var(--arctic)}
+.btn-primary:hover{background:var(--electric);box-shadow:0 12px 30px rgba(11,52,237,.32);transform:translateY(-2px)}
+.btn-blue{background:var(--electric);color:#F8F8FE}
+.btn-blue:hover{background:var(--quantum);box-shadow:0 12px 30px rgba(11,52,237,.32);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink-12)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.on-dark .btn-ghost{color:var(--arctic);border-color:var(--on-dark-12)}
+.on-dark .btn-ghost:hover{border-color:var(--arctic)}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:.5rem;font-weight:500;color:var(--electric);
+}
+.link-arrow .arr{transition:transform .4s var(--ease-out)}
+.link-arrow:hover .arr{transform:translateX(5px)}
+
+/* ============================================================
+   Logo mark (three-bar E)
+   ============================================================ */
+.logo{display:inline-flex;align-items:center}
+.logo img{height:20px;width:auto;display:block}
+.on-dark .logo img,.footer .logo img{filter:brightness(0) invert(1)}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);
+  display:flex;align-items:center;
+  transition:background .4s var(--ease), box-shadow .4s, backdrop-filter .4s, border-color .4s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(248,248,254,.72);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-links{
+  display:flex;align-items:center;gap:.35rem;
+  padding:.3rem;border-radius:100px;
+  background:rgba(17,17,16,.04);border:1px solid transparent;
+  transition:background .4s, border-color .4s;
+}
+.nav.scrolled .nav-links{background:rgba(248,248,254,.5);border-color:var(--line)}
+.nav-links a{
+  font-size:.92rem;font-weight:500;color:var(--ink-70);
+  padding:.5rem .95rem;border-radius:100px;transition:color .25s, background .25s;
+}
+.nav-links a:hover{color:var(--ink);background:rgba(248,248,254,.8)}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.nav-cta{padding:.62rem 1.25rem;font-size:.92rem}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:42px;height:42px;border-radius:12px;align-items:center;justify-content:center}
+/* Hamburger mirrors the logo's three-bar "E": electric-blue rounded bars */
+.nav-toggle span{display:block;width:16px;height:3.5px;border-radius:1.5px;background:var(--electric);position:relative;transition:transform .35s var(--ease),background .25s}
+.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;width:16px;height:3.5px;border-radius:1.5px;background:var(--electric);transition:transform .35s var(--ease),top .35s var(--ease)}
+.nav-toggle span::before{top:-6.5px}.nav-toggle span::after{top:6.5px}
+body.menu-open .nav-toggle span{background:transparent}
+body.menu-open .nav-toggle span::before{top:0;transform:rotate(45deg)}
+body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
+
+@media(max-width:980px){
+  .nav-links{
+    position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;gap:.25rem;
+    background:rgba(248,248,254,.96);backdrop-filter:blur(20px);
+    border-radius:0;border-bottom:1px solid var(--line);padding:1.2rem var(--gutter) 1.8rem;
+    transform:translateY(-120%);transition:transform .45s var(--ease-out);align-items:stretch;
+  }
+  body.menu-open .nav-links{transform:translateY(0)}
+  .nav-links a{padding:.85rem 1rem;font-size:1.05rem;border-radius:12px}
+  .nav-toggle{display:flex}
+  .nav-cta{display:none}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding-top:var(--nav-h);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+#field{position:absolute;inset:0;width:100%;height:100%}
+.hero-glow{
+  position:absolute;border-radius:50%;filter:blur(70px);opacity:.7;pointer-events:none;
+}
+.glow-1{width:46vw;height:46vw;left:-8vw;top:8vh;background:radial-gradient(circle at 30% 30%,rgba(102,171,241,.55),rgba(11,52,237,.18) 55%,transparent 72%)}
+.glow-2{width:40vw;height:40vw;right:-6vw;bottom:-8vh;background:radial-gradient(circle at 60% 40%,rgba(189,223,255,.7),rgba(255,110,91,.10) 60%,transparent 75%)}
+.hero-grid-fade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,var(--paper) 99%)}
+
+.hero .wrap{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.hero-inner{max-width:560px}
+.hero h1{margin:.7rem 0 1.6rem}
+.hero h1 .accent{color:var(--quantum)}
+.hero .lead{max-width:42ch;font-size:clamp(1.1rem,1.7vw,1.4rem)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.4rem}
+
+/* hero humanoid figure */
+.hero-figure{position:relative;z-index:1;justify-self:end;width:100%;max-width:clamp(420px,42vw,680px);transition:transform .6s var(--ease-out)}
+.hero-figure img{width:100%;height:auto;display:block;
+  -webkit-mask-image:radial-gradient(115% 120% at 46% 46%,#000 50%,transparent 88%),linear-gradient(90deg,#000 60%,transparent 96%),linear-gradient(270deg,#000 88%,transparent 100%),linear-gradient(180deg,#000 90%,transparent 100%);
+  -webkit-mask-composite:source-in,source-in,source-in;
+  mask-image:radial-gradient(115% 120% at 46% 46%,#000 50%,transparent 88%),linear-gradient(90deg,#000 60%,transparent 96%),linear-gradient(270deg,#000 88%,transparent 100%),linear-gradient(180deg,#000 90%,transparent 100%);
+  mask-composite:intersect;
+  animation:floaty 9s var(--ease) infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@media(max-width:960px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-figure{display:none}
+}
+@media (prefers-reduced-motion: reduce){.hero-figure img{animation:none}}
+
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-40)}
+.scroll-hint .mouse{width:22px;height:34px;border:1.5px solid var(--ink-40);border-radius:12px;position:relative}
+.scroll-hint .mouse::before{content:"";position:absolute;top:6px;left:50%;width:3px;height:6px;background:var(--electric);border-radius:2px;transform:translateX(-50%);animation:scrolldot 1.8s var(--ease) infinite}
+@keyframes scrolldot{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}80%{opacity:0;transform:translate(-50%,9px)}}
+
+/* logo ticker */
+.marquee{border-block:1px solid var(--line);padding-block:1.4rem;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee-track{display:flex;gap:3.5rem;width:max-content;animation:scrollx 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-size:.92rem;font-weight:500;color:var(--ink-40);white-space:nowrap;letter-spacing:.02em;display:inline-flex;gap:3.5rem;align-items:center}
+.marquee-track span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--electric);opacity:.5}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.marquee-track{animation:none}}
+
+/* ============================================================
+   WHO WE ARE
+   ============================================================ */
+.who-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+@media(max-width:900px){.who-grid{grid-template-columns:1fr}}
+.who h2{margin:1.2rem 0 1.5rem;max-width:16ch}
+.facts{margin-top:2.4rem;display:flex;flex-direction:column;gap:0}
+.fact{display:flex;gap:1.5rem;padding:1.15rem 0;border-top:1px solid var(--line);align-items:baseline}
+.fact:last-child{border-bottom:1px solid var(--line)}
+.fact .k{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);min-width:130px;flex:none;transition:color .3s var(--ease)}
+.fact .v{font-size:1.05rem;font-weight:500;transition:color .3s var(--ease)}
+.fact:hover .k,.fact:hover .v{color:var(--electric)}
+.who-visual{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:linear-gradient(160deg,var(--obsidian),var(--electric) 120%);box-shadow:var(--shadow-l)}
+.who-visual .vstack{position:absolute;inset:0;display:grid;place-items:center}
+.who-visual .figure{display:flex;gap:10px;align-items:flex-end;height:46%}
+.who-visual .figure b{width:18px;border-radius:6px;background:linear-gradient(var(--glacial),var(--azure));display:block;animation:eq 2.6s var(--ease) infinite}
+.who-visual .figure b:nth-child(1){height:40%;animation-delay:0s}
+.who-visual .figure b:nth-child(2){height:75%;animation-delay:.2s;background:linear-gradient(#F8F8FE,var(--glacial))}
+.who-visual .figure b:nth-child(3){height:100%;animation-delay:.4s}
+.who-visual .figure b:nth-child(4){height:62%;animation-delay:.6s;background:linear-gradient(#F8F8FE,var(--azure))}
+.who-visual .figure b:nth-child(5){height:85%;animation-delay:.8s}
+@keyframes eq{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.55)}}
+@media (prefers-reduced-motion: reduce){.who-visual .figure b{animation:none}}
+.who-visual .tag{position:absolute;left:18px;bottom:16px;color:var(--on-dark-70);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.who-visual .dotfield{position:absolute;inset:0;opacity:.5;
+  background-image:radial-gradient(rgba(248,248,254,.5) 1.1px,transparent 1.2px);
+  background-size:18px 18px;mask-image:radial-gradient(120% 90% at 80% 10%,#000,transparent 70%)}
+
+/* ============================================================
+   SOLUTIONS — bento
+   ============================================================ */
+.sec-head{max-width:760px;margin-bottom:clamp(2.5rem,5vw,3.8rem)}
+.sec-head h2{margin-top:1.1rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head.center .eyebrow{justify-content:center}
+
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{
+  position:relative;border-radius:var(--radius);padding:clamp(1.8rem,2.8vw,2.7rem);
+  background:#F8F8FE;border:1px solid var(--line);overflow:hidden;
+  transition:transform .5s var(--ease-out), box-shadow .5s, border-color .5s;
+  min-height:clamp(440px,46vw,560px);display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:transparent}
+.card .cc{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
+.card .ci{display:inline-flex;width:50px;height:50px;border-radius:14px;background:rgba(11,52,237,.08);align-items:center;justify-content:center}
+.card .ci i{display:block;width:12px;height:3px;background:var(--electric);box-shadow:0 6px 0 var(--electric),0 -6px 0 var(--electric)}
+.card h3{margin:1.5rem 0 .8rem;font-size:clamp(1.5rem,2.4vw,1.95rem);letter-spacing:-.025em}
+.card p{color:var(--ink-55);font-size:1.04rem;line-height:1.55;max-width:42ch}
+
+/* numbered capability list (left card) */
+.sol-list{list-style:none;margin-top:auto;padding-top:1.6rem}
+.sol-list li{display:flex;align-items:center;gap:1.1rem;padding:1.05rem .25rem;border-top:1px solid var(--line);font-size:1.1rem;font-weight:500;letter-spacing:-.01em;transition:padding-left .4s var(--ease)}
+.sol-list li:last-child{border-bottom:1px solid var(--line)}
+.sol-list li:hover{padding-inline-start:.9rem}
+.sol-list .n{font-size:.82rem;font-weight:700;color:var(--electric);letter-spacing:.08em;min-width:26px}
+
+/* image card (right) */
+.c-auto{color:var(--arctic);border-color:transparent;background:
+  radial-gradient(120% 80% at 80% 0%,rgba(102,171,241,.45),transparent 55%),
+  linear-gradient(160deg,color-mix(in srgb, var(--obsidian) 82%, var(--electric)),var(--electric) 160%)}
+.c-auto .ci{background:rgba(248,248,254,.14);margin-bottom:auto}
+.c-auto .ci i{background:#F8F8FE;box-shadow:0 6px 0 #F8F8FE,0 -6px 0 #F8F8FE}
+.c-auto p{color:var(--on-dark-70);max-width:38ch}
+.c-auto:hover{border-color:transparent;box-shadow:var(--shadow-l)}
+
+/* image-slot styling */
+.imgslot{position:absolute;inset:0;z-index:0;opacity:.95}
+.imgslot::after{content:"IMAGE SLOT";position:absolute;right:16px;top:16px;font-size:.6rem;letter-spacing:.16em;color:rgba(248,248,254,.5);border:1px dashed rgba(248,248,254,.35);padding:.2rem .45rem;border-radius:6px}
+/* filled image slot (real render) */
+.imgslot.filled{opacity:1;background-size:cover;background-position:center;transition:transform .7s var(--ease-out)}
+.imgslot.filled::after{content:none}
+.card:hover .imgslot.filled{transform:scale(1.05)}
+.imgslot.filled::before{content:"";position:absolute;inset:0}
+.c-auto .imgslot.filled{background-size:cover;background-position:center center}
+.c-auto .imgslot.filled::before{background:linear-gradient(180deg,transparent 0%,transparent 50%,rgba(17,17,16,.45) 78%,rgba(17,17,16,.8) 100%)}
+.c-mob .imgslot.filled{background-size:cover;background-position:center center}
+.c-mob .imgslot.filled::before{background:linear-gradient(180deg,transparent 0%,transparent 50%,rgba(17,17,16,.45) 78%,rgba(17,17,16,.8) 100%)}
+.c-auto .imgslot{background:
+  conic-gradient(from 200deg at 70% 30%,rgba(11,52,237,.0),rgba(102,171,241,.5),rgba(11,52,237,0)),
+  repeating-linear-gradient(115deg,rgba(248,248,254,.05) 0 2px,transparent 2px 9px)}
+
+@media(max-width:860px){
+  .sol-grid{grid-template-columns:1fr}
+  .card{min-height:380px}
+}
+
+/* capability pill tags */
+.tags{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
+.tags span{font-size:.8rem;font-weight:500;color:var(--ink-70);background:var(--ink-06);padding:.42rem .9rem;border-radius:100px;transition:background .35s,color .35s}
+.card:hover .tags span{background:rgba(11,52,237,.08);color:var(--electric)}
+
+/* horizontal core-area card (Smart Environments) */
+.sol-h{margin-top:18px;min-height:0;padding:0}
+.sol-h .sol-h-inner{display:grid;grid-template-columns:.95fr 1.05fr;width:100%}
+.sol-h-text{padding:clamp(1.8rem,3vw,2.8rem);display:flex;flex-direction:column;justify-content:center}
+.sol-h-text .ci{margin-bottom:1.4rem}
+.sol-h-text h3{margin:0 0 .8rem;font-size:clamp(1.5rem,2.2vw,1.9rem);letter-spacing:-.025em}
+.sol-h-visual{position:relative;overflow:hidden;min-height:clamp(260px,26vw,340px);
+  background:radial-gradient(120% 120% at 75% 25%,rgba(102,171,241,.22),transparent 62%),var(--paper-2);
+  border-right:1px solid var(--line)}
+.sol-h-visual.has-img{background:none;border-right:0}
+.sol-h-visual .sh-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s var(--ease-out)}
+.sol-h:hover .sol-h-visual .sh-img{transform:scale(1.05)}
+.sol-h-visual .dotfield{position:absolute;inset:0;opacity:.55;
+  background-image:radial-gradient(rgba(11,52,237,.32) 1px,transparent 1.2px);background-size:20px 20px;
+  mask-image:radial-gradient(110% 90% at 70% 35%,#000,transparent 72%)}
+.sol-h-visual svg{position:absolute;inset:0;width:100%;height:100%}
+.pulse{transform-box:fill-box;transform-origin:center;animation:nodepulse 2.8s var(--ease) infinite}
+@keyframes nodepulse{0%{transform:scale(1);opacity:.5}70%{transform:scale(2.6);opacity:0}100%{opacity:0}}
+@media(max-width:760px){
+  .sol-h .sol-h-inner{grid-template-columns:1fr}
+  .sol-h-visual{border-right:0;border-bottom:1px solid var(--line);order:-1;min-height:220px}
+}
+
+/* capability sub-card row */
+.sol-sub{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.sub{min-height:clamp(340px,30vw,410px)}
+.sub .sub-viz{position:relative;height:clamp(150px,16vw,185px);flex:none;border-radius:16px;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);margin-bottom:1.7rem}
+.sub .sub-viz svg{position:absolute;inset:0;width:100%;height:100%}
+.sub .sub-text h3{font-size:1.3rem;margin:0 0 .6rem}
+.sub .sub-text p{font-size:.98rem}
+.radar-sweep{transform-box:view-box;transform-origin:150px 90px;animation:radarspin 5.5s linear infinite}
+@keyframes radarspin{to{transform:rotate(360deg)}}
+.blip{transform-box:fill-box;transform-origin:center;animation:nodepulse 2.4s var(--ease) infinite}
+@media (prefers-reduced-motion: reduce){.pulse,.radar-sweep,.blip{animation:none}}
+
+/* Connected Mobility — image overlay (coral) */
+.c-mob{color:var(--arctic);border-color:transparent;background:
+  radial-gradient(120% 90% at 25% 15%,rgba(255,110,91,.42),transparent 58%),
+  linear-gradient(160deg,color-mix(in srgb, var(--mahogany) 62%, var(--obsidian)),var(--mahogany) 135%)}
+.c-mob .ci{background:rgba(248,248,254,.14);margin-bottom:auto}
+.c-mob .ci i{background:#F8F8FE;box-shadow:0 6px 0 #F8F8FE,0 -6px 0 #F8F8FE}
+.c-mob h3{margin-top:1.5rem;font-size:1.3rem}
+.c-mob p{color:var(--on-dark-70);max-width:34ch;font-size:.98rem}
+.c-mob:hover{border-color:transparent;box-shadow:var(--shadow-l)}
+.c-mob .imgslot{background:
+  radial-gradient(60% 70% at 75% 20%,rgba(255,110,91,.5),transparent 60%),
+  repeating-linear-gradient(58deg,rgba(248,248,254,.06) 0 2px,transparent 2px 12px)}
+
+@media(max-width:860px){.sol-sub{grid-template-columns:1fr}.sub{min-height:300px}}
+
+/* ============================================================
+   APPROACH
+   ============================================================ */
+.approach{background:linear-gradient(180deg,var(--paper),var(--paper-2));overflow:hidden}
+/* dot-matrix data-field brand pattern — varying-size halftone dots (tile generated in JS) */
+.ap-pattern{
+  position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.13;
+  background-repeat:repeat;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 20%,#000 78%,transparent);
+  mask-image:linear-gradient(180deg,transparent,#000 20%,#000 78%,transparent);
+}
+.approach .wrap{position:relative;z-index:1}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem 0;margin-top:1rem;position:relative}
+.step{padding:0 1.4rem 0 0;position:relative}
+.step::before{content:"";position:absolute;top:34px;left:64px;right:0;height:2px;z-index:0;
+  background:repeating-linear-gradient(90deg,var(--ink-12) 0 7px,transparent 7px 14px)}
+.step:nth-child(3n)::before{display:none}
+.step .num{
+  width:68px;height:68px;border-radius:50%;background:#F8F8FE;border:1px solid var(--line);
+  display:grid;place-items:center;font-weight:700;font-size:1.15rem;color:var(--electric);
+  position:relative;z-index:1;box-shadow:var(--shadow-s);margin-bottom:1.6rem;
+  transition:transform .5s var(--ease-out),background .4s,color .4s,box-shadow .4s;
+}
+.step:hover .num{background:var(--electric);color:#F8F8FE;transform:translateY(-4px);box-shadow:0 14px 30px rgba(11,52,237,.3)}
+.step h3{font-size:1.2rem;margin-bottom:.55rem}
+.step p{color:var(--ink-55);font-size:.95rem;line-height:1.55;max-width:30ch}
+@media(max-width:900px){
+  .steps{grid-template-columns:1fr 1fr;gap:2.5rem 1.5rem}
+  .step::before{display:none}
+}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* ============================================================
+   INDUSTRIES — dark
+   ============================================================ */
+.industries{background:var(--obsidian);color:var(--arctic);position:relative;overflow:hidden}
+.industries .dotfield{position:absolute;inset:0;opacity:.16;pointer-events:none;
+  background-image:radial-gradient(var(--azure) 1.2px,transparent 1.3px);background-size:26px 26px;
+  mask-image:radial-gradient(120% 80% at 90% 0%,#000,transparent 65%)}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative;z-index:1}
+.ind-cell{
+  position:relative;overflow:hidden;cursor:default;min-height:clamp(210px,18vw,250px);
+  padding:2rem 1.6rem 2.2rem;border-radius:var(--radius-s);
+  border:1px solid var(--on-dark-12);
+  background:linear-gradient(160deg,color-mix(in srgb, var(--obsidian) 86%, var(--electric)),var(--obsidian));
+  display:flex;flex-direction:column;justify-content:flex-end;
+  transition:border-color .4s,transform .5s var(--ease-out),box-shadow .5s;
+}
+.ind-cell:hover{transform:translateY(-4px);box-shadow:var(--shadow-l);border-color:transparent}
+/* swappable image layer */
+.ind-cell .ind-img{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;
+  opacity:0;transform:scale(1.04);transition:opacity .55s var(--ease),transform 4s var(--ease-out)}
+.ind-cell .ind-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(17,17,16,.15) 0%,rgba(17,17,16,.55) 55%,rgba(17,17,16,.9) 100%)}
+/* default cards: image hidden until hover */
+.ind-cell:hover .ind-img{opacity:1;transform:scale(1)}
+/* inverted cards: image shown by default, reverts to blue on hover */
+.ind-cell.flip .ind-img{opacity:1;transform:scale(1)}
+.ind-cell.flip:hover .ind-img{opacity:0;transform:scale(1.04)}
+.ind-cell > *{position:relative;z-index:1}
+.ind-cell .no{font-size:.8rem;font-weight:600;color:var(--azure);letter-spacing:.1em;transition:color .4s}
+.ind-cell:hover .no{color:#F8F8FE}
+.ind-cell h3{font-size:1.18rem;margin:.55rem 0 .55rem;letter-spacing:-.01em}
+.ind-cell p{font-size:.9rem;color:var(--on-dark-70);line-height:1.5;transition:color .4s}
+.ind-cell:hover p{color:rgba(248,248,254,.9)}
+.ind-cell .ar{position:absolute;top:1.8rem;right:1.5rem;bottom:auto;z-index:1;color:var(--on-dark-45);transition:transform .45s var(--ease-out),color .4s;font-size:1.1rem}
+.ind-cell:hover .ar{transform:translate(3px,-3px);color:#F8F8FE}
+@media(max-width:980px){.ind-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.ind-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   WHY QEONIX
+   ============================================================ */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pillar{
+  padding:2rem 1.8rem;border-radius:var(--radius-s);background:#F8F8FE;border:1px solid var(--line);
+  transition:transform .5s var(--ease-out),box-shadow .5s,border-color .5s;
+}
+.pillar:hover{transform:translateY(-5px);box-shadow:var(--shadow-m);border-color:transparent}
+.pillar .pi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(11,52,237,.07);margin-bottom:1.3rem}
+.pillar .pi i{width:11px;height:2.5px;background:var(--electric);display:block;box-shadow:0 5px 0 var(--electric),0 -5px 0 var(--electric)}
+.pillar h3{font-size:1.18rem;margin-bottom:.5rem}
+.pillar p{color:var(--ink-55);font-size:.94rem;line-height:1.55}
+@media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.why-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+@media(max-width:860px){.faq-grid{grid-template-columns:1fr}}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;text-align:start;
+  padding:1.4rem 0;display:flex;justify-content:space-between;gap:1.5rem;align-items:center;
+  font-family:inherit;font-size:1.1rem;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.faq-q .pm{flex:none;width:26px;height:26px;position:relative}
+.faq-q .pm::before,.faq-q .pm::after{content:"";position:absolute;top:50%;left:50%;width:13px;height:2px;background:var(--electric);transform:translate(-50%,-50%);transition:transform .4s var(--ease)}
+.faq-q .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-item.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.faq-a p{padding:0 0 1.5rem;color:var(--ink-55);max-width:60ch;line-height:1.6}
+
+/* ============================================================
+   CTA + FOOTER
+   ============================================================ */
+.cta{position:relative;overflow:hidden;color:var(--arctic);
+  background:radial-gradient(120% 120% at 80% 10%,rgba(102,171,241,.5),transparent 55%),
+  linear-gradient(150deg,var(--obsidian),var(--electric) 160%)}
+/* signal / equalizer-lines brand pattern — varying-density vertical dashes (tile generated in JS) */
+.cta .dotfield{position:absolute;inset:0;opacity:.4;background-repeat:repeat;
+  -webkit-mask-image:radial-gradient(125% 125% at 82% 12%,#000 8%,transparent 72%);
+  mask-image:radial-gradient(125% 125% at 82% 12%,#000 8%,transparent 72%)}
+.cta .wrap{position:relative;z-index:1;text-align:center;max-width:880px}
+.cta h2{font-size:clamp(2rem,5vw,3rem);letter-spacing:-.035em;line-height:1.1;margin-bottom:1.4rem}
+.cta p{color:var(--on-dark-70);font-size:1.15rem;max-width:46ch;margin:0 auto 2.4rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta .btn-blue{background:#F8F8FE;color:var(--obsidian)}
+.cta .btn-blue:hover{background:var(--glacial);color:var(--obsidian)}
+
+.footer{background:var(--obsidian);color:var(--arctic);padding-block:clamp(3.5rem,6vw,5rem) 2.5rem}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:3rem;border-bottom:1px solid var(--on-dark-12)}
+.footer-brand p{color:var(--on-dark-70);font-size:.92rem;max-width:32ch;margin-top:1.2rem;line-height:1.6}
+.fcol h4{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-45);margin-bottom:1.1rem;font-weight:600}
+.fcol a{display:block;color:var(--on-dark-70);font-size:.95rem;padding:.32rem 0;transition:color .25s}
+.fcol a:hover{color:var(--arctic)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:1.8rem;color:var(--on-dark-45);font-size:.85rem}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
+@media(max-width:520px){.footer-top{grid-template-columns:1fr}}
+
+/* ============================================================
+   Reveal animation
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}
+.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}
+.reveal[data-d="4"]{transition-delay:.32s}
+.reveal[data-d="5"]{transition-delay:.4s}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ============================================================
+   Language toggle (EN / AR)
+   ============================================================ */
+.lang-toggle{
+  display:inline-flex;align-items:center;justify-content:center;gap:.4rem;
+  min-width:46px;height:40px;padding:0 .85rem;border-radius:100px;cursor:pointer;
+  font-family:var(--font);font-size:.9rem;font-weight:600;letter-spacing:.01em;
+  color:var(--ink);background:rgba(17,17,16,.04);border:1px solid var(--ink-12);
+  transition:color .25s,background .25s,border-color .25s,transform .4s var(--ease-out);
+}
+.lang-toggle:hover{background:#F8F8FE;border-color:var(--ink);transform:translateY(-2px)}
+.lang-toggle::before{content:"";width:14px;height:14px;flex:none;border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%,transparent 38%,var(--electric) 39% 46%,transparent 47%),
+    linear-gradient(var(--electric) 0 0) 50% 0/2px 100% no-repeat,
+    linear-gradient(var(--electric) 0 0) 0 50%/100% 2px no-repeat;
+  opacity:.85}
+
+/* ============================================================
+   RTL / Arabic
+   ============================================================ */
+html[dir="rtl"]{--font:var(--font-ar)}
+html[dir="rtl"] .lang-toggle{font-family:var(--font-ar)}
+/* Arabic script: drop the tight Latin tracking and uppercase tricks */
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,
+html[dir="rtl"] .h1,html[dir="rtl"] .h2,html[dir="rtl"] .h3,
+html[dir="rtl"] .lead,html[dir="rtl"] .eyebrow,html[dir="rtl"] .btn,
+html[dir="rtl"] .fact .k,html[dir="rtl"] .fcol h4,html[dir="rtl"] .ind-cell .no,
+html[dir="rtl"] .scroll-hint,html[dir="rtl"] .who-visual .tag,
+html[dir="rtl"] .nav-links a,html[dir="rtl"] .footer-bottom,
+html[dir="rtl"] .step h3,html[dir="rtl"] .sol-list .n{letter-spacing:normal}
+html[dir="rtl"] .eyebrow,html[dir="rtl"] .fact .k,html[dir="rtl"] .fcol h4,
+html[dir="rtl"] .scroll-hint,html[dir="rtl"] .who-visual .tag{text-transform:none}
+/* Directional decorations */
+html[dir="rtl"] .who-visual .tag{left:auto;right:18px}
+html[dir="rtl"] .ind-cell .ar{right:auto;left:1.5rem;transform:scaleX(-1)}
+html[dir="rtl"] .ind-cell:hover .ar{transform:scaleX(-1) translate(3px,-3px)}
+html[dir="rtl"] .step::before{left:0;right:64px}
+html[dir="rtl"] .arr{display:inline-block;transform:scaleX(-1)}
+html[dir="rtl"] .btn:hover .arr,html[dir="rtl"] .link-arrow:hover .arr{transform:scaleX(-1) translateX(5px)}
+/* Mirror the hero humanoid so it faces the (right-aligned) Arabic copy.
+   The floaty animation also drives `transform`, so flip inside the keyframes;
+   the static transform covers the reduced-motion case (animation:none). */
+html[dir="rtl"] .hero-figure img{transform:scaleX(-1);animation-name:floaty-rtl}
+@keyframes floaty-rtl{0%,100%{transform:scaleX(-1) translateY(0)}50%{transform:scaleX(-1) translateY(-14px)}}
+/* Swap the hero glows so the blue wash stays under the (now right-side) text
+   and the warm glow stays behind the (now left-side) figure */
+html[dir="rtl"] .glow-1{left:auto;right:-8vw}
+html[dir="rtl"] .glow-2{right:auto;left:-6vw}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Qeonix home"><img src="public/qeonix-logo.png" alt="Qeonix" /></a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
+      <a href="#industries" data-i18n="nav.industries">Industries</a>
+      <a href="#approach" data-i18n="nav.approach">Approach</a>
+      <a href="#why" data-i18n="nav.why">Why Qeonix</a>
+    </nav>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">عربي</button>
+      <a href="#contact" class="btn btn-primary nav-cta" data-i18n="nav.contact">Contact us</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <canvas id="field"></canvas>
+    <div class="hero-grid-fade"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow reveal" data-i18n="hero.eyebrow">AI · Robotics · Smart Cities · Future Technologies</span>
+      <h1 class="h1 reveal" data-d="1" data-i18n-html="hero.h1">Live <span class="accent">Tomorrow,</span><br>Today.</h1>
+      <p class="lead reveal" data-d="2" data-i18n="hero.lead">We bring the physical and digital worlds together to create smarter, more responsive systems for governments, organizations, and cities.</p>
+      <div class="hero-actions reveal" data-d="3">
+        <a href="#solutions" class="btn btn-blue"><span data-i18n="hero.cta1">Explore Our Capabilities</span> <span class="arr">→</span></a>
+        <a href="#approach" class="btn btn-ghost" data-i18n="hero.cta2">How we work</a>
+      </div>
+    </div>
+    <div class="hero-figure reveal" data-d="2">
+      <img src="public/humanoid-robot-2.png" alt="Humanoid robot embodying Qeonix intelligence and engineering" />
+    </div>
+  </div>
+
+  <a href="#who" class="scroll-hint" aria-label="Scroll down"><span class="mouse"></span><span data-i18n="hero.scroll">Scroll</span></a>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span data-i18n="mq1">Artificial Intelligence</span><span data-i18n="mq2">Generative &amp; Agentic AI</span><span data-i18n="mq3">Robotics</span><span data-i18n="mq4">Drone Technology</span><span data-i18n="mq5">Smart Cities</span><span data-i18n="mq6">IoT</span><span data-i18n="mq7">Connected Mobility</span><span data-i18n="mq8">Data &amp; Analytics</span><span data-i18n="mq9">Connected Infrastructure</span>
+    <span data-i18n="mq1">Artificial Intelligence</span><span data-i18n="mq2">Generative &amp; Agentic AI</span><span data-i18n="mq3">Robotics</span><span data-i18n="mq4">Drone Technology</span><span data-i18n="mq5">Smart Cities</span><span data-i18n="mq6">IoT</span><span data-i18n="mq7">Connected Mobility</span><span data-i18n="mq8">Data &amp; Analytics</span><span data-i18n="mq9">Connected Infrastructure</span>
+  </div>
+</div>
+
+<!-- ===================== WHO WE ARE ===================== -->
+<section class="section who" id="who">
+  <div class="wrap who-grid">
+    <div>
+      <span class="eyebrow reveal" data-i18n="who.eyebrow">Who We Are</span>
+      <h2 class="h2 who-h reveal" data-d="1" data-i18n="who.h2">Engineering intelligent systems for the world ahead.</h2>
+      <p class="lead reveal" data-d="2" data-i18n="who.lead">QEONIX works with governments and enterprises to turn emerging technology into practical, secure, and scalable systems built for real-world performance. From AI and robotics to smart city infrastructure, we design, engineer, and deploy solutions that organizations can rely on.</p>
+      <div class="facts reveal" data-d="3">
+        <div class="fact"><span class="k" data-i18n="who.f1k">Headquartered</span><span class="v" data-i18n="who.f1v">Abu Dhabi, UAE</span></div>
+        <div class="fact"><span class="k" data-i18n="who.f2k">Designed for</span><span class="v" data-i18n="who.f2v">Real-world operations</span></div>
+        <div class="fact"><span class="k" data-i18n="who.f3k">Built to</span><span class="v" data-i18n="who.f3v">Perform, scale, and evolve</span></div>
+      </div>
+    </div>
+    <div class="who-visual reveal" data-d="2" aria-hidden="true">
+      <div class="dotfield"></div>
+      <div class="vstack"><div class="figure"><b></b><b></b><b></b><b></b><b></b></div></div>
+      <span class="tag" data-i18n="who.tag">Intelligence in motion</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOLUTIONS ===================== -->
+<section class="section" id="solutions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="sol.eyebrow">Our Solutions</span>
+      <h2 class="h2" data-i18n="sol.h2">Three ways we bring intelligence into operation.</h2>
+    </div>
+    <div class="sol-grid">
+      <!-- Left card: Intelligence & AI -->
+      <article class="card c-ai reveal">
+        <div class="cc">
+          <span class="ci" aria-hidden="true"><i></i></span>
+          <h3 data-i18n="sol.ai.h">Intelligence &amp; AI</h3>
+          <p data-i18n="sol.ai.p">Turn fragmented information into clear decisions, automated workflows, and actionable operational insight.</p>
+          <ol class="sol-list">
+            <li><span class="n">01</span><span data-i18n="sol.ai.1">Artificial Intelligence</span></li>
+            <li><span class="n">02</span><span data-i18n="sol.ai.2">Generative &amp; Agentic AI</span></li>
+            <li><span class="n">03</span><span data-i18n="sol.ai.3">Data &amp; Analytics</span></li>
+          </ol>
+        </div>
+      </article>
+      <!-- Right card: Autonomous Systems (image slot) -->
+      <article class="card c-auto reveal" data-d="1">
+        <div class="imgslot filled" style="background-image:url('public/autonomous-system.png')" aria-hidden="true"></div>
+        <div class="cc">
+          <span class="ci" aria-hidden="true"><i></i></span>
+          <h3 data-i18n="sol.auto.h">Autonomous Systems</h3>
+          <p data-i18n="sol.auto.p">Bring intelligence into physical operations through robotics, drones, and connected mobility systems.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Core area 3: Smart Environments (horizontal) -->
+    <article class="card sol-h reveal">
+      <div class="sol-h-inner">
+        <div class="sol-h-visual has-img" aria-hidden="true">
+          <div class="sh-img" style="background-image:url('public/smart-environments.png')"></div>
+        </div>
+        <div class="sol-h-text">
+          <span class="ci" aria-hidden="true"><i></i></span>
+          <h3 data-i18n="sol.env.h">Smart Environments</h3>
+          <p data-i18n="sol.env.p">Connect infrastructure, services, and operational systems to improve visibility, coordination, and response across cities and large-scale environments.</p>
+          <div class="tags"><span data-i18n="sol.env.t1">Smart Cities</span><span data-i18n="sol.env.t2">IoT</span><span data-i18n="sol.env.t3">Connected Infrastructure</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Capability sub-cards -->
+    <div class="sol-sub">
+      <!-- Generative & Agentic AI -->
+      <article class="card sub reveal">
+        <div class="sub-viz" aria-hidden="true">
+          <svg viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice">
+            <g stroke="rgba(11,52,237,.34)" stroke-width="1.4" fill="none" stroke-dasharray="3 4">
+              <path d="M150 90 L66 48"/><path d="M150 90 L66 132"/>
+              <path d="M150 90 L236 52"/><path d="M150 90 L236 128"/>
+            </g>
+            <g fill="#F8F8FE" stroke="rgba(11,52,237,.22)">
+              <rect x="46" y="34" width="38" height="28" rx="9"/>
+              <rect x="46" y="118" width="38" height="28" rx="9"/>
+              <rect x="216" y="38" width="38" height="28" rx="9"/>
+              <rect x="216" y="114" width="38" height="28" rx="9"/>
+            </g>
+            <g fill="#66ABF1"><circle cx="65" cy="48" r="3.5"/><circle cx="65" cy="132" r="3.5"/><circle cx="235" cy="52" r="3.5"/><circle cx="235" cy="128" r="3.5"/></g>
+            <rect x="124" y="66" width="52" height="48" rx="14" fill="#0B34ED"/>
+            <g fill="#F8F8FE"><rect x="139" y="80" width="22" height="3.2" rx="1.6"/><rect x="139" y="88.4" width="22" height="3.2" rx="1.6"/><rect x="139" y="96.8" width="22" height="3.2" rx="1.6"/></g>
+          </svg>
+        </div>
+        <div class="sub-text">
+          <h3 data-i18n="sol.gen.h">Generative &amp; Agentic AI</h3>
+          <p data-i18n="sol.gen.p">Deploy intelligent agents that support teams, coordinate tasks, and execute complex workflows.</p>
+        </div>
+      </article>
+
+      <!-- Robotics & Drone Technology -->
+      <article class="card sub reveal" data-d="1">
+        <div class="sub-viz" aria-hidden="true">
+          <svg viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice">
+            <defs><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#0B34ED" stop-opacity=".42"/><stop offset="1" stop-color="#0B34ED" stop-opacity="0"/>
+            </linearGradient></defs>
+            <g fill="none" stroke="rgba(11,52,237,.2)" stroke-width="1.3">
+              <circle cx="150" cy="90" r="64"/><circle cx="150" cy="90" r="42"/><circle cx="150" cy="90" r="21"/>
+              <line x1="78" y1="90" x2="222" y2="90"/><line x1="150" y1="18" x2="150" y2="162"/>
+            </g>
+            <g class="radar-sweep"><path d="M150 90 L150 26 A64 64 0 0 1 205 60 Z" fill="url(#sweep)"/></g>
+            <circle class="blip" cx="186" cy="60" r="5" fill="#0B34ED"/>
+          </svg>
+        </div>
+        <div class="sub-text">
+          <h3 data-i18n="sol.rob.h">Robotics &amp; Drone Technology</h3>
+          <p data-i18n="sol.rob.p">Improve precision, safety, and operational reach across industrial, commercial, and hard-to-access environments.</p>
+        </div>
+      </article>
+
+      <!-- Connected Mobility (image overlay) -->
+      <article class="card sub c-mob reveal" data-d="2">
+        <div class="imgslot filled" style="background-image:url('public/connected-mobility.png')" aria-hidden="true"></div>
+        <div class="cc">
+          <span class="ci" aria-hidden="true"><i></i></span>
+          <h3 data-i18n="sol.mob.h">Connected Mobility</h3>
+          <p data-i18n="sol.mob.p">Improve the coordination and movement of people, vehicles, fleets, and goods through connected transport systems.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== APPROACH (authored) ===================== -->
+<section class="section approach" id="approach">
+  <div class="ap-pattern" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="ap.eyebrow">Our Approach</span>
+      <h2 class="h2" data-i18n="ap.h2">From complex challenge to operational capability. </h2>
+      <p class="lead" style="margin-top:1.1rem" data-i18n="ap.lead">Every engagement begins with the environment in which technology must perform. We align technical design with operational requirements, existing systems and the people who will use the solution.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h3 data-i18n="ap.s1h">UNDERSTAND</h3><p data-i18n="ap.s1p">Define the challenge, operating context, priorities and measures of success.</p></div>
+      <div class="step reveal" data-d="1"><div class="num">02</div><h3 data-i18n="ap.s2h">DESIGN</h3><p data-i18n="ap.s2p">Shape the solution architecture, experience and technical direction.</p></div>
+      <div class="step reveal" data-d="2"><div class="num">03</div><h3 data-i18n="ap.s3h">ENGINEER</h3><p data-i18n="ap.s3p">Build the technologies, platforms and systems required.</p></div>
+      <div class="step reveal" data-d="3"><div class="num">04</div><h3 data-i18n="ap.s4h">INTEGRATE</h3><p data-i18n="ap.s4p">Connect the solution with existing infrastructure and operations.</p></div>
+      <div class="step reveal" data-d="4"><div class="num">05</div><h3 data-i18n="ap.s5h">DEPLOY</h3><p data-i18n="ap.s5p">Implement, validate and prepare the solution for live use.</p></div>
+      <div class="step reveal" data-d="5"><div class="num">06</div><h3 data-i18n="ap.s6h">EVOLVE</h3><p data-i18n="ap.s6p">Optimize performance and scale the solution as needs change.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INDUSTRIES (dark) ===================== -->
+<section class="section industries on-dark" id="industries">
+  <div class="dotfield" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:680px">
+      <span class="eyebrow" data-i18n="ind.eyebrow">Industries We Serve</span>
+      <h2 class="h2" data-i18n="ind.h2">Built for the industries shaping what comes next.</h2>
+      <p class="lead" style="color:var(--on-dark-70);margin-top:1.1rem" data-i18n="ind.lead">Qeonix applies intelligence, automation, and connected systems where performance, safety, and operational control matter most.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-cell reveal"><div class="ind-img" style="background-image:url('public/connected-mobility.png')" aria-hidden="true"></div><span class="ar">↗</span><span class="no">01</span><h3 data-i18n="ind.c1h">Transportation &amp; Mobility</h3><p data-i18n="ind.c1p">Intelligent systems for networks, fleets, vehicles, people, and goods.</p></div>
+      <div class="ind-cell flip reveal" data-d="1"><div class="ind-img" style="background-image:url('public/smart-environments.png')" aria-hidden="true"></div><span class="ar">↗</span><span class="no">02</span><h3 data-i18n="ind.c2h">Energy &amp; Utilities</h3><p data-i18n="ind.c2p">Monitoring, management, and optimization for critical infrastructure.</p></div>
+      <div class="ind-cell reveal" data-d="2"><div class="ind-img" style="background-image:url('public/autonomous-system.png')" aria-hidden="true"></div><span class="ar">↗</span><span class="no">03</span><h3 data-i18n="ind.c3h">Industrial &amp; Manufacturing</h3><p data-i18n="ind.c3p">Automation and robotics for productivity, precision, and safety.</p></div>
+      <div class="ind-cell flip reveal" data-d="3"><div class="ind-img" style="background-image:url('public/connected-mobility.png')" aria-hidden="true"></div><span class="ar">↗</span><span class="no">04</span><h3 data-i18n="ind.c4h">Logistics &amp; Supply Chain</h3><p data-i18n="ind.c4p">Visibility and control across assets, warehouses, and distribution.</p></div>
+      <div class="ind-cell flip reveal"><div class="ind-img" style="background-image:url('public/autonomous-system2.png')" aria-hidden="true"></div><span class="ar">↗</span><span class="no">05</span><h3 data-i18n="ind.c5h">Aviation &amp; Aerospace</h3><p data-i18n="ind.c5p">Intelligent and autonomous solutions for operations and infrastructure.</p></div>
+      <div class="ind-cell reveal" data-d="1"><div class="ind-img" style="background-image:url('public/smart-environments.png')" aria-hidden="true"></div><span class="ar">↗</span><span class="no">06</span><h3 data-i18n="ind.c6h">Construction &amp; Infrastructure</h3><p data-i18n="ind.c6p">Connected project monitoring, asset management, and performance.</p></div>
+      <div class="ind-cell flip reveal" data-d="2"><div class="ind-img" style="background-image:url('public/humanoid-robot-2.png')" aria-hidden="true"></div><span class="ar">↗</span><span class="no">07</span><h3 data-i18n="ind.c7h">Healthcare</h3><p data-i18n="ind.c7p">Intelligent platforms supporting efficient, informed operations.</p></div>
+      <div class="ind-cell reveal" data-d="3"><div class="ind-img" style="background-image:url('public/smart-environments.png')" aria-hidden="true"></div><span class="ar">↗</span><span class="no">08</span><h3 data-i18n="ind.c8h">Real Estate &amp; Urban Development</h3><p data-i18n="ind.c8p">Smarter buildings, communities, and urban environments.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY QEONIX ===================== -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:680px">
+      <span class="eyebrow" data-i18n="why.eyebrow">Why Qeonix</span>
+      <h2 class="h2" data-i18n="why.h2">Designed to work beyond the demo.</h2>
+      <p class="lead" style="margin-top:1.1rem" data-i18n="why.lead">We combine engineering depth, connected capabilities, and regional understanding to build systems that perform in real operating environments—and scale as needs change.</p>
+    </div>
+    <div class="why-grid">
+      <div class="pillar reveal"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p1h">Engineering Depth</h3><p data-i18n="why.p1p">Strong architecture, disciplined engineering, and reliable performance from design through deployment.</p></div>
+      <div class="pillar reveal" data-d="1"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p2h">Connected Capabilities</h3><p data-i18n="why.p2p">AI, autonomous systems, and infrastructure brought together within one integrated approach.</p></div>
+      <div class="pillar reveal" data-d="2"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p3h">Real-World Design</h3><p data-i18n="why.p3p">Solutions shaped around actual operating conditions, existing systems, and the people who use them.</p></div>
+      <div class="pillar reveal"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p4h">Secure &amp; Scalable</h3><p data-i18n="why.p4p">Technology built for demanding operations, long-term adoption, and future expansion.</p></div>
+      <div class="pillar reveal" data-d="1"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p5h">Regional Understanding</h3><p data-i18n="why.p5p">A UAE-based team with a clear understanding of regional priorities and operating environments.</p></div>
+      <div class="pillar reveal" data-d="2"><span class="pi" aria-hidden="true"><i></i></span><h3 data-i18n="why.p6h">Outcome Focus</h3><p data-i18n="why.p6p">Every solution is developed around the practical result it needs to deliver.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="faq">
+  <div class="wrap faq-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="faq.eyebrow">FAQs</span>
+      <h2 class="h2" style="margin-top:1rem" data-i18n="faq.h2">Your Questions, Answered.</h2>
+    </div>
+    <div class="faq-list reveal" data-d="1">
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q1">Where is Qeonix based?</span><span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p data-i18n="faq.a1">We're headquartered in Abu Dhabi, UAE, working with governments and enterprises across the region and beyond—with a clear understanding of regional priorities and operating environments.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q2">What does Qeonix actually build?</span><span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p data-i18n="faq.a2">AI and analytics, autonomous systems like robotics and drones, and smart, connected infrastructure—delivered as integrated, real-world systems rather than isolated tools.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q3">Do you work with our existing systems?</span><span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p data-i18n="faq.a3">Yes. Every solution is designed around your existing infrastructure, operating conditions, and the people who use it—so it fits the reality of your operations.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q4">How do you handle security and scale?</span><span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p data-i18n="faq.a4">Our systems are engineered for demanding operations, long-term adoption, and future expansion. Security and scalability are designed in from architecture through deployment.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q5">Which industries do you serve?</span><span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p data-i18n="faq.a5">Transportation &amp; mobility, energy &amp; utilities, industrial &amp; manufacturing, logistics, aviation &amp; aerospace, construction, healthcare, and real estate &amp; urban development.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q6">How do we get started?</span><span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p data-i18n="faq.a6">It starts with a short discovery conversation to map your operating reality and define the outcome you need. From there, we architect, engineer, and deploy.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="section cta on-dark" id="contact">
+  <div class="dotfield" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow reveal" style="justify-content:center;display:flex" data-i18n="cta.eyebrow">Build What’s Next.</span>
+    <h2 class="reveal" data-d="1" style="margin-top:1rem" data-i18n-html="cta.h2">Live Tomorrow,<br>Today.</h2>
+    <p class="reveal" data-d="2" data-i18n="cta.p">Discover how Qeonix can help your organization deploy AI, robotics, and connected systems across real-world operations</p>
+    <div class="cta-actions reveal" data-d="3">
+      <a href="mailto:hello@qeonix.com" class="btn btn-blue"><span data-i18n="cta.btn">Start the Conversation</span><span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo" aria-label="Qeonix home"><img src="public/qeonix-logo.png" alt="Qeonix" /></a>
+        <p data-i18n="ft.brand">Bringing the physical and digital worlds together to create smarter, more responsive systems for governments, organizations, and cities.</p>
+      </div>
+      <div class="fcol">
+        <h4 data-i18n="ft.explore">Explore</h4>
+        <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
+        <a href="#industries" data-i18n="nav.industries">Industries</a>
+        <a href="#approach" data-i18n="nav.approach">Approach</a>
+        <a href="#why" data-i18n="nav.why">Why Qeonix</a>
+      </div>
+      <div class="fcol">
+        <h4 data-i18n="ft.cap">Capabilities</h4>
+        <a href="#solutions" data-i18n="sol.ai.h">Intelligence &amp; AI</a>
+        <a href="#solutions" data-i18n="sol.auto.h">Autonomous Systems</a>
+        <a href="#solutions" data-i18n="sol.env.h">Smart Environments</a>
+        <a href="#solutions" data-i18n="sol.mob.h">Connected Mobility</a>
+      </div>
+      <div class="fcol">
+        <h4 data-i18n="ft.contact">Contact</h4>
+        <a href="mailto:hello@qeonix.com">hello@qeonix.com</a>
+        <a href="#contact" data-i18n="who.f1v">Abu Dhabi, UAE</a>
+        <a href="#faq" data-i18n="ft.faq">FAQs</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n-html="ft.copy">© <span id="yr"></span> QEONIX. All rights reserved.</span>
+      <span data-i18n="ft.tag">Intelligence · Engineering · Innovation</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ============================================================
+     i18n — English / Arabic (Arabic typeface: Cairo, RTL — per
+     QEONIX branding guideline, Typography · Arabic)
+     ============================================================ */
+  var I18N = {
+    en: {
+      "meta.title":"QEONIX — Live Tomorrow, Today.",
+      "meta.desc":"QEONIX brings the physical and digital worlds together to create smarter, more responsive systems for governments, organizations, and cities. AI · Robotics · Smart Cities · Future Technologies.",
+      "nav.solutions":"Solutions","nav.industries":"Industries","nav.approach":"Approach","nav.why":"Why Qeonix","nav.contact":"Contact us",
+      "hero.eyebrow":"AI · Robotics · Smart Cities · Future Technologies",
+      "hero.h1":'Live <span class="accent">Tomorrow,</span><br>Today.',
+      "hero.lead":"We bring the physical and digital worlds together to create smarter, more responsive systems for governments, organizations, and cities.",
+      "hero.cta1":"Explore Our Capabilities","hero.cta2":"How we work","hero.scroll":"Scroll",
+      "mq1":"Artificial Intelligence","mq2":"Generative & Agentic AI","mq3":"Robotics","mq4":"Drone Technology","mq5":"Smart Cities","mq6":"IoT","mq7":"Connected Mobility","mq8":"Data & Analytics","mq9":"Connected Infrastructure",
+      "who.eyebrow":"Who We Are",
+      "who.h2":"Engineering intelligent systems for the world ahead.",
+      "who.lead":"QEONIX works with governments and enterprises to turn emerging technology into practical, secure, and scalable systems built for real-world performance. From AI and robotics to smart city infrastructure, we design, engineer, and deploy solutions that organizations can rely on.",
+      "who.f1k":"Headquartered","who.f1v":"Abu Dhabi, UAE","who.f2k":"Designed for","who.f2v":"Real-world operations","who.f3k":"Built to","who.f3v":"Perform, scale, and evolve","who.tag":"Intelligence in motion",
+      "sol.eyebrow":"Our Solutions","sol.h2":"Three ways we bring intelligence into operation.",
+      "sol.ai.h":"Intelligence & AI","sol.ai.p":"Turn fragmented information into clear decisions, automated workflows, and actionable operational insight.","sol.ai.1":"Artificial Intelligence","sol.ai.2":"Generative & Agentic AI","sol.ai.3":"Data & Analytics",
+      "sol.auto.h":"Autonomous Systems","sol.auto.p":"Bring intelligence into physical operations through robotics, drones, and connected mobility systems.",
+      "sol.env.h":"Smart Environments","sol.env.p":"Connect infrastructure, services, and operational systems to improve visibility, coordination, and response across cities and large-scale environments.","sol.env.t1":"Smart Cities","sol.env.t2":"IoT","sol.env.t3":"Connected Infrastructure",
+      "sol.gen.h":"Generative & Agentic AI","sol.gen.p":"Deploy intelligent agents that support teams, coordinate tasks, and execute complex workflows.",
+      "sol.rob.h":"Robotics & Drone Technology","sol.rob.p":"Improve precision, safety, and operational reach across industrial, commercial, and hard-to-access environments.",
+      "sol.mob.h":"Connected Mobility","sol.mob.p":"Improve the coordination and movement of people, vehicles, fleets, and goods through connected transport systems.",
+      "ap.eyebrow":"Our Approach","ap.h2":"From complex challenge to operational capability. ","ap.lead":"Every engagement begins with the environment in which technology must perform. We align technical design with operational requirements, existing systems and the people who will use the solution.",
+      "ap.s1h":"UNDERSTAND","ap.s1p":"Define the challenge, operating context, priorities and measures of success.",
+      "ap.s2h":"DESIGN","ap.s2p":"Shape the solution architecture, experience and technical direction.",
+      "ap.s3h":"ENGINEER","ap.s3p":"Build the technologies, platforms and systems required.",
+      "ap.s4h":"INTEGRATE","ap.s4p":"Connect the solution with existing infrastructure and operations.",
+      "ap.s5h":"DEPLOY","ap.s5p":"Implement, validate and prepare the solution for live use.",
+      "ap.s6h":"EVOLVE","ap.s6p":"Optimize performance and scale the solution as needs change.",
+      "ind.eyebrow":"Industries We Serve","ind.h2":"Built for the industries shaping what comes next.","ind.lead":"Qeonix applies intelligence, automation, and connected systems where performance, safety, and operational control matter most.",
+      "ind.c1h":"Transportation & Mobility","ind.c1p":"Intelligent systems for networks, fleets, vehicles, people, and goods.",
+      "ind.c2h":"Energy & Utilities","ind.c2p":"Monitoring, management, and optimization for critical infrastructure.",
+      "ind.c3h":"Industrial & Manufacturing","ind.c3p":"Automation and robotics for productivity, precision, and safety.",
+      "ind.c4h":"Logistics & Supply Chain","ind.c4p":"Visibility and control across assets, warehouses, and distribution.",
+      "ind.c5h":"Aviation & Aerospace","ind.c5p":"Intelligent and autonomous solutions for operations and infrastructure.",
+      "ind.c6h":"Construction & Infrastructure","ind.c6p":"Connected project monitoring, asset management, and performance.",
+      "ind.c7h":"Healthcare","ind.c7p":"Intelligent platforms supporting efficient, informed operations.",
+      "ind.c8h":"Real Estate & Urban Development","ind.c8p":"Smarter buildings, communities, and urban environments.",
+      "why.eyebrow":"Why Qeonix","why.h2":"Designed to work beyond the demo.","why.lead":"We combine engineering depth, connected capabilities, and regional understanding to build systems that perform in real operating environments—and scale as needs change.",
+      "why.p1h":"Engineering Depth","why.p1p":"Strong architecture, disciplined engineering, and reliable performance from design through deployment.",
+      "why.p2h":"Connected Capabilities","why.p2p":"AI, autonomous systems, and infrastructure brought together within one integrated approach.",
+      "why.p3h":"Real-World Design","why.p3p":"Solutions shaped around actual operating conditions, existing systems, and the people who use them.",
+      "why.p4h":"Secure & Scalable","why.p4p":"Technology built for demanding operations, long-term adoption, and future expansion.",
+      "why.p5h":"Regional Understanding","why.p5p":"A UAE-based team with a clear understanding of regional priorities and operating environments.",
+      "why.p6h":"Outcome Focus","why.p6p":"Every solution is developed around the practical result it needs to deliver.",
+      "faq.eyebrow":"FAQs","faq.h2":"Your Questions, Answered.",
+      "faq.q1":"Where is Qeonix based?","faq.a1":"We're headquartered in Abu Dhabi, UAE, working with governments and enterprises across the region and beyond—with a clear understanding of regional priorities and operating environments.",
+      "faq.q2":"What does Qeonix actually build?","faq.a2":"AI and analytics, autonomous systems like robotics and drones, and smart, connected infrastructure—delivered as integrated, real-world systems rather than isolated tools.",
+      "faq.q3":"Do you work with our existing systems?","faq.a3":"Yes. Every solution is designed around your existing infrastructure, operating conditions, and the people who use it—so it fits the reality of your operations.",
+      "faq.q4":"How do you handle security and scale?","faq.a4":"Our systems are engineered for demanding operations, long-term adoption, and future expansion. Security and scalability are designed in from architecture through deployment.",
+      "faq.q5":"Which industries do you serve?","faq.a5":"Transportation & mobility, energy & utilities, industrial & manufacturing, logistics, aviation & aerospace, construction, healthcare, and real estate & urban development.",
+      "faq.q6":"How do we get started?","faq.a6":"It starts with a short discovery conversation to map your operating reality and define the outcome you need. From there, we architect, engineer, and deploy.",
+      "cta.eyebrow":"Build What’s Next.","cta.h2":"Live Tomorrow,<br>Today.","cta.p":"Discover how Qeonix can help your organization deploy AI, robotics, and connected systems across real-world operations","cta.btn":"Start the Conversation",
+      "ft.brand":"Bringing the physical and digital worlds together to create smarter, more responsive systems for governments, organizations, and cities.",
+      "ft.explore":"Explore","ft.cap":"Capabilities","ft.contact":"Contact","ft.faq":"FAQs",
+      "ft.copy":'© <span id="yr"></span> QEONIX. All rights reserved.',"ft.tag":"Intelligence · Engineering · Innovation"
+    },
+    ar: {
+      "meta.title":"كيونكس — عِش الغد، اليوم.",
+      "meta.desc":"تُوحّد كيونكس بين العالمين المادي والرقمي لبناء أنظمة أذكى وأكثر استجابة للحكومات والمؤسسات والمدن. الذكاء الاصطناعي · الروبوتات · المدن الذكية · تقنيات المستقبل.",
+      "nav.solutions":"الحلول","nav.industries":"القطاعات","nav.approach":"منهجيتنا","nav.why":"لماذا كيونكس","nav.contact":"تواصل معنا",
+      "hero.eyebrow":"الذكاء الاصطناعي · الروبوتات · المدن الذكية · تقنيات المستقبل",
+      "hero.h1":'عِش <span class="accent">الغد،</span><br>اليوم.',
+      "hero.lead":"نُوحّد بين العالمين المادي والرقمي لبناء أنظمة أذكى وأكثر استجابة للحكومات والمؤسسات والمدن.",
+      "hero.cta1":"استكشف قدراتنا","hero.cta2":"كيف نعمل","hero.scroll":"مرّر للأسفل",
+      "mq1":"الذكاء الاصطناعي","mq2":"الذكاء التوليدي والوكيل","mq3":"الروبوتات","mq4":"تقنية الطائرات المسيّرة","mq5":"المدن الذكية","mq6":"إنترنت الأشياء","mq7":"التنقل المتصل","mq8":"البيانات والتحليلات","mq9":"البنية التحتية المتصلة",
+      "who.eyebrow":"من نحن",
+      "who.h2":"نُهندس أنظمة ذكية لعالم الغد.",
+      "who.lead":"تعمل كيونكس مع الحكومات والمؤسسات لتحويل التقنيات الناشئة إلى أنظمة عملية وآمنة وقابلة للتوسّع، مصمّمة للأداء في الواقع. من الذكاء الاصطناعي والروبوتات إلى البنية التحتية للمدن الذكية، نُصمّم ونُهندس وننشر حلولًا يمكن للمؤسسات الاعتماد عليها.",
+      "who.f1k":"المقر الرئيسي","who.f1v":"أبوظبي، الإمارات","who.f2k":"مصمّمة لـ","who.f2v":"العمليات الواقعية","who.f3k":"مبنية لـ","who.f3v":"الأداء والتوسّع والتطوّر","who.tag":"الذكاء في حركة",
+      "sol.eyebrow":"حلولنا","sol.h2":"ثلاث طرق نُدخل بها الذكاء إلى التشغيل.",
+      "sol.ai.h":"الذكاء والذكاء الاصطناعي","sol.ai.p":"نُحوّل المعلومات المتفرقة إلى قرارات واضحة وسير عمل آلي ورؤى تشغيلية قابلة للتنفيذ.","sol.ai.1":"الذكاء الاصطناعي","sol.ai.2":"الذكاء التوليدي والوكيل","sol.ai.3":"البيانات والتحليلات",
+      "sol.auto.h":"الأنظمة ذاتية التشغيل","sol.auto.p":"نُدخل الذكاء إلى العمليات المادية عبر الروبوتات والطائرات المسيّرة وأنظمة التنقل المتصل.",
+      "sol.env.h":"البيئات الذكية","sol.env.p":"نربط البنية التحتية والخدمات والأنظمة التشغيلية لتحسين الوضوح والتنسيق والاستجابة عبر المدن والبيئات واسعة النطاق.","sol.env.t1":"المدن الذكية","sol.env.t2":"إنترنت الأشياء","sol.env.t3":"البنية التحتية المتصلة",
+      "sol.gen.h":"الذكاء التوليدي والوكيل","sol.gen.p":"ننشر وكلاء أذكياء يدعمون الفرق وينسّقون المهام وينفّذون سير العمل المعقّد.",
+      "sol.rob.h":"الروبوتات وتقنية الطائرات المسيّرة","sol.rob.p":"نُحسّن الدقة والسلامة والوصول التشغيلي في البيئات الصناعية والتجارية والتي يصعب الوصول إليها.",
+      "sol.mob.h":"التنقل المتصل","sol.mob.p":"نُحسّن تنسيق وحركة الأشخاص والمركبات والأساطيل والبضائع عبر أنظمة نقل متصلة.",
+      "ap.eyebrow":"منهجيتنا","ap.h2":"من التحدّي المعقّد إلى قدرة تشغيلية.","ap.lead":"يبدأ كل مشروع بفهم البيئة التي يجب أن تعمل فيها التقنية. نُوائم التصميم التقني مع المتطلبات التشغيلية والأنظمة القائمة والأشخاص الذين سيستخدمون الحل.",
+      "ap.s1h":"الفهم","ap.s1p":"تحديد التحدّي وسياق التشغيل والأولويات ومقاييس النجاح.",
+      "ap.s2h":"التصميم","ap.s2p":"صياغة بنية الحل وتجربته واتجاهه التقني.",
+      "ap.s3h":"الهندسة","ap.s3p":"بناء التقنيات والمنصّات والأنظمة المطلوبة.",
+      "ap.s4h":"التكامل","ap.s4p":"ربط الحل بالبنية التحتية والعمليات القائمة.",
+      "ap.s5h":"النشر","ap.s5p":"التنفيذ والتحقّق وتهيئة الحل للاستخدام الفعلي.",
+      "ap.s6h":"التطوّر","ap.s6p":"تحسين الأداء وتوسيع الحل مع تغيّر الاحتياجات.",
+      "ind.eyebrow":"القطاعات التي نخدمها","ind.h2":"مبنية للقطاعات التي تصنع المستقبل.","ind.lead":"تُطبّق كيونكس الذكاء والأتمتة والأنظمة المتصلة حيث يكون الأداء والسلامة والتحكّم التشغيلي في أمسّ الأهمية.",
+      "ind.c1h":"النقل والتنقل","ind.c1p":"أنظمة ذكية للشبكات والأساطيل والمركبات والأشخاص والبضائع.",
+      "ind.c2h":"الطاقة والمرافق","ind.c2p":"مراقبة وإدارة وتحسين للبنية التحتية الحيوية.",
+      "ind.c3h":"الصناعة والتصنيع","ind.c3p":"أتمتة وروبوتات لرفع الإنتاجية والدقة والسلامة.",
+      "ind.c4h":"اللوجستيات وسلاسل الإمداد","ind.c4p":"وضوح وتحكّم عبر الأصول والمستودعات والتوزيع.",
+      "ind.c5h":"الطيران والفضاء","ind.c5p":"حلول ذكية وذاتية التشغيل للعمليات والبنية التحتية.",
+      "ind.c6h":"البناء والبنية التحتية","ind.c6p":"مراقبة مشاريع متصلة وإدارة أصول وأداء.",
+      "ind.c7h":"الرعاية الصحية","ind.c7p":"منصّات ذكية تدعم عمليات كفؤة ومبنية على المعرفة.",
+      "ind.c8h":"العقارات والتطوير العمراني","ind.c8p":"مبانٍ ومجتمعات وبيئات حضرية أكثر ذكاءً.",
+      "why.eyebrow":"لماذا كيونكس","why.h2":"مصمّمة لتعمل خارج إطار العرض التجريبي.","why.lead":"نجمع بين عمق الهندسة والقدرات المتصلة والفهم الإقليمي لبناء أنظمة تعمل في بيئات تشغيل حقيقية وتتوسّع مع تغيّر الاحتياجات.",
+      "why.p1h":"عمق هندسي","why.p1p":"بنية متينة وهندسة منضبطة وأداء موثوق من التصميم حتى النشر.",
+      "why.p2h":"قدرات متصلة","why.p2p":"الذكاء الاصطناعي والأنظمة ذاتية التشغيل والبنية التحتية ضمن منهج متكامل واحد.",
+      "why.p3h":"تصميم واقعي","why.p3p":"حلول مصمّمة حول ظروف التشغيل الفعلية والأنظمة القائمة والأشخاص الذين يستخدمونها.",
+      "why.p4h":"آمنة وقابلة للتوسّع","why.p4p":"تقنية مبنية للعمليات المتطلّبة والاعتماد طويل الأمد والتوسّع المستقبلي.",
+      "why.p5h":"فهم إقليمي","why.p5p":"فريق مقرّه الإمارات يمتلك فهمًا واضحًا للأولويات وبيئات التشغيل الإقليمية.",
+      "why.p6h":"تركيز على النتائج","why.p6p":"كل حل يُطوّر حول النتيجة العملية التي يجب أن يحقّقها.",
+      "faq.eyebrow":"الأسئلة الشائعة","faq.h2":"إجابات على أسئلتك.",
+      "faq.q1":"أين يقع مقر كيونكس؟","faq.a1":"مقرّنا الرئيسي في أبوظبي، الإمارات، ونعمل مع الحكومات والمؤسسات في المنطقة وخارجها، مع فهم واضح للأولويات وبيئات التشغيل الإقليمية.",
+      "faq.q2":"ماذا تبني كيونكس فعليًا؟","faq.a2":"الذكاء الاصطناعي والتحليلات، والأنظمة ذاتية التشغيل مثل الروبوتات والطائرات المسيّرة، والبنية التحتية الذكية المتصلة، نقدّمها كأنظمة متكاملة وواقعية لا كأدوات منفصلة.",
+      "faq.q3":"هل تعملون مع أنظمتنا الحالية؟","faq.a3":"نعم. يُصمّم كل حل حول بنيتك التحتية القائمة وظروف التشغيل والأشخاص الذين يستخدمونها، ليتلاءم مع واقع عملياتك.",
+      "faq.q4":"كيف تتعاملون مع الأمان والتوسّع؟","faq.a4":"أنظمتنا مُهندَسة للعمليات المتطلّبة والاعتماد طويل الأمد والتوسّع المستقبلي. يُدمج الأمان وقابلية التوسّع منذ التصميم وحتى النشر.",
+      "faq.q5":"ما القطاعات التي تخدمونها؟","faq.a5":"النقل والتنقل، والطاقة والمرافق، والصناعة والتصنيع، واللوجستيات، والطيران والفضاء، والبناء، والرعاية الصحية، والعقارات والتطوير العمراني.",
+      "faq.q6":"كيف نبدأ؟","faq.a6":"يبدأ الأمر بمحادثة استكشافية قصيرة لرسم واقع عملياتك وتحديد النتيجة التي تحتاجها. ومن هناك، نُصمّم ونُهندس وننشر.",
+      "cta.eyebrow":"ابنِ ما هو قادم.","cta.h2":"عِش الغد،<br>اليوم.","cta.p":"اكتشف كيف يمكن لكيونكس مساعدة مؤسستك على نشر الذكاء الاصطناعي والروبوتات والأنظمة المتصلة عبر العمليات الواقعية.","cta.btn":"ابدأ المحادثة",
+      "ft.brand":"نُوحّد بين العالمين المادي والرقمي لبناء أنظمة أذكى وأكثر استجابة للحكومات والمؤسسات والمدن.",
+      "ft.explore":"استكشف","ft.cap":"القدرات","ft.contact":"تواصل","ft.faq":"الأسئلة الشائعة",
+      "ft.copy":'© <span id="yr"></span> كيونكس. جميع الحقوق محفوظة.',"ft.tag":"الذكاء · الهندسة · الابتكار"
+    }
+  };
+
+  function applyLang(lang){
+    if(!I18N[lang]) lang = "en";
+    var dict = I18N[lang], doc = document.documentElement;
+    doc.lang = lang; doc.dir = (lang === "ar") ? "rtl" : "ltr";
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k = el.getAttribute("data-i18n");
+      if(dict[k] != null) el.textContent = dict[k];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-html");
+      if(dict[k] != null) el.innerHTML = dict[k];
+    });
+    if(dict["meta.title"]) document.title = dict["meta.title"];
+    var md = document.querySelector('meta[name="description"]');
+    if(md && dict["meta.desc"]) md.setAttribute("content", dict["meta.desc"]);
+    var tg = document.getElementById("langToggle");
+    if(tg){ tg.textContent = (lang === "ar") ? "EN" : "عربي"; tg.setAttribute("lang", lang === "ar" ? "en" : "ar"); }
+    var yr = document.getElementById("yr");
+    if(yr) yr.textContent = new Date().getFullYear();
+    try{ localStorage.setItem("qx-lang", lang); }catch(e){}
+  }
+
+  var savedLang = "en";
+  try{ savedLang = localStorage.getItem("qx-lang") || "en"; }catch(e){}
+  applyLang(savedLang);
+
+  var langToggle = document.getElementById("langToggle");
+  if(langToggle){
+    langToggle.addEventListener("click", function(){
+      var next = (document.documentElement.lang === "ar") ? "en" : "ar";
+      applyLang(next);
+      // any open FAQ answers need their pinned height recalculated after text swap
+      document.querySelectorAll(".faq-item.open .faq-a").forEach(function(a){
+        a.style.maxHeight = a.scrollHeight + "px";
+      });
+    });
+  }
+
+  /* ---- Approach: varying-size halftone dot field (brand data-field pattern) ---- */
+  (function(){
+    var el = document.querySelector(".ap-pattern");
+    if(!el) return;
+    var N = 16, sp = 15, size = N * sp, rmin = 0.6, rmax = 3.3, c = "";
+    for(var j=0;j<N;j++){
+      for(var i=0;i<N;i++){
+        var w = 0.65*Math.sin(2*Math.PI*(2*i+j)/N) + 0.35*Math.sin(2*Math.PI*(i+2*j)/N);
+        var r = (rmin + (rmax-rmin)*((w+1)/2)).toFixed(2);
+        c += '<circle cx="'+(i*sp+sp/2).toFixed(1)+'" cy="'+(j*sp+sp/2).toFixed(1)+'" r="'+r+'"/>';
+      }
+    }
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="'+size+'" height="'+size+'" fill="%230B34ED">'+c+'</svg>';
+    var uri = svg.replace(/#/g,"%23").replace(/</g,"%3C").replace(/>/g,"%3E").replace(/"/g,"'");
+    el.style.backgroundImage = 'url("data:image/svg+xml,'+uri+'")';
+    el.style.backgroundSize = size+"px "+size+"px";
+  })();
+
+  /* ---- CTA: varying-density equalizer / signal lines (brand pattern) ---- */
+  (function(){
+    var el = document.querySelector(".cta .dotfield");
+    if(!el) return;
+    var cols = 18, colSp = 14, w = cols*colSp, H = 240, seg = 20, s = "";
+    for(var i=0;i<cols;i++){
+      var x = (i*colSp + colSp/2).toFixed(1);
+      var wv = 0.6*Math.sin(2*Math.PI*i/cols) + 0.4*Math.sin(2*Math.PI*2*i/cols);
+      var t = (wv+1)/2;                       /* 0..1 density */
+      var len = 4 + 13*t;                     /* dash length 4..17 within 20px period */
+      var sw = (1.2 + 1.5*t).toFixed(2);      /* stroke width 1.2..2.7 */
+      var off = (seg*((Math.sin(2*Math.PI*i/cols)+1)/2)).toFixed(1); /* stagger */
+      s += '<line x1="'+x+'" y1="0" x2="'+x+'" y2="'+H+'" stroke="%23F8F8FE" stroke-width="'+sw+'" stroke-dasharray="'+len.toFixed(1)+' '+(seg-len).toFixed(1)+'" stroke-dashoffset="'+off+'"/>';
+    }
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+H+'">'+s+'</svg>';
+    var uri = svg.replace(/#/g,"%23").replace(/</g,"%3C").replace(/>/g,"%3E").replace(/"/g,"'");
+    el.style.backgroundImage = 'url("data:image/svg+xml,'+uri+'")';
+    el.style.backgroundSize = w+"px "+H+"px";
+  })();
+
+  /* ---- Nav scroll state ---- */
+  var nav = document.getElementById("nav");
+  function onScroll(){ nav.classList.toggle("scrolled", window.scrollY > 24); }
+  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* ---- Mobile menu ---- */
+  var toggle = document.getElementById("navToggle");
+  var navLinks = document.getElementById("navLinks");
+  toggle.addEventListener("click", function(){
+    var open = document.body.classList.toggle("menu-open");
+    toggle.setAttribute("aria-expanded", open ? "true":"false");
+  });
+  navLinks.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ document.body.classList.remove("menu-open"); toggle.setAttribute("aria-expanded","false"); }
+  });
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if(reduce || !("IntersectionObserver" in window)){
+    reveals.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, {threshold:.14, rootMargin:"0px 0px -8% 0px"});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- FAQ accordion ---- */
+  document.querySelectorAll(".faq-q").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var item = btn.parentElement;
+      var ans = item.querySelector(".faq-a");
+      var open = item.classList.toggle("open");
+      ans.style.maxHeight = open ? ans.scrollHeight + "px" : 0;
+    });
+  });
+
+  /* ---- Hero particle field (dot matrix that connects) ---- */
+  var canvas = document.getElementById("field");
+  if(canvas && !reduce){
+    var ctx = canvas.getContext("2d");
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W, H, pts, mouse = {x:-999,y:-999};
+    function size(){
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      canvas.width = W*dpr; canvas.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+      var density = Math.min(Math.max((W*H)/16000, 36), 110);
+      pts = [];
+      for(var i=0;i<density;i++){
+        pts.push({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.25, vy:(Math.random()-.5)*.25});
+      }
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<pts.length;i++){
+        var p = pts[i];
+        p.x += p.vx; p.y += p.vy;
+        if(p.x<0||p.x>W) p.vx*=-1;
+        if(p.y<0||p.y>H) p.vy*=-1;
+        // connect to mouse
+        var dmx = p.x-mouse.x, dmy = p.y-mouse.y, dm = Math.sqrt(dmx*dmx+dmy*dmy);
+        if(dm<150){ ctx.strokeStyle="rgba(11,52,237,"+(0.18*(1-dm/150))+")"; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y); ctx.stroke(); }
+        for(var j=i+1;j<pts.length;j++){
+          var q=pts[j], dx=p.x-q.x, dy=p.y-q.y, d=Math.sqrt(dx*dx+dy*dy);
+          if(d<118){ ctx.strokeStyle="rgba(17,17,16,"+(0.06*(1-d/118))+")"; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke(); }
+        }
+        ctx.fillStyle = (i%7===0) ? "rgba(11,52,237,.55)" : "rgba(17,17,16,.28)";
+        ctx.beginPath(); ctx.arc(p.x,p.y,(i%7===0)?2:1.4,0,6.283); ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    var hero = canvas.closest(".hero");
+    var figure = document.querySelector(".hero-figure");
+    hero.addEventListener("mousemove", function(e){
+      var r=canvas.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
+      if(figure){ var nx=(e.clientX/window.innerWidth-.5), ny=(e.clientY/window.innerHeight-.5);
+        figure.style.transform="translate("+(nx*-20)+"px,"+(ny*-14)+"px)"; }
+    });
+    hero.addEventListener("mouseleave", function(){ mouse.x=-999; mouse.y=-999; if(figure) figure.style.transform=""; });
+    window.addEventListener("resize", size);
+    size(); draw();
+  }
+})();
+</script>
+</body>
+</html>
