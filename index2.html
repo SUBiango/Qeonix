@@ -489,9 +489,9 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 /* ============================================================
    CTA + FOOTER
    ============================================================ */
-.cta{position:relative;overflow:hidden;color:var(--arctic);
-  background:radial-gradient(120% 120% at 80% 10%,rgba(116,118,235,.5),transparent 55%),
-  linear-gradient(150deg,var(--obsidian),var(--electric) 160%)}
+.cta{position:relative;overflow:hidden;color:var(--arctic);background:var(--quantum)}
+/* eyebrow sits on the quantum fill now, so lighten it from the blue lift for contrast */
+.cta .eyebrow{color:var(--glacial)}
 /* signal / equalizer-lines brand pattern — varying-density vertical dashes (tile generated in JS) */
 .cta .dotfield{position:absolute;inset:0;opacity:.4;background-repeat:repeat;
   -webkit-mask-image:radial-gradient(125% 125% at 82% 12%,#000 8%,transparent 72%);
