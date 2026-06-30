@@ -22,11 +22,11 @@
   /* Primary palette */
   --arctic:      #F8F8FE;
   --obsidian:    #111110;
-  --electric:    #0B34ED;
+  --electric:    #0206DB;
   --quantum:     #0206DB;
   /* Secondary */
-  --azure:       #66ABF1;
-  --glacial:     #BDDFFF;
+  --azure:       #7476EB;
+  --glacial:     #D2D2F9;
   --coral:       #FF6E5B;
   --mahogany:    #541A1A;
 
@@ -62,7 +62,7 @@
   /* Shadows */
   --shadow-s: 0 1px 2px rgba(17,17,16,.04), 0 8px 24px rgba(17,17,16,.05);
   --shadow-m: 0 2px 6px rgba(17,17,16,.05), 0 18px 50px rgba(17,17,16,.09);
-  --shadow-l: 0 30px 80px rgba(11,52,237,.14), 0 12px 30px rgba(17,17,16,.10);
+  --shadow-l: 0 30px 80px rgba(2,6,219,.14), 0 12px 30px rgba(17,17,16,.10);
 
   --ease: cubic-bezier(.22,.61,.36,1);
   --ease-out: cubic-bezier(.16,1,.3,1);
@@ -116,9 +116,9 @@ h1,h2,h3{font-weight:700;line-height:1.08;letter-spacing:-.02em}
 .btn .arr{transition:transform .4s var(--ease-out)}
 .btn:hover .arr{transform:translateX(4px)}
 .btn-primary{background:var(--obsidian);color:var(--arctic)}
-.btn-primary:hover{background:var(--electric);box-shadow:0 12px 30px rgba(11,52,237,.32);transform:translateY(-2px)}
+.btn-primary:hover{background:var(--electric);box-shadow:0 12px 30px rgba(2,6,219,.32);transform:translateY(-2px)}
 .btn-blue{background:var(--electric);color:#F8F8FE}
-.btn-blue:hover{background:var(--quantum);box-shadow:0 12px 30px rgba(11,52,237,.32);transform:translateY(-2px)}
+.btn-blue:hover{background:var(--quantum);box-shadow:0 12px 30px rgba(2,6,219,.32);transform:translateY(-2px)}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink-12)}
 .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
 .on-dark .btn-ghost{color:var(--arctic);border-color:var(--on-dark-12)}
@@ -197,8 +197,8 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .hero-glow{
   position:absolute;border-radius:50%;filter:blur(70px);opacity:.7;pointer-events:none;
 }
-.glow-1{width:46vw;height:46vw;left:-8vw;top:8vh;background:radial-gradient(circle at 30% 30%,rgba(102,171,241,.55),rgba(11,52,237,.18) 55%,transparent 72%)}
-.glow-2{width:40vw;height:40vw;right:-6vw;bottom:-8vh;background:radial-gradient(circle at 60% 40%,rgba(189,223,255,.7),rgba(255,110,91,.10) 60%,transparent 75%)}
+.glow-1{width:46vw;height:46vw;left:-8vw;top:8vh;background:radial-gradient(circle at 30% 30%,rgba(116,118,235,.55),rgba(2,6,219,.18) 55%,transparent 72%)}
+.glow-2{width:40vw;height:40vw;right:-6vw;bottom:-8vh;background:radial-gradient(circle at 60% 40%,rgba(192,193,246,.7),rgba(255,110,91,.10) 60%,transparent 75%)}
 .hero-grid-fade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,var(--paper) 99%)}
 
 .hero .wrap{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:center}
@@ -285,7 +285,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 }
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:transparent}
 .card .cc{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
-.card .ci{display:inline-flex;width:50px;height:50px;border-radius:14px;background:rgba(11,52,237,.08);align-items:center;justify-content:center}
+.card .ci{display:inline-flex;width:50px;height:50px;border-radius:14px;background:rgba(2,6,219,.08);align-items:center;justify-content:center}
 .card .ci svg{width:24px;height:24px;fill:none;stroke:var(--electric);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .card h3{margin:1.5rem 0 .8rem;font-size:clamp(1.5rem,2.4vw,1.95rem);letter-spacing:-.025em}
 .card p{color:var(--ink-55);font-size:1.04rem;line-height:1.55;max-width:42ch}
@@ -299,7 +299,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 
 /* image card (right) */
 .c-auto{color:var(--arctic);border-color:transparent;background:
-  radial-gradient(120% 80% at 80% 0%,rgba(102,171,241,.45),transparent 55%),
+  radial-gradient(120% 80% at 80% 0%,rgba(116,118,235,.45),transparent 55%),
   linear-gradient(160deg,color-mix(in srgb, var(--obsidian) 82%, var(--electric)),var(--electric) 160%)}
 .c-auto .ci{background:rgba(248,248,254,.14);margin-bottom:auto}
 .c-auto .ci svg{stroke:#F8F8FE}
@@ -319,7 +319,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .c-mob .imgslot.filled{background-size:cover;background-position:center center}
 .c-mob .imgslot.filled::before{background:linear-gradient(180deg,transparent 0%,transparent 50%,rgba(17,17,16,.45) 78%,rgba(17,17,16,.8) 100%)}
 .c-auto .imgslot{background:
-  conic-gradient(from 200deg at 70% 30%,rgba(11,52,237,.0),rgba(102,171,241,.5),rgba(11,52,237,0)),
+  conic-gradient(from 200deg at 70% 30%,rgba(2,6,219,.0),rgba(116,118,235,.5),rgba(2,6,219,0)),
   repeating-linear-gradient(115deg,rgba(248,248,254,.05) 0 2px,transparent 2px 9px)}
 
 @media(max-width:860px){
@@ -330,7 +330,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 /* capability pill tags */
 .tags{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
 .tags span{font-size:.8rem;font-weight:500;color:var(--ink-70);background:var(--ink-06);padding:.42rem .9rem;border-radius:100px;transition:background .35s,color .35s}
-.card:hover .tags span{background:rgba(11,52,237,.08);color:var(--electric)}
+.card:hover .tags span{background:rgba(2,6,219,.08);color:var(--electric)}
 
 /* horizontal core-area card (Smart Environments) */
 .sol-h{margin-top:18px;min-height:0;padding:0}
@@ -339,13 +339,13 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .sol-h-text .ci{margin-bottom:1.4rem}
 .sol-h-text h3{margin:0 0 .8rem;font-size:clamp(1.5rem,2.2vw,1.9rem);letter-spacing:-.025em}
 .sol-h-visual{position:relative;overflow:hidden;min-height:clamp(260px,26vw,340px);
-  background:radial-gradient(120% 120% at 75% 25%,rgba(102,171,241,.22),transparent 62%),var(--paper-2);
+  background:radial-gradient(120% 120% at 75% 25%,rgba(116,118,235,.22),transparent 62%),var(--paper-2);
   border-right:1px solid var(--line)}
 .sol-h-visual.has-img{background:none;border-right:0}
 .sol-h-visual .sh-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s var(--ease-out)}
 .sol-h:hover .sol-h-visual .sh-img{transform:scale(1.05)}
 .sol-h-visual .dotfield{position:absolute;inset:0;opacity:.55;
-  background-image:radial-gradient(rgba(11,52,237,.32) 1px,transparent 1.2px);background-size:20px 20px;
+  background-image:radial-gradient(rgba(2,6,219,.32) 1px,transparent 1.2px);background-size:20px 20px;
   mask-image:radial-gradient(110% 90% at 70% 35%,#000,transparent 72%)}
 .sol-h-visual svg{position:absolute;inset:0;width:100%;height:100%}
 .pulse{transform-box:fill-box;transform-origin:center;animation:nodepulse 2.8s var(--ease) infinite}
@@ -405,7 +405,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
   position:relative;z-index:1;box-shadow:var(--shadow-s);margin-bottom:1.6rem;
   transition:transform .5s var(--ease-out),background .4s,color .4s,box-shadow .4s;
 }
-.step:hover .num{background:var(--electric);color:#F8F8FE;transform:translateY(-4px);box-shadow:0 14px 30px rgba(11,52,237,.3)}
+.step:hover .num{background:var(--electric);color:#F8F8FE;transform:translateY(-4px);box-shadow:0 14px 30px rgba(2,6,219,.3)}
 .step h3{font-size:1.2rem;margin-bottom:.55rem}
 .step p{color:var(--ink-55);font-size:.95rem;line-height:1.55;max-width:30ch}
 @media(max-width:900px){
@@ -461,7 +461,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
   transition:transform .5s var(--ease-out),box-shadow .5s,border-color .5s;
 }
 .pillar:hover{transform:translateY(-5px);box-shadow:var(--shadow-m);border-color:transparent}
-.pillar .pi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(11,52,237,.07);margin-bottom:1.3rem}
+.pillar .pi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(2,6,219,.07);margin-bottom:1.3rem}
 .pillar .pi svg{width:22px;height:22px;fill:none;stroke:var(--electric);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .pillar h3{font-size:1.18rem;margin-bottom:.5rem}
 .pillar p{color:var(--ink-55);font-size:.94rem;line-height:1.55}
@@ -489,7 +489,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
    CTA + FOOTER
    ============================================================ */
 .cta{position:relative;overflow:hidden;color:var(--arctic);
-  background:radial-gradient(120% 120% at 80% 10%,rgba(102,171,241,.5),transparent 55%),
+  background:radial-gradient(120% 120% at 80% 10%,rgba(116,118,235,.5),transparent 55%),
   linear-gradient(150deg,var(--obsidian),var(--electric) 160%)}
 /* signal / equalizer-lines brand pattern — varying-density vertical dashes (tile generated in JS) */
 .cta .dotfield{position:absolute;inset:0;opacity:.4;background-repeat:repeat;
@@ -744,18 +744,18 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
       <article class="card sub reveal">
         <div class="sub-viz" aria-hidden="true">
           <svg viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice">
-            <g stroke="rgba(11,52,237,.34)" stroke-width="1.4" fill="none" stroke-dasharray="3 4">
+            <g stroke="rgba(2,6,219,.34)" stroke-width="1.4" fill="none" stroke-dasharray="3 4">
               <path d="M150 90 L66 48"/><path d="M150 90 L66 132"/>
               <path d="M150 90 L236 52"/><path d="M150 90 L236 128"/>
             </g>
-            <g fill="#F8F8FE" stroke="rgba(11,52,237,.22)">
+            <g fill="#F8F8FE" stroke="rgba(2,6,219,.22)">
               <rect x="46" y="34" width="38" height="28" rx="9"/>
               <rect x="46" y="118" width="38" height="28" rx="9"/>
               <rect x="216" y="38" width="38" height="28" rx="9"/>
               <rect x="216" y="114" width="38" height="28" rx="9"/>
             </g>
-            <g fill="#66ABF1"><circle cx="65" cy="48" r="3.5"/><circle cx="65" cy="132" r="3.5"/><circle cx="235" cy="52" r="3.5"/><circle cx="235" cy="128" r="3.5"/></g>
-            <rect x="124" y="66" width="52" height="48" rx="14" fill="#0B34ED"/>
+            <g fill="#7476EB"><circle cx="65" cy="48" r="3.5"/><circle cx="65" cy="132" r="3.5"/><circle cx="235" cy="52" r="3.5"/><circle cx="235" cy="128" r="3.5"/></g>
+            <rect x="124" y="66" width="52" height="48" rx="14" fill="#0206DB"/>
             <g fill="#F8F8FE"><rect x="139" y="80" width="22" height="3.2" rx="1.6"/><rect x="139" y="88.4" width="22" height="3.2" rx="1.6"/><rect x="139" y="96.8" width="22" height="3.2" rx="1.6"/></g>
           </svg>
         </div>
@@ -770,14 +770,14 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
         <div class="sub-viz" aria-hidden="true">
           <svg viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice">
             <defs><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#0B34ED" stop-opacity=".42"/><stop offset="1" stop-color="#0B34ED" stop-opacity="0"/>
+              <stop offset="0" stop-color="#0206DB" stop-opacity=".42"/><stop offset="1" stop-color="#0206DB" stop-opacity="0"/>
             </linearGradient></defs>
-            <g fill="none" stroke="rgba(11,52,237,.2)" stroke-width="1.3">
+            <g fill="none" stroke="rgba(2,6,219,.2)" stroke-width="1.3">
               <circle cx="150" cy="90" r="64"/><circle cx="150" cy="90" r="42"/><circle cx="150" cy="90" r="21"/>
               <line x1="78" y1="90" x2="222" y2="90"/><line x1="150" y1="18" x2="150" y2="162"/>
             </g>
             <g class="radar-sweep"><path d="M150 90 L150 26 A64 64 0 0 1 205 60 Z" fill="url(#sweep)"/></g>
-            <circle class="blip" cx="186" cy="60" r="5" fill="#0B34ED"/>
+            <circle class="blip" cx="186" cy="60" r="5" fill="#0206DB"/>
           </svg>
         </div>
         <div class="sub-text">
@@ -1182,7 +1182,7 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
         c += '<circle cx="'+(i*sp+sp/2).toFixed(1)+'" cy="'+(j*sp+sp/2).toFixed(1)+'" r="'+r+'"/>';
       }
     }
-    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="'+size+'" height="'+size+'" fill="%230B34ED">'+c+'</svg>';
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="'+size+'" height="'+size+'" fill="%230206DB">'+c+'</svg>';
     var uri = svg.replace(/#/g,"%23").replace(/</g,"%3C").replace(/>/g,"%3E").replace(/"/g,"'");
     el.style.backgroundImage = 'url("data:image/svg+xml,'+uri+'")';
     el.style.backgroundSize = size+"px "+size+"px";
@@ -1269,12 +1269,12 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
         if(p.y<0||p.y>H) p.vy*=-1;
         // connect to mouse
         var dmx = p.x-mouse.x, dmy = p.y-mouse.y, dm = Math.sqrt(dmx*dmx+dmy*dmy);
-        if(dm<150){ ctx.strokeStyle="rgba(11,52,237,"+(0.18*(1-dm/150))+")"; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y); ctx.stroke(); }
+        if(dm<150){ ctx.strokeStyle="rgba(2,6,219,"+(0.18*(1-dm/150))+")"; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y); ctx.stroke(); }
         for(var j=i+1;j<pts.length;j++){
           var q=pts[j], dx=p.x-q.x, dy=p.y-q.y, d=Math.sqrt(dx*dx+dy*dy);
           if(d<118){ ctx.strokeStyle="rgba(17,17,16,"+(0.06*(1-d/118))+")"; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke(); }
         }
-        ctx.fillStyle = (i%7===0) ? "rgba(11,52,237,.55)" : "rgba(17,17,16,.28)";
+        ctx.fillStyle = (i%7===0) ? "rgba(2,6,219,.55)" : "rgba(17,17,16,.28)";
         ctx.beginPath(); ctx.arc(p.x,p.y,(i%7===0)?2:1.4,0,6.283); ctx.fill();
       }
       requestAnimationFrame(draw);
