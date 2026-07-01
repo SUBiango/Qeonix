@@ -166,19 +166,22 @@ h1,h2,h3{font-weight:700;line-height:1.08;letter-spacing:-.02em}
 .nav-links a:hover{color:var(--ink);background:rgba(248,248,254,.8)}
 .nav-right{display:flex;align-items:center;gap:.75rem}
 .nav-cta{padding:.62rem 1.25rem;font-size:.92rem}
-.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:42px;height:42px;border-radius:12px;align-items:center;justify-content:center}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:48px;height:42px;border-radius:12px;align-items:center;justify-content:center}
 /* Hamburger mirrors the logo's three-bar "E": electric-blue rounded bars */
-.nav-toggle span{display:block;width:16px;height:3.5px;border-radius:1.5px;background:var(--electric);position:relative;transition:transform .35s var(--ease),background .25s}
-.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;width:16px;height:3.5px;border-radius:1.5px;background:var(--electric);transition:transform .35s var(--ease),top .35s var(--ease)}
+.nav-toggle span{display:block;width:24px;height:3.5px;border-radius:1.5px;background:var(--electric);position:relative;transition:transform .35s var(--ease),background .25s}
+.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;width:24px;height:3.5px;border-radius:1.5px;background:var(--electric);transition:transform .35s var(--ease),top .35s var(--ease)}
 .nav-toggle span::before{top:-6.5px}.nav-toggle span::after{top:6.5px}
 body.menu-open .nav-toggle span{background:transparent}
 body.menu-open .nav-toggle span::before{top:0;transform:rotate(45deg)}
 body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 
 @media(max-width:980px){
+  /* Drop the nav's backdrop-filter on mobile: it makes the nav a containing
+     block for the fixed dropdown, collapsing its width. Use a solid bg instead. */
+  .nav.scrolled{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(248,248,254,.95)}
   .nav-links{
-    position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;gap:.25rem;
-    background:rgba(248,248,254,.96);backdrop-filter:blur(20px);
+    position:fixed;inset:var(--nav-h) 0 auto 0;width:100vw;flex-direction:column;gap:.25rem;
+    background:rgba(248,248,254,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
     border-radius:0;border-bottom:1px solid var(--line);padding:1.2rem var(--gutter) 1.8rem;
     transform:translateY(-120%);transition:transform .45s var(--ease-out);align-items:stretch;
   }
