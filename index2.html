@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <script>
 /* Set language/direction ASAP to avoid a layout flash (text is swapped later) */
-(function(){try{var l=localStorage.getItem("qx-lang")||"en";var d=document.documentElement;d.lang=l;d.dir=l==="ar"?"rtl":"ltr";}catch(e){}})();
+(function(){var d=document.documentElement;d.lang="en";d.dir="ltr";})();/* language switching temporarily disabled — English only */
 </script>
 <style>
 /* ============================================================
@@ -1128,12 +1128,14 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
     try{ localStorage.setItem("qx-lang", lang); }catch(e){}
   }
 
-  var savedLang = "en";
-  try{ savedLang = localStorage.getItem("qx-lang") || "en"; }catch(e){}
-  applyLang(savedLang);
+  // Language switching temporarily disabled — force English regardless of any saved preference.
+  applyLang("en");
 
   var langToggle = document.getElementById("langToggle");
   if(langToggle){
+    // Toggle button left visible but inert for now. To re-enable Arabic,
+    // restore the click handler below (and the saved-language load above).
+    /*
     langToggle.addEventListener("click", function(){
       var next = (document.documentElement.lang === "ar") ? "en" : "ar";
       applyLang(next);
@@ -1142,6 +1144,7 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
         a.style.maxHeight = a.scrollHeight + "px";
       });
     });
+    */
   }
 
   /* ---- Nav scroll state ---- */
