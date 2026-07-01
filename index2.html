@@ -209,7 +209,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.4rem}
 
 /* hero humanoid figure — full robot emerging from two concentric shaded circles */
-.hero-figure{position:relative;z-index:1;justify-self:end;width:100%;max-width:clamp(380px,42vw,600px);aspect-ratio:1;transition:transform .6s var(--ease-out)}
+.hero-figure{position:relative;z-index:1;justify-self:end;width:100%;max-width:clamp(420px,46vw,660px);aspect-ratio:1;transition:transform .6s var(--ease-out)}
 .hero-orb{position:absolute;inset:0;animation:floaty 9s var(--ease) infinite}
 .hero-orb .ring{position:absolute;border-radius:50%;pointer-events:none}
 /* outer circle — larger, lighter fill */
@@ -217,7 +217,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 /* inner circle — smaller, slightly darker fill */
 .hero-orb .ring-2{inset:7%;background:color-mix(in srgb,var(--quantum) 16%,var(--paper))}
 /* full robot: head framed by the circles, neck/shoulders overflowing below */
-.hero-orb img{position:absolute;left:50%;top:15%;transform:translateX(-50%);width:87%;height:auto;display:block;z-index:1}
+.hero-orb img{position:absolute;left:50%;top:18%;transform:translateX(-50%);width:80%;height:auto;display:block;z-index:1}
 /* small tick accent at ~3 o'clock, echoing the reference */
 .hero-figure::after{content:"";position:absolute;top:34%;right:1%;width:34px;height:2px;border-radius:2px;background:var(--quantum);z-index:2}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
