@@ -257,6 +257,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .fact .v{font-size:1.05rem;font-weight:500;transition:color .3s var(--ease)}
 .fact:hover .k,.fact:hover .v{color:var(--electric)}
 .who-visual{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:linear-gradient(160deg,var(--obsidian),var(--electric) 120%);box-shadow:var(--shadow-l)}
+.who-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .who-visual .vstack{position:absolute;inset:0;display:grid;place-items:center}
 .who-visual .figure{display:flex;gap:10px;align-items:flex-end;height:46%}
 .who-visual .figure b{width:18px;border-radius:6px;background:linear-gradient(var(--glacial),var(--azure));display:block;animation:eq 2.6s var(--ease) infinite}
@@ -267,7 +268,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .who-visual .figure b:nth-child(5){height:85%;animation-delay:.8s}
 @keyframes eq{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.55)}}
 @media (prefers-reduced-motion: reduce){.who-visual .figure b{animation:none}}
-.who-visual .tag{position:absolute;left:18px;bottom:16px;color:var(--on-dark-70);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.who-visual .tag{position:absolute;left:14px;bottom:14px;z-index:1;color:#F8F8FE;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(17,17,16,.5);padding:.4rem .7rem;border-radius:8px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .who-visual .dotfield{position:absolute;inset:0;opacity:.5;
   background-image:radial-gradient(rgba(248,248,254,.5) 1.1px,transparent 1.2px);
   background-size:18px 18px;mask-image:radial-gradient(120% 90% at 80% 10%,#000,transparent 70%)}
@@ -364,6 +365,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .sub{min-height:clamp(340px,30vw,410px)}
 .sub .sub-viz{position:relative;height:clamp(150px,16vw,185px);flex:none;border-radius:16px;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);margin-bottom:1.7rem}
 .sub .sub-viz svg{position:absolute;inset:0;width:100%;height:100%}
+.sub .sub-viz img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .sub .sub-text h3{font-size:1.3rem;margin:0 0 .6rem}
 .sub .sub-text p{font-size:.98rem}
 .radar-sweep{transform-box:view-box;transform-origin:150px 90px;animation:radarspin 5.5s linear infinite}
@@ -683,8 +685,7 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
       </div>
     </div>
     <div class="who-visual reveal" data-d="2" aria-hidden="true">
-      <div class="dotfield"></div>
-      <div class="vstack"><div class="figure"><b></b><b></b><b></b><b></b><b></b></div></div>
+      <img src="public/who-we-are.png" alt="" />
       <span class="tag" data-i18n="who.tag">Intelligence in motion</span>
     </div>
   </div>
@@ -742,21 +743,7 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
       <!-- Generative & Agentic AI -->
       <article class="card sub reveal">
         <div class="sub-viz" aria-hidden="true">
-          <svg viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice">
-            <g stroke="rgba(2,6,219,.34)" stroke-width="1.4" fill="none" stroke-dasharray="3 4">
-              <path d="M150 90 L66 48"/><path d="M150 90 L66 132"/>
-              <path d="M150 90 L236 52"/><path d="M150 90 L236 128"/>
-            </g>
-            <g fill="#F8F8FE" stroke="rgba(2,6,219,.22)">
-              <rect x="46" y="34" width="38" height="28" rx="9"/>
-              <rect x="46" y="118" width="38" height="28" rx="9"/>
-              <rect x="216" y="38" width="38" height="28" rx="9"/>
-              <rect x="216" y="114" width="38" height="28" rx="9"/>
-            </g>
-            <g fill="#7476EB"><circle cx="65" cy="48" r="3.5"/><circle cx="65" cy="132" r="3.5"/><circle cx="235" cy="52" r="3.5"/><circle cx="235" cy="128" r="3.5"/></g>
-            <rect x="124" y="66" width="52" height="48" rx="14" fill="#0206DB"/>
-            <g fill="#F8F8FE"><rect x="139" y="80" width="22" height="3.2" rx="1.6"/><rect x="139" y="88.4" width="22" height="3.2" rx="1.6"/><rect x="139" y="96.8" width="22" height="3.2" rx="1.6"/></g>
-          </svg>
+          <img src="public/generative-agentic-ai.png" alt="" />
         </div>
         <div class="sub-text">
           <h3 data-i18n="sol.gen.h">Generative &amp; Agentic AI</h3>
@@ -767,17 +754,7 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
       <!-- Robotics & Drone Technology -->
       <article class="card sub reveal" data-d="1">
         <div class="sub-viz" aria-hidden="true">
-          <svg viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice">
-            <defs><linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#0206DB" stop-opacity=".42"/><stop offset="1" stop-color="#0206DB" stop-opacity="0"/>
-            </linearGradient></defs>
-            <g fill="none" stroke="rgba(2,6,219,.2)" stroke-width="1.3">
-              <circle cx="150" cy="90" r="64"/><circle cx="150" cy="90" r="42"/><circle cx="150" cy="90" r="21"/>
-              <line x1="78" y1="90" x2="222" y2="90"/><line x1="150" y1="18" x2="150" y2="162"/>
-            </g>
-            <g class="radar-sweep"><path d="M150 90 L150 26 A64 64 0 0 1 205 60 Z" fill="url(#sweep)"/></g>
-            <circle class="blip" cx="186" cy="60" r="5" fill="#0206DB"/>
-          </svg>
+          <img src="public/robotics-drone-technology.png" alt="" />
         </div>
         <div class="sub-text">
           <h3 data-i18n="sol.rob.h">Robotics &amp; Drone Technology</h3>
