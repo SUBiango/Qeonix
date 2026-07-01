@@ -1,1 +1,6 @@
 .DS_Store
+
+# Non-site files
+*.code-workspace
+*.pdf
+public/hero-robot-sample*.png

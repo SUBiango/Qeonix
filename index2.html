@@ -226,10 +226,15 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @media(max-width:960px){
   .hero .wrap{grid-template-columns:1fr}
+  /* tablet: stack the figure under the text, centered and a bit smaller */
+  .hero-figure{justify-self:center;max-width:clamp(320px,58vw,440px);margin-top:1.5rem}
+  /* CTAs drop near the bottom and would overlap the scroll indicator, so hide it
+     (.hero prefix needed to outrank the later base .scroll-hint rule) */
+  .hero .scroll-hint{display:none}
+}
+/* phones: too narrow for the figure, hide it */
+@media(max-width:640px){
   .hero-figure{display:none}
-  /* hero stacks to one column here; the CTAs drop near the bottom and would
-     overlap the bottom-anchored scroll indicator, so hide it on mobile */
-  .scroll-hint{display:none}
 }
 @media (prefers-reduced-motion: reduce){.hero-figure img{animation:none}}
 
