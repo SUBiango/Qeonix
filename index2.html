@@ -216,8 +216,8 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .hero-orb .ring-1{inset:0;background:color-mix(in srgb,var(--quantum) 7%,var(--paper))}
 /* inner circle — smaller, slightly darker fill */
 .hero-orb .ring-2{inset:7%;background:color-mix(in srgb,var(--quantum) 16%,var(--paper))}
-/* full robot, larger, sitting in front of the circles and overflowing downward */
-.hero-orb img{position:absolute;left:50%;bottom:-6%;transform:translateX(-50%);width:112%;height:auto;display:block;z-index:1}
+/* full robot: head framed by the circles, neck/shoulders overflowing below */
+.hero-orb img{position:absolute;left:50%;top:15%;transform:translateX(-50%);width:87%;height:auto;display:block;z-index:1}
 /* small tick accent at ~3 o'clock, echoing the reference */
 .hero-figure::after{content:"";position:absolute;top:34%;right:1%;width:34px;height:2px;border-radius:2px;background:var(--quantum);z-index:2}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
