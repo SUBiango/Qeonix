@@ -1,15 +1,17 @@
-# Static site (no build). Declares where serverless functions live so the
-# contact form can forward leads to Zoho Flow via /.netlify/functions/zoho-lead,
-# and sets security headers for all responses.
+# Static site (no build). Only the `site/` folder is published, so config,
+# function source, and docs at the repo root are never served. Functions live
+# in netlify/functions and forward the contact form to Zoho Flow.
+[build]
+  publish = "site"
+
 [functions]
   directory = "netlify/functions"
 
 # Security headers applied to every response.
 # HSTS uses includeSubDomains + preload (2-year max-age) so the domain is
 # eligible for the browser HSTS preload list (submit at hstspreload.org).
-# CSP allows inline <style>/<script> (this is a hand-authored static page with
-# no user-input reflected into the DOM) and Google Fonts; everything else is
-# locked to same-origin.
+# CSP is strict: scripts and styles load only from 'self' (no inline), with
+# Google Fonts the only third-party origin.
 [[headers]]
   for = "/*"
   [headers.values]
@@ -18,5 +20,6 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
     Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()"
     Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
