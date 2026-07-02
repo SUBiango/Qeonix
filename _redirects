@@ -1,0 +1,6 @@
+# Serve the full site (index2.html) at the site root.
+/    /index2.html    200!
+
+# Canonicalize direct file URLs to the root to avoid duplicate content.
+/index.html     /    301!
+/index2.html    /    301!
