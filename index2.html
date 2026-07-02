@@ -1239,11 +1239,12 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
   }
 })();
 
-/* ---- Contact form: forward to Zoho Flow (CRM) + best-effort Netlify record ----
-   CRM delivery is the goal, so the Zoho Flow forward (via the serverless proxy
-   /.netlify/functions/zoho-lead, which keeps the webhook URL server-side) gates
-   the success state. Netlify Forms is a best-effort backup record and never
-   blocks the visitor. */
+/* ---- Contact form: forward to Zoho Flow (CRM) + Netlify Forms record ----
+   Both destinations are attempted on every submit. The Zoho Flow forward goes
+   through the serverless proxy (/.netlify/functions/zoho-lead) so the webhook
+   URL stays server-side. Success fires if EITHER destination accepts the lead,
+   so the visitor is never shown an error as long as the lead was captured
+   somewhere; only if both fail do we surface the error. */
 (function(){
   var form = document.querySelector(".cta-form");
   if(!form) return;
@@ -1258,15 +1259,17 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
     var lead = {};
     fd.forEach(function(value, key){ lead[key] = value; });
 
-    // Best-effort backup record in Netlify Forms; log failures, don't block.
-    fetch("/", {method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body:netlifyBody})
-      .then(function(r){ if(!r.ok) console.warn("Netlify Forms record failed:", r.status); })
-      .catch(function(err){ console.warn("Netlify Forms record error:", err); });
+    // CRM delivery via Zoho Flow proxy.
+    var crm = fetch("/.netlify/functions/zoho-lead", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(lead)})
+      .then(function(res){ if(!res.ok){ console.warn("Zoho Flow forward failed:", res.status); throw new Error("zoho "+res.status); } return "zoho"; });
 
-    // CRM delivery via Zoho Flow proxy gates the success state.
-    fetch("/.netlify/functions/zoho-lead", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(lead)})
-      .then(function(res){
-        if(!res.ok) throw new Error("bad status");
+    // Backup record in Netlify Forms.
+    var record = fetch("/", {method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body:netlifyBody})
+      .then(function(res){ if(!res.ok){ console.warn("Netlify Forms record failed:", res.status); throw new Error("netlify "+res.status); } return "netlify"; });
+
+    // Success if either destination accepts the lead; error only if both fail.
+    Promise.any([crm, record])
+      .then(function(){
         form.classList.add("sent");
         form.scrollIntoView({behavior:"smooth", block:"center"});
       })
