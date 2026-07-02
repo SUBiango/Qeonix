@@ -581,6 +581,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
   color:var(--ink);background:rgba(17,17,16,.04);border:1px solid var(--ink-12);
   transition:color .25s,background .25s,border-color .25s,transform .4s var(--ease-out);
 }
+.lang-toggle[hidden]{display:none}
 .lang-toggle:hover{background:#F8F8FE;border-color:var(--ink);transform:translateY(-2px)}
 .lang-toggle::before{content:"";width:14px;height:14px;flex:none;border-radius:50%;
   background:
@@ -642,7 +643,8 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
       <a href="#why" data-i18n="nav.why">Why Qeonix</a>
     </nav>
     <div class="nav-right">
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">عربي</button>
+      <!-- Hidden until Arabic translation is ready. Remove `hidden` to restore. -->
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language" hidden>عربي</button>
       <a href="#contact" class="btn btn-primary nav-cta" data-i18n="nav.contact">Contact us</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     </div>
