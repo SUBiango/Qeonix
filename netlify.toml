@@ -1,0 +1,4 @@
+# Static site (no build). Only declares where serverless functions live so the
+# contact form can forward leads to Zoho Flow via /.netlify/functions/zoho-lead.
+[functions]
+  directory = "netlify/functions"

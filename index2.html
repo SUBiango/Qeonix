@@ -1239,7 +1239,11 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
   }
 })();
 
-/* ---- Contact form: AJAX submit to Netlify with inline success state ---- */
+/* ---- Contact form: record in Netlify Forms + forward to Zoho Flow (CRM) ----
+   Netlify Forms is the primary record (spam filtering + notifications) and
+   gates the success state. The Zoho Flow forward goes through a serverless
+   proxy (/.netlify/functions/zoho-lead) so the webhook URL stays server-side;
+   it is best-effort and never blocks the visitor. */
 (function(){
   var form = document.querySelector(".cta-form");
   if(!form) return;
@@ -1248,10 +1252,19 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
     if(!form.reportValidity()) return;
     var btn = form.querySelector(".cta-submit");
     if(btn) btn.disabled = true;
-    var body = new URLSearchParams(new FormData(form)).toString();
-    fetch("/", {method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body:body})
+
+    var fd = new FormData(form);
+    var netlifyBody = new URLSearchParams(fd).toString();
+    var lead = {};
+    fd.forEach(function(value, key){ lead[key] = value; });
+
+    fetch("/", {method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body:netlifyBody})
       .then(function(res){
         if(!res.ok) throw new Error("bad status");
+        // Forward to Zoho Flow CRM; log failures but don't block the visitor.
+        fetch("/.netlify/functions/zoho-lead", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(lead)})
+          .then(function(z){ if(!z.ok) console.warn("Zoho Flow forward failed:", z.status); })
+          .catch(function(err){ console.warn("Zoho Flow forward error:", err); });
         form.classList.add("sent");
         form.scrollIntoView({behavior:"smooth", block:"center"});
       })
