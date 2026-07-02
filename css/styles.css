@@ -600,3 +600,25 @@ html[dir="rtl"] .hero-figure img{transform:scaleX(-1);animation-name:floaty-rtl}
    and the warm glow stays behind the (now left-side) figure */
 html[dir="rtl"] .glow-1{left:auto;right:-8vw}
 html[dir="rtl"] .glow-2{right:auto;left:-6vw}
+
+
+/* ============================================================
+   Utilities extracted from former inline style="" attributes
+   (so the CSP can drop 'unsafe-inline' from style-src)
+   ============================================================ */
+.mt-lead{margin-top:1.1rem}
+.mt-sm{margin-top:1rem}
+.sec-head.narrow{max-width:680px}
+.lead.on-dark-muted{color:var(--on-dark-70)}
+
+/* Card / industry background images */
+.bg-autonomous-system{background-image:url('/images/autonomous-system.png')}
+.bg-smart-environments{background-image:url('/images/smart-environments.png')}
+.bg-connected-mobility{background-image:url('/images/connected-mobility.png')}
+.bg-transportation{background-image:url('/images/transportation.png')}
+.bg-energy{background-image:url('/images/energy.png')}
+.bg-industrial{background-image:url('/images/industrial.png')}
+.bg-supply-chain{background-image:url('/images/supply-chain.png')}
+.bg-aviation{background-image:url('/images/aviation.png')}
+.bg-healthcare{background-image:url('/images/healthcare.png')}
+.bg-realestate-urban{background-image:url('/images/realestate-urban.png')}
