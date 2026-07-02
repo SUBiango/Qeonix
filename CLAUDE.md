@@ -8,12 +8,16 @@ Deployed on Netlify; production is https://qeonix.com.
 
 ## Structure
 
-- `index.html` — the site markup (hero, who-we-are, solutions, approach,
+Only `site/` is published to Netlify (see `netlify.toml` `publish`), so config,
+function source, and docs at the repo root are never served.
+
+- `site/index.html` — the site markup (hero, who-we-are, solutions, approach,
   industries, why, FAQ, contact).
-- `css/styles.css` — all styles. `js/main.js` — all behavior (i18n, nav,
-  form submit, hero canvas), loaded at the end of `index.html`. Google Fonts
-  (Poppins + Cairo) is the only third-party resource.
-- `images/` — image assets referenced by the HTML/CSS.
+- `site/css/styles.css` — all styles. `site/js/main.js` — all behavior (i18n,
+  nav, form submit, hero canvas), loaded at the end of `index.html`. Google
+  Fonts (Poppins + Cairo) is the only third-party resource.
+- `site/images/` — image assets referenced by the HTML/CSS.
+- `site/favicon.svg`, `site/robots.txt`, `site/sitemap.xml`.
 - `netlify/functions/zoho-lead.js` — serverless proxy that forwards contact-form
   submissions to Zoho Flow CRM (webhook URL in the `ZOHO_FLOW_WEBHOOK_URL` env
   var, set per Netlify deploy context).
@@ -33,8 +37,9 @@ Deployed on Netlify; production is https://qeonix.com.
 
 ## Working on this project
 
-- Nothing to build or compile. Preview by opening `index.html` or serving the
-  directory (`python3 -m http.server`); the CRM function needs `netlify dev`.
+- Nothing to build or compile. Preview by opening `site/index.html` or serving
+  `site/` (`python3 -m http.server -d site`); the CRM function needs
+  `netlify dev` (which serves `site/` per `netlify.toml`).
 - Honor `prefers-reduced-motion` (already handled) when adding animations.
 - The language toggle is hidden (English-only) until the Arabic translation
   ships — remove `hidden` from `#langToggle` to restore it.
