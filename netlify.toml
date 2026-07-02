@@ -5,13 +5,15 @@
   directory = "netlify/functions"
 
 # Security headers applied to every response.
-# HSTS is intentionally omitted — Netlify sets Strict-Transport-Security itself.
+# HSTS uses includeSubDomains + preload (2-year max-age) so the domain is
+# eligible for the browser HSTS preload list (submit at hstspreload.org).
 # CSP allows inline <style>/<script> (this is a hand-authored static page with
 # no user-input reflected into the DOM) and Google Fonts; everything else is
 # locked to same-origin.
 [[headers]]
   for = "/*"
   [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
