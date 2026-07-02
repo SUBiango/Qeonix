@@ -8,11 +8,12 @@ Deployed on Netlify; production is https://qeonix.com.
 
 ## Structure
 
-- `index.html` — the whole site (hero, who-we-are, solutions, approach,
-  industries, why, FAQ, contact). Inline `<style>` in the `<head>` and inline
-  `<script>` before `</body>`. Only external resource is Google Fonts
-  (Poppins + Cairo).
-- `public/` — image assets referenced by `index.html`.
+- `index.html` — the site markup (hero, who-we-are, solutions, approach,
+  industries, why, FAQ, contact).
+- `css/styles.css` — all styles. `js/main.js` — all behavior (i18n, nav,
+  form submit, hero canvas), loaded at the end of `index.html`. Google Fonts
+  (Poppins + Cairo) is the only third-party resource.
+- `images/` — image assets referenced by the HTML/CSS.
 - `netlify/functions/zoho-lead.js` — serverless proxy that forwards contact-form
   submissions to Zoho Flow CRM (webhook URL in the `ZOHO_FLOW_WEBHOOK_URL` env
   var, set per Netlify deploy context).
