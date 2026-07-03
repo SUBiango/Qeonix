@@ -1,0 +1,26 @@
+# QEONIX
+
+> QEONIX designs, engineers, and deploys intelligent systems — AI, robotics, and smart-city infrastructure — for governments and enterprises. Headquartered in Abu Dhabi, UAE. Tagline: "Live Tomorrow, Today."
+
+QEONIX brings the physical and digital worlds together to create smarter, more responsive systems for governments, organizations, and cities. Solutions are delivered as integrated, real-world systems built around a client's existing infrastructure, operating conditions, and the people who use them.
+
+## What QEONIX does
+- Intelligence & AI: artificial intelligence, generative & agentic AI, data & analytics
+- Autonomous Systems: robotics, drones, connected mobility
+- Smart Environments: connected, intelligent infrastructure for buildings, communities, and cities
+
+## Industries served
+Transportation & mobility, energy & utilities, industrial & manufacturing, logistics & supply chain, aviation & aerospace, construction & infrastructure, healthcare, and real estate & urban development.
+
+## Approach
+Understand, Design, Engineer, Integrate, Deploy, Evolve — aligning technical design with operational requirements and existing systems.
+
+## Contact
+- Website: https://qeonix.com/
+- Email: info@qeonix.com
+- Location: Abu Dhabi, UAE
+
+## Key pages
+- [Home](https://qeonix.com/)
+- [FAQs](https://qeonix.com/#faq)
+- [Contact](https://qeonix.com/#contact)
