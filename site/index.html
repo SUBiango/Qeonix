@@ -22,6 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/css/styles.css" />
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 
@@ -340,6 +341,9 @@
           <div class="cta-field">
             <label for="cf-msg" data-i18n="cta.form.msg">How can we help?</label>
             <textarea id="cf-msg" name="message" rows="3" data-i18n-ph="cta.form.msgph" placeholder="Tell us briefly about your project or challenge…"></textarea>
+          </div>
+          <div class="cta-field cta-captcha">
+            <div class="h-captcha" data-sitekey="c3b84774-320a-413c-bd02-7b4e32eeefe2"></div>
           </div>
           <button type="submit" class="btn btn-blue cta-submit"><span data-i18n="cta.form.send">Discuss Your Project</span><span class="arr">→</span></button>
           <p class="cta-fineprint" data-i18n="cta.form.privacy">We’ll only use your details to respond to your enquiry.</p>

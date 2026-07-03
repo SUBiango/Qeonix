@@ -10,8 +10,8 @@
 # Security headers applied to every response.
 # HSTS uses includeSubDomains + preload (2-year max-age) so the domain is
 # eligible for the browser HSTS preload list (submit at hstspreload.org).
-# CSP is strict: scripts and styles load only from 'self' (no inline), with
-# Google Fonts the only third-party origin.
+# CSP is strict: no inline scripts/styles. Third-party origins are limited to
+# Google Fonts (styles/fonts) and hCaptcha (script/frame/connect/style).
 [[headers]]
   for = "/*"
   [headers.values]
@@ -22,4 +22,4 @@
     Cross-Origin-Opener-Policy = "same-origin"
     Cross-Origin-Resource-Policy = "same-origin"
     Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://hcaptcha.com https://*.hcaptcha.com; style-src 'self' https://fonts.googleapis.com https://hcaptcha.com https://*.hcaptcha.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hcaptcha.com https://*.hcaptcha.com; frame-src https://hcaptcha.com https://*.hcaptcha.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"

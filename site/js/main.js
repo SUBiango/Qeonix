@@ -263,6 +263,15 @@
     e.preventDefault();
     if(!form.reportValidity()) return;
     var btn = form.querySelector(".cta-submit");
+
+    // Require the hCaptcha token, but only if the widget actually loaded — if
+    // hCaptcha is blocked/unavailable, fail open so the form still works.
+    if(form.querySelector(".h-captcha") && window.hcaptcha){
+      if(!window.hcaptcha.getResponse()){
+        alert("Please complete the captcha to send your message.");
+        return;
+      }
+    }
     if(btn) btn.disabled = true;
 
     var fd = new FormData(form);
@@ -286,6 +295,7 @@
       })
       .catch(function(){
         if(btn) btn.disabled = false;
+        if(window.hcaptcha) try{ window.hcaptcha.reset(); }catch(e){}
         alert("Sorry, something went wrong. Please email info@qeonix.com");
       });
   });
