@@ -1,12 +1,24 @@
 // Forwards contact-form submissions to the Zoho Flow webhook (CRM).
 // The webhook URL is kept server-side in the ZOHO_FLOW_WEBHOOK_URL env var so
-// it is never exposed to the browser. Netlify v2 function: exposed at /api/lead
-// with an edge rate limit (see the exported config below).
+// it is never exposed to the browser. Netlify v2 function: exposed at /api/lead.
+// Abuse controls: a per-IP rate limiter (Netlify Blobs, works on all plans) and
+// the dormant edge rateLimit in the exported config (activates on a paid plan).
+import { getStore } from "@netlify/blobs";
+
 const MAX_BODY = 20000; // bytes — reject oversized payloads before parsing
+const RL_WINDOW_MS = 60000; // per-IP window
+const RL_MAX = 10; // max requests per window
 
 export default async (req) => {
   if (req.method !== "POST") {
     return new Response("Method Not Allowed", { status: 405 });
+  }
+
+  const ip =
+    req.headers.get("x-nf-client-connection-ip") ||
+    (req.headers.get("x-forwarded-for") || "").split(",")[0].trim();
+  if (await isRateLimited(ip)) {
+    return new Response("Too Many Requests", { status: 429 });
   }
 
   const webhook = process.env.ZOHO_FLOW_WEBHOOK_URL;
@@ -80,6 +92,27 @@ export const config = {
     action: "block",
   },
 };
+
+// Per-IP rate limit backed by Netlify Blobs. Best-effort (get/set isn't atomic)
+// and fails OPEN — a storage hiccup must never block the contact form.
+async function isRateLimited(ip) {
+  if (!ip) return false;
+  try {
+    const store = getStore("contact-ratelimit");
+    const key = ip.replace(/[^a-zA-Z0-9:._-]/g, "_");
+    const now = Date.now();
+    const rec = (await store.get(key, { type: "json" })) || { count: 0, reset: now + RL_WINDOW_MS };
+    if (now > rec.reset) {
+      rec.count = 0;
+      rec.reset = now + RL_WINDOW_MS;
+    }
+    rec.count += 1;
+    await store.setJSON(key, rec);
+    return rec.count > RL_MAX;
+  } catch (e) {
+    return false;
+  }
+}
 
 // A valid email can't start with a spreadsheet formula character, so this also
 // guards the email field against CSV/formula injection.
