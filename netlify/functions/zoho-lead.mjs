@@ -1,45 +1,46 @@
 // Forwards contact-form submissions to the Zoho Flow webhook (CRM).
 // The webhook URL is kept server-side in the ZOHO_FLOW_WEBHOOK_URL env var so
-// it is never exposed to the browser. Set it in Netlify:
-//   Site settings -> Environment variables -> ZOHO_FLOW_WEBHOOK_URL
+// it is never exposed to the browser. Netlify v2 function: exposed at /api/lead
+// with an edge rate limit (see the exported config below).
 const MAX_BODY = 20000; // bytes — reject oversized payloads before parsing
 
-exports.handler = async (event) => {
-  if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Method Not Allowed" };
+export default async (req) => {
+  if (req.method !== "POST") {
+    return new Response("Method Not Allowed", { status: 405 });
   }
 
   const webhook = process.env.ZOHO_FLOW_WEBHOOK_URL;
   if (!webhook) {
-    return { statusCode: 500, body: "Webhook not configured" };
+    return new Response("Webhook not configured", { status: 500 });
   }
 
-  if (typeof event.body === "string" && event.body.length > MAX_BODY) {
-    return { statusCode: 413, body: "Payload too large" };
+  const raw = await req.text();
+  if (raw.length > MAX_BODY) {
+    return new Response("Payload too large", { status: 413 });
   }
 
   let data;
   try {
-    data = JSON.parse(event.body || "{}");
+    data = JSON.parse(raw || "{}");
   } catch (e) {
-    return { statusCode: 400, body: "Invalid JSON" };
+    return new Response("Invalid JSON", { status: 400 });
   }
   if (typeof data !== "object" || data === null || Array.isArray(data)) {
-    return { statusCode: 400, body: "Invalid payload" };
+    return new Response("Invalid payload", { status: 400 });
   }
 
   // Honeypot: silently accept and drop bot submissions.
   if (data["bot-field"]) {
-    return { statusCode: 200, body: "ok" };
+    return new Response("ok", { status: 200 });
   }
 
   const name = text(data.name, 120);
   const email = text(data.email, 200);
   if (!name) {
-    return { statusCode: 400, body: "Name is required" };
+    return new Response("Name is required", { status: 400 });
   }
   if (!isEmail(email)) {
-    return { statusCode: 400, body: "A valid email is required" };
+    return new Response("A valid email is required", { status: 400 });
   }
 
   const payload = {
@@ -60,12 +61,24 @@ exports.handler = async (event) => {
       body: JSON.stringify(payload),
     });
     if (!res.ok) {
-      return { statusCode: 502, body: "Upstream error: " + res.status };
+      return new Response("Upstream error: " + res.status, { status: 502 });
     }
-    return { statusCode: 200, body: "ok" };
+    return new Response("ok", { status: 200 });
   } catch (e) {
-    return { statusCode: 502, body: "Forward failed" };
+    return new Response("Forward failed", { status: 502 });
   }
+};
+
+// Netlify serves this function at /api/lead and rate-limits it at the edge:
+// max 10 requests per 60s per IP (+domain), then 429.
+export const config = {
+  path: "/api/lead",
+  rateLimit: {
+    windowSize: 60,
+    windowLimit: 10,
+    aggregateBy: ["ip", "domain"],
+    action: "block",
+  },
 };
 
 // A valid email can't start with a spreadsheet formula character, so this also
