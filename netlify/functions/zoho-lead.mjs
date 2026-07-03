@@ -101,7 +101,7 @@ async function isRateLimited(ip) {
     const store = getStore("contact-ratelimit");
     const key = ip.replace(/[^a-zA-Z0-9:._-]/g, "_");
     const now = Date.now();
-    const rec = (await store.get(key, { type: "json" })) || { count: 0, reset: now + RL_WINDOW_MS };
+    const rec = (await store.get(key, { type: "json", consistency: "strong" })) || { count: 0, reset: now + RL_WINDOW_MS };
     if (now > rec.reset) {
       rec.count = 0;
       rec.reset = now + RL_WINDOW_MS;
