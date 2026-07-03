@@ -32,8 +32,12 @@ function source, and docs at the repo root are never served.
 ## Contact form
 
 - Submits to Netlify Forms (backup record) *and* forwards to Zoho Flow CRM via
-  the serverless proxy; the inline success state shows if either accepts the
-  lead. Honeypot field is `bot-field`.
+  the serverless proxy at `/api/lead`; the inline success state shows if either
+  accepts the lead. Honeypot field is `bot-field`.
+- Abuse controls in the function: per-IP rate limit (Netlify Blobs, 10/60s,
+  fails open) and hCaptcha verification (enforced only when `HCAPTCHA_SECRET` is
+  set). The Netlify edge `rateLimit` in the function config is dormant on the
+  Free plan and activates on a paid plan.
 
 ## Working on this project
 

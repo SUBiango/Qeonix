@@ -55,6 +55,17 @@ export default async (req) => {
     return new Response("A valid email is required", { status: 400 });
   }
 
+  // hCaptcha: verify only when the secret is configured, so the form keeps
+  // working during rollout. Once HCAPTCHA_SECRET is set, a valid token is
+  // required (fails closed on a bad/absent token).
+  const hcaptchaSecret = process.env.HCAPTCHA_SECRET;
+  if (hcaptchaSecret) {
+    const token = typeof data["h-captcha-response"] === "string" ? data["h-captcha-response"] : "";
+    if (!token || !(await verifyHcaptcha(hcaptchaSecret, token, ip))) {
+      return new Response("Captcha verification failed", { status: 403 });
+    }
+  }
+
   const payload = {
     name,
     email,
@@ -109,6 +120,25 @@ async function isRateLimited(ip) {
     rec.count += 1;
     await store.setJSON(key, rec);
     return rec.count > RL_MAX;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Verify an hCaptcha token server-side. Fails closed (returns false) on any
+// error so a bad token can't slip through when enforcement is on.
+async function verifyHcaptcha(secret, token, ip) {
+  try {
+    const body = new URLSearchParams({ secret, response: token });
+    if (ip) body.set("remoteip", ip);
+    const res = await fetch("https://api.hcaptcha.com/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body.toString(),
+    });
+    if (!res.ok) return false;
+    const json = await res.json();
+    return json.success === true;
   } catch (e) {
     return false;
   }
