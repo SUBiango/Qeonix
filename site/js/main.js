@@ -252,8 +252,8 @@
 
 /* ---- Contact form: forward to Zoho Flow (CRM) + Netlify Forms record ----
    Both destinations are attempted on every submit. The Zoho Flow forward goes
-   through the serverless proxy (/.netlify/functions/zoho-lead) so the webhook
-   URL stays server-side. Success fires if EITHER destination accepts the lead,
+   through the serverless proxy (/api/lead) so the webhook URL stays
+   server-side. Success fires if EITHER destination accepts the lead,
    so the visitor is never shown an error as long as the lead was captured
    somewhere; only if both fail do we surface the error. */
 (function(){
@@ -271,7 +271,7 @@
     fd.forEach(function(value, key){ lead[key] = value; });
 
     // CRM delivery via Zoho Flow proxy.
-    var crm = fetch("/.netlify/functions/zoho-lead", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(lead)})
+    var crm = fetch("/api/lead", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(lead)})
       .then(function(res){ if(!res.ok){ console.warn("Zoho Flow forward failed:", res.status); throw new Error("zoho "+res.status); } return "zoho"; });
 
     // Backup record in Netlify Forms.
