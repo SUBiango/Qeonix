@@ -16,9 +16,10 @@ function source, and docs at the repo root are never served.
 - `site/css/styles.css` — all styles. `site/js/main.js` — all behavior (i18n,
   nav, form submit, hero canvas), loaded at the end of `index.html`. Google
   Fonts (Poppins + Cairo) is the only third-party resource.
-- `site/images/` — image assets referenced by the HTML/CSS.
-- `site/favicon.svg`, `site/robots.txt`, `site/sitemap.xml`.
-- `netlify/functions/zoho-lead.js` — serverless proxy that forwards contact-form
+- `site/images/` — image assets, incl. `social-preview.png` (OG/Twitter card)
+  and `favicon/` (favicon set + `site.webmanifest`).
+- `site/robots.txt`, `site/sitemap.xml`, `site/llms.txt`.
+- `netlify/functions/zoho-lead.mjs` — serverless proxy that forwards contact-form
   submissions to Zoho Flow CRM (webhook URL in the `ZOHO_FLOW_WEBHOOK_URL` env
   var, set per Netlify deploy context).
 - `netlify.toml` — functions directory + security headers (CSP, HSTS, etc.).
