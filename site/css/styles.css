@@ -611,10 +611,13 @@ html[dir="rtl"] .glow-2{right:auto;left:-6vw}
 .sec-head.narrow{max-width:680px}
 .lead.on-dark-muted{color:var(--on-dark-70)}
 
-/* Card / industry background images */
-.bg-autonomous-system{background-image:url('/images/autonomous-system.png')}
+/* Card / industry background images.
+   The two solution image-slots sit over a decorative gradient set on
+   `.c-auto .imgslot` / `.c-mob .imgslot` (0,2,0); scope these to
+   `.imgslot.filled.<class>` (0,3,0) so the photo wins over that gradient. */
+.imgslot.filled.bg-autonomous-system{background-image:url('/images/autonomous-system.png')}
 .bg-smart-environments{background-image:url('/images/smart-environments.png')}
-.bg-connected-mobility{background-image:url('/images/connected-mobility.png')}
+.imgslot.filled.bg-connected-mobility{background-image:url('/images/connected-mobility.png')}
 .bg-transportation{background-image:url('/images/transportation.png')}
 .bg-energy{background-image:url('/images/energy.png')}
 .bg-industrial{background-image:url('/images/industrial.png')}
