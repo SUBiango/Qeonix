@@ -42,9 +42,12 @@ function source, and docs at the repo root are never served.
 
 ## Working on this project
 
-- Nothing to build or compile. Preview by opening `site/index.html` or serving
-  `site/` (`python3 -m http.server -d site`); the CRM function needs
-  `netlify dev` (which serves `site/` per `netlify.toml`).
+- Nothing to build or compile. Serve `site/` as the web root:
+  `python3 -m http.server 8000 -d site`, then open http://localhost:8000.
+  Assets use absolute paths (`/css`, `/js`, `/images`), so opening
+  `site/index.html` directly via `file://` (or serving the repo root) shows no
+  styles — it must be served with `site/` as the document root. `netlify dev`
+  also serves `site/` (per `netlify.toml`) and runs the CRM function.
 - Honor `prefers-reduced-motion` (already handled) when adding animations.
 - The language toggle is hidden (English-only) until the Arabic translation
   ships — remove `hidden` from `#langToggle` to restore it.
