@@ -448,7 +448,7 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
    ============================================================ */
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .pillar{
-  padding:2rem 1.8rem;border-radius:var(--radius-s);background:#F8F8FE;border:1px solid var(--line);
+  padding:2rem 1.8rem;border-radius:0;background:#F8F8FE;border:1px solid var(--line);
   transition:transform .5s var(--ease-out),box-shadow .5s,border-color .5s;
 }
 .pillar:hover{transform:translateY(-5px);box-shadow:var(--shadow-m);border-color:transparent}
