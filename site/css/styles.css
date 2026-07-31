@@ -408,13 +408,14 @@ body.menu-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
    INDUSTRIES — dark
    ============================================================ */
 .industries{background:var(--obsidian);color:var(--arctic);position:relative;overflow:hidden}
+.industries .eyebrow{color:var(--arctic)}
 .industries .dotfield{position:absolute;inset:0;opacity:.16;pointer-events:none;
   background-image:radial-gradient(var(--azure) 1.2px,transparent 1.3px);background-size:26px 26px;
   mask-image:radial-gradient(120% 80% at 90% 0%,#000,transparent 65%)}
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative;z-index:1}
 .ind-cell{
   position:relative;overflow:hidden;cursor:default;min-height:clamp(210px,18vw,250px);
-  padding:2rem 1.6rem 2.2rem;border-radius:var(--radius-s);
+  padding:2rem 1.6rem 2.2rem;border-radius:0;
   border:1px solid var(--on-dark-12);
   background:var(--quantum);
   display:flex;flex-direction:column;justify-content:flex-end;
