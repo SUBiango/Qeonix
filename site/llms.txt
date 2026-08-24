@@ -1,26 +1,74 @@
 # QEONIX
 
-> QEONIX designs, engineers, and deploys intelligent systems — AI, robotics, and smart-city infrastructure — for governments and enterprises. Headquartered in Abu Dhabi, UAE. Tagline: "Live Tomorrow, Today."
+> Qeonix designs, engineers and deploys the intelligent systems that governments,
+> cities and enterprises run on — decision intelligence, agentic AI, autonomous
+> systems and connected infrastructure. Headquartered in Abu Dhabi, United Arab
+> Emirates. Tagline: "Live Tomorrow, Today."
 
-QEONIX brings the physical and digital worlds together to create smarter, more responsive systems for governments, organizations, and cities. Solutions are delivered as integrated, real-world systems built around a client's existing infrastructure, operating conditions, and the people who use them.
+Qeonix is an engineering and product organisation rather than a reseller or a
+pure systems integrator. It architects, builds, deploys and operates the
+platforms and intelligence layers its clients run on, and integrates them with
+the systems already in place.
 
-## What QEONIX does
-- Intelligence & AI: artificial intelligence, generative & agentic AI, data & analytics
-- Autonomous Systems: robotics, drones, connected mobility
-- Smart Environments: connected, intelligent infrastructure for buildings, communities, and cities
+## Capabilities
+- **Intelligence & AI** — decision intelligence, computer vision, predictive
+  analytics, generative AI, enterprise AI applied to existing operations.
+- **Agentic AI** — multi-agent orchestration, tool and API calling, enterprise
+  integration, human-in-the-loop controls, permissions, observability,
+  auditability, model flexibility across open-source and commercial models.
+- **Autonomous Systems (Physical AI)** — robotics, drones, autonomous
+  inspection, remote operations, aerial intelligence, fleet intelligence.
+- **Data & Digital Platforms** — data platforms, integration layers, APIs,
+  event-driven systems, workflow engines, digital twins, cloud-native and
+  hybrid infrastructure.
 
-## Industries served
-Transportation & mobility, energy & utilities, industrial & manufacturing, logistics & supply chain, aviation & aerospace, construction & infrastructure, healthcare, and real estate & urban development.
+## Sectors
+- **Smart Government** — digital government platforms, resident super-apps,
+  service orchestration, cross-agency workflows, case management, permitting
+  and licensing journeys, government AI assistants, payments and digital
+  identity integration.
+- **Smart Cities** — city operations, command and control centres, utilities,
+  waste, mobility, parking, tolling, EV charging, public transport, IoT and
+  asset management, environmental monitoring, field operations.
+- **Connected Mobility** — mobility-as-a-service, multimodal journeys, fleet
+  orchestration, intelligent transportation, connected vehicles, transport
+  intelligence.
+- **Healthcare** — digital health platforms, patient journeys, provider
+  ecosystems, care orchestration, insurance intelligence, healthcare analytics.
+- Also energy and utilities, industrial and manufacturing, logistics and supply
+  chain, aviation and aerospace, real estate and urban development.
 
-## Approach
-Understand, Design, Engineer, Integrate, Deploy, Evolve — aligning technical design with operational requirements and existing systems.
+## Deployment and sovereignty
+Qeonix systems are architected so that deployment topology is a design decision:
+public cloud, dedicated private cloud, on-premise inside the customer's data
+centre, or isolated environments designed to support data residency
+requirements. Identity and role-based access, permissions, audit trails,
+observability, human oversight and controlled model access are part of the
+architecture. Qeonix does not claim third-party certifications on this site.
+
+## Locations
+- Abu Dhabi, United Arab Emirates — headquarters
+- Paris, France — office
+- Muscat, Oman — in progress
+- Doha, Qatar — in progress
 
 ## Contact
 - Website: https://qeonix.com/
 - Email: info@qeonix.com
-- Location: Abu Dhabi, UAE
 
 ## Key pages
 - [Home](https://qeonix.com/)
-- [FAQs](https://qeonix.com/#faq)
-- [Contact](https://qeonix.com/#contact)
+- [Intelligence & AI](https://qeonix.com/ai/)
+- [Agentic AI](https://qeonix.com/agentic-ai/)
+- [Autonomous Systems](https://qeonix.com/autonomous-systems/)
+- [Smart Cities](https://qeonix.com/smart-cities/)
+- [Smart Government](https://qeonix.com/smart-government/)
+- [Connected Mobility](https://qeonix.com/mobility/)
+- [Data & Platforms](https://qeonix.com/data-platforms/)
+- [Healthcare](https://qeonix.com/healthcare/)
+- [Industries](https://qeonix.com/industries/)
+- [Sovereign AI](https://qeonix.com/sovereign-ai/)
+- [About Qeonix](https://qeonix.com/about/)
+- [Contact](https://qeonix.com/contact/)
+
+Arabic versions of every page are available under https://qeonix.com/ar/.

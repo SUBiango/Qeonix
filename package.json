@@ -1,8 +1,14 @@
 {
   "name": "qeonix",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "QEONIX marketing site — Netlify functions dependencies",
+  "type": "module",
+  "description": "QEONIX marketing site — static generator + Netlify function dependencies",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "check": "node build/build.mjs && node build/check.mjs",
+    "serve": "python3 -m http.server 8765 -d site"
+  },
   "dependencies": {
     "@netlify/blobs": "^10.7.9"
   }
