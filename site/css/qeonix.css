@@ -311,7 +311,7 @@ body.has-light-top .nav-a[aria-current="page"]::after{background:var(--electric)
   animation:megaIn .26s var(--ease-out) both;
 }
 @keyframes megaIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-.mega-note{color:var(--electric-lift);margin-bottom:1rem;padding-inline-start:.35rem}
+.mega-note{color:#fff;margin-bottom:1rem;padding-inline-start:.35rem}
 .mega-list{display:grid;grid-template-columns:1fr 1fr;gap:.3rem}
 .mega-list a{
   display:flex;gap:.85rem;align-items:flex-start;
