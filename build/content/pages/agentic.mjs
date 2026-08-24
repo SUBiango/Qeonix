@@ -12,12 +12,12 @@ const RUNGS = [
   { label: T("Chatbot", "روبوت محادثة"), note: T("Answers from a script or a document. Cannot change anything.", "يجيب من نص أو مستند. لا يستطيع تغيير أي شيء.") },
   { label: T("Copilot", "مساعد مرافق"), note: T("Drafts and suggests inside a tool. A person still does the work.", "يصوغ ويقترح داخل الأداة. والإنسان هو من ينفّذ.") },
   { label: T("Agent", "وكيل"), note: T("Plans a task, calls approved tools and completes it end to end.", "يخطّط للمهمة ويستدعي أدوات معتمدة وينجزها من طرف إلى طرف.") },
-  { label: T("Multi-agent system", "منظومة متعدّدة الوكلاء"), note: T("Specialised agents coordinated by an orchestrator with shared state.", "وكلاء متخصّصون ينسّقهم منظّم واحد بحالة مشتركة.") },
+  { label: T("Multi-agent system", "منظومة متعدّدة الوكلاء"), note: T("Specialized agents coordinated by an orchestrator with shared state.", "وكلاء متخصّصون ينسّقهم منظّم واحد بحالة مشتركة.") },
   { label: T("Autonomous operation", "تشغيل ذاتي"), note: T("A whole workflow runs unattended, with humans on the exceptions.", "سير عمل كامل يعمل دون تدخّل، مع تدخّل بشري عند الاستثناءات."), emphasis: true },
 ];
 
 const STACK = [
-  { label: T("Experience", "طبقة التجربة"), note: T("Where the request arrives.", "حيث يصل الطلب."), items: [T("Web & mobile", "الويب والتطبيقات"), T("Contact centre", "مركز الاتصال"), T("Internal consoles", "لوحات داخلية"), T("Messaging channels", "قنوات المراسلة"), T("System events", "أحداث الأنظمة")] },
+  { label: T("Experience", "طبقة التجربة"), note: T("Where the request arrives.", "حيث يصل الطلب."), items: [T("Web & mobile", "الويب والتطبيقات"), T("Contact center", "مركز الاتصال"), T("Internal consoles", "لوحات داخلية"), T("Messaging channels", "قنوات المراسلة"), T("System events", "أحداث الأنظمة")] },
   { label: T("Orchestration", "طبقة التنسيق"), note: T("Intent, planning, routing, state.", "النية والتخطيط والتوجيه والحالة."), tone: "hi", items: [T("Intent resolution", "تحديد النية"), T("Task planning", "تخطيط المهام"), T("Agent routing", "توجيه الوكلاء"), T("Shared memory", "الذاكرة المشتركة"), T("Retry & fallback", "إعادة المحاولة والبدائل"), T("Escalation policy", "سياسة التصعيد")] },
   { label: T("Agents", "الوكلاء"), note: T("Narrow scope. Individually testable.", "نطاق محدود. قابل للاختبار منفردًا."), items: [T("Service agent", "وكيل الخدمة"), T("Operations agent", "وكيل العمليات"), T("Field service agent", "وكيل الخدمة الميدانية"), T("Finance agent", "الوكيل المالي"), T("Procurement agent", "وكيل المشتريات"), T("Analytics agent", "وكيل التحليلات"), T("Knowledge agent", "وكيل المعرفة"), T("Compliance agent", "وكيل الالتزام")] },
   { label: T("Models & knowledge", "النماذج والمعرفة"), note: T("Chosen per workload, not per vendor.", "تُختار حسب العبء، لا حسب المورّد."), items: [T("Open-source models", "نماذج مفتوحة المصدر"), T("Commercial models", "نماذج تجارية"), T("Model routing", "توجيه النماذج"), T("Retrieval & grounding", "الاسترجاع والإسناد"), T("Evaluation sets", "مجموعات التقييم"), T("Guardrails", "ضوابط السلامة")] },
@@ -36,7 +36,7 @@ const AGENTS = [
 
 const CONTROLS = [
   { icon: "key", h: T("Scoped permissions", "صلاحيات محدّدة النطاق"), p: T("An agent is granted named tools and named data, not a role that happens to be broad. Scope is reviewable and revocable at any time.", "يُمنح الوكيل أدوات محدّدة وبيانات محدّدة بالاسم، لا دورًا واسعًا بالصدفة. والنطاق قابل للمراجعة والسحب في أي وقت.") },
-  { icon: "people", h: T("Human-in-the-loop", "الإنسان ضمن الحلقة"), p: T("Consequential steps — money, personal data, a physical dispatch, an irreversible status change — stop for a named approver.", "الخطوات ذات الأثر — المال والبيانات الشخصية والإرسال الميداني وأي تغيير غير قابل للعكس — تتوقّف عند مُعتمِد محدّد بالاسم.") },
+  { icon: "people", h: T("Human-in-the-loop", "الإنسان ضمن الحلقة"), p: T("Consequential steps (money, personal data, a physical dispatch, an irreversible status change) stop for a named approver.", "الخطوات ذات الأثر (المال والبيانات الشخصية والإرسال الميداني وأي تغيير غير قابل للعكس) تتوقّف عند مُعتمِد محدّد بالاسم.") },
   { icon: "eye", h: T("Traceable reasoning", "استدلال قابل للتتبّع"), p: T("Inputs, retrieved context, tool calls and outputs are recorded so a reviewer can reconstruct a decision months later.", "تُسجَّل المدخلات والسياق المسترجَع واستدعاءات الأدوات والمخرجات، ليتمكّن المراجع من إعادة بناء القرار بعد أشهر.") },
   { icon: "model", h: T("Model flexibility", "مرونة النماذج"), p: T("Workloads route to open-source or commercial models on merit. No single provider becomes a structural dependency.", "تُوجَّه الأعباء إلى نماذج مفتوحة أو تجارية بحسب الجدارة. ولا يتحوّل أي مزوّد إلى اعتماد بنيوي.") },
   { icon: "target", h: T("Evaluation before rollout", "تقييم قبل الإطلاق"), p: T("Agents ship against evaluation sets built from real cases, and regressions are caught before a workflow is widened.", "تُطلق الوكلاء وفق مجموعات تقييم مبنية على حالات حقيقية، وتُلتقط الانحدارات قبل توسيع أي سير عمل.") },
@@ -66,7 +66,7 @@ const FAQS = [
   },
   {
     q: T("Which models does Qeonix use?", "أي النماذج تستخدمها كيونكس؟"),
-    a: T("Whichever fits the workload and the deployment constraint. We design for model flexibility across open-source and commercial models, with routing per task, so an organisation is not structurally dependent on one provider and can move as the market moves.", "ما يناسب العبء وقيد النشر. نصمّم على أساس مرونة النماذج بين المفتوحة المصدر والتجارية، مع توجيه لكل مهمة، حتى لا ترتبط الجهة بنيويًا بمزوّد واحد وتتمكّن من التحرّك مع تحرّك السوق."),
+    a: T("Whichever fits the workload and the deployment constraint. We design for model flexibility across open-source and commercial models, with routing per task, so an organization is not structurally dependent on one provider and can move as the market moves.", "ما يناسب العبء وقيد النشر. نصمّم على أساس مرونة النماذج بين المفتوحة المصدر والتجارية، مع توجيه لكل مهمة، حتى لا ترتبط الجهة بنيويًا بمزوّد واحد وتتمكّن من التحرّك مع تحرّك السوق."),
   },
   {
     q: T("Can this run without sending data to a third-party model provider?", "هل يمكن تشغيل ذلك دون إرسال البيانات إلى مزوّد نماذج خارجي؟"),
@@ -78,7 +78,7 @@ const FAQS = [
   },
   {
     q: T("What does a first engagement look like?", "كيف يبدو أول ارتباط؟"),
-    a: T("A single workflow with a measurable cost and a clear owner, taken from scoping to production. That gives the organisation a working system, a real integration path and honest numbers on cost per task and human-override rate before anything is widened.", "سير عمل واحد له تكلفة قابلة للقياس ومالك واضح، يُؤخذ من التحديد إلى الإنتاج. وهذا يمنح الجهة نظامًا عاملًا ومسار تكامل حقيقيًا وأرقامًا صادقة عن تكلفة المهمة ومعدّل التدخّل البشري قبل أي توسيع."),
+    a: T("A single workflow with a measurable cost and a clear owner, taken from scoping to production. That gives the organization a working system, a real integration path and honest numbers on cost per task and human-override rate before anything is widened.", "سير عمل واحد له تكلفة قابلة للقياس ومالك واضح، يُؤخذ من التحديد إلى الإنتاج. وهذا يمنح الجهة نظامًا عاملًا ومسار تكامل حقيقيًا وأرقامًا صادقة عن تكلفة المهمة ومعدّل التدخّل البشري قبل أي توسيع."),
   },
 ];
 
@@ -90,8 +90,8 @@ export default function agentic(lang) {
     kicker: T("Qeonix Intelligence · Agentic AI", "ذكاء كيونكس · الذكاء الاصطناعي الوكيل"),
     h: T("The AI operating layer|for work that has consequences.", "طبقة تشغيل الذكاء الاصطناعي|للأعمال ذات الأثر."),
     lead: T(
-      "Agents that understand a request, reason about it, call your real systems and finish the job — inside permissions your security team set, with an audit trail your regulator can read.",
-      "وكلاء يفهمون الطلب ويستنتجون ويستدعون أنظمتكم الفعلية وينجزون العمل — ضمن صلاحيات يضعها فريق الأمن لديكم، وبسجل تدقيق يستطيع جهاتكم الرقابية قراءته."
+      "Agents that understand a request, reason about it, call your real systems and finish the job, inside permissions your security team set, with an audit trail your regulator can read.",
+      "وكلاء يفهمون الطلب ويستنتجون ويستدعون أنظمتكم الفعلية وينجزون العمل، ضمن صلاحيات يضعها فريق الأمن لديكم، وبسجل تدقيق يستطيع جهاتكم الرقابية قراءته."
     ),
     meta: [
       { k: T("Deployment", "النشر"), v: T("Cloud, private, on-premise, sovereign", "سحابة عامة أو خاصة أو داخل المنشأة أو سيادية") },
@@ -107,7 +107,7 @@ ${section(`
   ${secHead({
     kicker: T("The distinction", "الفارق"),
     h: T("Everyone has a chatbot.|The question is what happens next.", "لدى الجميع روبوت محادثة.|السؤال هو ما الذي يحدث بعده."),
-    lead: T("Each rung adds capability and removes a human from a step. Each one also raises the bar on governance — which is the part most programmes discover late.", "كل درجة تضيف قدرة وتزيح إنسانًا عن خطوة. وكل درجة ترفع أيضًا سقف الحوكمة — وهو ما تكتشفه أغلب البرامج متأخّرًا."),
+    lead: T("Each rung adds capability and removes a human from a step. Each one also raises the bar on governance, which is the part most programs discover late.", "كل درجة تضيف قدرة وتزيح إنسانًا عن خطوة. وكل درجة ترفع أيضًا سقف الحوكمة، وهو ما تكتشفه أغلب البرامج متأخّرًا."),
   }, lang)}
   ${ladder(RUNGS, lang)}
 `, { tone: "light" })}
@@ -137,7 +137,7 @@ ${section(`
   ${secHead({
     kicker: T("Agents in service", "وكلاء في الخدمة"),
     h: T("Narrow agents beat one|that claims to do everything.", "الوكلاء محدودو النطاق أفضل من واحد|يدّعي القيام بكل شيء."),
-    lead: T("Each of these has a defined scope, its own evaluation set and its own permission envelope. That is what makes them testable — and replaceable.", "لكل من هؤلاء نطاق محدّد ومجموعة تقييم خاصة وغلاف صلاحيات خاص. وهذا ما يجعلهم قابلين للاختبار — وللاستبدال."),
+    lead: T("Each of these has a defined scope, its own evaluation set and its own permission envelope. That is what makes them testable, and replaceable.", "لكل من هؤلاء نطاق محدّد ومجموعة تقييم خاصة وغلاف صلاحيات خاص. وهذا ما يجعلهم قابلين للاختبار، وللاستبدال."),
   }, lang)}
   ${capGrid(AGENTS, lang, { cols: 3 })}
 `, { tone: "paper" })}
@@ -154,7 +154,7 @@ ${section(`
   ${secHead({
     kicker: T("How we take it live", "كيف ندخل به الخدمة"),
     h: T("Autonomy is earned,|one workflow at a time.", "الاستقلالية تُكتسب،|سير عمل تلو الآخر."),
-    lead: T("We do not switch an organisation to agentic operation. We move one workflow, instrument it honestly, and let the numbers decide the next one.", "لا ننقل الجهة دفعة واحدة إلى التشغيل الوكيل. ننقل سير عمل واحدًا، ونقيسه بصدق، ونترك الأرقام تحدّد التالي."),
+    lead: T("We do not switch an organization to agentic operation. We move one workflow, instrument it honestly, and let the numbers decide the next one.", "لا ننقل الجهة دفعة واحدة إلى التشغيل الوكيل. ننقل سير عمل واحدًا، ونقيسه بصدق، ونترك الأرقام تحدّد التالي."),
   }, lang)}
   ${flowStack(LIFECYCLE, lang, { id: "agentic-lifecycle", dense: true })}
 `, { tone: "paper" })}
@@ -199,8 +199,8 @@ ${closer("agentic", lang)}
       "منصّة الذكاء الاصطناعي الوكيل للحكومات والمؤسسات | كيونكس"
     ),
     description: T(
-      "Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit — deployable in cloud, private, on-premise or sovereign environments.",
-      "ذكاء اصطناعي وكيل بمستوى المؤسسات والجهات الحكومية: تنسيق متعدّد الوكلاء، واستدعاء الأدوات وواجهات البرمجة، وضوابط الإنسان ضمن الحلقة، وصلاحيات محدّدة النطاق، وقابلية مراقبة وتدقيق — قابل للنشر في السحابة أو بيئة خاصة أو داخل المنشأة أو بيئة سيادية."
+      "Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit. Deployable in cloud, private, on-premise or sovereign environments.",
+      "ذكاء اصطناعي وكيل بمستوى المؤسسات والجهات الحكومية: تنسيق متعدّد الوكلاء، واستدعاء الأدوات وواجهات البرمجة، وضوابط الإنسان ضمن الحلقة، وصلاحيات محدّدة النطاق، وقابلية مراقبة وتدقيق. قابل للنشر في السحابة أو بيئة خاصة أو داخل المنشأة أو بيئة سيادية."
     ),
     og: "agentic",
     service: { name: LABEL, type: T("Agentic AI platform engineering", "هندسة منصّات الذكاء الاصطناعي الوكيل") },

@@ -16,7 +16,7 @@ export const INDUSTRIES = [
   {
     id: "energy", icon: "bolt",
     h: T("Energy & Utilities", "الطاقة والمرافق"),
-    p: T("Monitoring, optimisation and response across critical infrastructure.", "المراقبة والتحسين والاستجابة عبر البنية التحتية الحيوية."),
+    p: T("Monitoring, optimization and response across critical infrastructure.", "المراقبة والتحسين والاستجابة عبر البنية التحتية الحيوية."),
   },
   {
     id: "industrial", icon: "factory",
@@ -49,7 +49,7 @@ export const INDUSTRIES = [
 export const TIERS = [
   { icon: "cloud", label: T("Public cloud", "السحابة العامة"), note: T("Fastest path where the data class allows it.", "أسرع مسار حين يسمح تصنيف البيانات بذلك.") },
   { icon: "server", label: T("Private cloud", "السحابة الخاصة"), note: T("Dedicated tenancy under your own controls.", "استضافة مخصّصة تحت ضوابطكم.") },
-  { icon: "lock", label: T("On-premise", "داخل المنشأة"), note: T("Inside your data centre and network boundary.", "داخل مركز بياناتكم وحدود شبكتكم.") },
+  { icon: "lock", label: T("On-premise", "داخل المنشأة"), note: T("Inside your data center and network boundary.", "داخل مركز بياناتكم وحدود شبكتكم.") },
   { icon: "shield", label: T("Isolated / sovereign", "بيئة معزولة / سيادية"), note: T("Architected for residency and disconnected operation.", "مصمّمة لإقامة البيانات والتشغيل غير المتصل.") },
 ];
 

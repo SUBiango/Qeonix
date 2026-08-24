@@ -118,8 +118,8 @@ export const OFFICE_STATUS = {
 
 export const FOOTER = {
   blurb: T(
-    "Qeonix designs, engineers and deploys the intelligent systems that governments, cities and enterprises run on — from decision intelligence and agentic AI to autonomous operations and connected infrastructure.",
-    "تصمّم كيونكس وتهندس وتنشر الأنظمة الذكية التي تعتمد عليها الحكومات والمدن والمؤسسات — من ذكاء القرار والذكاء الاصطناعي الوكيل إلى العمليات ذاتية التشغيل والبنية التحتية المتصلة."
+    "Qeonix designs, engineers and deploys the intelligent systems that governments, cities and enterprises run on, from decision intelligence and agentic AI to autonomous operations and connected infrastructure.",
+    "تصمّم كيونكس وتهندس وتنشر الأنظمة الذكية التي تعتمد عليها الحكومات والمدن والمؤسسات، من ذكاء القرار والذكاء الاصطناعي الوكيل إلى العمليات ذاتية التشغيل والبنية التحتية المتصلة."
   ),
   columns: [
     {

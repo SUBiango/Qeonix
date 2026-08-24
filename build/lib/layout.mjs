@@ -131,7 +131,7 @@ function header(page, lang) {
   return `<a class="skip" href="#main">${tx(UI.skip, lang)}</a>
 <header class="hdr" id="hdr" data-solid="${page.solidHeader ? "true" : "false"}">
   <div class="wrap hdr-in">
-    <a class="hdr-logo" href="${esc(url("home", lang))}" aria-label="${tx(BRAND.name, lang)} — ${tx(UI.home, lang)}">${wordmark()}</a>
+    <a class="hdr-logo" href="${esc(url("home", lang))}" aria-label="${tx(BRAND.name, lang)}: ${tx(UI.home, lang)}">${wordmark()}</a>
 
     <nav class="nav" id="nav" aria-label="${tx(UI.primaryNav, lang)}">
       <ul class="nav-list">
@@ -178,8 +178,8 @@ export function ctaBand(lang, copy = {}) {
     ar: "ابنِ النظام|الذي سيعتمد عليه الآخرون.",
   };
   const lead = copy.lead || {
-    en: "Tell us what has to work — the operating reality, the constraints, the outcome. We will come back with an architecture, not a brochure.",
-    ar: "أخبرنا بما يجب أن يعمل فعليًا — واقع التشغيل والقيود والنتيجة المطلوبة. سنعود إليك ببنية هندسية، لا بكتيّب تعريفي.",
+    en: "Tell us what has to work: the operating reality, the constraints, the outcome. We will come back with an architecture, not a brochure.",
+    ar: "أخبرنا بما يجب أن يعمل فعليًا: واقع التشغيل والقيود والنتيجة المطلوبة. سنعود إليك ببنية هندسية، لا بكتيّب تعريفي.",
   };
   return `<section class="ctaband tone-accent" id="cta"><span id="contact" class="vh" aria-hidden="true"></span>
   ${gridfield("gf-cta")}

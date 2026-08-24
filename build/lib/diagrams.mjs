@@ -11,7 +11,7 @@ import { icon } from "./icons.mjs";
 /* ------------------------------------------------------------------
    HERO — "intelligence lattice"
    A deliberate topology, not a particle soup: a core, an orbit of
-   specialised nodes, and signals travelling the edges between them.
+   specialized nodes, and signals traveling the edges between them.
    ------------------------------------------------------------------ */
 const LATTICE_NODES = [
   { x: 500, y: 130, r: 5, k: "s" }, { x: 715, y: 205, r: 7, k: "m" },
