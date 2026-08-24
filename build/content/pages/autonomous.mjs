@@ -1,6 +1,7 @@
 import { T } from "../../lib/html.mjs";
 import { section, secHead, btn, capGrid, faq, trustGrid, statement, picture, featureRow } from "../../lib/components.mjs";
 import { cycle, matrix, archBoard } from "../../lib/diagrams.mjs";
+import { missionConsole } from "../../lib/showcase.mjs";
 import { heroFor, closer } from "../../lib/page.mjs";
 import { url } from "../site.mjs";
 
@@ -90,6 +91,15 @@ ${section(`
   }, lang)}
   ${cycle(LOOP, lang, { id: "auto-loop", returnLabel: T("Confirmed outcomes retrain the model", "النتائج المؤكَّدة تعيد تدريب النموذج") })}
 `, { tone: "light" })}
+
+${section(`
+  ${secHead({
+    kicker: T("In operation", "أثناء التشغيل"),
+    h: T("Mission control,|not a video feed.", "قيادة مهام،|لا بثّ فيديو."),
+    lead: T("A corridor scan in progress: the detection, the decision inside the cleared envelope, the dispatched work order and the archived evidence. The operator supervises; the loop closes itself.", "مسح ممر قيد التنفيذ: الرصد، والقرار ضمن النطاق المصرَّح، وأمر العمل المُرسل، والأدلّة المؤرشفة. المشغّل يشرف؛ والحلقة تُغلق نفسها."),
+  }, lang)}
+  <div class="reveal" data-d="1">${missionConsole(lang)}</div>
+`, { tone: "paper" })}
 
 ${section(`
   ${secHead({ kicker: T("Platforms", "المنصّات"), h: T("Six ways we put it in the field.", "ستّ طرق لإنزاله إلى الميدان.") }, lang)}

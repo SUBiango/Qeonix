@@ -1,6 +1,7 @@
 import { T, tx } from "../../lib/html.mjs";
 import { section, secHead, btn, capGrid, faq, trustGrid, statement } from "../../lib/components.mjs";
 import { archBoard, ladder, deployTiers, matrix, flowStack } from "../../lib/diagrams.mjs";
+import { agenticTrace } from "../../lib/showcase.mjs";
 import { heroFor, closer } from "../../lib/page.mjs";
 import { url } from "../site.mjs";
 import { TIERS } from "../shared.mjs";
@@ -110,6 +111,15 @@ ${section(`
   }, lang)}
   ${ladder(RUNGS, lang)}
 `, { tone: "light" })}
+
+${section(`
+  ${secHead({
+    kicker: T("In operation", "أثناء التشغيل"),
+    h: T("What a run actually looks like.", "كيف يبدو التشغيل فعليًا."),
+    lead: T("One request, traced end to end: the plan, the tool calls, the policy check, the human checkpoint and the audit record. This is the difference between an agent and a chatbot, on one screen.", "طلب واحد مُتتبَّع من طرف إلى طرف: الخطة واستدعاءات الأدوات وفحص السياسات ونقطة المراجعة البشرية وسجل التدقيق. هذا هو الفرق بين الوكيل وروبوت المحادثة، في شاشة واحدة."),
+  }, lang)}
+  <div class="reveal" data-d="1">${agenticTrace(lang)}</div>
+`, { tone: "paper" })}
 
 ${section(`
   ${secHead({

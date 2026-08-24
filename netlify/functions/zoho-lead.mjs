@@ -27,7 +27,9 @@ export default async (req) => {
   }
 
   const raw = await req.text();
-  if (raw.length > MAX_BODY) {
+  // Measure bytes, not UTF-16 code units, so multi-byte (e.g. Arabic) payloads
+  // are capped at the size the comment above promises.
+  if (new TextEncoder().encode(raw).length > MAX_BODY) {
     return new Response("Payload too large", { status: 413 });
   }
 
@@ -72,6 +74,8 @@ export default async (req) => {
     phone: phone(data.phone, 40),
     company: text(data.company, 160),
     industry: text(data.industry, 80),
+    intent: text(data.intent, 40), // strategic | partnership | careers | other
+    language: data.language === "ar" ? "ar" : "en",
     message: multiline(data.message, 4000),
     source: "qeonix.com contact form",
     submittedAt: new Date().toISOString(),
@@ -167,8 +171,12 @@ function multiline(v, max) {
   return s;
 }
 
-// Phone: keep only phone characters (also prevents formula injection).
+// Phone: keep only phone characters, then apply the same leading-formula
+// guard as the other fields — "+9715..." would otherwise still evaluate as a
+// formula in a spreadsheet export.
 function phone(v, max) {
   if (v == null) return "";
-  return String(v).replace(/[^\d+()\-\s]/g, "").replace(/\s+/g, " ").trim().slice(0, max);
+  let s = String(v).replace(/[^\d+()\-\s]/g, "").replace(/\s+/g, " ").trim().slice(0, max);
+  if (/^[=+\-@]/.test(s)) s = "'" + s;
+  return s;
 }

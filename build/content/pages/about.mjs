@@ -9,7 +9,7 @@ const LABEL = T("About Qeonix", "عن كيونكس");
 const FACTS = [
   { k: T("Headquarters", "المقر الرئيسي"), v: T("Abu Dhabi, UAE", "أبوظبي، الإمارات") },
   { k: T("European presence", "الحضور الأوروبي"), v: T("Paris, France", "باريس، فرنسا") },
-  { k: T("Expanding", "التوسّع"), v: T("Muscat & Doha, in progress", "مسقط والدوحة، قيد التأسيس") },
+  { k: T("Expanding", "التوسّع"), v: T("Muscat & Doha, soon", "مسقط والدوحة، قريبًا") },
   { k: T("Model", "النموذج"), v: T("Engineering-led, product-oriented", "هندسي القيادة، منتجيّ التوجّه") },
 ];
 
@@ -17,7 +17,7 @@ const BELIEFS = [
   { h: T("Build, not broker", "نبني ولا نتوسّط"), p: T("Our value is in what we design, engineer and operate — not in reselling someone else's platform with our logo on the slide.", "قيمتنا فيما نصمّمه ونهندسه ونشغّله — لا في إعادة بيع منصّة غيرنا وشعارنا على العرض.") },
   { h: T("Production is the point", "الإنتاج هو الغاية"), p: T("A capability that exists only in a demo does not exist. We are accountable for what runs, under load, in the second year.", "القدرة الموجودة في عرض تجريبي فقط غير موجودة. نحن مساءلون عمّا يعمل، تحت الحمل، في السنة الثانية.") },
   { h: T("The region is a hard market, deliberately", "المنطقة سوق صعبة، عن قصد"), p: T("Government-grade expectations, sovereignty requirements and Arabic as a first-class language raise the bar. Systems built to clear it travel well.", "توقّعات بمستوى حكومي ومتطلّبات سيادية والعربية كلغة أولى ترفع السقف. والأنظمة المبنية لتجاوزه تسافر جيدًا.") },
-  { h: T("Small senior teams", "فرق صغيرة رفيعة الخبرة"), p: T("The people who design a system stay on it through production. Nothing is thrown over a wall to a delivery arm.", "من يصمّم النظام يبقى عليه حتى الإنتاج. لا شيء يُرمى فوق جدار إلى ذراع تنفيذ.") },
+  { h: T("The architects stay with the system", "المعماريون يبقون مع النظام"), p: T("Senior technical ownership runs from the first architecture session through production operations — the same accountable engineers, backed by full multidisciplinary delivery.", "تمتد الملكية التقنية الرفيعة من أول جلسة هندسية حتى تشغيل الإنتاج — المهندسون المسؤولون أنفسهم، يسندهم تنفيذ متكامل متعدّد التخصّصات.") },
   { h: T("Honest about autonomy", "صادقون بشأن الاستقلالية"), p: T("We tell clients what should not be automated yet. Trust in the systems depends on candour about their limits.", "نخبر العملاء بما لا ينبغي أتمتته بعد. فالثقة بالأنظمة تقوم على الصراحة بشأن حدودها.") },
   { h: T("Measured, always", "قياس دائم"), p: T("Every engagement carries an operational metric. If the number does not move, the work is not done.", "كل ارتباط يحمل مؤشّرًا تشغيليًا. وإن لم يتحرّك الرقم فالعمل لم يُنجز.") },
 ];
@@ -84,6 +84,23 @@ ${section(`
   }, lang)}
   ${trustGrid(WHY_AD, lang)}
 `, { tone: "deep", grid: true })}
+
+${section(`
+  ${secHead({
+    kicker: T("Where this capability comes from", "من أين تأتي هذه القدرة"),
+    h: T("Not assembled yesterday.", "لم تُجمَّع بين ليلة وضحاها."),
+    lead: T("Qeonix is a young name carrying experienced hands: its teams were building enterprise platforms, AI systems and national-scale digital services long before they were building them here, under one roof and one architecture.", "كيونكس اسم حديث تحمله أيادٍ خبيرة: فِرقها كانت تبني المنصّات المؤسسية وأنظمة الذكاء الاصطناعي والخدمات الرقمية واسعة النطاق قبل أن تبنيها هنا بزمن، تحت سقف واحد وبنية واحدة."),
+  }, lang)}
+  <!-- HERITAGE / PROOF POINTS — insert only management-approved facts here.
+       Candidates awaiting approval (do NOT publish without sign-off):
+         - founding team backgrounds and prior organisations
+         - collective years of engineering / delivery experience
+         - count of platforms or systems previously delivered by the team
+         - named markets or sectors previously served
+         - team size and engineering headcount
+         - investors or group affiliation, if disclosable
+       Format when approved: factStrip([{k,v},...]) or a short paragraph. -->
+`, { tone: "paper", cls: "sec-tight" })}
 
 ${section(`
   ${secHead({

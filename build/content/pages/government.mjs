@@ -1,6 +1,7 @@
 import { T } from "../../lib/html.mjs";
 import { section, secHead, btn, capGrid, faq, trustGrid, statement, approvalSlot } from "../../lib/components.mjs";
 import { archBoard, flowStack, matrix, deployTiers } from "../../lib/diagrams.mjs";
+import { govOpsConsole } from "../../lib/showcase.mjs";
 import { heroFor, closer } from "../../lib/page.mjs";
 import { url } from "../site.mjs";
 import { TIERS } from "../shared.mjs";
@@ -99,6 +100,15 @@ ${section(`
   }, lang)}
   ${flowStack(JOURNEY, lang, { id: "gov-journey", dense: true })}
 `, { tone: "light" })}
+
+${section(`
+  ${secHead({
+    kicker: T("The operating environment", "بيئة التشغيل"),
+    h: T("This is the software|behind that journey.", "هذه هي البرمجيات|خلف تلك الرحلة."),
+    lead: T("The view a service director actually runs the day from: the live queue, the SLAs under pressure, the health of every integration, and the crews closing the loop in the field.", "الشاشة التي يدير منها مدير الخدمة يومه فعلًا: قائمة العمل المباشرة، والاتفاقيات تحت الضغط، وصحة كل تكامل، والفرق التي تُغلق الحلقة في الميدان."),
+  }, lang)}
+  <div class="reveal" data-d="1">${govOpsConsole(lang)}</div>
+`, { tone: "paper" })}
 
 ${section(`
   ${secHead({ kicker: T("What we build", "ما نبنيه"), h: T("Six platform capabilities.", "ست قدرات منصّية.") }, lang)}

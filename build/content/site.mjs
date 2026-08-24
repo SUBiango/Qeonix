@@ -55,6 +55,8 @@ export const NAV = [
       { key: "ai", label: T("Intelligence & AI", "الذكاء الاصطناعي"), note: T("Decision intelligence, computer vision, enterprise AI.", "ذكاء القرار، والرؤية الحاسوبية، والذكاء الاصطناعي المؤسسي."), icon: "chip" },
       { key: "agentic", label: T("Agentic AI", "الذكاء الاصطناعي الوكيل"), note: T("Agents that reason, act and stay under control.", "وكلاء يستنتجون وينفّذون تحت رقابة كاملة."), icon: "agent", featured: true },
       { key: "autonomous", label: T("Autonomous Systems", "الأنظمة ذاتية التشغيل"), note: T("Physical AI: robotics, drones, remote operations.", "الذكاء المادي: الروبوتات والطائرات المسيّرة والتشغيل عن بُعد."), icon: "drone" },
+      { key: "cities", label: T("Smart Cities", "المدن الذكية"), note: T("A city operating layer, from resident to field crew.", "طبقة تشغيل للمدينة، من المتعامل حتى الفريق الميداني."), icon: "city" },
+      { key: "mobility", label: T("Smart Mobility", "التنقل الذكي"), note: T("Transport that behaves as one network.", "نقل يعمل كشبكة واحدة."), icon: "route" },
       { key: "platforms", label: T("Data & Platforms", "البيانات والمنصّات"), note: T("The data, integration and workflow layer underneath.", "طبقة البيانات والتكامل وسير العمل التي تسند كل ما سبق."), icon: "layers" },
     ],
   },
@@ -64,8 +66,6 @@ export const NAV = [
     note: T("Where these systems go into live operation.", "حيث تدخل هذه الأنظمة الخدمة الفعلية."),
     children: [
       { key: "government", label: T("Smart Government", "الحكومة الذكية"), note: T("Digital services, orchestration, government AI.", "الخدمات الرقمية والتنسيق والذكاء الاصطناعي الحكومي."), icon: "building", featured: true },
-      { key: "cities", label: T("Smart Cities", "المدن الذكية"), note: T("A city operating layer from citizen to field crew.", "طبقة تشغيل للمدينة من المتعامل حتى الفريق الميداني."), icon: "city" },
-      { key: "mobility", label: T("Connected Mobility", "التنقل المتصل"), note: T("Transport intelligence, fleets, tolling, EV.", "ذكاء النقل والأساطيل والتعرفة المرورية والمركبات الكهربائية."), icon: "route" },
       { key: "healthcare", label: T("Healthcare", "الرعاية الصحية"), note: T("Digital health platforms and care orchestration.", "منصّات الصحة الرقمية وتنسيق الرعاية."), icon: "health" },
       { key: "industries", label: T("All industries", "جميع القطاعات"), note: T("Energy, industrial, logistics, aviation, real estate.", "الطاقة والصناعة واللوجستيات والطيران والعقارات."), icon: "grid" },
     ],
@@ -111,7 +111,7 @@ export const OFFICES = [
 export const OFFICE_STATUS = {
   hq: T("Headquarters", "المقر الرئيسي"),
   active: T("Office", "مكتب"),
-  progress: T("In progress", "قيد التأسيس"),
+  progress: T("Soon", "قريبًا"),
 };
 
 /* ---------------- footer ---------------- */
@@ -128,18 +128,18 @@ export const FOOTER = {
         { key: "ai", label: T("Intelligence & AI", "الذكاء الاصطناعي") },
         { key: "agentic", label: T("Agentic AI", "الذكاء الاصطناعي الوكيل") },
         { key: "autonomous", label: T("Autonomous Systems", "الأنظمة ذاتية التشغيل") },
+        { key: "cities", label: T("Smart Cities", "المدن الذكية") },
+        { key: "mobility", label: T("Smart Mobility", "التنقل الذكي") },
         { key: "platforms", label: T("Data & Platforms", "البيانات والمنصّات") },
-        { key: "sovereign", label: T("Sovereign AI", "الذكاء السيادي") },
       ],
     },
     {
       h: T("Sectors", "القطاعات"),
       links: [
         { key: "government", label: T("Smart Government", "الحكومة الذكية") },
-        { key: "cities", label: T("Smart Cities", "المدن الذكية") },
-        { key: "mobility", label: T("Connected Mobility", "التنقل المتصل") },
         { key: "healthcare", label: T("Healthcare", "الرعاية الصحية") },
         { key: "industries", label: T("Industries", "القطاعات") },
+        { key: "sovereign", label: T("Sovereign AI", "الذكاء السيادي") },
       ],
     },
     {

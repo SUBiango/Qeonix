@@ -1,6 +1,7 @@
 import { T } from "../../lib/html.mjs";
 import { section, secHead, faq, trustGrid, statement, pillars } from "../../lib/components.mjs";
 import { archBoard, deployTiers, flowStack } from "../../lib/diagrams.mjs";
+import { boundaryMatrix } from "../../lib/showcase.mjs";
 import { heroFor, closer } from "../../lib/page.mjs";
 import { TIERS } from "../shared.mjs";
 
@@ -83,6 +84,14 @@ ${section(`
     lead: T("The same system definition deploys across all four. Moving down the spectrum changes the operating model, not the product.", "تعريف النظام نفسه يُنشر عبر المستويات الأربعة. والانتقال عبر الطيف يغيّر نموذج التشغيل، لا المنتج."),
   }, lang)}
   ${deployTiers(TIERS, lang)}
+  <div class="u-mt">
+    ${secHead({
+      kicker: T("Control boundaries", "حدود التحكم"),
+      h: T("Where things run, stay|and stop.", "أين تعمل الأشياء، وأين تبقى،|وأين تتوقّف."),
+      lead: T("The same five questions, answered per topology — including the one most vendors avoid: whether an external model can be reached at all.", "الأسئلة الخمسة نفسها، مُجابة لكل بنية نشر — بما فيها السؤال الذي يتجنّبه أغلب المورّدين: هل يمكن الوصول إلى نموذج خارجي أصلًا."),
+    }, lang)}
+    ${boundaryMatrix(lang)}
+  </div>
 `, { tone: "light" })}
 
 ${section(`
