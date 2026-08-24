@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="/js/boot.js"></script>
+<title>Agentic AI Platform for Government &amp; Enterprise | Qeonix</title>
+<meta name="description" content="Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit — deployable in cloud, private, on-premise or sovereign environments.">
+<link rel="canonical" href="https://qeonix.com/agentic-ai/">
+<link rel="alternate" hreflang="en" href="https://qeonix.com/agentic-ai/">
+<link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/agentic-ai/">
+<link rel="alternate" hreflang="x-default" href="https://qeonix.com/agentic-ai/">
+<meta name="theme-color" content="#06070F">
+<meta name="author" content="QEONIX">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+
+<link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/favicon/favicon-96x96.png" sizes="96x96" type="image/png">
+<link rel="shortcut icon" href="/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="QEONIX">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QEONIX">
+<meta property="og:locale" content="en_AE">
+<meta property="og:locale:alternate" content="ar_AE">
+<meta property="og:url" content="https://qeonix.com/agentic-ai/">
+<meta property="og:title" content="Agentic AI Platform for Government &amp; Enterprise | Qeonix">
+<meta property="og:description" content="Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit — deployable in cloud, private, on-premise or sovereign environments.">
+<meta property="og:image" content="https://qeonix.com/images/social/agentic.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Agentic AI Platform for Government &amp; Enterprise | Qeonix">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agentic AI Platform for Government &amp; Enterprise | Qeonix">
+<meta name="twitter:description" content="Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit — deployable in cloud, private, on-premise or sovereign environments.">
+<meta name="twitter:image" content="https://qeonix.com/images/social/agentic.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="/css/qeonix.css?v=3">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://qeonix.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Agentic AI",
+      "item": "https://qeonix.com/agentic-ai/"
+    }
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Agentic AI",
+  "serviceType": "Agentic AI platform engineering",
+  "description": "Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit — deployable in cloud, private, on-premise or sovereign environments.",
+  "provider": {
+    "@id": "https://qeonix.com/#organization"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "United Arab Emirates"
+    },
+    {
+      "@type": "Country",
+      "name": "France"
+    }
+  ],
+  "url": "https://qeonix.com/agentic-ai/"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes an agent different from a chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A chatbot produces text. An agent produces a change in a system: it plans a task, calls approved tools against real enterprise systems, handles failure and reports what it did. That difference is why the engineering effort sits in permissions, tool definitions and audit rather than in conversation design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which models does Qeonix use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whichever fits the workload and the deployment constraint. We design for model flexibility across open-source and commercial models, with routing per task, so an organisation is not structurally dependent on one provider and can move as the market moves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this run without sending data to a third-party model provider?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Where the data class requires it, the platform is architected to run inside a private or sovereign environment with inference constrained to the same boundary, using models that can be hosted there. That is a design decision taken at the start, because retrofitting it is expensive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you stop an agent doing something it should not?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three layers. The agent can only call an explicit, versioned set of tools. It acts under an identity with scoped permissions on data and actions. And any action class marked consequential stops at a named human approver before it executes. Autonomy is widened only after measured performance, per workflow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a first engagement look like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A single workflow with a measurable cost and a clear owner, taken from scoping to production. That gives the organisation a working system, a real integration path and honest numbers on cost per task and human-override rate before anything is widened."
+      }
+    }
+  ]
+}</script>
+</head>
+<body class="page p-agentic">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr" id="hdr" data-solid="true">
+  <div class="wrap hdr-in">
+    <a class="hdr-logo" href="/" aria-label="QEONIX — Home"><svg class="wordmark" viewBox="0 0 268 32" role="img" aria-label="QEONIX" focusable="false">
+  <path class="wm-l" d="M16.6 0C7.6 0 .9 6.9.9 16s6.7 16 15.7 16c3 0 5.7-.8 8-2.2l3.4 3.4 4.2-4.2-3.2-3.2c2-2.6 3.2-6 3.2-9.8C32.2 6.9 25.5 0 16.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S11.1 5.9 16.6 5.9s9.5 4.3 9.5 10.1c0 2.1-.5 4-1.5 5.5l-4.2-4.2-4.2 4.2 4 4c-1.1.4-2.3.6-3.6.6Z"/>
+  <g class="wm-e">
+    <rect x="41.6" y="4.2" width="23.6" height="5.6" rx="2.8"/>
+    <rect x="41.6" y="13.2" width="16.4" height="5.6" rx="2.8"/>
+    <rect x="41.6" y="22.2" width="23.6" height="5.6" rx="2.8"/>
+  </g>
+  <path class="wm-l" d="M90.6 0C81.6 0 74.9 6.9 74.9 16s6.7 16 15.7 16 15.7-6.9 15.7-16S99.6 0 90.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S85.1 5.9 90.6 5.9s9.5 4.3 9.5 10.1-4 10.1-9.5 10.1Z"/>
+  <path class="wm-l" d="M139.2.6v20L124.5.6h-6.2v30.8h6.2v-20l14.7 20h6.2V.6z"/>
+  <path class="wm-l" d="M157.8.6h6.3v30.8h-6.3z"/>
+  <path class="wm-l" d="M203.2.6h-7.3l-7.1 10.6L181.7.6h-7.4l10.7 15-11 15.8h7.4l7.4-11 7.4 11h7.4l-11-15.8z"/>
+</svg></a>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li class="nav-i has-menu">
+      <button class="nav-b" type="button" aria-expanded="false" aria-controls="menu-capabilities" data-current="true">
+        <span>Capabilities</span>
+        <span class="nav-chev" aria-hidden="true"></span>
+      </button>
+      <div class="megamenu" id="menu-capabilities" hidden>
+        <div class="mega-in">
+          <p class="mega-note mono">What Qeonix designs, engineers and operates.</p>
+          <ul class="mega-list">
+            <li>
+              <a href="/ai/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="15" height="15" rx="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2.5v2M15 2.5v2M9 19.5v2M15 19.5v2M2.5 9h2M2.5 15h2M19.5 9h2M19.5 15h2"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Intelligence &amp; AI</strong>
+                  <span>Decision intelligence, computer vision, enterprise AI.</span>
+                </span>
+              </a>
+            </li><li class="is-featured">
+              <a href="/agentic-ai/" aria-current="page">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3"/><rect x="4" y="6" width="16" height="11" rx="3"/><path d="M9 11v1.5M15 11v1.5M9.5 21h5"/><path d="M12 17v4"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Agentic AI</strong>
+                  <span>Agents that reason, act and stay under control.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/autonomous-systems/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.5 8.5h7v7h-7z"/><path d="m8.5 8.5-3-3M15.5 8.5l3-3M8.5 15.5l-3 3M15.5 15.5l3 3"/><circle cx="4.2" cy="4.2" r="2.2"/><circle cx="19.8" cy="4.2" r="2.2"/><circle cx="4.2" cy="19.8" r="2.2"/><circle cx="19.8" cy="19.8" r="2.2"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Autonomous Systems</strong>
+                  <span>Physical AI: robotics, drones, remote operations.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/data-platforms/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.8 2.6 7.3 12 11.8l9.4-4.5z"/><path d="m2.6 12.4 9.4 4.5 9.4-4.5"/><path d="m2.6 17.2 9.4 4.5 9.4-4.5"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Data &amp; Platforms</strong>
+                  <span>The data, integration and workflow layer underneath.</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li><li class="nav-i has-menu">
+      <button class="nav-b" type="button" aria-expanded="false" aria-controls="menu-sectors">
+        <span>Sectors</span>
+        <span class="nav-chev" aria-hidden="true"></span>
+      </button>
+      <div class="megamenu" id="menu-sectors" hidden>
+        <div class="mega-in">
+          <p class="mega-note mono">Where these systems go into live operation.</p>
+          <ul class="mega-list">
+            <li class="is-featured">
+              <a href="/smart-government/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2.8" width="16" height="18.4" rx="2"/><path d="M8.5 7h2M13.5 7h2M8.5 11h2M13.5 11h2M8.5 15h2M13.5 15h2M10 21.2v-3h4v3"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Smart Government</strong>
+                  <span>Digital services, orchestration, government AI.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/smart-cities/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21V9.5l6-3.5v4l6-3.5V11l6-3v13z"/><path d="M7 21v-3.5M12 21v-3.5M17 21v-3.5"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Smart Cities</strong>
+                  <span>A city operating layer from citizen to field crew.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/mobility/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="5.5" r="2.5"/><path d="M8 18.5h6.5a4 4 0 0 0 0-8h-5a4 4 0 0 1 0-8H16"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Connected Mobility</strong>
+                  <span>Transport intelligence, fleets, tolling, EV.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/healthcare/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 5.6a5 5 0 0 0-7.1 0L12 6.7l-1.1-1.1a5 5 0 1 0-7.1 7.1l7.4 7.4a1.1 1.1 0 0 0 1.6 0l7.4-7.4a5 5 0 0 0 0-7.1Z"/><path d="M4.6 12.4h3.5l1.4-2.3 2 4 1.5-2.5h4.4"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Healthcare</strong>
+                  <span>Digital health platforms and care orchestration.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/industries/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg></span>
+                <span class="mega-txt">
+                  <strong>All industries</strong>
+                  <span>Energy, industrial, logistics, aviation, real estate.</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li><li class="nav-i">
+    <a class="nav-a" href="/sovereign-ai/">Sovereign AI</a>
+  </li><li class="nav-i">
+    <a class="nav-a" href="/about/">About</a>
+  </li>
+      </ul>
+      <div class="nav-foot">
+        <ul class="offices offices-compact">
+    <li class="office is-hq">
+      <span class="office-city">Abu Dhabi</span>
+      <span class="office-country">United Arab Emirates</span>
+      <span class="office-status mono">Headquarters</span>
+    </li><li class="office is-active">
+      <span class="office-city">Paris</span>
+      <span class="office-country">France</span>
+      <span class="office-status mono">Office</span>
+    </li><li class="office is-progress">
+      <span class="office-city">Muscat</span>
+      <span class="office-country">Oman</span>
+      <span class="office-status mono">In progress</span>
+    </li><li class="office is-progress">
+      <span class="office-city">Doha</span>
+      <span class="office-country">Qatar</span>
+      <span class="office-status mono">In progress</span>
+    </li>
+  </ul>
+      </div>
+    </nav>
+
+    <div class="hdr-right">
+      <a class="langsw mono" href="/ar/agentic-ai/" lang="ar" hreflang="ar"
+         aria-label="Switch to Arabic">عربي</a>
+      <a class="btn btn-primary hdr-cta" href="/contact/">
+        <span>Start a conversation</span><span class="btn-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+        <span aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+  <span class="hdr-rule" aria-hidden="true"></span>
+</header>
+<div class="nav-scrim" id="navScrim" hidden></div>
+<main id="main">
+
+<section class="phero tone-deep">
+  <div class="gridfield gf-hero" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><span aria-current="page">Agentic AI</span></li></ol>
+  </nav>
+    <div class="phero-grid">
+      <div class="phero-copy">
+        <p class="kicker mono reveal"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Qeonix Intelligence · Agentic AI</span></p>
+        <h1 class="h1 reveal" data-d="1"><span class="hl" data-d="0">The AI operating layer</span><span class="hl" data-d="1">for work that has consequences.</span></h1>
+        <p class="lead lead-lg reveal" data-d="2">Agents that understand a request, reason about it, call your real systems and finish the job — inside permissions your security team set, with an audit trail your regulator can read.</p>
+        <div class="phero-cta reveal" data-d="3"><a class="btn btn-primary" href="/contact/">
+    <span>Start a conversation</span><span class="btn-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+            </div>
+      </div>
+      <ul class="phero-meta reveal" data-d="2">
+        <li><span class="mono pm-k">Deployment</span><span class="pm-v">Cloud, private, on-premise, sovereign</span></li><li><span class="mono pm-k">Models</span><span class="pm-v">Open-source and commercial, routed per task</span></li><li><span class="mono pm-k">Control</span><span class="pm-v">Scoped permissions, approvals, full audit</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec tone-light">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>The distinction</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Everyone has a chatbot.</span><span class="hl" data-d="1">The question is what happens next.</span></h2>
+    <p class="lead">Each rung adds capability and removes a human from a step. Each one also raises the bar on governance — which is the part most programmes discover late.</p>
+  </header>
+  <ol class="ladder reveal" id="ladder">
+    
+      <li class="rung" data-d="0">
+        <span class="rung-bar" aria-hidden="true"></span>
+        <span class="rung-ix mono">01</span>
+        <h3 class="rung-key">Chatbot</h3>
+        <p class="rung-note">Answers from a script or a document. Cannot change anything.</p>
+      </li>
+      <li class="rung" data-d="1">
+        <span class="rung-bar" aria-hidden="true"></span>
+        <span class="rung-ix mono">02</span>
+        <h3 class="rung-key">Copilot</h3>
+        <p class="rung-note">Drafts and suggests inside a tool. A person still does the work.</p>
+      </li>
+      <li class="rung" data-d="2">
+        <span class="rung-bar" aria-hidden="true"></span>
+        <span class="rung-ix mono">03</span>
+        <h3 class="rung-key">Agent</h3>
+        <p class="rung-note">Plans a task, calls approved tools and completes it end to end.</p>
+      </li>
+      <li class="rung" data-d="3">
+        <span class="rung-bar" aria-hidden="true"></span>
+        <span class="rung-ix mono">04</span>
+        <h3 class="rung-key">Multi-agent system</h3>
+        <p class="rung-note">Specialised agents coordinated by an orchestrator with shared state.</p>
+      </li>
+      <li class="rung is-peak" data-d="4">
+        <span class="rung-bar" aria-hidden="true"></span>
+        <span class="rung-ix mono">05</span>
+        <h3 class="rung-key">Autonomous operation</h3>
+        <p class="rung-note">A whole workflow runs unattended, with humans on the exceptions.</p>
+      </li>
+  </ol>
+</div>
+</section>
+
+<section class="sec tone-deep">
+  <div class="gridfield" aria-hidden="true"></div>
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Architecture</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Six layers.</span><span class="hl" data-d="1">Every one of them governable.</span></h2>
+    <p class="lead">This is the shape of a Qeonix agentic deployment. The model is one band out of six, which is roughly its share of the actual engineering.</p>
+  </header>
+  <div class="arch reveal" id="agentic-stack">
+    
+    <div class="arch-band" data-d="0">
+      <div class="arch-meta">
+        <span class="arch-ix mono">01</span>
+        <h3 class="arch-label">Experience</h3>
+        <p class="arch-note">Where the request arrives.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Web &amp; mobile</li><li class="chip">Contact centre</li><li class="chip">Internal consoles</li><li class="chip">Messaging channels</li><li class="chip">System events</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band tone-hi" data-d="1">
+      <div class="arch-meta">
+        <span class="arch-ix mono">02</span>
+        <h3 class="arch-label">Orchestration</h3>
+        <p class="arch-note">Intent, planning, routing, state.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Intent resolution</li><li class="chip">Task planning</li><li class="chip">Agent routing</li><li class="chip">Shared memory</li><li class="chip">Retry &amp; fallback</li><li class="chip">Escalation policy</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="2">
+      <div class="arch-meta">
+        <span class="arch-ix mono">03</span>
+        <h3 class="arch-label">Agents</h3>
+        <p class="arch-note">Narrow scope. Individually testable.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Service agent</li><li class="chip">Operations agent</li><li class="chip">Field service agent</li><li class="chip">Finance agent</li><li class="chip">Procurement agent</li><li class="chip">Analytics agent</li><li class="chip">Knowledge agent</li><li class="chip">Compliance agent</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="3">
+      <div class="arch-meta">
+        <span class="arch-ix mono">04</span>
+        <h3 class="arch-label">Models &amp; knowledge</h3>
+        <p class="arch-note">Chosen per workload, not per vendor.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Open-source models</li><li class="chip">Commercial models</li><li class="chip">Model routing</li><li class="chip">Retrieval &amp; grounding</li><li class="chip">Evaluation sets</li><li class="chip">Guardrails</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="4">
+      <div class="arch-meta">
+        <span class="arch-ix mono">05</span>
+        <h3 class="arch-label">Tools &amp; enterprise systems</h3>
+        <p class="arch-note">Where work actually lands.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Core systems</li><li class="chip">Case management</li><li class="chip">Payments</li><li class="chip">Notifications</li><li class="chip">Documents</li><li class="chip">Internal APIs</li><li class="chip">MCP-compatible connectors</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="5">
+      <div class="arch-meta">
+        <span class="arch-ix mono">06</span>
+        <h3 class="arch-label">Control plane</h3>
+        <p class="arch-note">The part that gets audited.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Identity &amp; roles</li><li class="chip">Scoped permissions</li><li class="chip">Approval checkpoints</li><li class="chip">Full audit trail</li><li class="chip">Tracing &amp; observability</li><li class="chip">Cost &amp; rate controls</li>
+      </ul>
+    </div>
+    
+  
+    <p class="arch-legend mono">Read top to bottom for the request path; bottom to top for the accountability path.</p>
+  </div>
+</div>
+</section>
+
+<section class="sec tone-paper">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Agents in service</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Narrow agents beat one</span><span class="hl" data-d="1">that claims to do everything.</span></h2>
+    <p class="lead">Each of these has a defined scope, its own evaluation set and its own permission envelope. That is what makes them testable — and replaceable.</p>
+  </header>
+  <ul class="capgrid cg-3">
+    <li class="cap reveal" data-d="0"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2.8" width="16" height="18.4" rx="2"/><path d="M8.5 7h2M13.5 7h2M8.5 11h2M13.5 11h2M8.5 15h2M13.5 15h2M10 21.2v-3h4v3"/></svg></span>
+        <h3 class="cap-h">Government service agent</h3>
+        <p class="cap-p">Takes a resident request in plain language, checks eligibility against the record, assembles the case and moves it into the responsible department&#39;s queue.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">01</span></div></li><li class="cap reveal" data-d="1"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6.5" height="5.5" rx="1.5"/><rect x="14.5" y="15.5" width="6.5" height="5.5" rx="1.5"/><path d="M6.25 8.5v5.75a2 2 0 0 0 2 2h6.25"/><path d="M12.5 14.25 14.5 16.25 12.5 18.25"/></svg></span>
+        <h3 class="cap-h">Operations agent</h3>
+        <p class="cap-p">Watches operational signals, correlates them against thresholds and standing procedure, and opens the right ticket with the right priority before anyone calls.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">02</span></div></li><li class="cap reveal" data-d="2"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2.7 8.5 4.4v9.8L12 21.3 3.5 16.9V7.1z"/><path d="M3.7 7.2 12 11.6l8.3-4.4M12 11.6v9.7"/></svg></span>
+        <h3 class="cap-h">Field service agent</h3>
+        <p class="cap-p">Sequences jobs against crew skills, location and SLA, then keeps the schedule honest as the day degrades.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">03</span></div></li><li class="cap reveal" data-d="0"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20V4"/><path d="M3 20h18"/><path d="m6.5 15.5 4-4.5 3.5 3 5-6.5"/></svg></span>
+        <h3 class="cap-h">Analytics agent</h3>
+        <p class="cap-p">Answers operational questions against governed data, shows the query it ran, and refuses politely when the data does not support the answer.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">04</span></div></li><li class="cap reveal" data-d="1"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 3.5 6 7l3.5 3.5M14.5 13.5 18 17l-3.5 3.5"/><path d="M6 7h6.5a5 5 0 0 1 5 5v0M18 17h-6.5a5 5 0 0 1-5-5v0"/></svg></span>
+        <h3 class="cap-h">Procurement agent</h3>
+        <p class="cap-p">Drafts requisitions, checks them against framework agreements and policy, and routes for the signature the policy actually requires.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">05</span></div></li><li class="cap reveal" data-d="2"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4 5.6v6c0 5 3.4 8.4 8 9.8 4.6-1.4 8-4.8 8-9.8v-6z"/><path d="m9 12 2.2 2.2L15.2 10"/></svg></span>
+        <h3 class="cap-h">Compliance agent</h3>
+        <p class="cap-p">Reads what the other agents did, tests it against the control set, and flags the exceptions for a human reviewer.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">06</span></div></li>
+  </ul>
+</div>
+</section>
+
+<section class="sec tone-light">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Control plane</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">The six questions</span><span class="hl" data-d="1">a CISO asks first.</span></h2>
+    
+  </header>
+  <ul class="trust">
+    
+      <li class="trust-i reveal" data-d="0">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8" cy="12" r="4.2"/><path d="M12.2 12H21M18 12v3.2M15.2 12v2.4"/></svg></span>
+        <h3 class="trust-h">Scoped permissions</h3>
+        <p class="trust-p">An agent is granted named tools and named data, not a role that happens to be broad. Scope is reviewable and revocable at any time.</p>
+      </li>
+      <li class="trust-i reveal" data-d="1">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0"/><path d="M16.5 5.1a3.4 3.4 0 0 1 0 5.8M17.6 14.9a6.2 6.2 0 0 1 3.6 5.6"/></svg></span>
+        <h3 class="trust-h">Human-in-the-loop</h3>
+        <p class="trust-p">Consequential steps — money, personal data, a physical dispatch, an irreversible status change — stop for a named approver.</p>
+      </li>
+      <li class="trust-i reveal" data-d="2">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="1"/></svg></span>
+        <h3 class="trust-h">Traceable reasoning</h3>
+        <p class="trust-p">Inputs, retrieved context, tool calls and outputs are recorded so a reviewer can reconstruct a decision months later.</p>
+      </li>
+      <li class="trust-i reveal" data-d="0">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="6" r="2.6"/><circle cx="5.5" cy="17.5" r="2.6"/><circle cx="18.5" cy="17.5" r="2.6"/><path d="M10.2 7.9 7.3 15.1M13.8 7.9l2.9 7.2M8.1 17.5h7.8"/></svg></span>
+        <h3 class="trust-h">Model flexibility</h3>
+        <p class="trust-p">Workloads route to open-source or commercial models on merit. No single provider becomes a structural dependency.</p>
+      </li>
+      <li class="trust-i reveal" data-d="1">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span>
+        <h3 class="trust-h">Evaluation before rollout</h3>
+        <p class="trust-p">Agents ship against evaluation sets built from real cases, and regressions are caught before a workflow is widened.</p>
+      </li>
+      <li class="trust-i reveal" data-d="2">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10" width="15" height="10.5" rx="2.5"/><path d="M8 10V7.2a4 4 0 0 1 8 0V10"/><path d="M12 14v3"/></svg></span>
+        <h3 class="trust-h">Deployment boundary</h3>
+        <p class="trust-p">The whole stack can run inside a private or sovereign environment, with inference constrained to the same boundary.</p>
+      </li>
+  </ul>
+</div>
+</section>
+
+<section class="sec tone-paper">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>How we take it live</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Autonomy is earned,</span><span class="hl" data-d="1">one workflow at a time.</span></h2>
+    <p class="lead">We do not switch an organisation to agentic operation. We move one workflow, instrument it honestly, and let the numbers decide the next one.</p>
+  </header>
+  <ol class="flow reveal" id="agentic-lifecycle">
+    <li class="flow-step is-dense" data-d="0">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">01</span>
+          <h3 class="flow-key">Scope a workflow, not a chatbot</h3>
+        </div>
+        <p class="flow-note">We start from a process with a measurable cost, a queue and an owner.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></div>
+    </li>
+    <li class="flow-step is-dense" data-d="1">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">02</span>
+          <h3 class="flow-key">Ground it in real data</h3>
+        </div>
+        <p class="flow-note">Retrieval, permissions and data contracts before any prompt engineering.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.8 2.6 7.3 12 11.8l9.4-4.5z"/><path d="m2.6 12.4 9.4 4.5 9.4-4.5"/><path d="m2.6 17.2 9.4 4.5 9.4-4.5"/></svg></div>
+    </li>
+    <li class="flow-step is-dense" data-d="2">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">03</span>
+          <h3 class="flow-key">Give it real tools</h3>
+        </div>
+        <p class="flow-note">Explicit, versioned tool definitions against the systems that hold the truth.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 3.5 6 7l3.5 3.5M14.5 13.5 18 17l-3.5 3.5"/><path d="M6 7h6.5a5 5 0 0 1 5 5v0M18 17h-6.5a5 5 0 0 1-5-5v0"/></svg></div>
+    </li>
+    <li class="flow-step is-dense" data-d="3">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">04</span>
+          <h3 class="flow-key">Constrain the autonomy</h3>
+        </div>
+        <p class="flow-note">Approval gates set per action class, tightened or relaxed after evidence.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4 5.6v6c0 5 3.4 8.4 8 9.8 4.6-1.4 8-4.8 8-9.8v-6z"/><path d="m9 12 2.2 2.2L15.2 10"/></svg></div>
+    </li>
+    <li class="flow-step is-dense" data-d="4">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">05</span>
+          <h3 class="flow-key">Instrument everything</h3>
+        </div>
+        <p class="flow-note">Traces, evaluation scores, cost per task and human-override rate.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="1"/></svg></div>
+    </li>
+    <li class="flow-step is-dense" data-d="5">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">06</span>
+          <h3 class="flow-key">Widen once it earns it</h3>
+        </div>
+        <p class="flow-note">Scope grows on measured performance, never on enthusiasm.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20V4"/><path d="M3 20h18"/><path d="m6.5 15.5 4-4.5 3.5 3 5-6.5"/></svg></div>
+    </li></ol>
+</div>
+</section>
+
+<section class="sec tone-light">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Platform capability</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">What is in the box.</span></h2>
+    
+  </header>
+  <div class="matrix reveal" id="matrix">
+    
+      <section class="matrix-col" data-d="0">
+        <h3 class="matrix-h mono">Reasoning</h3>
+        <ul class="matrix-list">
+          <li>Task decomposition</li><li>Multi-step planning</li><li>Tool selection</li><li>Self-correction</li><li>Confidence handling</li>
+        </ul>
+      </section>
+      <section class="matrix-col" data-d="1">
+        <h3 class="matrix-h mono">Integration</h3>
+        <ul class="matrix-list">
+          <li>REST &amp; GraphQL APIs</li><li>Event streams</li><li>MCP-compatible connectors</li><li>Legacy adapters</li><li>Document pipelines</li>
+        </ul>
+      </section>
+      <section class="matrix-col" data-d="2">
+        <h3 class="matrix-h mono">Governance</h3>
+        <ul class="matrix-list">
+          <li>Role-based access</li><li>Approval workflows</li><li>Audit export</li><li>Data classification</li><li>Retention policy</li>
+        </ul>
+      </section>
+      <section class="matrix-col" data-d="3">
+        <h3 class="matrix-h mono">Operations</h3>
+        <ul class="matrix-list">
+          <li>Tracing &amp; replay</li><li>Evaluation harness</li><li>Cost controls</li><li>Rate limiting</li><li>Incident runbooks</li>
+        </ul>
+      </section>
+  </div>
+</div>
+</section>
+
+<section class="sec tone-deep">
+  <div class="gridfield" aria-hidden="true"></div>
+  <div class="wrap">
+  <header class="sec-head al-center reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Deployment</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Run it where the mandate says.</span></h2>
+    <p class="lead">Topology is chosen against data classification and regulatory obligation, then held as an architectural constraint through the whole build.</p>
+  </header>
+  <ul class="tiers reveal">
+    
+      <li class="tier" data-d="0">
+        <span class="tier-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18.5a4.5 4.5 0 0 1-.4-9A6 6 0 0 1 18 9.6a4.45 4.45 0 0 1-.6 8.9z"/></svg></span>
+        <h3 class="tier-h">Public cloud</h3>
+        <p class="tier-note">Fastest path where the data class allows it.</p>
+        <span class="tier-ix mono" aria-hidden="true">01</span>
+      </li>
+      <li class="tier" data-d="1">
+        <span class="tier-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="6.5" rx="2"/><rect x="3" y="13.5" width="18" height="6.5" rx="2"/><path d="M7 7.25h.01M7 16.75h.01M11 7.25h3M11 16.75h3"/></svg></span>
+        <h3 class="tier-h">Private cloud</h3>
+        <p class="tier-note">Dedicated tenancy under your own controls.</p>
+        <span class="tier-ix mono" aria-hidden="true">02</span>
+      </li>
+      <li class="tier" data-d="2">
+        <span class="tier-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10" width="15" height="10.5" rx="2.5"/><path d="M8 10V7.2a4 4 0 0 1 8 0V10"/><path d="M12 14v3"/></svg></span>
+        <h3 class="tier-h">On-premise</h3>
+        <p class="tier-note">Inside your data centre and network boundary.</p>
+        <span class="tier-ix mono" aria-hidden="true">03</span>
+      </li>
+      <li class="tier" data-d="3">
+        <span class="tier-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4 5.6v6c0 5 3.4 8.4 8 9.8 4.6-1.4 8-4.8 8-9.8v-6z"/><path d="m9 12 2.2 2.2L15.2 10"/></svg></span>
+        <h3 class="tier-h">Isolated / sovereign</h3>
+        <p class="tier-note">Architected for residency and disconnected operation.</p>
+        <span class="tier-ix mono" aria-hidden="true">04</span>
+      </li>
+  </ul>
+  <p class="u-mt u-center"><a class="btn btn-ghost" href="/sovereign-ai/">
+    <span>Sovereign AI in detail</span><span class="btn-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a></p>
+</div>
+</section>
+
+<section class="sec tone-accent sec-tight">
+  
+  <div class="wrap"><div class="statement reveal">
+    <p class="statement-t"><span class="sl" data-d="0">An agent you cannot audit</span><span class="sl" data-d="1">is a liability, not a capability.</span></p>
+    
+  </div></div>
+</section>
+
+<section class="sec tone-light">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Questions</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Agentic AI, answered.</span></h2>
+    
+  </header>
+  <div class="u-narrow-c"><div class="faq reveal">
+    <div class="faq-item">
+        <h3 class="faq-hd">
+          <button class="faq-q" type="button" id="agentic-faq-1-b" aria-expanded="false" aria-controls="agentic-faq-1-p">
+            <span>What makes an agent different from a chatbot?</span>
+            <span class="faq-pm" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq-a" id="agentic-faq-1-p" role="region" aria-labelledby="agentic-faq-1-b" hidden>
+          <p>A chatbot produces text. An agent produces a change in a system: it plans a task, calls approved tools against real enterprise systems, handles failure and reports what it did. That difference is why the engineering effort sits in permissions, tool definitions and audit rather than in conversation design.</p>
+        </div>
+      </div><div class="faq-item">
+        <h3 class="faq-hd">
+          <button class="faq-q" type="button" id="agentic-faq-2-b" aria-expanded="false" aria-controls="agentic-faq-2-p">
+            <span>Which models does Qeonix use?</span>
+            <span class="faq-pm" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq-a" id="agentic-faq-2-p" role="region" aria-labelledby="agentic-faq-2-b" hidden>
+          <p>Whichever fits the workload and the deployment constraint. We design for model flexibility across open-source and commercial models, with routing per task, so an organisation is not structurally dependent on one provider and can move as the market moves.</p>
+        </div>
+      </div><div class="faq-item">
+        <h3 class="faq-hd">
+          <button class="faq-q" type="button" id="agentic-faq-3-b" aria-expanded="false" aria-controls="agentic-faq-3-p">
+            <span>Can this run without sending data to a third-party model provider?</span>
+            <span class="faq-pm" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq-a" id="agentic-faq-3-p" role="region" aria-labelledby="agentic-faq-3-b" hidden>
+          <p>Yes. Where the data class requires it, the platform is architected to run inside a private or sovereign environment with inference constrained to the same boundary, using models that can be hosted there. That is a design decision taken at the start, because retrofitting it is expensive.</p>
+        </div>
+      </div><div class="faq-item">
+        <h3 class="faq-hd">
+          <button class="faq-q" type="button" id="agentic-faq-4-b" aria-expanded="false" aria-controls="agentic-faq-4-p">
+            <span>How do you stop an agent doing something it should not?</span>
+            <span class="faq-pm" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq-a" id="agentic-faq-4-p" role="region" aria-labelledby="agentic-faq-4-b" hidden>
+          <p>Three layers. The agent can only call an explicit, versioned set of tools. It acts under an identity with scoped permissions on data and actions. And any action class marked consequential stops at a named human approver before it executes. Autonomy is widened only after measured performance, per workflow.</p>
+        </div>
+      </div><div class="faq-item">
+        <h3 class="faq-hd">
+          <button class="faq-q" type="button" id="agentic-faq-5-b" aria-expanded="false" aria-controls="agentic-faq-5-p">
+            <span>What does a first engagement look like?</span>
+            <span class="faq-pm" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq-a" id="agentic-faq-5-p" role="region" aria-labelledby="agentic-faq-5-b" hidden>
+          <p>A single workflow with a measurable cost and a clear owner, taken from scoping to production. That gives the organisation a working system, a real integration path and honest numbers on cost per task and human-override rate before anything is widened.</p>
+        </div>
+      </div>
+  </div></div>
+</div>
+</section>
+
+<section class="sec tone-light sec-tight">
+  
+  <div class="wrap"><div class="nextup reveal">
+    <h2 class="nextup-h mono">Continue</h2>
+    <ul>
+      <li><a href="/ai/">
+        <span class="nu-k">Intelligence &amp; AI</span>
+        <span class="nu-p">The models and vision underneath the agents.</span>
+        <span class="nu-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li><li><a href="/smart-government/">
+        <span class="nu-k">Smart Government</span>
+        <span class="nu-p">Where agentic workflows meet public service delivery.</span>
+        <span class="nu-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li><li><a href="/sovereign-ai/">
+        <span class="nu-k">Sovereign AI</span>
+        <span class="nu-p">Running all of it inside your own boundary.</span>
+        <span class="nu-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li>
+    </ul>
+  </div></div>
+</section>
+
+</main>
+<section class="ctaband tone-accent" id="cta"><span id="contact" class="vh" aria-hidden="true"></span>
+  <div class="gridfield gf-cta" aria-hidden="true"></div>
+  <div class="wrap ctaband-in">
+    <div class="ctaband-copy reveal">
+      <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Next step</span></p>
+      <h2 class="h2"><span class="hl" data-d="0">Build the system</span><span class="hl" data-d="1">others will depend on.</span></h2>
+      <p class="lead">Tell us what has to work — the operating reality, the constraints, the outcome. We will come back with an architecture, not a brochure.</p>
+    </div>
+    <div class="ctaband-act reveal" data-d="1">
+      <a class="btn btn-invert" href="/contact/">
+        <span>Start a conversation</span><span class="btn-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="btn btn-quiet" href="/agentic-ai/">
+        <span>Explore capabilities</span>
+      </a>
+      <p class="ctaband-mail"><a href="mailto:info@qeonix.com">info@qeonix.com</a></p>
+    </div>
+  </div>
+</section>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <div class="ftr-brand">
+        <a class="ftr-logo" href="/" aria-label="QEONIX"><svg class="wordmark wm-invert" viewBox="0 0 268 32" role="img" aria-label="QEONIX" focusable="false">
+  <path class="wm-l" d="M16.6 0C7.6 0 .9 6.9.9 16s6.7 16 15.7 16c3 0 5.7-.8 8-2.2l3.4 3.4 4.2-4.2-3.2-3.2c2-2.6 3.2-6 3.2-9.8C32.2 6.9 25.5 0 16.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S11.1 5.9 16.6 5.9s9.5 4.3 9.5 10.1c0 2.1-.5 4-1.5 5.5l-4.2-4.2-4.2 4.2 4 4c-1.1.4-2.3.6-3.6.6Z"/>
+  <g class="wm-e">
+    <rect x="41.6" y="4.2" width="23.6" height="5.6" rx="2.8"/>
+    <rect x="41.6" y="13.2" width="16.4" height="5.6" rx="2.8"/>
+    <rect x="41.6" y="22.2" width="23.6" height="5.6" rx="2.8"/>
+  </g>
+  <path class="wm-l" d="M90.6 0C81.6 0 74.9 6.9 74.9 16s6.7 16 15.7 16 15.7-6.9 15.7-16S99.6 0 90.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S85.1 5.9 90.6 5.9s9.5 4.3 9.5 10.1-4 10.1-9.5 10.1Z"/>
+  <path class="wm-l" d="M139.2.6v20L124.5.6h-6.2v30.8h6.2v-20l14.7 20h6.2V.6z"/>
+  <path class="wm-l" d="M157.8.6h6.3v30.8h-6.3z"/>
+  <path class="wm-l" d="M203.2.6h-7.3l-7.1 10.6L181.7.6h-7.4l10.7 15-11 15.8h7.4l7.4-11 7.4 11h7.4l-11-15.8z"/>
+</svg></a>
+        <p class="ftr-blurb">Qeonix designs, engineers and deploys the intelligent systems that governments, cities and enterprises run on — from decision intelligence and agentic AI to autonomous operations and connected infrastructure.</p>
+        <p class="ftr-mail"><a href="mailto:info@qeonix.com">info@qeonix.com</a></p>
+      </div>
+      <nav class="ftr-col" aria-label="Capabilities">
+        <h2 class="ftr-h mono">Capabilities</h2>
+        <ul><li><a href="/ai/">Intelligence &amp; AI</a></li><li><a href="/agentic-ai/">Agentic AI</a></li><li><a href="/autonomous-systems/">Autonomous Systems</a></li><li><a href="/data-platforms/">Data &amp; Platforms</a></li><li><a href="/sovereign-ai/">Sovereign AI</a></li></ul>
+      </nav><nav class="ftr-col" aria-label="Sectors">
+        <h2 class="ftr-h mono">Sectors</h2>
+        <ul><li><a href="/smart-government/">Smart Government</a></li><li><a href="/smart-cities/">Smart Cities</a></li><li><a href="/mobility/">Connected Mobility</a></li><li><a href="/healthcare/">Healthcare</a></li><li><a href="/industries/">Industries</a></li></ul>
+      </nav><nav class="ftr-col" aria-label="Company">
+        <h2 class="ftr-h mono">Company</h2>
+        <ul><li><a href="/about/">About Qeonix</a></li><li><a href="/contact/">Contact</a></li><li><a href="/about/#delivery">How we deliver</a></li><li><a href="/about/#careers">Careers</a></li></ul>
+      </nav>
+    </div>
+
+    <div class="ftr-offices">
+      <h2 class="ftr-h mono">Offices</h2>
+      <ul class="offices">
+    <li class="office is-hq">
+      <span class="office-city">Abu Dhabi</span>
+      <span class="office-country">United Arab Emirates</span>
+      <span class="office-status mono">Headquarters</span>
+    </li><li class="office is-active">
+      <span class="office-city">Paris</span>
+      <span class="office-country">France</span>
+      <span class="office-status mono">Office</span>
+    </li><li class="office is-progress">
+      <span class="office-city">Muscat</span>
+      <span class="office-country">Oman</span>
+      <span class="office-status mono">In progress</span>
+    </li><li class="office is-progress">
+      <span class="office-city">Doha</span>
+      <span class="office-country">Qatar</span>
+      <span class="office-status mono">In progress</span>
+    </li>
+  </ul>
+    </div>
+
+    <div class="ftr-bot">
+      <p>© 2026 QEONIX. All rights reserved.</p>
+      <p class="ftr-motto mono">Intelligence, Innovation, Impact.</p>
+      <a class="ftr-lang mono" href="/ar/agentic-ai/" lang="ar" hreflang="ar">عربي</a>
+    </div>
+  </div>
+</footer>
+<script src="/js/qeonix.js?v=3" defer></script>
+</body>
+</html>

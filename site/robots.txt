@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+# Answer engines and AI crawlers are welcome; see /llms.txt for a structured
+# summary of what Qeonix does.
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://qeonix.com/sitemap.xml

@@ -1,9 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://qeonix.com/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/"/>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/ai/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/ai/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/ai/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/ai/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/agentic-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/agentic-ai/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/agentic-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/agentic-ai/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/agentic-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/agentic-ai/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/agentic-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/agentic-ai/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/autonomous-systems/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/autonomous-systems/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/autonomous-systems/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/autonomous-systems/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/autonomous-systems/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/autonomous-systems/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/autonomous-systems/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/autonomous-systems/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/smart-cities/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/smart-cities/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/smart-cities/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/smart-cities/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/smart-cities/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/smart-cities/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/smart-cities/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/smart-cities/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/smart-government/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/smart-government/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/smart-government/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/smart-government/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/smart-government/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/smart-government/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/smart-government/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/smart-government/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/mobility/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/mobility/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/mobility/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/mobility/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/mobility/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/mobility/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/mobility/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/mobility/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/data-platforms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/data-platforms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/data-platforms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/data-platforms/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/data-platforms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/data-platforms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/data-platforms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/data-platforms/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/healthcare/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/healthcare/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/healthcare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/healthcare/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/healthcare/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/healthcare/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/healthcare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/healthcare/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/industries/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/industries/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/industries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/industries/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/industries/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/industries/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/industries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/industries/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/sovereign-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/sovereign-ai/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/sovereign-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/sovereign-ai/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/sovereign-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/sovereign-ai/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/sovereign-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/sovereign-ai/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/about/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/about/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/contact/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qeonix.com/ar/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://qeonix.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://qeonix.com/contact/"/>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

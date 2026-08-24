@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="/js/boot.js"></script>
+<title>Smart City Platforms &amp; City Operations | Qeonix</title>
+<meta name="description" content="A city operating layer from Qeonix: command and control centres, connected infrastructure and IoT, service request lifecycle, field operations, utilities, waste, mobility, parking, EV, environmental monitoring and digital twins — integrated across a mixed multi-vendor estate.">
+<link rel="canonical" href="https://qeonix.com/smart-cities/">
+<link rel="alternate" hreflang="en" href="https://qeonix.com/smart-cities/">
+<link rel="alternate" hreflang="ar" href="https://qeonix.com/ar/smart-cities/">
+<link rel="alternate" hreflang="x-default" href="https://qeonix.com/smart-cities/">
+<meta name="theme-color" content="#06070F">
+<meta name="author" content="QEONIX">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+
+<link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/favicon/favicon-96x96.png" sizes="96x96" type="image/png">
+<link rel="shortcut icon" href="/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="QEONIX">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QEONIX">
+<meta property="og:locale" content="en_AE">
+<meta property="og:locale:alternate" content="ar_AE">
+<meta property="og:url" content="https://qeonix.com/smart-cities/">
+<meta property="og:title" content="Smart City Platforms &amp; City Operations | Qeonix">
+<meta property="og:description" content="A city operating layer from Qeonix: command and control centres, connected infrastructure and IoT, service request lifecycle, field operations, utilities, waste, mobility, parking, EV, environmental monitoring and digital twins — integrated across a mixed multi-vendor estate.">
+<meta property="og:image" content="https://qeonix.com/images/social/cities.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Smart City Platforms &amp; City Operations | Qeonix">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Smart City Platforms &amp; City Operations | Qeonix">
+<meta name="twitter:description" content="A city operating layer from Qeonix: command and control centres, connected infrastructure and IoT, service request lifecycle, field operations, utilities, waste, mobility, parking, EV, environmental monitoring and digital twins — integrated across a mixed multi-vendor estate.">
+<meta name="twitter:image" content="https://qeonix.com/images/social/cities.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="/css/qeonix.css?v=3">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://qeonix.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Smart Cities",
+      "item": "https://qeonix.com/smart-cities/"
+    }
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Smart Cities",
+  "serviceType": "Smart city platform engineering",
+  "description": "A city operating layer from Qeonix: command and control centres, connected infrastructure and IoT, service request lifecycle, field operations, utilities, waste, mobility, parking, EV, environmental monitoring and digital twins — integrated across a mixed multi-vendor estate.",
+  "provider": {
+    "@id": "https://qeonix.com/#organization"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "United Arab Emirates"
+    },
+    {
+      "@type": "Country",
+      "name": "France"
+    }
+  ],
+  "url": "https://qeonix.com/smart-cities/"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes this different from a smart city dashboard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A dashboard shows you a problem. This closes it. The platform turns a signal into a classified work order, assigns it to a crew with the right skills and parts, and confirms completion with evidence. The dashboard is a by-product, not the deliverable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "We already have systems from several vendors. Does that block this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — it is the normal starting condition. The integration and data layer is designed around a mixed estate with different ages, protocols and data quality. Replacing everything is almost never the right first move."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long before something is running?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We scope a first domain — typically one high-volume request type with a field crew behind it — and take it end to end. That establishes the request lifecycle, the asset link and the field application under real conditions, and becomes the pattern the other domains reuse."
+      }
+    }
+  ]
+}</script>
+</head>
+<body class="page p-cities">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr" id="hdr" data-solid="true">
+  <div class="wrap hdr-in">
+    <a class="hdr-logo" href="/" aria-label="QEONIX — Home"><svg class="wordmark" viewBox="0 0 268 32" role="img" aria-label="QEONIX" focusable="false">
+  <path class="wm-l" d="M16.6 0C7.6 0 .9 6.9.9 16s6.7 16 15.7 16c3 0 5.7-.8 8-2.2l3.4 3.4 4.2-4.2-3.2-3.2c2-2.6 3.2-6 3.2-9.8C32.2 6.9 25.5 0 16.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S11.1 5.9 16.6 5.9s9.5 4.3 9.5 10.1c0 2.1-.5 4-1.5 5.5l-4.2-4.2-4.2 4.2 4 4c-1.1.4-2.3.6-3.6.6Z"/>
+  <g class="wm-e">
+    <rect x="41.6" y="4.2" width="23.6" height="5.6" rx="2.8"/>
+    <rect x="41.6" y="13.2" width="16.4" height="5.6" rx="2.8"/>
+    <rect x="41.6" y="22.2" width="23.6" height="5.6" rx="2.8"/>
+  </g>
+  <path class="wm-l" d="M90.6 0C81.6 0 74.9 6.9 74.9 16s6.7 16 15.7 16 15.7-6.9 15.7-16S99.6 0 90.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S85.1 5.9 90.6 5.9s9.5 4.3 9.5 10.1-4 10.1-9.5 10.1Z"/>
+  <path class="wm-l" d="M139.2.6v20L124.5.6h-6.2v30.8h6.2v-20l14.7 20h6.2V.6z"/>
+  <path class="wm-l" d="M157.8.6h6.3v30.8h-6.3z"/>
+  <path class="wm-l" d="M203.2.6h-7.3l-7.1 10.6L181.7.6h-7.4l10.7 15-11 15.8h7.4l7.4-11 7.4 11h7.4l-11-15.8z"/>
+</svg></a>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li class="nav-i has-menu">
+      <button class="nav-b" type="button" aria-expanded="false" aria-controls="menu-capabilities">
+        <span>Capabilities</span>
+        <span class="nav-chev" aria-hidden="true"></span>
+      </button>
+      <div class="megamenu" id="menu-capabilities" hidden>
+        <div class="mega-in">
+          <p class="mega-note mono">What Qeonix designs, engineers and operates.</p>
+          <ul class="mega-list">
+            <li>
+              <a href="/ai/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="15" height="15" rx="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2.5v2M15 2.5v2M9 19.5v2M15 19.5v2M2.5 9h2M2.5 15h2M19.5 9h2M19.5 15h2"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Intelligence &amp; AI</strong>
+                  <span>Decision intelligence, computer vision, enterprise AI.</span>
+                </span>
+              </a>
+            </li><li class="is-featured">
+              <a href="/agentic-ai/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3"/><rect x="4" y="6" width="16" height="11" rx="3"/><path d="M9 11v1.5M15 11v1.5M9.5 21h5"/><path d="M12 17v4"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Agentic AI</strong>
+                  <span>Agents that reason, act and stay under control.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/autonomous-systems/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.5 8.5h7v7h-7z"/><path d="m8.5 8.5-3-3M15.5 8.5l3-3M8.5 15.5l-3 3M15.5 15.5l3 3"/><circle cx="4.2" cy="4.2" r="2.2"/><circle cx="19.8" cy="4.2" r="2.2"/><circle cx="4.2" cy="19.8" r="2.2"/><circle cx="19.8" cy="19.8" r="2.2"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Autonomous Systems</strong>
+                  <span>Physical AI: robotics, drones, remote operations.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/data-platforms/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.8 2.6 7.3 12 11.8l9.4-4.5z"/><path d="m2.6 12.4 9.4 4.5 9.4-4.5"/><path d="m2.6 17.2 9.4 4.5 9.4-4.5"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Data &amp; Platforms</strong>
+                  <span>The data, integration and workflow layer underneath.</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li><li class="nav-i has-menu">
+      <button class="nav-b" type="button" aria-expanded="false" aria-controls="menu-sectors" data-current="true">
+        <span>Sectors</span>
+        <span class="nav-chev" aria-hidden="true"></span>
+      </button>
+      <div class="megamenu" id="menu-sectors" hidden>
+        <div class="mega-in">
+          <p class="mega-note mono">Where these systems go into live operation.</p>
+          <ul class="mega-list">
+            <li class="is-featured">
+              <a href="/smart-government/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2.8" width="16" height="18.4" rx="2"/><path d="M8.5 7h2M13.5 7h2M8.5 11h2M13.5 11h2M8.5 15h2M13.5 15h2M10 21.2v-3h4v3"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Smart Government</strong>
+                  <span>Digital services, orchestration, government AI.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/smart-cities/" aria-current="page">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21V9.5l6-3.5v4l6-3.5V11l6-3v13z"/><path d="M7 21v-3.5M12 21v-3.5M17 21v-3.5"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Smart Cities</strong>
+                  <span>A city operating layer from citizen to field crew.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/mobility/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="5.5" r="2.5"/><path d="M8 18.5h6.5a4 4 0 0 0 0-8h-5a4 4 0 0 1 0-8H16"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Connected Mobility</strong>
+                  <span>Transport intelligence, fleets, tolling, EV.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/healthcare/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 5.6a5 5 0 0 0-7.1 0L12 6.7l-1.1-1.1a5 5 0 1 0-7.1 7.1l7.4 7.4a1.1 1.1 0 0 0 1.6 0l7.4-7.4a5 5 0 0 0 0-7.1Z"/><path d="M4.6 12.4h3.5l1.4-2.3 2 4 1.5-2.5h4.4"/></svg></span>
+                <span class="mega-txt">
+                  <strong>Healthcare</strong>
+                  <span>Digital health platforms and care orchestration.</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="/industries/">
+                <span class="mega-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg></span>
+                <span class="mega-txt">
+                  <strong>All industries</strong>
+                  <span>Energy, industrial, logistics, aviation, real estate.</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li><li class="nav-i">
+    <a class="nav-a" href="/sovereign-ai/">Sovereign AI</a>
+  </li><li class="nav-i">
+    <a class="nav-a" href="/about/">About</a>
+  </li>
+      </ul>
+      <div class="nav-foot">
+        <ul class="offices offices-compact">
+    <li class="office is-hq">
+      <span class="office-city">Abu Dhabi</span>
+      <span class="office-country">United Arab Emirates</span>
+      <span class="office-status mono">Headquarters</span>
+    </li><li class="office is-active">
+      <span class="office-city">Paris</span>
+      <span class="office-country">France</span>
+      <span class="office-status mono">Office</span>
+    </li><li class="office is-progress">
+      <span class="office-city">Muscat</span>
+      <span class="office-country">Oman</span>
+      <span class="office-status mono">In progress</span>
+    </li><li class="office is-progress">
+      <span class="office-city">Doha</span>
+      <span class="office-country">Qatar</span>
+      <span class="office-status mono">In progress</span>
+    </li>
+  </ul>
+      </div>
+    </nav>
+
+    <div class="hdr-right">
+      <a class="langsw mono" href="/ar/smart-cities/" lang="ar" hreflang="ar"
+         aria-label="Switch to Arabic">عربي</a>
+      <a class="btn btn-primary hdr-cta" href="/contact/">
+        <span>Start a conversation</span><span class="btn-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+        <span aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+  <span class="hdr-rule" aria-hidden="true"></span>
+</header>
+<div class="nav-scrim" id="navScrim" hidden></div>
+<main id="main">
+
+<section class="phero tone-deep">
+  <div class="gridfield gf-hero" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+    <ol><li><a href="/">Home</a></li><li><span aria-current="page">Smart Cities</span></li></ol>
+  </nav>
+    <div class="phero-grid">
+      <div class="phero-copy">
+        <p class="kicker mono reveal"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Sector · Cities &amp; urban operations</span></p>
+        <h1 class="h1 reveal" data-d="1"><span class="hl" data-d="0">A city is not twelve systems.</span><span class="hl" data-d="1">It is one operation.</span></h1>
+        <p class="lead lead-lg reveal" data-d="2">Services, mobility, utilities, waste, permits and field crews usually meet only in a monthly report. Qeonix builds the layer where they meet in real time — from a resident&#39;s request to the crew that closes it.</p>
+        <div class="phero-cta reveal" data-d="3"><a class="btn btn-primary" href="/contact/">
+    <span>Start a conversation</span><span class="btn-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+            </div>
+      </div>
+      <ul class="phero-meta reveal" data-d="2">
+        <li><span class="mono pm-k">Span</span><span class="pm-v">Citizen to field crew, one loop</span></li><li><span class="mono pm-k">Estate</span><span class="pm-v">Designed for mixed, multi-vendor</span></li><li><span class="mono pm-k">Measured by</span><span class="pm-v">Time-to-close and first-time-fix</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec tone-light">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>The city operating layer</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Every domain, one spine.</span></h2>
+    <p class="lead">These are the systems a city already owns. What is missing is almost always the layer that lets them share a picture, a queue and an audit trail.</p>
+  </header>
+  <div class="mesh reveal">
+    <ul class="mesh-row mesh-top">
+    <li class="mesh-tile" data-d="0">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0"/><path d="M16.5 5.1a3.4 3.4 0 0 1 0 5.8M17.6 14.9a6.2 6.2 0 0 1 3.6 5.6"/></svg></span>
+      <span class="mesh-label">Citizen services</span>
+    </li>
+    <li class="mesh-tile" data-d="1">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="5.5" r="2.5"/><path d="M8 18.5h6.5a4 4 0 0 0 0-8h-5a4 4 0 0 1 0-8H16"/></svg></span>
+      <span class="mesh-label">Mobility &amp; traffic</span>
+    </li>
+    <li class="mesh-tile" data-d="2">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 2.5 4.5 13.8h6.3L10.5 21.5l9-11.3h-6.3z"/></svg></span>
+      <span class="mesh-label">Energy &amp; utilities</span>
+    </li>
+    <li class="mesh-tile" data-d="3">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20c0-8 5-13 16-14 0 10-5.5 15-11 15a5 5 0 0 1-5-1Z"/><path d="M4 20c3-6 6-8.5 10.5-11"/></svg></span>
+      <span class="mesh-label">Waste &amp; cleansing</span>
+    </li>
+    <li class="mesh-tile" data-d="4">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21V9.5l6-3.5v4l6-3.5V11l6-3v13z"/><path d="M7 21v-3.5M12 21v-3.5M17 21v-3.5"/></svg></span>
+      <span class="mesh-label">Public realm</span>
+    </li>
+    <li class="mesh-tile" data-d="5">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="2.8" width="16" height="18.4" rx="2"/><path d="M8.5 7h2M13.5 7h2M8.5 11h2M13.5 11h2M8.5 15h2M13.5 15h2M10 21.2v-3h4v3"/></svg></span>
+      <span class="mesh-label">Permits &amp; inspection</span>
+    </li></ul>
+    <div class="mesh-core">
+      <span class="mesh-core-rule" aria-hidden="true"></span>
+      <div class="mesh-core-body">
+        <span class="mono mesh-core-kicker">Qeonix layer</span>
+        <strong class="mesh-core-h">Shared data · shared identity · shared orchestration</strong>
+        <span class="mesh-core-note">One picture of the city, one queue of work, one audit trail.</span>
+      </div>
+      <span class="mesh-core-rule" aria-hidden="true"></span>
+    </div>
+    <ul class="mesh-row mesh-bottom">
+    <li class="mesh-tile" data-d="0">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13.5 5.3 7a2 2 0 0 1 1.9-1.3h9.6A2 2 0 0 1 18.7 7L21 13.5"/><path d="M3 13.5h18v4a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1h-11v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M6.5 16h.01M17.5 16h.01"/></svg></span>
+      <span class="mesh-label">Parking &amp; tolling</span>
+    </li>
+    <li class="mesh-tile" data-d="1">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/><path d="m6.4 6.4 3 3M14.6 14.6l3 3M17.6 6.4l-3 3M9.4 14.6l-3 3"/></svg></span>
+      <span class="mesh-label">EV charging</span>
+    </li>
+    <li class="mesh-tile" data-d="2">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="1"/></svg></span>
+      <span class="mesh-label">Environmental sensing</span>
+    </li>
+    <li class="mesh-tile" data-d="3">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12 18.4 5.6"/><circle cx="12" cy="12" r="1"/></svg></span>
+      <span class="mesh-label">Command &amp; control</span>
+    </li>
+    <li class="mesh-tile" data-d="4">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2.7 8.5 4.4v9.8L12 21.3 3.5 16.9V7.1z"/><path d="M3.7 7.2 12 11.6l8.3-4.4M12 11.6v9.7"/></svg></span>
+      <span class="mesh-label">Field workforce</span>
+    </li>
+    <li class="mesh-tile" data-d="5">
+      <span class="mesh-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4 5.6v6c0 5 3.4 8.4 8 9.8 4.6-1.4 8-4.8 8-9.8v-6z"/><path d="m9 12 2.2 2.2L15.2 10"/></svg></span>
+      <span class="mesh-label">Public safety integration</span>
+    </li></ul>
+  </div>
+</div>
+</section>
+
+<section class="sec tone-deep">
+  <div class="gridfield" aria-hidden="true"></div>
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Reference architecture</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">From the resident</span><span class="hl" data-d="1">to the physical city.</span></h2>
+    <p class="lead">Read it downward as a request travelling to the street, and upward as evidence travelling back to the record.</p>
+  </header>
+  <div class="arch reveal" id="city-stack">
+    
+    <div class="arch-band" data-d="0">
+      <div class="arch-meta">
+        <span class="arch-ix mono">01</span>
+        <h3 class="arch-label">Residents, businesses, visitors</h3>
+        <p class="arch-note">Everyone who asks the city for something.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Service requests</li><li class="chip">Reports &amp; complaints</li><li class="chip">Payments</li><li class="chip">Permits</li><li class="chip">Journeys</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="1">
+      <div class="arch-meta">
+        <span class="arch-ix mono">02</span>
+        <h3 class="arch-label">Digital experience</h3>
+        <p class="arch-note">One surface across every city service.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">City app</li><li class="chip">Web portal</li><li class="chip">Contact centre</li><li class="chip">Kiosks</li><li class="chip">Field mobile</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band tone-hi" data-d="2">
+      <div class="arch-meta">
+        <span class="arch-ix mono">03</span>
+        <h3 class="arch-label">Service orchestration</h3>
+        <p class="arch-note">Turning a request into assigned work.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Request lifecycle</li><li class="chip">Routing &amp; SLA</li><li class="chip">Work orders</li><li class="chip">Escalation</li><li class="chip">Notifications</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="3">
+      <div class="arch-meta">
+        <span class="arch-ix mono">04</span>
+        <h3 class="arch-label">AI &amp; agents</h3>
+        <p class="arch-note">Triage, prediction, automation.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Request triage</li><li class="chip">Demand forecasting</li><li class="chip">Vision on city assets</li><li class="chip">Predictive maintenance</li><li class="chip">Operations agents</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="4">
+      <div class="arch-meta">
+        <span class="arch-ix mono">05</span>
+        <h3 class="arch-label">City data platform</h3>
+        <p class="arch-note">One reconciled picture of the city.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Asset registry</li><li class="chip">GIS &amp; spatial</li><li class="chip">Telemetry store</li><li class="chip">Digital twin</li><li class="chip">Interoperability</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="5">
+      <div class="arch-meta">
+        <span class="arch-ix mono">06</span>
+        <h3 class="arch-label">Operation centres</h3>
+        <p class="arch-note">Where the city is actually run.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Command &amp; control</li><li class="chip">Incident management</li><li class="chip">Live operational view</li><li class="chip">Multi-agency coordination</li><li class="chip">Emergency support</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="6">
+      <div class="arch-meta">
+        <span class="arch-ix mono">07</span>
+        <h3 class="arch-label">Field operations</h3>
+        <p class="arch-note">The crews who close the loop.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">Crew scheduling</li><li class="chip">Mobile work orders</li><li class="chip">Evidence capture</li><li class="chip">Route optimisation</li><li class="chip">Completion &amp; QA</li>
+      </ul>
+    </div>
+    <div class="arch-link" aria-hidden="true"><span></span><span></span><span></span></div>
+  
+    <div class="arch-band" data-d="7">
+      <div class="arch-meta">
+        <span class="arch-ix mono">08</span>
+        <h3 class="arch-label">Connected infrastructure</h3>
+        <p class="arch-note">The physical city, instrumented.</p>
+      </div>
+      <ul class="arch-chips">
+        <li class="chip">IoT sensors</li><li class="chip">Metering</li><li class="chip">Cameras</li><li class="chip">Traffic systems</li><li class="chip">Utility networks</li><li class="chip">Autonomous assets</li>
+      </ul>
+    </div>
+    
+  
+    
+  </div>
+</div>
+</section>
+
+<section class="sec tone-paper">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>One request, end to end</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">What closing the loop</span><span class="hl" data-d="1">actually looks like.</span></h2>
+    
+  </header>
+  <ol class="flow reveal" id="city-lifecycle">
+    <li class="flow-step is-dense" data-d="0">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">01</span>
+          <h3 class="flow-key">A resident reports a fault</h3>
+        </div>
+        <p class="flow-note">A photo and a location, from the city app or the contact centre.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0"/><path d="M16.5 5.1a3.4 3.4 0 0 1 0 5.8M17.6 14.9a6.2 6.2 0 0 1 3.6 5.6"/></svg></div>
+    </li>
+    <li class="flow-step is-dense" data-d="1">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">02</span>
+          <h3 class="flow-key">Triage without a queue</h3>
+        </div>
+        <p class="flow-note">Vision classifies the fault, matches it to an asset and sets severity.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12s3.6-6.5 9.5-6.5S21.5 12 21.5 12s-3.6 6.5-9.5 6.5S2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></svg></div>
+    </li>
+    <li class="flow-step is-dense" data-d="2">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">03</span>
+          <h3 class="flow-key">Work order, not a ticket</h3>
+        </div>
+        <p class="flow-note">The right crew, the right skill, the right parts, sequenced against the day.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6.5" height="5.5" rx="1.5"/><rect x="14.5" y="15.5" width="6.5" height="5.5" rx="1.5"/><path d="M6.25 8.5v5.75a2 2 0 0 0 2 2h6.25"/><path d="M12.5 14.25 14.5 16.25 12.5 18.25"/></svg></div>
+    </li>
+    <li class="flow-step is-dense" data-d="3">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">04</span>
+          <h3 class="flow-key">Closed in the field</h3>
+        </div>
+        <p class="flow-note">Completed on a mobile device with photographic evidence attached.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4.5 12.5 5 5 10-11"/></svg></div>
+    </li>
+    <li class="flow-step is-dense" data-d="4">
+      <div class="flow-rail" aria-hidden="true"><span class="flow-dot"></span><span class="flow-line"></span></div>
+      <div class="flow-body">
+        <div class="flow-head">
+          <span class="flow-ix mono">05</span>
+          <h3 class="flow-key">Verified and learned from</h3>
+        </div>
+        <p class="flow-note">Outcome confirmed, asset history updated, recurrence flagged for planning.</p>
+      </div>
+      <div class="flow-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20V4"/><path d="M3 20h18"/><path d="m6.5 15.5 4-4.5 3.5 3 5-6.5"/></svg></div>
+    </li></ol>
+</div>
+</section>
+
+<section class="sec tone-light">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Capabilities</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Six places we do the work.</span></h2>
+    
+  </header>
+  <ul class="capgrid cg-3">
+    <li class="cap reveal" data-d="0"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12 18.4 5.6"/><circle cx="12" cy="12" r="1"/></svg></span>
+        <h3 class="cap-h">City command centre</h3>
+        <p class="cap-p">A live operational picture across departments, with incident management and multi-agency coordination rather than eight screens showing eight systems.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">01</span></div></li><li class="cap reveal" data-d="1"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg></span>
+        <h3 class="cap-h">Connected infrastructure &amp; IoT</h3>
+        <p class="cap-p">Sensor, meter and camera estates brought into one telemetry layer with device management, health monitoring and a sane data contract.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">02</span></div></li><li class="cap reveal" data-d="2"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2.7 8.5 4.4v9.8L12 21.3 3.5 16.9V7.1z"/><path d="M3.7 7.2 12 11.6l8.3-4.4M12 11.6v9.7"/></svg></span>
+        <h3 class="cap-h">Field operations</h3>
+        <p class="cap-p">Crew scheduling, mobile work orders, route optimisation and evidence capture — the part of a smart city programme that is usually left out.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">03</span></div></li><li class="cap reveal" data-d="0"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20c0-8 5-13 16-14 0 10-5.5 15-11 15a5 5 0 0 1-5-1Z"/><path d="M4 20c3-6 6-8.5 10.5-11"/></svg></span>
+        <h3 class="cap-h">Environment &amp; sustainability</h3>
+        <p class="cap-p">Air quality, noise, water and waste monitored continuously and tied to the operational response, not only to an annual report.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">04</span></div></li><li class="cap reveal" data-d="1"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.8 2.6 7.3 12 11.8l9.4-4.5z"/><path d="m2.6 12.4 9.4 4.5 9.4-4.5"/><path d="m2.6 17.2 9.4 4.5 9.4-4.5"/></svg></span>
+        <h3 class="cap-h">Digital twin</h3>
+        <p class="cap-p">A spatial model of assets and networks used for planning, impact assessment and scenario testing before work is committed.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">05</span></div></li><li class="cap reveal" data-d="2"><div class="cap-in">
+        <span class="cap-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13.5 5.3 7a2 2 0 0 1 1.9-1.3h9.6A2 2 0 0 1 18.7 7L21 13.5"/><path d="M3 13.5h18v4a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1h-11v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M6.5 16h.01M17.5 16h.01"/></svg></span>
+        <h3 class="cap-h">Mobility &amp; parking</h3>
+        <p class="cap-p">Traffic, parking, tolling and EV infrastructure treated as one demand-management problem rather than four procurements.</p>
+        
+        
+        <span class="cap-ix mono" aria-hidden="true">06</span></div></li>
+  </ul>
+</div>
+</section>
+
+<section class="sec tone-paper">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>What we have learned</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Why smart city programmes stall.</span></h2>
+    
+  </header>
+  <ul class="trust">
+    
+      <li class="trust-i reveal" data-d="0">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6.5" height="5.5" rx="1.5"/><rect x="14.5" y="15.5" width="6.5" height="5.5" rx="1.5"/><path d="M6.25 8.5v5.75a2 2 0 0 0 2 2h6.25"/><path d="M12.5 14.25 14.5 16.25 12.5 18.25"/></svg></span>
+        <h3 class="trust-h">Start with a service, not a sensor</h3>
+        <p class="trust-p">Instrumentation without a closed operational loop produces dashboards nobody opens. We start from a request type with a queue behind it.</p>
+      </li>
+      <li class="trust-i reveal" data-d="1">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.5 3.5 6 7l3.5 3.5M14.5 13.5 18 17l-3.5 3.5"/><path d="M6 7h6.5a5 5 0 0 1 5 5v0M18 17h-6.5a5 5 0 0 1-5-5v0"/></svg></span>
+        <h3 class="trust-h">Assume the estate is mixed</h3>
+        <p class="trust-p">Cities run twenty vendors across three decades. The integration layer is designed for that, not for a clean-sheet replacement.</p>
+      </li>
+      <li class="trust-i reveal" data-d="2">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20.5a6.2 6.2 0 0 1 12.4 0"/><path d="M16.5 5.1a3.4 3.4 0 0 1 0 5.8M17.6 14.9a6.2 6.2 0 0 1 3.6 5.6"/></svg></span>
+        <h3 class="trust-h">Design for the crew</h3>
+        <p class="trust-p">If the mobile work order is worse than the paper it replaced, the programme fails in the field regardless of the platform.</p>
+      </li>
+      <li class="trust-i reveal" data-d="0">
+        <span class="trust-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="1"/></svg></span>
+        <h3 class="trust-h">Measure the loop, not the launch</h3>
+        <p class="trust-p">Time-to-close, repeat-fault rate and first-time-fix are the metrics that show whether the city actually got better.</p>
+      </li>
+  </ul>
+</div>
+</section>
+
+<section class="sec tone-light">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Coverage</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Operational domains.</span></h2>
+    
+  </header>
+  <div class="matrix reveal" id="matrix">
+    
+      <section class="matrix-col" data-d="0">
+        <h3 class="matrix-h mono">Utilities</h3>
+        <ul class="matrix-list">
+          <li>Network monitoring</li><li>Smart metering</li><li>Leak &amp; loss detection</li><li>Outage response</li><li>Demand management</li>
+        </ul>
+      </section>
+      <section class="matrix-col" data-d="1">
+        <h3 class="matrix-h mono">Waste &amp; cleansing</h3>
+        <ul class="matrix-list">
+          <li>Bin &amp; route optimisation</li><li>Fill-level sensing</li><li>Fleet tracking</li><li>Contractor SLA</li><li>Cleanliness indexing</li>
+        </ul>
+      </section>
+      <section class="matrix-col" data-d="2">
+        <h3 class="matrix-h mono">Public realm</h3>
+        <ul class="matrix-list">
+          <li>Street lighting</li><li>Parks &amp; landscaping</li><li>Signage &amp; furniture</li><li>Condition surveys</li><li>Event operations</li>
+        </ul>
+      </section>
+      <section class="matrix-col" data-d="3">
+        <h3 class="matrix-h mono">Safety &amp; resilience</h3>
+        <ul class="matrix-list">
+          <li>Incident coordination</li><li>Multi-agency comms</li><li>Flood &amp; weather response</li><li>Crowd operations</li><li>Business continuity</li>
+        </ul>
+      </section>
+  </div>
+</div>
+</section>
+
+<section class="sec tone-accent sec-tight">
+  
+  <div class="wrap"><div class="statement reveal">
+    <p class="statement-t"><span class="sl" data-d="0">A dashboard shows a problem.</span><span class="sl" data-d="1">An operation closes it.</span></p>
+    
+  </div></div>
+</section>
+
+<section class="sec tone-paper">
+  
+  <div class="wrap">
+  <header class="sec-head al-start reveal">
+    <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Questions</span></p>
+    <h2 class="h2"><span class="hl" data-d="0">Smart cities, answered.</span></h2>
+    
+  </header>
+  <div class="u-narrow-c"><div class="faq reveal">
+    <div class="faq-item">
+        <h3 class="faq-hd">
+          <button class="faq-q" type="button" id="city-faq-1-b" aria-expanded="false" aria-controls="city-faq-1-p">
+            <span>What makes this different from a smart city dashboard?</span>
+            <span class="faq-pm" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq-a" id="city-faq-1-p" role="region" aria-labelledby="city-faq-1-b" hidden>
+          <p>A dashboard shows you a problem. This closes it. The platform turns a signal into a classified work order, assigns it to a crew with the right skills and parts, and confirms completion with evidence. The dashboard is a by-product, not the deliverable.</p>
+        </div>
+      </div><div class="faq-item">
+        <h3 class="faq-hd">
+          <button class="faq-q" type="button" id="city-faq-2-b" aria-expanded="false" aria-controls="city-faq-2-p">
+            <span>We already have systems from several vendors. Does that block this?</span>
+            <span class="faq-pm" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq-a" id="city-faq-2-p" role="region" aria-labelledby="city-faq-2-b" hidden>
+          <p>No — it is the normal starting condition. The integration and data layer is designed around a mixed estate with different ages, protocols and data quality. Replacing everything is almost never the right first move.</p>
+        </div>
+      </div><div class="faq-item">
+        <h3 class="faq-hd">
+          <button class="faq-q" type="button" id="city-faq-3-b" aria-expanded="false" aria-controls="city-faq-3-p">
+            <span>How long before something is running?</span>
+            <span class="faq-pm" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="faq-a" id="city-faq-3-p" role="region" aria-labelledby="city-faq-3-b" hidden>
+          <p>We scope a first domain — typically one high-volume request type with a field crew behind it — and take it end to end. That establishes the request lifecycle, the asset link and the field application under real conditions, and becomes the pattern the other domains reuse.</p>
+        </div>
+      </div>
+  </div></div>
+</div>
+</section>
+
+<section class="sec tone-light sec-tight">
+  
+  <div class="wrap"><div class="nextup reveal">
+    <h2 class="nextup-h mono">Continue</h2>
+    <ul>
+      <li><a href="/smart-government/">
+        <span class="nu-k">Smart Government</span>
+        <span class="nu-p">The service side of the same operating layer.</span>
+        <span class="nu-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li><li><a href="/mobility/">
+        <span class="nu-k">Connected Mobility</span>
+        <span class="nu-p">Movement across the city, coordinated.</span>
+        <span class="nu-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li><li><a href="/autonomous-systems/">
+        <span class="nu-k">Autonomous Systems</span>
+        <span class="nu-p">Inspection and response in the field.</span>
+        <span class="nu-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a></li>
+    </ul>
+  </div></div>
+</section>
+
+</main>
+<section class="ctaband tone-accent" id="cta"><span id="contact" class="vh" aria-hidden="true"></span>
+  <div class="gridfield gf-cta" aria-hidden="true"></div>
+  <div class="wrap ctaband-in">
+    <div class="ctaband-copy reveal">
+      <p class="kicker mono"><span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span><span>Next step</span></p>
+      <h2 class="h2"><span class="hl" data-d="0">Build the system</span><span class="hl" data-d="1">others will depend on.</span></h2>
+      <p class="lead">Tell us what has to work — the operating reality, the constraints, the outcome. We will come back with an architecture, not a brochure.</p>
+    </div>
+    <div class="ctaband-act reveal" data-d="1">
+      <a class="btn btn-invert" href="/contact/">
+        <span>Start a conversation</span><span class="btn-arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="btn btn-quiet" href="/agentic-ai/">
+        <span>Explore capabilities</span>
+      </a>
+      <p class="ctaband-mail"><a href="mailto:info@qeonix.com">info@qeonix.com</a></p>
+    </div>
+  </div>
+</section>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <div class="ftr-brand">
+        <a class="ftr-logo" href="/" aria-label="QEONIX"><svg class="wordmark wm-invert" viewBox="0 0 268 32" role="img" aria-label="QEONIX" focusable="false">
+  <path class="wm-l" d="M16.6 0C7.6 0 .9 6.9.9 16s6.7 16 15.7 16c3 0 5.7-.8 8-2.2l3.4 3.4 4.2-4.2-3.2-3.2c2-2.6 3.2-6 3.2-9.8C32.2 6.9 25.5 0 16.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S11.1 5.9 16.6 5.9s9.5 4.3 9.5 10.1c0 2.1-.5 4-1.5 5.5l-4.2-4.2-4.2 4.2 4 4c-1.1.4-2.3.6-3.6.6Z"/>
+  <g class="wm-e">
+    <rect x="41.6" y="4.2" width="23.6" height="5.6" rx="2.8"/>
+    <rect x="41.6" y="13.2" width="16.4" height="5.6" rx="2.8"/>
+    <rect x="41.6" y="22.2" width="23.6" height="5.6" rx="2.8"/>
+  </g>
+  <path class="wm-l" d="M90.6 0C81.6 0 74.9 6.9 74.9 16s6.7 16 15.7 16 15.7-6.9 15.7-16S99.6 0 90.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S85.1 5.9 90.6 5.9s9.5 4.3 9.5 10.1-4 10.1-9.5 10.1Z"/>
+  <path class="wm-l" d="M139.2.6v20L124.5.6h-6.2v30.8h6.2v-20l14.7 20h6.2V.6z"/>
+  <path class="wm-l" d="M157.8.6h6.3v30.8h-6.3z"/>
+  <path class="wm-l" d="M203.2.6h-7.3l-7.1 10.6L181.7.6h-7.4l10.7 15-11 15.8h7.4l7.4-11 7.4 11h7.4l-11-15.8z"/>
+</svg></a>
+        <p class="ftr-blurb">Qeonix designs, engineers and deploys the intelligent systems that governments, cities and enterprises run on — from decision intelligence and agentic AI to autonomous operations and connected infrastructure.</p>
+        <p class="ftr-mail"><a href="mailto:info@qeonix.com">info@qeonix.com</a></p>
+      </div>
+      <nav class="ftr-col" aria-label="Capabilities">
+        <h2 class="ftr-h mono">Capabilities</h2>
+        <ul><li><a href="/ai/">Intelligence &amp; AI</a></li><li><a href="/agentic-ai/">Agentic AI</a></li><li><a href="/autonomous-systems/">Autonomous Systems</a></li><li><a href="/data-platforms/">Data &amp; Platforms</a></li><li><a href="/sovereign-ai/">Sovereign AI</a></li></ul>
+      </nav><nav class="ftr-col" aria-label="Sectors">
+        <h2 class="ftr-h mono">Sectors</h2>
+        <ul><li><a href="/smart-government/">Smart Government</a></li><li><a href="/smart-cities/">Smart Cities</a></li><li><a href="/mobility/">Connected Mobility</a></li><li><a href="/healthcare/">Healthcare</a></li><li><a href="/industries/">Industries</a></li></ul>
+      </nav><nav class="ftr-col" aria-label="Company">
+        <h2 class="ftr-h mono">Company</h2>
+        <ul><li><a href="/about/">About Qeonix</a></li><li><a href="/contact/">Contact</a></li><li><a href="/about/#delivery">How we deliver</a></li><li><a href="/about/#careers">Careers</a></li></ul>
+      </nav>
+    </div>
+
+    <div class="ftr-offices">
+      <h2 class="ftr-h mono">Offices</h2>
+      <ul class="offices">
+    <li class="office is-hq">
+      <span class="office-city">Abu Dhabi</span>
+      <span class="office-country">United Arab Emirates</span>
+      <span class="office-status mono">Headquarters</span>
+    </li><li class="office is-active">
+      <span class="office-city">Paris</span>
+      <span class="office-country">France</span>
+      <span class="office-status mono">Office</span>
+    </li><li class="office is-progress">
+      <span class="office-city">Muscat</span>
+      <span class="office-country">Oman</span>
+      <span class="office-status mono">In progress</span>
+    </li><li class="office is-progress">
+      <span class="office-city">Doha</span>
+      <span class="office-country">Qatar</span>
+      <span class="office-status mono">In progress</span>
+    </li>
+  </ul>
+    </div>
+
+    <div class="ftr-bot">
+      <p>© 2026 QEONIX. All rights reserved.</p>
+      <p class="ftr-motto mono">Intelligence, Innovation, Impact.</p>
+      <a class="ftr-lang mono" href="/ar/smart-cities/" lang="ar" hreflang="ar">عربي</a>
+    </div>
+  </div>
+</footer>
+<script src="/js/qeonix.js?v=3" defer></script>
+</body>
+</html>
