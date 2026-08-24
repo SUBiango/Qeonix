@@ -1,6 +1,8 @@
-# Static site (no build). Only the `site/` folder is published, so config,
-# function source, and docs at the repo root are never served. Functions live
-# in netlify/functions and forward the contact form to Zoho Flow.
+# Static site (pre-rendered by build/build.mjs; output is committed, so no
+# build command is needed and a deploy cannot fail on generation). Only `site/`
+# is published; config, generator source and docs at the repo root are never
+# served. Functions live in netlify/functions and forward the contact form to
+# Zoho Flow.
 [build]
   publish = "site"
 
@@ -24,9 +26,43 @@
     Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()"
     Content-Security-Policy = "default-src 'self'; script-src 'self' https://hcaptcha.com https://*.hcaptcha.com; style-src 'self' https://fonts.googleapis.com https://hcaptcha.com https://*.hcaptcha.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hcaptcha.com https://*.hcaptcha.com; frame-src https://hcaptcha.com https://*.hcaptcha.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
 
+# Long-lived caching for fingerprint-stable assets. CSS/JS carry a ?v= query
+# that is bumped on change; images and fonts change by filename.
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# HTML is always revalidated so deploys propagate immediately.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # Serve the PWA manifest with its correct MIME type (Netlify defaults to
 # application/octet-stream for .webmanifest).
 [[headers]]
   for = "/images/favicon/site.webmanifest"
   [headers.values]
     Content-Type = "application/manifest+json"
+
+# Old single-page anchors -> their new routes (301 so link equity follows).
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/ar"
+  to = "/ar/"
+  status = 301

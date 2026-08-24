@@ -7,20 +7,28 @@ import {
   ORIGIN, BRAND, NAV, FOOTER, UI, OFFICES, OFFICE_STATUS, ROUTES, url, canonical,
 } from "../content/site.mjs";
 
-/* Inline wordmark. Vector so it stays crisp at any size and can be recoloured
-   per surface — replaces a 5500px raster that was rendered 20px tall. */
+/* Inline wordmark, traced 1:1 from the brand master (qeonix-logo.png,
+   5500x585): geometric Q with a diagonal tail, three equal square-cornered
+   bars for the E (brand blue), rounded-square O, and sharp N/I/X. Vector so
+   it stays crisp at any size and recolours per surface. */
 export function wordmark(cls = "") {
-  return `<svg class="${cx("wordmark", cls)}" viewBox="0 0 268 32" role="img" aria-label="QEONIX" focusable="false">
-  <path class="wm-l" d="M16.6 0C7.6 0 .9 6.9.9 16s6.7 16 15.7 16c3 0 5.7-.8 8-2.2l3.4 3.4 4.2-4.2-3.2-3.2c2-2.6 3.2-6 3.2-9.8C32.2 6.9 25.5 0 16.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S11.1 5.9 16.6 5.9s9.5 4.3 9.5 10.1c0 2.1-.5 4-1.5 5.5l-4.2-4.2-4.2 4.2 4 4c-1.1.4-2.3.6-3.6.6Z"/>
-  <g class="wm-e">
-    <rect x="41.6" y="4.2" width="23.6" height="5.6" rx="2.8"/>
-    <rect x="41.6" y="13.2" width="16.4" height="5.6" rx="2.8"/>
-    <rect x="41.6" y="22.2" width="23.6" height="5.6" rx="2.8"/>
+  return `<svg class="${cx("wordmark", cls)}" viewBox="0 0 5500 585" role="img" aria-label="QEONIX" focusable="false">
+  <g class="wm-l">
+    <path d="M150 3h330a147 147 0 0 1 147 147v285a147 147 0 0 1-147 147H150A147 147 0 0 1 3 435V150A147 147 0 0 1 150 3Zm32 112a60 60 0 0 0-60 60v235a60 60 0 0 0 60 60h266a60 60 0 0 0 60-60V175a60 60 0 0 0-60-60H182Z"/>
+    <path d="m342 396 130-1 175 190H517Z"/>
+    <path d="M2274 3h334a147 147 0 0 1 147 147v285a147 147 0 0 1-147 147h-334a147 147 0 0 1-147-147V150A147 147 0 0 1 2274 3Zm35 112a60 60 0 0 0-60 60v235a60 60 0 0 0 60 60h264a60 60 0 0 0 60-60V175a60 60 0 0 0-60-60h-264Z"/>
+    <path d="M3189 3h124v578h-124z"/>
+    <path d="M3666 3h124v578h-124z"/>
+    <path d="M3189 3h159l442 578h-159z"/>
+    <path d="M4286 3h133v578h-133z"/>
+    <path d="M4874 3h163l463 578h-163z"/>
+    <path d="M5334 3h163L5034 581h-163z"/>
   </g>
-  <path class="wm-l" d="M90.6 0C81.6 0 74.9 6.9 74.9 16s6.7 16 15.7 16 15.7-6.9 15.7-16S99.6 0 90.6 0Zm0 26.1c-5.5 0-9.5-4.3-9.5-10.1S85.1 5.9 90.6 5.9s9.5 4.3 9.5 10.1-4 10.1-9.5 10.1Z"/>
-  <path class="wm-l" d="M139.2.6v20L124.5.6h-6.2v30.8h6.2v-20l14.7 20h6.2V.6z"/>
-  <path class="wm-l" d="M157.8.6h6.3v30.8h-6.3z"/>
-  <path class="wm-l" d="M203.2.6h-7.3l-7.1 10.6L181.7.6h-7.4l10.7 15-11 15.8h7.4l7.4-11 7.4 11h7.4l-11-15.8z"/>
+  <g class="wm-e">
+    <path d="M1063 0h545v117h-545z"/>
+    <path d="M1063 233h545v117h-545z"/>
+    <path d="M1063 468h545v117h-545z"/>
+  </g>
 </svg>`;
 }
 
@@ -81,7 +89,7 @@ ${page.noindex ? '<meta name="robots" content="noindex,follow">' : '<meta name="
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${esc(fontHref(lang))}">
-<link rel="stylesheet" href="/css/qeonix.css?v=3">
+<link rel="stylesheet" href="/css/qeonix.css?v=10">
 ${(page.jsonld || []).map((b) => `<script type="application/ld+json">${escJsonLd(b)}</script>`).join("\n")}`;
 }
 

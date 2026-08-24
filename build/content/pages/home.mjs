@@ -8,13 +8,14 @@ import {
   heroLattice, flowStack, archBoard, cycle, cityMesh, deployTiers, gridfield, markRule,
 } from "../../lib/diagrams.mjs";
 import { officeList } from "../../lib/layout.mjs";
+import { agenticTrace, govOpsConsole, missionConsole, mobilityConsole, platformStack } from "../../lib/showcase.mjs";
 import { url, ORIGIN, BRAND, UI } from "../site.mjs";
 import { INDUSTRIES } from "../shared.mjs";
 
 /* ------------------------------------------------------------------ copy */
 
 const HERO = {
-  kicker: T("Abu Dhabi · Intelligent systems engineering", "أبوظبي · هندسة الأنظمة الذكية"),
+  kicker: T("AI · Autonomous systems · Government technology — Abu Dhabi", "الذكاء الاصطناعي · الأنظمة ذاتية التشغيل · التقنيات الحكومية — أبوظبي"),
   h: T("Live|Tomorrow,|Today.", "عِش|الغد،|اليوم."),
   lead: T(
     "Qeonix designs, engineers and deploys the intelligent systems that governments, cities and enterprises run on — from decision intelligence and agentic AI to autonomous operations and connected infrastructure.",
@@ -55,6 +56,18 @@ const BUILD = [
     h: T("Autonomous Systems", "الأنظمة ذاتية التشغيل"),
     p: T("Physical AI: robotics, drones, autonomous inspection and remote operations that move intelligence off the screen and into the field.", "الذكاء المادي: روبوتات وطائرات مسيّرة وفحص ذاتي وتشغيل عن بُعد تنقل الذكاء من الشاشة إلى الميدان."),
     tags: [T("Aerial intelligence", "الاستطلاع الجوي"), T("Autonomous inspection", "الفحص الذاتي"), T("Fleet intelligence", "ذكاء الأساطيل"), T("Remote operations", "التشغيل عن بُعد")],
+  },
+  {
+    icon: "city", href: "cities",
+    h: T("Smart Cities", "المدن الذكية"),
+    p: T("A city operating layer that connects services, infrastructure, command centres and field crews — from a resident's request to the crew that closes it.", "طبقة تشغيل للمدينة تربط الخدمات والبنية التحتية ومراكز القيادة والفرق الميدانية — من طلب المتعامل إلى الفريق الذي يُنجزه."),
+    tags: [T("Command & control", "القيادة والتحكم"), T("Connected infrastructure", "البنية التحتية المتصلة"), T("Field operations", "العمليات الميدانية"), T("Digital twins", "التوائم الرقمية")],
+  },
+  {
+    icon: "route", href: "mobility",
+    h: T("Smart Mobility", "التنقل الذكي"),
+    p: T("Transport that behaves as one network — multimodal journeys, fleet orchestration, intelligent traffic, parking, tolling and the EV ecosystem.", "نقل يعمل كشبكة واحدة — رحلات متعدّدة الوسائط وتنسيق الأساطيل والمرور الذكي والمواقف والتعرفة ومنظومة المركبات الكهربائية."),
+    tags: [T("Mobility-as-a-Service", "التنقل كخدمة"), T("Fleet orchestration", "تنسيق الأساطيل"), T("Intelligent transport", "النقل الذكي"), T("EV ecosystem", "منظومة المركبات الكهربائية")],
   },
   {
     icon: "layers", href: "platforms",
@@ -123,7 +136,7 @@ const TRUST = [
 ];
 
 const WHY = [
-  { h: T("One intelligence layer", "طبقة ذكاء واحدة"), p: "AI, software, autonomous systems and infrastructure designed together, by one team, against one architecture." },
+  { h: T("Architecture continuity", "استمرارية البنية"), p: "The diagram from the first workshop is the system running in production. Nothing was lost in a handover, because there was none." },
   { h: T("Beyond the demo", "أبعد من العرض التجريبي"), p: "We are judged on what survives production load, integration reality and a second year of operation." },
   { h: T("Digital and physical", "رقمي ومادي"), p: "The same decision layer that answers a resident can dispatch a drone. Most vendors do one or the other." },
   { h: T("Architecture first", "البنية أولًا"), p: "Enterprise and solution architecture precede product design, because retrofitting either is what kills programmes." },
@@ -133,7 +146,7 @@ const WHY = [
 
 /* Arabic for WHY kept alongside for readability of the English block above. */
 const WHY_AR = [
-  "الذكاء الاصطناعي والبرمجيات والأنظمة ذاتية التشغيل والبنية التحتية تُصمَّم معًا، بفريق واحد، ووفق بنية واحدة.",
+  "المخطّط الذي رُسم في أول ورشة هو النظام نفسه العامل في الإنتاج. لم يضِع شيء في تسليم، لأنه لم يكن هناك تسليم.",
   "يُحكم علينا بما يصمد أمام حمل الإنتاج وواقع التكامل وسنة تشغيل ثانية.",
   "طبقة القرار نفسها التي تردّ على المتعامل قادرة على إرسال طائرة مسيّرة. أغلب المورّدين يقدّم أحد الأمرين.",
   "تسبق البنية المؤسسية وبنية الحل تصميمَ المنتج، لأن تعديلهما لاحقًا هو ما يُفشل البرامج.",
@@ -177,7 +190,7 @@ export default function home(lang) {
 
   const body = `
 <span id="who" class="vh" aria-hidden="true"></span>
-<section class="hero" id="top">
+<section class="hero is-light" id="top">
   <div class="hero-bg" aria-hidden="true">
     <div class="hero-wash"></div>
     ${gridfield("gf-hero")}
@@ -215,55 +228,68 @@ ${section(`
 ${section(`
   ${secHead({
     kicker: T("What we build", "ما نبنيه"),
-    h: T("Four capabilities,|engineered as one system.", "أربع قدرات،|مهندَسة كنظام واحد."),
+    h: T("Six capabilities,|engineered as one system.", "ست قدرات،|مهندَسة كنظام واحد."),
     lead: T("They are sold separately and almost never deployed that way. The value is in the seams between them.", "تُقدَّم منفصلة، ولا تُنشر كذلك تقريبًا أبدًا. القيمة تكمن في نقاط الوصل بينها."),
   }, lang)}
-  ${capGrid(BUILD.map((b) => ({ ...b, href: L(b.href) })), lang, { cols: 4 })}
+  ${capGrid(BUILD.map((b) => ({ ...b, href: L(b.href) })), lang, { cols: 3 })}
 `, { id: "build", tone: "paper" })}
 
 ${section(`
   ${secHead({
-    kicker: T("Qeonix Intelligence", "ذكاء كيونكس"),
-    h: T("Agentic AI that an enterprise|can actually put its name on.", "ذكاء اصطناعي وكيل|يمكن للمؤسسة أن تضع اسمها عليه."),
-    lead: T("A chatbot answers. An agent acts — which is precisely why the interesting engineering is in the control plane, not the model.", "الروبوت المحادث يجيب. أما الوكيل فينفّذ — ولهذا تحديدًا تكمن الهندسة الجادّة في طبقة التحكم، لا في النموذج."),
+    kicker: T("Technology in operation", "التقنية أثناء التشغيل"),
+    h: T("Enough architecture.|This is what the software looks like.", "يكفي حديثًا عن البنية.|هكذا تبدو البرمجيات فعلًا."),
+    lead: T("Four Qeonix-engineered operating environments — the consoles residents never see and operators live in. Conceptual environments, real engineering.", "أربع بيئات تشغيل من هندسة كيونكس — اللوحات التي لا يراها المتعاملون ويعيش فيها المشغّلون. بيئات توضيحية، وهندسة حقيقية."),
   }, lang)}
-  ${archBoard(AGENT_STACK, lang, {
-    id: "agent-stack",
-    legend: T("Every band above is a place where an organisation can set policy, revoke access or require a signature.", "كل طبقة أعلاه موضع يمكن للجهة فيه ضبط السياسة أو سحب الصلاحية أو اشتراط توقيع."),
-  })}
-  <p class="u-mt-s">${btn(ar ? "منصّة الذكاء الوكيل" : "The agentic platform", L("agentic"), { kind: "ghost", lang })}</p>
-`, { id: "agentic", tone: "deep", grid: true })}
 
-${section(`
-  ${secHead({
-    kicker: T("Physical AI", "الذكاء المادي"),
-    h: T("When intelligence leaves the screen.", "حين يغادر الذكاء الشاشة."),
-    lead: T("Inspection, monitoring and response handled by machines that see, decide and act — under supervision, on a schedule, in places it is expensive or unsafe to send people.", "فحص ومراقبة واستجابة تتولّاها آلات ترى وتقرّر وتنفّذ — تحت إشراف، ووفق جدول، في أماكن يَكلُف إرسال البشر إليها كثيرًا أو يعرّضهم للخطر."),
-    align: "center",
-  }, lang)}
-  ${cycle(SENSE, lang, { id: "sense", returnLabel: T("Every outcome trains the next cycle", "كل نتيجة تدرّب الدورة التالية") })}
-  <p class="u-mt u-center">${btn(ar ? "الأنظمة ذاتية التشغيل" : "Autonomous systems", L("autonomous"), { kind: "ghost", lang })}</p>
-`, { id: "physical", tone: "light" })}
-
-${section(`
-  ${secHead({
-    kicker: T("Government & city operating layer", "طبقة تشغيل الحكومة والمدينة"),
-    h: T("A city is not twelve systems.|It is one operation.", "المدينة ليست اثني عشر نظامًا.|إنها عملية واحدة."),
-    lead: T("Services, mobility, utilities, waste, permits and field crews are usually run by separate platforms that meet only in a report. Qeonix builds the layer where they meet in real time.", "تُدار الخدمات والتنقل والمرافق والنفايات والتصاريح والفرق الميدانية عادةً بمنصّات منفصلة لا تلتقي إلا في تقرير. تبني كيونكس الطبقة التي تلتقي فيها آنيًّا."),
-  }, lang)}
-  ${cityMesh(CITY_DOMAINS, lang, {
-    kicker: T("Qeonix layer", "طبقة كيونكس"),
-    label: T("Shared data, shared identity, shared orchestration", "بيانات مشتركة وهوية مشتركة وتنسيق مشترك"),
-    note: T("One picture of the city, one queue of work, one audit trail.", "صورة واحدة للمدينة، وقائمة عمل واحدة، وسجل تدقيق واحد."),
-  })}
-  <div class="u-mt">
-    ${capGrid([
-      { icon: "building", h: T("Smart Government", "الحكومة الذكية"), p: T("Digital services, cross-agency orchestration and government AI assistants.", "خدمات رقمية وتنسيق بين الجهات ومساعدون حكوميون بالذكاء الاصطناعي."), href: L("government") },
-      { icon: "city", h: T("Smart Cities", "المدن الذكية"), p: T("City operations, command centres, infrastructure and field workforce.", "عمليات المدينة ومراكز القيادة والبنية التحتية والقوى العاملة الميدانية."), href: L("cities") },
-      { icon: "route", h: T("Connected Mobility", "التنقل المتصل"), p: T("Fleets, public transport, parking, tolling and the EV ecosystem.", "الأساطيل والنقل العام ومواقف السيارات والتعرفة المرورية ومنظومة المركبات الكهربائية."), href: L("mobility") },
-    ], lang, { cols: 3 })}
+  <div class="show reveal">
+    <div class="show-copy">
+      <p class="kicker mono">${markRule()}<span>01 · ${ar ? "المنصّة الوكيلة" : "Agentic platform"}</span></p>
+      <h3 class="h3">${ar ? "وكيل يُنجز معاملة، لا محادثة." : "An agent finishing a case, not a chat."}</h3>
+      <p>${ar ? "طلب حقيقي يتحوّل إلى خطة، فاستدعاءات أدوات، فنقطة اعتماد بشرية، فسجل تدقيق — تحت صلاحيات محدّدة النطاق." : "A request becomes a plan, tool calls, a human checkpoint and an audit record — under scoped permissions the whole way."}</p>
+      <p class="show-cta">${btn(ar ? "الذكاء الاصطناعي الوكيل" : "Agentic AI", L("agentic"), { kind: "ghost", lang })}</p>
+    </div>
+    <div class="show-ui">${agenticTrace(lang)}</div>
   </div>
-`, { id: "city", tone: "paper" })}
+
+  <div class="show is-flip reveal">
+    <div class="show-copy">
+      <p class="kicker mono">${markRule()}<span>02 · ${ar ? "منصّة الحكومة والمدينة" : "Government & city platform"}</span></p>
+      <h3 class="h3">${ar ? "المدينة كقائمة عمل واحدة." : "The city as one queue of work."}</h3>
+      <p>${ar ? "طلبات الخدمة واتفاقيات المستوى وصحة التكامل والفرق الميدانية — في صورة تشغيلية واحدة تُدار منها المدينة." : "Service requests, SLAs, integration health and field crews — one operational picture the city is actually run from."}</p>
+      <p class="show-cta">${btn(ar ? "الحكومة الذكية" : "Smart Government", L("government"), { kind: "ghost", lang })}</p>
+    </div>
+    <div class="show-ui">${govOpsConsole(lang)}</div>
+  </div>
+
+  <div class="show reveal">
+    <div class="show-copy">
+      <p class="kicker mono">${markRule()}<span>03 · ${ar ? "الاستقلالية" : "Autonomy"}</span></p>
+      <h3 class="h3">${ar ? "من الرصد إلى أمر عمل." : "From a detection to a work order."}</h3>
+      <p>${ar ? "مهمة فحص مُشرَف عليها: استشعار، رصد، قرار ضمن الحدود المصرَّح بها، إرسال، وأدلّة مؤرشفة." : "A supervised inspection mission: sense, detect, decide inside the cleared envelope, dispatch — and archive the evidence."}</p>
+      <p class="show-cta">${btn(ar ? "الأنظمة ذاتية التشغيل" : "Autonomous systems", L("autonomous"), { kind: "ghost", lang })}</p>
+    </div>
+    <div class="show-ui">${missionConsole(lang)}</div>
+  </div>
+
+  <div class="show is-flip reveal">
+    <div class="show-copy">
+      <p class="kicker mono">${markRule()}<span>04 · ${ar ? "منصّة التنقل" : "Mobility platform"}</span></p>
+      <h3 class="h3">${ar ? "شبكة تُعيد توازنها بنفسها." : "A network that rebalances itself."}</h3>
+      <p>${ar ? "توقّع ذروة، وإعادة توجيه حول حادث، وتجهيز أسطول، وتسعير ديناميكي — قبل أن يتّصل أحد." : "A demand spike forecast, an incident reroute, staged fleet capacity and dynamic pricing — before anyone phones a control room."}</p>
+      <p class="show-cta">${btn(ar ? "التنقل الذكي" : "Smart Mobility", L("mobility"), { kind: "ghost", lang })}</p>
+    </div>
+    <div class="show-ui">${mobilityConsole(lang)}</div>
+  </div>
+`, { id: "operation", tone: "light" })}
+
+${section(`
+  ${secHead({
+    kicker: T("One foundation, many platforms", "أساس واحد، منصّات متعدّدة"),
+    h: T("Why those four ship fast:|they stand on the same stack.", "لماذا تُنجَز هذه الأربع بسرعة:|لأنها تقف على المنظومة نفسها."),
+    lead: T("Qeonix is not a project shop that starts from a blank page. A reusable, governed intelligence foundation carries every domain platform — which is what makes complex vertical systems buildable in months, not years.", "كيونكس ليست ورشة مشاريع تبدأ من صفحة بيضاء. أساس ذكي محكوم وقابل لإعادة الاستخدام يحمل كل منصّة قطاعية — وهذا ما يجعل الأنظمة القطاعية المعقّدة قابلة للبناء في شهور لا سنوات."),
+  }, lang)}
+  ${platformStack(lang)}
+`, { id: "stack", tone: "paper" })}
 
 ${section(`
   ${secHead({
@@ -272,7 +298,7 @@ ${section(`
     lead: T("The pattern repeats across sectors: a dense physical operation, fragmented data, and decisions being made later than they should be.", "النمط يتكرّر عبر القطاعات: عملية مادية كثيفة، وبيانات مبعثرة، وقرارات تُتّخذ متأخّرة عمّا ينبغي."),
   }, lang)}
   ${industryGrid(INDUSTRIES.map((i) => ({ ...i, href: L("industries") + "#" + i.id })), lang)}
-`, { id: "industries", tone: "light" })}
+`, { id: "industries", tone: "paper" })}
 
 <span id="approach" class="vh" aria-hidden="true"></span>
 ${section(`
@@ -282,7 +308,7 @@ ${section(`
     lead: T("The same organisation that draws the architecture writes the code and answers the pager. Nothing is handed to a downstream party who was not in the room.", "الجهة نفسها التي ترسم البنية تكتب الشيفرة وتستجيب للتنبيه. لا شيء يُسلَّم لطرف لم يكن حاضرًا في الغرفة."),
   }, lang)}
   ${track(DELIVERY, lang)}
-`, { id: "delivery", tone: "paper" })}
+`, { id: "delivery", tone: "light" })}
 
 ${section(`
   ${secHead({
@@ -293,7 +319,7 @@ ${section(`
   ${deployTiers(SOVEREIGN_TIERS, lang)}
   <div class="u-mt">${trustGrid(TRUST, lang)}</div>
   <p class="u-mt-s">${btn(ar ? "الذكاء الاصطناعي السيادي" : "Sovereign AI", L("sovereign"), { kind: "ghost", lang })}</p>
-`, { id: "sovereign", tone: "deep", grid: true })}
+`, { id: "sovereign", tone: "paper", grid: true })}
 
 ${section(statement({
   text: T("Designed to work|beyond the demo.", "مصمّمة لتعمل|أبعد من العرض التجريبي."),
@@ -302,8 +328,9 @@ ${section(statement({
 
 ${section(`
   ${secHead({
-    kicker: T("Why Qeonix", "لماذا كيونكس"),
-    h: T("Six reasons a serious buyer|shortlists us.", "ستة أسباب تجعل المشتري الجادّ|يضعنا في قائمته القصيرة."),
+    kicker: T("Built differently", "مبنيّة بطريقة مختلفة"),
+    h: T("What changes when one team|owns the whole system.", "ما الذي يتغيّر حين يملك فريق واحد|النظام بأكمله."),
+    lead: T("Not a list of virtues — a list of consequences. Each of these is what an operator inherits because architecture, engineering and operations never changed hands.", "ليست قائمة فضائل — بل قائمة نتائج. كلٌّ ممّا يلي هو ما يرثه المشغّل لأن البنية والهندسة والتشغيل لم تنتقل بين أيدٍ متعدّدة."),
   }, lang)}
   ${pillars(WHY, lang)}
 
@@ -330,6 +357,7 @@ ${section(`
   return {
     route: "home",
     solidHeader: false,
+    bodyClass: "has-light-top",
     title: T(
       "Qeonix — AI, Autonomous Systems & Smart Government Technology | Abu Dhabi",
       "كيونكس — الذكاء الاصطناعي والأنظمة ذاتية التشغيل وتقنيات الحكومة الذكية | أبوظبي"

@@ -88,9 +88,9 @@ export function heroLattice() {
     <g class="lat-core">
       <circle cx="470" cy="470" r="58" class="lat-core-disc"/>
       <g class="lat-core-mark">
-        <rect x="446" y="454" width="48" height="6" rx="3"/>
-        <rect x="446" y="467" width="34" height="6" rx="3"/>
-        <rect x="446" y="480" width="48" height="6" rx="3"/>
+        <rect x="446" y="452.5" width="48" height="7"/>
+        <rect x="446" y="466.5" width="48" height="7"/>
+        <rect x="446" y="480.5" width="48" height="7"/>
       </g>
     </g>
 

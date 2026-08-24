@@ -1,9 +1,10 @@
 import { T } from "../../lib/html.mjs";
 import { section, secHead, capGrid, faq, trustGrid, statement } from "../../lib/components.mjs";
 import { archBoard, matrix, flowStack } from "../../lib/diagrams.mjs";
+import { mobilityConsole } from "../../lib/showcase.mjs";
 import { heroFor, closer } from "../../lib/page.mjs";
 
-const LABEL = T("Connected Mobility", "التنقل المتصل");
+const LABEL = T("Smart Mobility", "التنقل الذكي");
 
 const CAPS = [
   { icon: "route", h: T("Mobility-as-a-Service", "التنقل كخدمة"), p: T("Journey planning, booking and payment across modes in one experience — bus, metro, taxi, micro-mobility and parking treated as one network, not five apps.", "تخطيط الرحلة والحجز والدفع عبر الوسائط في تجربة واحدة — الحافلة والمترو والأجرة والتنقل الخفيف والمواقف كشبكة واحدة، لا خمسة تطبيقات.") },
@@ -86,6 +87,15 @@ ${section(`
 
 ${section(`
   ${secHead({
+    kicker: T("In operation", "أثناء التشغيل"),
+    h: T("The network, run as one system.", "الشبكة، تُدار كنظام واحد."),
+    lead: T("A stadium event, an incident on a corridor, an EV network at load — and the platform rebalancing all three while the control room supervises.", "فعالية في الاستاد، وحادث على ممر، وشبكة شحن تحت الحمل — والمنصّة تعيد التوازن للثلاثة بينما تشرف غرفة التحكم."),
+  }, lang)}
+  <div class="reveal" data-d="1">${mobilityConsole(lang)}</div>
+`, { tone: "paper" })}
+
+${section(`
+  ${secHead({
     kicker: T("Reference architecture", "بنية مرجعية"),
     h: T("One network,|five layers.", "شبكة واحدة،|خمس طبقات."),
   }, lang)}
@@ -124,7 +134,7 @@ ${closer("mobility", lang)}
     solidHeader: true,
     crumbTrail: hero.crumbTrail,
     title: T(
-      "Connected Mobility & Intelligent Transportation | Qeonix",
+      "Smart Mobility & Intelligent Transportation | Qeonix",
       "التنقل المتصل وأنظمة النقل الذكية | كيونكس"
     ),
     description: T(

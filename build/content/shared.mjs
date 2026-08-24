@@ -66,13 +66,13 @@ export const RELATED = {
     { key: "autonomous", label: T("Autonomous Systems", "الأنظمة ذاتية التشغيل"), note: T("Vision and decisioning in the physical world.", "الرؤية واتخاذ القرار في العالم المادي.") },
   ],
   autonomous: [
-    { key: "mobility", label: T("Connected Mobility", "التنقل المتصل"), note: T("Fleets, corridors and transport operations.", "الأساطيل والممرّات وعمليات النقل.") },
+    { key: "mobility", label: T("Smart Mobility", "التنقل الذكي"), note: T("Fleets, corridors and transport operations.", "الأساطيل والممرّات وعمليات النقل.") },
     { key: "cities", label: T("Smart Cities", "المدن الذكية"), note: T("Field operations tied to city command.", "العمليات الميدانية مرتبطة بقيادة المدينة.") },
     { key: "ai", label: T("Intelligence & AI", "الذكاء الاصطناعي"), note: T("The perception and decision layer.", "طبقة الإدراك واتخاذ القرار.") },
   ],
   cities: [
     { key: "government", label: T("Smart Government", "الحكومة الذكية"), note: T("The service side of the same operating layer.", "الجانب الخدمي من طبقة التشغيل نفسها.") },
-    { key: "mobility", label: T("Connected Mobility", "التنقل المتصل"), note: T("Movement across the city, coordinated.", "الحركة عبر المدينة، بتنسيق واحد.") },
+    { key: "mobility", label: T("Smart Mobility", "التنقل الذكي"), note: T("Movement across the city, coordinated.", "الحركة عبر المدينة، بتنسيق واحد.") },
     { key: "autonomous", label: T("Autonomous Systems", "الأنظمة ذاتية التشغيل"), note: T("Inspection and response in the field.", "الفحص والاستجابة في الميدان.") },
   ],
   government: [

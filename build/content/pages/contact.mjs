@@ -18,6 +18,7 @@ const INTENTS = [
 
 const INDUSTRIES = [
   T("Government & Public Sector", "الحكومة والقطاع العام"),
+  T("Smart Cities & Urban Operations", "المدن الذكية والعمليات الحضرية"),
   T("Transportation & Mobility", "النقل والتنقل"),
   T("Energy & Utilities", "الطاقة والمرافق"),
   T("Industrial & Manufacturing", "الصناعة والتصنيع"),

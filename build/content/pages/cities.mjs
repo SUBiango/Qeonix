@@ -1,6 +1,7 @@
 import { T } from "../../lib/html.mjs";
 import { section, secHead, btn, capGrid, faq, trustGrid, statement } from "../../lib/components.mjs";
 import { archBoard, cityMesh, matrix, flowStack } from "../../lib/diagrams.mjs";
+import { govOpsConsole } from "../../lib/showcase.mjs";
 import { heroFor, closer } from "../../lib/page.mjs";
 import { url } from "../site.mjs";
 
@@ -128,6 +129,15 @@ ${section(`
   }, lang)}
   ${flowStack(LIFECYCLE, lang, { id: "city-lifecycle", dense: true })}
 `, { tone: "paper" })}
+
+${section(`
+  ${secHead({
+    kicker: T("The operating environment", "بيئة التشغيل"),
+    h: T("The console the city|is run from.", "اللوحة التي تُدار|منها المدينة."),
+    lead: T("Requests, SLAs, integrations and field crews on one screen — because closing the loop is an operations discipline, not a dashboard feature.", "الطلبات والاتفاقيات والتكاملات والفرق الميدانية في شاشة واحدة — لأن إغلاق الحلقة انضباط تشغيلي، لا خاصية في لوحة."),
+  }, lang)}
+  <div class="reveal" data-d="1">${govOpsConsole(lang)}</div>
+`, { tone: "light" })}
 
 ${section(`
   ${secHead({ kicker: T("Capabilities", "القدرات"), h: T("Six places we do the work.", "ستة مواضع نؤدّي فيها العمل.") }, lang)}
