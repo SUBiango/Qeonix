@@ -16,7 +16,7 @@ import { INDUSTRIES } from "../shared.mjs";
 
 const HERO = {
   kicker: T("AI · Autonomous systems · Government technology · Abu Dhabi", "الذكاء الاصطناعي · الأنظمة ذاتية التشغيل · التقنيات الحكومية · أبوظبي"),
-  h: T("Live|Tomorrow,|Today.", "عِش|الغد،|اليوم."),
+  h: T("Live|Tomorrow,|Today.", "المستقبل|بين يديك"),
   lead: T(
     "Qeonix designs, engineers and deploys the intelligent systems that governments, cities and enterprises run on, from decision intelligence and agentic AI to autonomous operations and connected infrastructure.",
     "تصمّم كيونكس وتهندس وتنشر الأنظمة الذكية التي تعتمد عليها الحكومات والمدن والمؤسسات، من ذكاء القرار والذكاء الاصطناعي الوكيل إلى العمليات ذاتية التشغيل والبنية التحتية المتصلة."
