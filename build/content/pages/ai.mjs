@@ -8,25 +8,25 @@ import { TIERS } from "../shared.mjs";
 const LABEL = T("Intelligence & AI", "الذكاء الاصطناعي");
 
 const DOMAINS = [
-  { icon: "compass", h: T("Decision intelligence", "ذكاء القرار"), p: T("Models wrapped in the context, thresholds and authority structure of the decision they support — so a recommendation arrives with the reason and the owner attached.", "نماذج مغلَّفة بسياق القرار وحدوده وهيكل الصلاحية الخاص به — لتصل التوصية مصحوبة بالسبب والمسؤول.") },
+  { icon: "compass", h: T("Decision intelligence", "ذكاء القرار"), p: T("Models wrapped in the context, thresholds and authority structure of the decision they support, so a recommendation arrives with the reason and the owner attached.", "نماذج مغلَّفة بسياق القرار وحدوده وهيكل الصلاحية الخاص به، لتصل التوصية مصحوبة بالسبب والمسؤول.") },
   { icon: "vision", h: T("Computer vision", "الرؤية الحاسوبية"), p: T("Detection, classification and change monitoring on fixed cameras, vehicle-mounted sensors and aerial imagery, tuned against the site rather than a public dataset.", "الكشف والتصنيف ورصد التغيّر عبر الكاميرات الثابتة والمستشعرات المركّبة على المركبات والصور الجوية، مضبوطة على الموقع لا على مجموعة بيانات عامة.") },
   { icon: "graph", h: T("Predictive analytics", "التحليلات التنبؤية"), p: T("Failure, demand and load forecasting built on the operator's own history, and re-scored as reality diverges from the training window.", "التنبؤ بالأعطال والطلب والأحمال بناءً على سجل المشغّل نفسه، مع إعادة تقييم مستمرة كلما ابتعد الواقع عن نافذة التدريب.") },
-  { icon: "spark", h: T("Generative AI", "الذكاء التوليدي"), p: T("Drafting, summarisation, translation and knowledge retrieval grounded in governed sources, with citations back to the record.", "الصياغة والتلخيص والترجمة واسترجاع المعرفة من مصادر محكومة، مع إسناد مرجعي إلى السجل الأصلي.") },
-  { icon: "layers", h: T("Data intelligence", "ذكاء البيانات"), p: T("Entity resolution, quality scoring and lineage — the unglamorous work that determines whether any of the above is trustworthy.", "توحيد الكيانات وتقييم الجودة وتتبّع المنشأ — العمل غير اللافت الذي يحدّد ما إذا كان أيٌّ مما سبق جديرًا بالثقة.") },
-  { icon: "chip", h: T("Enterprise AI", "الذكاء المؤسسي"), p: T("AI delivered as a governed capability across an organisation, not as a series of disconnected pilots each with its own key and its own risk.", "ذكاء اصطناعي يُقدَّم كقدرة محكومة على مستوى المؤسسة، لا كسلسلة تجارب منفصلة لكلٍّ مفتاحها ومخاطرها.") },
+  { icon: "spark", h: T("Generative AI", "الذكاء التوليدي"), p: T("Drafting, summarization, translation and knowledge retrieval grounded in governed sources, with citations back to the record.", "الصياغة والتلخيص والترجمة واسترجاع المعرفة من مصادر محكومة، مع إسناد مرجعي إلى السجل الأصلي.") },
+  { icon: "layers", h: T("Data intelligence", "ذكاء البيانات"), p: T("Entity resolution, quality scoring and lineage: the unglamorous work that determines whether any of the above is trustworthy.", "توحيد الكيانات وتقييم الجودة وتتبّع المنشأ: العمل غير اللافت الذي يحدّد ما إذا كان أيٌّ مما سبق جديرًا بالثقة.") },
+  { icon: "chip", h: T("Enterprise AI", "الذكاء المؤسسي"), p: T("AI delivered as a governed capability across an organization, not as a series of disconnected pilots each with its own key and its own risk.", "ذكاء اصطناعي يُقدَّم كقدرة محكومة على مستوى المؤسسة، لا كسلسلة تجارب منفصلة لكلٍّ مفتاحها ومخاطرها.") },
 ];
 
 const PIPELINE = [
   { label: T("Establish the ground truth", "ترسيخ المرجعية"), icon: "layers", note: T("Sources, ownership, quality and the lineage that lets an answer be defended.", "المصادر والملكية والجودة ومسار المنشأ الذي يسمح بالدفاع عن أي إجابة.") },
   { label: T("Frame the decision", "تأطير القرار"), icon: "compass", note: T("What is being decided, by whom, on what evidence, against which threshold.", "ما الذي يُقرَّر، ومن يقرّره، وبأي أدلّة، ووفق أي حدّ.") },
   { label: T("Build and evaluate", "البناء والتقييم"), icon: "target", note: T("Trained or selected against the operator's own cases, scored before deployment.", "تدريب أو اختيار وفق حالات المشغّل نفسه، بتقييم سابق للنشر.") },
-  { label: T("Integrate into the workflow", "الدمج في سير العمل"), icon: "flow", note: T("Delivered where the work already happens — not as another screen to check.", "تُقدَّم حيث يجري العمل فعلًا — لا كشاشة إضافية للمراجعة.") },
+  { label: T("Integrate into the workflow", "الدمج في سير العمل"), icon: "flow", note: T("Delivered where the work already happens, not as another screen to check.", "تُقدَّم حيث يجري العمل فعلًا، لا كشاشة إضافية للمراجعة.") },
   { label: T("Monitor and re-score", "المراقبة وإعادة التقييم"), icon: "eye", note: T("Drift, override rates and outcome quality tracked as first-class metrics.", "الانحراف ومعدّلات التجاوز وجودة النتائج تُتابَع كمؤشّرات أساسية.") },
 ];
 
 const STACK = [
   { label: T("Perception", "الإدراك"), items: [T("Object detection", "كشف الأجسام"), T("Segmentation", "التجزئة"), T("Change detection", "كشف التغيّر"), T("OCR & document AI", "التعرّف الضوئي وذكاء المستندات"), T("Audio & signal", "الصوت والإشارة")] },
-  { label: T("Reasoning", "الاستدلال"), items: [T("Forecasting", "التنبؤ"), T("Optimisation", "التحسين"), T("Anomaly detection", "كشف الشذوذ"), T("Retrieval & grounding", "الاسترجاع والإسناد"), T("Simulation", "المحاكاة")] },
+  { label: T("Reasoning", "الاستدلال"), items: [T("Forecasting", "التنبؤ"), T("Optimization", "التحسين"), T("Anomaly detection", "كشف الشذوذ"), T("Retrieval & grounding", "الاسترجاع والإسناد"), T("Simulation", "المحاكاة")] },
   { label: T("Delivery", "التقديم"), items: [T("Operational dashboards", "لوحات تشغيلية"), T("Alerts & thresholds", "التنبيهات والحدود"), T("Embedded in core systems", "مدمج في الأنظمة الأساسية"), T("Assistants & copilots", "المساعدون والمرافقون"), T("APIs", "واجهات البرمجة")] },
   { label: T("Assurance", "الضمان"), items: [T("Evaluation sets", "مجموعات التقييم"), T("Drift monitoring", "مراقبة الانحراف"), T("Bias review", "مراجعة التحيّز"), T("Model registry", "سجل النماذج"), T("MLOps pipelines", "مسارات عمليات التعلّم الآلي")] },
 ];
@@ -63,8 +63,8 @@ export default function ai(lang) {
     kicker: T("Capability · Intelligence & AI", "قدرة · الذكاء الاصطناعي"),
     h: T("Applied AI for operations|that already exist.", "ذكاء اصطناعي تطبيقي لعمليات|قائمة بالفعل."),
     lead: T(
-      "Most organisations do not need a new AI strategy. They need three decisions made earlier, more consistently, and with the evidence attached — inside the systems their teams already work in.",
-      "أغلب المؤسسات لا تحتاج استراتيجية ذكاء اصطناعي جديدة. تحتاج ثلاثة قرارات تُتّخذ أبكر وبثبات أكبر ومع الأدلّة — داخل الأنظمة التي تعمل فيها فرقها بالفعل."
+      "Most organizations do not need a new AI strategy. They need three decisions made earlier, more consistently, and with the evidence attached, inside the systems their teams already work in.",
+      "أغلب المؤسسات لا تحتاج استراتيجية ذكاء اصطناعي جديدة. تحتاج ثلاثة قرارات تُتّخذ أبكر وبثبات أكبر ومع الأدلّة، داخل الأنظمة التي تعمل فيها فرقها بالفعل."
     ),
     meta: [
       { k: T("Applied to", "تُطبَّق على"), v: T("Live operations, not pilots", "عمليات فعلية، لا تجارب") },
@@ -134,8 +134,8 @@ ${closer("ai", lang)}
       "الذكاء الاصطناعي وذكاء القرار | كيونكس أبوظبي"
     ),
     description: T(
-      "Applied AI for live operations: decision intelligence, computer vision, predictive analytics, generative AI and enterprise AI — engineered on your own data, integrated into existing workflows, and deployable inside your own environment.",
-      "ذكاء اصطناعي تطبيقي للعمليات الفعلية: ذكاء القرار والرؤية الحاسوبية والتحليلات التنبؤية والذكاء التوليدي والذكاء المؤسسي — مهندَس على بياناتكم، ومدمج في سير عملكم القائم، وقابل للنشر داخل بيئتكم."
+      "Applied AI for live operations: decision intelligence, computer vision, predictive analytics, generative AI and enterprise AI. Engineered on your own data, integrated into existing workflows, and deployable inside your own environment.",
+      "ذكاء اصطناعي تطبيقي للعمليات الفعلية: ذكاء القرار والرؤية الحاسوبية والتحليلات التنبؤية والذكاء التوليدي والذكاء المؤسسي. مهندَس على بياناتكم، ومدمج في سير عملكم القائم، وقابل للنشر داخل بيئتكم."
     ),
     og: "ai",
     service: { name: LABEL, type: T("Artificial intelligence engineering", "هندسة الذكاء الاصطناعي") },

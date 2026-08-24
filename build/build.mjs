@@ -218,39 +218,39 @@ function llms() {
   return `# QEONIX
 
 > Qeonix designs, engineers and deploys the intelligent systems that governments,
-> cities and enterprises run on — decision intelligence, agentic AI, autonomous
+> cities and enterprises run on: decision intelligence, agentic AI, autonomous
 > systems and connected infrastructure. Headquartered in Abu Dhabi, United Arab
 > Emirates. Tagline: "Live Tomorrow, Today."
 
-Qeonix is an engineering and product organisation rather than a reseller or a
+Qeonix is an engineering and product organization rather than a reseller or a
 pure systems integrator. It architects, builds, deploys and operates the
 platforms and intelligence layers its clients run on, and integrates them with
 the systems already in place.
 
 ## Capabilities
-- **Intelligence & AI** — decision intelligence, computer vision, predictive
+- **Intelligence & AI**: decision intelligence, computer vision, predictive
   analytics, generative AI, enterprise AI applied to existing operations.
-- **Agentic AI** — multi-agent orchestration, tool and API calling, enterprise
+- **Agentic AI**: multi-agent orchestration, tool and API calling, enterprise
   integration, human-in-the-loop controls, permissions, observability,
   auditability, model flexibility across open-source and commercial models.
-- **Autonomous Systems (Physical AI)** — robotics, drones, autonomous
+- **Autonomous Systems (Physical AI)**: robotics, drones, autonomous
   inspection, remote operations, aerial intelligence, fleet intelligence.
-- **Data & Digital Platforms** — data platforms, integration layers, APIs,
+- **Data & Digital Platforms**: data platforms, integration layers, APIs,
   event-driven systems, workflow engines, digital twins, cloud-native and
   hybrid infrastructure.
 
 ## Sectors
-- **Smart Government** — digital government platforms, resident super-apps,
+- **Smart Government**: digital government platforms, resident super-apps,
   service orchestration, cross-agency workflows, case management, permitting
   and licensing journeys, government AI assistants, payments and digital
   identity integration.
-- **Smart Cities** — city operations, command and control centres, utilities,
+- **Smart Cities**: city operations, command and control centers, utilities,
   waste, mobility, parking, tolling, EV charging, public transport, IoT and
   asset management, environmental monitoring, field operations.
-- **Connected Mobility** — mobility-as-a-service, multimodal journeys, fleet
+- **Connected Mobility**: mobility-as-a-service, multimodal journeys, fleet
   orchestration, intelligent transportation, connected vehicles, transport
   intelligence.
-- **Healthcare** — digital health platforms, patient journeys, provider
+- **Healthcare**: digital health platforms, patient journeys, provider
   ecosystems, care orchestration, insurance intelligence, healthcare analytics.
 - Also energy and utilities, industrial and manufacturing, logistics and supply
   chain, aviation and aerospace, real estate and urban development.
@@ -258,16 +258,16 @@ the systems already in place.
 ## Deployment and sovereignty
 Qeonix systems are architected so that deployment topology is a design decision:
 public cloud, dedicated private cloud, on-premise inside the customer's data
-centre, or isolated environments designed to support data residency
+center, or isolated environments designed to support data residency
 requirements. Identity and role-based access, permissions, audit trails,
 observability, human oversight and controlled model access are part of the
 architecture. Qeonix does not claim third-party certifications on this site.
 
 ## Locations
-- Abu Dhabi, United Arab Emirates — headquarters
-- Paris, France — office
-- Muscat, Oman — in progress
-- Doha, Qatar — in progress
+- Abu Dhabi, United Arab Emirates: headquarters
+- Paris, France: office
+- Muscat, Oman: in progress
+- Doha, Qatar: in progress
 
 ## Contact
 - Website: ${ORIGIN}/

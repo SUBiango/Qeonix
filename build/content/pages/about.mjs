@@ -14,17 +14,17 @@ const FACTS = [
 ];
 
 const BELIEFS = [
-  { h: T("Build, not broker", "نبني ولا نتوسّط"), p: T("Our value is in what we design, engineer and operate — not in reselling someone else's platform with our logo on the slide.", "قيمتنا فيما نصمّمه ونهندسه ونشغّله — لا في إعادة بيع منصّة غيرنا وشعارنا على العرض.") },
+  { h: T("Build, not broker", "نبني ولا نتوسّط"), p: T("Our value is in what we design, engineer and operate, not in reselling someone else's platform with our logo on the slide.", "قيمتنا فيما نصمّمه ونهندسه ونشغّله، لا في إعادة بيع منصّة غيرنا وشعارنا على العرض.") },
   { h: T("Production is the point", "الإنتاج هو الغاية"), p: T("A capability that exists only in a demo does not exist. We are accountable for what runs, under load, in the second year.", "القدرة الموجودة في عرض تجريبي فقط غير موجودة. نحن مساءلون عمّا يعمل، تحت الحمل، في السنة الثانية.") },
   { h: T("The region is a hard market, deliberately", "المنطقة سوق صعبة، عن قصد"), p: T("Government-grade expectations, sovereignty requirements and Arabic as a first-class language raise the bar. Systems built to clear it travel well.", "توقّعات بمستوى حكومي ومتطلّبات سيادية والعربية كلغة أولى ترفع السقف. والأنظمة المبنية لتجاوزه تسافر جيدًا.") },
-  { h: T("The architects stay with the system", "المعماريون يبقون مع النظام"), p: T("Senior technical ownership runs from the first architecture session through production operations — the same accountable engineers, backed by full multidisciplinary delivery.", "تمتد الملكية التقنية الرفيعة من أول جلسة هندسية حتى تشغيل الإنتاج — المهندسون المسؤولون أنفسهم، يسندهم تنفيذ متكامل متعدّد التخصّصات.") },
+  { h: T("The architects stay with the system", "المعماريون يبقون مع النظام"), p: T("Senior technical ownership runs from the first architecture session through production operations: the same accountable engineers, backed by full multidisciplinary delivery.", "تمتد الملكية التقنية الرفيعة من أول جلسة هندسية حتى تشغيل الإنتاج: المهندسون المسؤولون أنفسهم، يسندهم تنفيذ متكامل متعدّد التخصّصات.") },
   { h: T("Honest about autonomy", "صادقون بشأن الاستقلالية"), p: T("We tell clients what should not be automated yet. Trust in the systems depends on candour about their limits.", "نخبر العملاء بما لا ينبغي أتمتته بعد. فالثقة بالأنظمة تقوم على الصراحة بشأن حدودها.") },
   { h: T("Measured, always", "قياس دائم"), p: T("Every engagement carries an operational metric. If the number does not move, the work is not done.", "كل ارتباط يحمل مؤشّرًا تشغيليًا. وإن لم يتحرّك الرقم فالعمل لم يُنجز.") },
 ];
 
 const WHY_AD = [
-  { icon: "building", h: T("Governments moving first", "حكومات تتحرّك أولًا"), p: T("The region's public sector is adopting AI and autonomous systems at a pace most markets are still debating — with the mandate and capital to deploy at national scale.", "يتبنّى القطاع العام في المنطقة الذكاء الاصطناعي والأنظمة ذاتية التشغيل بوتيرة لا تزال معظم الأسواق تناقشها — وبتفويض ورأس مال للنشر على نطاق وطني.") },
-  { icon: "city", h: T("Cities as live programmes", "مدن كبرامج حيّة"), p: T("Urban intelligence here is not a pilot district; it is operating policy. That produces real requirements, real load and real accountability.", "الذكاء الحضري هنا ليس حيًّا تجريبيًا؛ بل سياسة تشغيل. وهذا يولّد متطلّبات وحملًا ومساءلة حقيقية.") },
+  { icon: "building", h: T("Governments moving first", "حكومات تتحرّك أولًا"), p: T("The region's public sector is adopting AI and autonomous systems at a pace most markets are still debating, with the mandate and capital to deploy at national scale.", "يتبنّى القطاع العام في المنطقة الذكاء الاصطناعي والأنظمة ذاتية التشغيل بوتيرة لا تزال معظم الأسواق تناقشها، وبتفويض ورأس مال للنشر على نطاق وطني.") },
+  { icon: "city", h: T("Cities as live programs", "مدن كبرامج حيّة"), p: T("Urban intelligence here is not a pilot district; it is operating policy. That produces real requirements, real load and real accountability.", "الذكاء الحضري هنا ليس حيًّا تجريبيًا؛ بل سياسة تشغيل. وهذا يولّد متطلّبات وحملًا ومساءلة حقيقية.") },
   { icon: "shield", h: T("Sovereignty as a requirement", "السيادة كمتطلّب"), p: T("Data residency and controlled deployment are procurement conditions in this region, which forces an architectural discipline most vendors defer.", "إقامة البيانات والنشر المحكوم شرطان في المشتريات بهذه المنطقة، ما يفرض انضباطًا هندسيًا يؤجّله معظم المورّدين.") },
   { icon: "compass", h: T("Built here, aimed outward", "تُبنى هنا، وتتّجه للخارج"), p: T("Abu Dhabi is the headquarters and the standard-setter; Paris extends us into Europe, and Muscat and Doha are in progress. The systems are designed for international deployment from day one.", "أبوظبي هي المقر وواضعة المعيار؛ وباريس تمدّنا نحو أوروبا، ومسقط والدوحة قيد التأسيس. والأنظمة مصمّمة للنشر الدولي من اليوم الأول.") },
 ];
@@ -35,7 +35,7 @@ const DELIVERY = [
   { h: T("Product & design", "المنتج والتصميم"), p: T("UX and interfaces designed for operators, residents and field crews.", "تجربة وواجهات مصمّمة للمشغّلين والمتعاملين والفرق الميدانية.") },
   { h: T("Engineering", "الهندسة"), p: T("AI, software, data and cybersecurity engineering in one team.", "هندسة الذكاء الاصطناعي والبرمجيات والبيانات والأمن في فريق واحد.") },
   { h: T("Integration", "التكامل"), p: T("Into the estate that exists, under its identity and its constraints.", "مع المنظومة القائمة، تحت هويتها وقيودها.") },
-  { h: T("Deployment", "النشر"), p: T("Cloud, private, on-premise or sovereign — fixed at design time.", "سحابي أو خاص أو داخل المنشأة أو سيادي — يُثبَّت عند التصميم.") },
+  { h: T("Deployment", "النشر"), p: T("Cloud, private, on-premise or sovereign: fixed at design time.", "سحابي أو خاص أو داخل المنشأة أو سيادي: يُثبَّت عند التصميم.") },
   { h: T("Operations", "التشغيل"), p: T("DevOps, MLOps and support, run by the people who built it.", "عمليات التطوير والتعلّم الآلي والدعم، بأيدي من بناه.") },
   { h: T("Evolution", "التطوير"), p: T("Measured, tuned and extended as the mandate grows.", "قياس وضبط وتوسيع مع نموّ التكليف.") },
 ];
@@ -50,8 +50,8 @@ export default function about(lang) {
     kicker: T("The company", "الشركة"),
     h: T("An engineering company|in a market that demands one.", "شركة هندسية|في سوق يشترط ذلك."),
     lead: T(
-      "Qeonix was built in Abu Dhabi to do one thing well: turn emerging technology into systems that governments, cities and enterprises can actually run — and stand behind them in production.",
-      "أُسّست كيونكس في أبوظبي لتُتقن أمرًا واحدًا: تحويل التقنيات الناشئة إلى أنظمة تستطيع الحكومات والمدن والمؤسسات تشغيلها فعلًا — والوقوف خلفها في الإنتاج."
+      "Qeonix was built in Abu Dhabi to do one thing well: turn emerging technology into systems that governments, cities and enterprises can actually run, and stand behind them in production.",
+      "أُسّست كيونكس في أبوظبي لتُتقن أمرًا واحدًا: تحويل التقنيات الناشئة إلى أنظمة تستطيع الحكومات والمدن والمؤسسات تشغيلها فعلًا، والوقوف خلفها في الإنتاج."
     ),
     meta: [
       { k: T("Identity", "الهوية"), v: T("Abu Dhabi-born, globally ambitious", "وُلدت في أبوظبي، بطموح عالمي") },
@@ -80,7 +80,7 @@ ${section(`
   ${secHead({
     kicker: T("Why Abu Dhabi", "لماذا أبوظبي"),
     h: T("Headquartered here|on purpose.", "المقر هنا|عن قصد."),
-    lead: T("Not as a flag of convenience — because this is where the hardest, most consequential versions of our problems are being solved first.", "ليس كعنوان شكلي — بل لأن أصعب نسخ مشكلاتنا وأكثرها أثرًا تُحَل هنا أولًا."),
+    lead: T("Not as a flag of convenience: this is where the hardest, most consequential versions of our problems are being solved first.", "ليس كعنوان شكلي: بل لأن أصعب نسخ مشكلاتنا وأكثرها أثرًا تُحَل هنا أولًا."),
   }, lang)}
   ${trustGrid(WHY_AD, lang)}
 `, { tone: "deep", grid: true })}
@@ -93,7 +93,7 @@ ${section(`
   }, lang)}
   <!-- HERITAGE / PROOF POINTS — insert only management-approved facts here.
        Candidates awaiting approval (do NOT publish without sign-off):
-         - founding team backgrounds and prior organisations
+         - founding team backgrounds and prior organizations
          - collective years of engineering / delivery experience
          - count of platforms or systems previously delivered by the team
          - named markets or sectors previously served
@@ -147,12 +147,12 @@ ${closer("about", lang)}
     solidHeader: true,
     crumbTrail: hero.crumbTrail,
     title: T(
-      "About Qeonix — AI & Intelligent Systems Company, Abu Dhabi",
-      "عن كيونكس — شركة الذكاء الاصطناعي والأنظمة الذكية، أبوظبي"
+      "About Qeonix | AI & Intelligent Systems Company, Abu Dhabi",
+      "عن كيونكس | شركة الذكاء الاصطناعي والأنظمة الذكية، أبوظبي"
     ),
     description: T(
-      "Qeonix is an Abu Dhabi-headquartered engineering company building AI, agentic systems, autonomous technology and smart city platforms for governments and enterprises — with a presence in Paris and offices in Muscat and Doha in progress.",
-      "كيونكس شركة هندسية مقرّها أبوظبي تبني الذكاء الاصطناعي والأنظمة الوكيلة والتقنيات ذاتية التشغيل ومنصّات المدن الذكية للحكومات والمؤسسات — مع حضور في باريس ومكتبين قيد التأسيس في مسقط والدوحة."
+      "Qeonix is an Abu Dhabi-headquartered engineering company building AI, agentic systems, autonomous technology and smart city platforms for governments and enterprises, with a presence in Paris and offices in Muscat and Doha in progress.",
+      "كيونكس شركة هندسية مقرّها أبوظبي تبني الذكاء الاصطناعي والأنظمة الوكيلة والتقنيات ذاتية التشغيل ومنصّات المدن الذكية للحكومات والمؤسسات، مع حضور في باريس ومكتبين قيد التأسيس في مسقط والدوحة."
     ),
     og: "about",
     body,

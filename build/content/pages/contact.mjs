@@ -35,7 +35,7 @@ function form(lang) {
     name: T("Full name", "الاسم الكامل"),
     email: T("Work email", "البريد الإلكتروني للعمل"),
     phone: T("Phone (optional)", "الهاتف (اختياري)"),
-    company: T("Organisation", "الجهة / المؤسسة"),
+    company: T("Organization", "الجهة / المؤسسة"),
     industry: T("Sector", "القطاع"),
     industryPh: T("Select your sector", "اختر قطاعك"),
     msg: T("What has to work?", "ما الذي يجب أن يعمل؟"),
@@ -43,7 +43,7 @@ function form(lang) {
     send: T("Send it to the team", "أرسلها إلى الفريق"),
     privacy: T("We use your details only to respond to this enquiry.", "نستخدم بياناتك للرد على هذا الاستفسار فقط."),
     okH: T("Received. Thank you.", "وصلت. شكرًا لك."),
-    okP: T("A member of the team — not an autoresponder — will come back to you shortly.", "سيعاود التواصل معك أحد أعضاء الفريق — لا ردّ آلي — قريبًا."),
+    okP: T("A member of the team, not an autoresponder, will come back to you shortly.", "سيعاود التواصل معك أحد أعضاء الفريق، لا ردّ آلي، قريبًا."),
     intent: T("What brings you here?", "ما الذي جاء بك إلينا؟"),
     err: T("This field is required.", "هذا الحقل مطلوب."),
     captchaMsg: T("Please complete the verification.", "يرجى إكمال خطوة التحقّق."),
@@ -137,8 +137,8 @@ export default function contact(lang) {
     kicker: T("Start a conversation", "ابدأ محادثة"),
     h: T("Tell us what|has to work.", "أخبرنا بما|يجب أن يعمل."),
     lead: T(
-      "The operating reality, the constraints, the outcome you need. We will come back with questions worth answering and an architecture worth reading — not a brochure.",
-      "واقع التشغيل والقيود والنتيجة المطلوبة. سنعود إليك بأسئلة تستحق الإجابة وبنية تستحق القراءة — لا بكتيّب تعريفي."
+      "The operating reality, the constraints, the outcome you need. We will come back with questions worth answering and an architecture worth reading, not a brochure.",
+      "واقع التشغيل والقيود والنتيجة المطلوبة. سنعود إليك بأسئلة تستحق الإجابة وبنية تستحق القراءة، لا بكتيّب تعريفي."
     ),
   }, lang);
 
@@ -177,8 +177,8 @@ ${section(`
     hideCta: true,
     crumbTrail: hero.crumbTrail,
     title: T(
-      "Contact Qeonix — Start a Conversation",
-      "تواصل مع كيونكس — ابدأ محادثة"
+      "Contact Qeonix | Start a Conversation",
+      "تواصل مع كيونكس | ابدأ محادثة"
     ),
     description: T(
       "Talk to Qeonix about a strategic initiative, a technology partnership or a role. Headquartered in Abu Dhabi with a presence in Paris; Muscat and Doha in progress.",

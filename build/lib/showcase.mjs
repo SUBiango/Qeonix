@@ -26,8 +26,8 @@ export function consoleFrame({ name, env, panes, cls = "" }, lang) {
   </div>
   <div class="qxc-body">${panes}</div>
   <figcaption class="qxc-cap mono">${lang === "ar"
-    ? "بيئة منتج توضيحية — واجهة منصّة كيونكس، وبيانات للعرض فقط"
-    : "Conceptual product environment — Qeonix platform UI, illustrative data"}</figcaption>
+    ? "بيئة منتج توضيحية: واجهة منصّة كيونكس، وبيانات للعرض فقط"
+    : "Conceptual product environment: Qeonix platform UI, illustrative data"}</figcaption>
 </figure>`;
 }
 
@@ -38,13 +38,13 @@ const S = (en, ar) => T(en, ar);
    ------------------------------------------------------------------ */
 export function agenticTrace(lang) {
   const steps = [
-    { t: "00.0", actor: S("Request", "الطلب"), kind: "in", text: S("Resident asks to transfer a trade licence to a new address", "متعامل يطلب نقل رخصة تجارية إلى عنوان جديد"), status: "done" },
+    { t: "00.0", actor: S("Request", "الطلب"), kind: "in", text: S("Resident asks to transfer a trade license to a new address", "متعامل يطلب نقل رخصة تجارية إلى عنوان جديد"), status: "done" },
     { t: "00.4", actor: S("Orchestrator", "المنسّق"), kind: "core", text: S("Intent resolved → plan: verify, check premises, draft case", "تحديد النية → الخطة: تحقّق، فحص العقار، إعداد الملف"), status: "done" },
-    { t: "01.1", actor: S("Service agent", "وكيل الخدمة"), kind: "agent", text: S("Identity verified via digital ID · licence record retrieved", "التحقّق من الهوية عبر الهوية الرقمية · استرجاع سجل الرخصة"), tool: S("Registry API", "واجهة السجل"), status: "done" },
-    { t: "02.3", actor: S("Policy agent", "وكيل السياسات"), kind: "agent", text: S("New premises zoning checked against licence activity class", "فحص تنظيم العقار الجديد مقابل فئة نشاط الرخصة"), tool: S("Zoning rules", "قواعد التنظيم"), status: "done" },
+    { t: "01.1", actor: S("Service agent", "وكيل الخدمة"), kind: "agent", text: S("Identity verified via digital ID · license record retrieved", "التحقّق من الهوية عبر الهوية الرقمية · استرجاع سجل الرخصة"), tool: S("Registry API", "واجهة السجل"), status: "done" },
+    { t: "02.3", actor: S("Policy agent", "وكيل السياسات"), kind: "agent", text: S("New premises zoning checked against license activity class", "فحص تنظيم العقار الجديد مقابل فئة نشاط الرخصة"), tool: S("Zoning rules", "قواعد التنظيم"), status: "done" },
     { t: "02.9", actor: S("Service agent", "وكيل الخدمة"), kind: "agent", text: S("Case assembled · fees computed · payment link prepared", "تجميع الملف · احتساب الرسوم · تجهيز رابط الدفع"), tool: S("Case + payments", "الحالات والمدفوعات"), status: "done" },
-    { t: "03.2", actor: S("Human checkpoint", "نقطة المراجعة البشرية"), kind: "human", text: S("Address change on an active licence → routed to duty officer", "تغيير عنوان على رخصة فعّالة → إحالة إلى الموظف المناوب"), status: "wait" },
-    { t: "—", actor: S("Audit", "التدقيق"), kind: "audit", text: S("Full trace retained: inputs, retrievals, tool calls, approver", "الاحتفاظ بالأثر كاملًا: المدخلات والاسترجاعات واستدعاءات الأدوات والمعتمِد"), status: "log" },
+    { t: "03.2", actor: S("Human checkpoint", "نقطة المراجعة البشرية"), kind: "human", text: S("Address change on an active license → routed to duty officer", "تغيير عنوان على رخصة فعّالة → إحالة إلى الموظف المناوب"), status: "wait" },
+    { t: "–", actor: S("Audit", "التدقيق"), kind: "audit", text: S("Full trace retained: inputs, retrievals, tool calls, approver", "الاحتفاظ بالأثر كاملًا: المدخلات والاسترجاعات واستدعاءات الأدوات والمعتمِد"), status: "log" },
   ];
 
   const rows = steps.map((s2) => `
@@ -63,7 +63,7 @@ export function agenticTrace(lang) {
     [S("Permissions", "الصلاحيات"), lang === "ar" ? "قراءة السجل · إنشاء حالة · لا مدفوعات" : "registry read · case create · no payments"],
     [S("Model route", "مسار النموذج"), lang === "ar" ? "استدلال داخل الحدود" : "in-boundary inference"],
     [S("Tools allowed", "الأدوات المتاحة"), "4 / 31"],
-    [S("Escalation", "التصعيد"), lang === "ar" ? "موظف مناوب — قسم التراخيص" : "duty officer — licensing"],
+    [S("Escalation", "التصعيد"), lang === "ar" ? "موظف مناوب، قسم التراخيص" : "duty officer, licensing"],
   ].map(([k, v]) => `<div class="qxk"><span class="qxk-k mono">${tx(k, lang)}</span><span class="qxk-v">${esc(t(v, lang))}</span></div>`).join("");
 
   const panes = `
@@ -79,7 +79,7 @@ export function agenticTrace(lang) {
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Agentic Platform — Operations Console", "منصّة كيونكس الوكيلة — لوحة العمليات"),
+    name: S("Qeonix Agentic Platform: Operations Console", "منصّة كيونكس الوكيلة: لوحة العمليات"),
     env: S("Sovereign deployment", "نشر سيادي"),
     panes, cls: "qx-agentic",
   }, lang);
@@ -99,10 +99,10 @@ export function govOpsConsole(lang) {
 
   const queue = [
     [S("Streetlight fault · Zone 4", "عطل إنارة · المنطقة ٤"), S("Crew assigned", "فريق مُكلَّف"), "ok"],
-    [S("Licence transfer · commercial", "نقل رخصة · تجاري"), S("Awaiting approval", "بانتظار الاعتماد"), "wait"],
-    [S("Water pressure report · Zone 2", "بلاغ ضغط مياه · المنطقة ٢"), S("Triage — vision match 0.94", "فرز — تطابق رؤية ٠٫٩٤"), "ok"],
+    [S("License transfer · commercial", "نقل رخصة · تجاري"), S("Awaiting approval", "بانتظار الاعتماد"), "wait"],
+    [S("Water pressure report · Zone 2", "بلاغ ضغط مياه · المنطقة ٢"), S("Triage: vision match 0.94", "فرز: تطابق رؤية ٠٫٩٤"), "ok"],
     [S("Illegal dumping · camera event", "رمي مخلفات · حدث كاميرا"), S("Work order created", "أُنشئ أمر عمل"), "ok"],
-    [S("Permit inspection · site 8", "تفتيش تصريح · موقع ٨"), S("SLA at risk — 4h left", "اتفاقية معرّضة — ٤ ساعات"), "warn"],
+    [S("Permit inspection · site 8", "تفتيش تصريح · موقع ٨"), S("SLA at risk: 4h left", "اتفاقية معرّضة: ٤ ساعات"), "warn"],
   ].map(([a, b, s2]) => `<li class="qxq" data-s="${s2}"><span class="qxq-t">${tx(a, lang)}</span><span class="qxq-s mono">${tx(b, lang)}</span></li>`).join("");
 
   const health = [
@@ -131,7 +131,7 @@ export function govOpsConsole(lang) {
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Government Platform — City Operations", "منصّة كيونكس الحكومية — عمليات المدينة"),
+    name: S("Qeonix Government Platform: City Operations", "منصّة كيونكس الحكومية: عمليات المدينة"),
     env: S("Government cloud", "سحابة حكومية"),
     panes, cls: "qx-gov",
   }, lang);
@@ -171,11 +171,11 @@ export function missionConsole(lang) {
     <h4 class="qxp-h mono">${ar ? "بث الرصد" : "Detection feed"}</h4>
     <ul class="qx-queue qx-feed">${feed}</ul>
     <div class="qxk"><span class="qxk-k mono">${ar ? "الصلاحية" : "Authority"}</span>
-    <span class="qxk-v">${ar ? "استقلالية مُشرَف عليها — المشغّل يملك القرار خارج النطاق المصرَّح." : "Supervised autonomy — the operator owns anything outside the cleared envelope."}</span></div>
+    <span class="qxk-v">${ar ? "استقلالية مُشرَف عليها: المشغّل يملك القرار خارج النطاق المصرَّح." : "Supervised autonomy: the operator owns anything outside the cleared envelope."}</span></div>
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Autonomy — Mission Control", "استقلالية كيونكس — قيادة المهام"),
+    name: S("Qeonix Autonomy: Mission Control", "استقلالية كيونكس: قيادة المهام"),
     env: S("On-premise", "داخل المنشأة"),
     panes, cls: "qx-mission",
   }, lang);
@@ -189,7 +189,7 @@ export function mobilityConsole(lang) {
   const modes = [
     [S("Metro line A", "خط المترو أ"), S("2-min headway", "تواتر دقيقتين"), "ok"],
     [S("Bus network", "شبكة الحافلات"), S("94% on time", "٩٤٪ في الموعد"), "ok"],
-    [S("Corridor 5 · road", "الممر ٥ · طرق"), S("incident — rerouting", "حادث — إعادة توجيه"), "warn"],
+    [S("Corridor 5 · road", "الممر ٥ · طرق"), S("incident: rerouting", "حادث: إعادة توجيه"), "warn"],
     [S("Parking · district core", "المواقف · قلب المدينة"), S("81% occupied", "إشغال ٨١٪"), "ok"],
     [S("EV charging", "شحن المركبات"), S("312 / 340 online", "٣١٢/٣٤٠ متاح"), "ok"],
   ].map(([k, v, s2]) => `<li class="qxh" data-s="${s2}"><i aria-hidden="true"></i><span>${tx(k, lang)}</span><span class="qxh-s mono">${tx(v, lang)}</span></li>`).join("");
@@ -212,7 +212,7 @@ export function mobilityConsole(lang) {
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Mobility — Network Operations", "تنقل كيونكس — عمليات الشبكة"),
+    name: S("Qeonix Mobility: Network Operations", "تنقل كيونكس: عمليات الشبكة"),
     env: S("Private cloud", "سحابة خاصة"),
     panes, cls: "qx-mobility",
   }, lang);
@@ -271,7 +271,7 @@ export function boundaryMatrix(lang) {
   const cols = [
     S("Public cloud", "سحابة عامة"),
     S("Private cloud", "سحابة خاصة"),
-    S("Customer data centre", "مركز بيانات العميل"),
+    S("Customer data center", "مركز بيانات العميل"),
     S("Isolated environment", "بيئة معزولة"),
   ];
   /* cell values: in = inside boundary · ctl = customer-controlled · x = unavailable/blocked */

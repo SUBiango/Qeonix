@@ -21,7 +21,7 @@ export default function notFound(lang) {
     solidHeader: false,
     hideCta: true,
     noindex: true,
-    title: T("Page not found — Qeonix", "الصفحة غير موجودة — كيونكس"),
+    title: T("Page not found | Qeonix", "الصفحة غير موجودة | كيونكس"),
     description: T("The page you requested does not exist.", "الصفحة المطلوبة غير موجودة."),
     og: "default",
     body,

@@ -19,7 +19,7 @@ const SECTORS = [
   {
     id: "transport", icon: "route",
     h: T("Transportation & Mobility", "النقل والتنقل"),
-    see: T("Operators optimising their own slice of a journey nobody owns end to end.", "مشغّلون يحسّن كلٌّ منهم جزءه من رحلة لا يملكها أحد من طرف إلى طرف."),
+    see: T("Operators optimizing their own slice of a journey nobody owns end to end.", "مشغّلون يحسّن كلٌّ منهم جزءه من رحلة لا يملكها أحد من طرف إلى طرف."),
     build: [T("Multimodal journey platforms", "منصّات الرحلات متعدّدة الوسائط"), T("Fleet orchestration", "تنسيق الأساطيل"), T("Network intelligence", "ذكاء الشبكة"), T("Parking, tolling & EV", "المواقف والتعرفة والمركبات الكهربائية")],
     href: "mobility",
   },
@@ -69,12 +69,12 @@ const SECTORS = [
 
 const FAQS = [
   {
-    q: T("Do you specialise in one industry?", "هل تتخصّصون في قطاع واحد؟"),
-    a: T("We specialise in a pattern: dense physical operations, fragmented data and decisions made later than they should be. The platform capabilities — intelligence, agents, autonomy, data — are common; the domain models, integrations and operating constraints are what change per sector.", "نتخصّص في نمط: عمليات مادية كثيفة وبيانات مبعثرة وقرارات تُتّخذ متأخّرة. القدرات المنصّية — الذكاء والوكلاء والاستقلالية والبيانات — مشتركة؛ أما نماذج المجال والتكاملات وقيود التشغيل فهي ما يتغيّر بين القطاعات."),
+    q: T("Do you specialize in one industry?", "هل تتخصّصون في قطاع واحد؟"),
+    a: T("We specialize in a pattern: dense physical operations, fragmented data and decisions made later than they should be. The platform capabilities (intelligence, agents, autonomy, data) are common; the domain models, integrations and operating constraints are what change per sector.", "نتخصّص في نمط: عمليات مادية كثيفة وبيانات مبعثرة وقرارات تُتّخذ متأخّرة. القدرات المنصّية (الذكاء والوكلاء والاستقلالية والبيانات) مشتركة؛ أما نماذج المجال والتكاملات وقيود التشغيل فهي ما يتغيّر بين القطاعات."),
   },
   {
     q: T("What if our sector is not listed?", "ماذا لو لم يكن قطاعنا مذكورًا؟"),
-    a: T("The list is where the pattern shows up most often, not a boundary. If your operation involves physical assets, field teams and decisions built on fragmented data, the same architecture applies — start a conversation and we will tell you honestly whether we are the right fit.", "القائمة هي حيث يظهر النمط غالبًا، لا حدودًا. إن كانت عملياتكم تشمل أصولًا مادية وفرقًا ميدانية وقرارات مبنية على بيانات مبعثرة، فالبنية نفسها تنطبق — ابدأوا محادثة وسنخبركم بصدق إن كنّا الجهة المناسبة."),
+    a: T("The list is where the pattern shows up most often, not a boundary. If your operation involves physical assets, field teams and decisions built on fragmented data, the same architecture applies. Start a conversation and we will tell you honestly whether we are the right fit.", "القائمة هي حيث يظهر النمط غالبًا، لا حدودًا. إن كانت عملياتكم تشمل أصولًا مادية وفرقًا ميدانية وقرارات مبنية على بيانات مبعثرة، فالبنية نفسها تنطبق. ابدأوا محادثة وسنخبركم بصدق إن كنّا الجهة المناسبة."),
   },
 ];
 
@@ -101,8 +101,8 @@ export default function industries(lang) {
     kicker: T("Sectors", "القطاعات"),
     h: T("One pattern,|eight operating realities.", "نمط واحد،|وثماني بيئات تشغيل."),
     lead: T(
-      "Every sector we work in shares the same underlying problem: a physical operation generating more signal than its systems can turn into action. What differs is the domain — and the domain is where the engineering care goes.",
-      "تشترك القطاعات التي نعمل فيها في المشكلة الأساسية نفسها: عملية مادية تولّد إشارات تفوق قدرة أنظمتها على تحويلها إلى فعل. والمختلف هو المجال — وإليه تتّجه العناية الهندسية."
+      "Every sector we work in shares the same underlying problem: a physical operation generating more signal than its systems can turn into action. What differs is the domain, and the domain is where the engineering care goes.",
+      "تشترك القطاعات التي نعمل فيها في المشكلة الأساسية نفسها: عملية مادية تولّد إشارات تفوق قدرة أنظمتها على تحويلها إلى فعل. والمختلف هو المجال، وإليه تتّجه العناية الهندسية."
     ),
     meta: [
       { k: T("Sectors", "القطاعات"), v: T("Eight, sharing one platform architecture", "ثمانية، ببنية منصّية واحدة") },
@@ -134,8 +134,8 @@ ${closer("industries", lang)}
     solidHeader: true,
     crumbTrail: hero.crumbTrail,
     title: T(
-      "Industries — AI & Intelligent Systems by Sector | Qeonix",
-      "القطاعات — الذكاء الاصطناعي والأنظمة الذكية حسب القطاع | كيونكس"
+      "Industries: AI & Intelligent Systems by Sector | Qeonix",
+      "القطاعات: الذكاء الاصطناعي والأنظمة الذكية حسب القطاع | كيونكس"
     ),
     description: T(
       "Where Qeonix systems operate: government, transportation, energy and utilities, industrial and manufacturing, logistics, aviation and aerospace, healthcare, and real estate and urban development.",

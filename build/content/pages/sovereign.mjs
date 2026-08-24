@@ -8,12 +8,12 @@ import { TIERS } from "../shared.mjs";
 const LABEL = T("Sovereign AI", "الذكاء الاصطناعي السيادي");
 
 const CONTROLS = [
-  { icon: "pin", h: T("Data residency", "إقامة البيانات"), p: T("Storage, processing and model inference architected to remain inside the jurisdiction or facility the mandate names — verifiable at the network level, not asserted in a slide.", "التخزين والمعالجة واستدلال النماذج مصمّمة للبقاء داخل النطاق أو المنشأة التي يسمّيها التكليف — بتحقّق على مستوى الشبكة، لا بادّعاء في عرض تقديمي.") },
+  { icon: "pin", h: T("Data residency", "إقامة البيانات"), p: T("Storage, processing and model inference architected to remain inside the jurisdiction or facility the mandate names, verifiable at the network level, not asserted in a slide.", "التخزين والمعالجة واستدلال النماذج مصمّمة للبقاء داخل النطاق أو المنشأة التي يسمّيها التكليف، بتحقّق على مستوى الشبكة، لا بادّعاء في عرض تقديمي.") },
   { icon: "lock", h: T("Isolated environments", "البيئات المعزولة"), p: T("Designed to operate in restricted and disconnected environments where required: updates, model weights and telemetry all follow a controlled transfer process.", "مصمّمة للعمل في بيئات مقيّدة وغير متصلة عند الاقتضاء: التحديثات وأوزان النماذج والقياسات كلها تتبع عملية نقل محكومة.") },
   { icon: "model", h: T("Controlled model access", "وصول محكوم للنماذج"), p: T("Models that can be hosted inside the boundary, routed per workload. External model calls, where permitted at all, are explicit, logged and classified by data sensitivity.", "نماذج قابلة للاستضافة داخل الحدود، بتوجيه لكل عبء. أما الاستدعاءات الخارجية، حيثما سُمح بها أصلًا، فصريحة ومسجّلة ومصنّفة وفق حساسية البيانات.") },
-  { icon: "key", h: T("Identity and access", "الهوية والوصول"), p: T("Role-based access for people, services and agents, integrated with the organisation's own identity provider — never a parallel account system.", "وصول حسب الدور للأشخاص والخدمات والوكلاء، بتكامل مع مزوّد هوية الجهة نفسها — لا نظام حسابات موازٍ أبدًا.") },
+  { icon: "key", h: T("Identity and access", "الهوية والوصول"), p: T("Role-based access for people, services and agents, integrated with the organization's own identity provider, never a parallel account system.", "وصول حسب الدور للأشخاص والخدمات والوكلاء، بتكامل مع مزوّد هوية الجهة نفسها، لا نظام حسابات موازٍ أبدًا.") },
   { icon: "eye", h: T("Auditability", "قابلية التدقيق"), p: T("Configuration, access, actions and model decisions logged in a form an internal auditor or regulator can actually work with.", "الإعدادات والوصول والإجراءات وقرارات النماذج تُسجَّل بصيغة يستطيع المدقّق الداخلي أو المنظّم العمل بها فعلًا.") },
-  { icon: "shield", h: T("Cybersecurity engineering", "هندسة الأمن السيبراني"), p: T("Threat modelling, hardening, secrets management and secure development practice applied through the build — aligned with the customer's own security requirements.", "نمذجة التهديدات والتحصين وإدارة الأسرار وممارسات التطوير الآمن مطبَّقة عبر مراحل البناء — بما يتوافق مع متطلّبات أمن الجهة نفسها.") },
+  { icon: "shield", h: T("Cybersecurity engineering", "هندسة الأمن السيبراني"), p: T("Threat modeling, hardening, secrets management and secure development practice applied through the build, aligned with the customer's own security requirements.", "نمذجة التهديدات والتحصين وإدارة الأسرار وممارسات التطوير الآمن مطبَّقة عبر مراحل البناء، بما يتوافق مع متطلّبات أمن الجهة نفسها.") },
 ];
 
 const STACK = [
@@ -34,14 +34,14 @@ const PROCESS = [
 
 const LANGUAGE = [
   { h: T("“Designed for”", "«مصمَّمة لـ»"), p: T("We describe what the architecture is designed for and can be deployed within. We do not claim certifications this site has not verified.", "نصف ما صُمِّمت له البنية وما يمكن نشرها ضمنه. ولا ندّعي شهادات لم يجرِ التحقّق منها.") },
-  { h: T("Verified, then stated", "تحقّق ثم تصريح"), p: T("Compliance claims are made in a due-diligence process against your framework — where they can be evidenced — not in marketing copy.", "تُقدَّم ادّعاءات الالتزام في عملية عناية واجبة وفق إطاركم — حيث يمكن إثباتها — لا في نص تسويقي.") },
+  { h: T("Verified, then stated", "تحقّق ثم تصريح"), p: T("Compliance claims are made in a due-diligence process against your framework, where they can be evidenced, not in marketing copy.", "تُقدَّم ادّعاءات الالتزام في عملية عناية واجبة وفق إطاركم، حيث يمكن إثباتها، لا في نص تسويقي.") },
   { h: T("Your framework leads", "إطاركم هو المرجع"), p: T("Government and enterprise customers bring their own security and data frameworks. Our architectures are built to be assessed against them.", "تأتي الجهات الحكومية والمؤسسات بأطرها الأمنية والبياناتية. وتُبنى بنانا لتُقيَّم وفقها.") },
 ];
 
 const FAQS = [
   {
     q: T("What does “sovereign AI” mean in practice?", "ماذا يعني «الذكاء الاصطناعي السيادي» عمليًا؟"),
-    a: T("That an organisation can run meaningful AI — including modern language models and agentic workflows — while its data, model inference and operational control remain inside infrastructure it governs. In practice it is a set of architectural decisions about hosting, model access, identity and audit, taken at the start.", "أن تتمكّن الجهة من تشغيل ذكاء اصطناعي حقيقي — بما فيه نماذج اللغة الحديثة وسير العمل الوكيل — بينما تبقى بياناتها واستدلال نماذجها وتحكّمها التشغيلي داخل بنية تخضع لحوكمتها. وهو عمليًا مجموعة قرارات هندسية حول الاستضافة والوصول إلى النماذج والهوية والتدقيق، تُتّخذ في البداية."),
+    a: T("That an organization can run meaningful AI, including modern language models and agentic workflows, while its data, model inference and operational control remain inside infrastructure it governs. In practice it is a set of architectural decisions about hosting, model access, identity and audit, taken at the start.", "أن تتمكّن الجهة من تشغيل ذكاء اصطناعي حقيقي، بما فيه نماذج اللغة الحديثة وسير العمل الوكيل، بينما تبقى بياناتها واستدلال نماذجها وتحكّمها التشغيلي داخل بنية تخضع لحوكمتها. وهو عمليًا مجموعة قرارات هندسية حول الاستضافة والوصول إلى النماذج والهوية والتدقيق، تُتّخذ في البداية."),
   },
   {
     q: T("Does sovereignty mean weaker AI?", "هل تعني السيادة ذكاءً أضعف؟"),
@@ -49,7 +49,7 @@ const FAQS = [
   },
   {
     q: T("Is Qeonix certified against specific security standards?", "هل كيونكس معتمدة وفق معايير أمنية محدّدة؟"),
-    a: T("We do not publish certification claims on this site. Security and compliance posture is shared and evidenced directly in a due-diligence process against the framework your organisation applies.", "لا ننشر ادّعاءات اعتماد على هذا الموقع. تُعرض حالة الأمن والالتزام وتُثبَت مباشرةً في عملية عناية واجبة وفق الإطار الذي تطبّقه جهتكم."),
+    a: T("We do not publish certification claims on this site. Security and compliance posture is shared and evidenced directly in a due-diligence process against the framework your organization applies.", "لا ننشر ادّعاءات اعتماد على هذا الموقع. تُعرض حالة الأمن والالتزام وتُثبَت مباشرةً في عملية عناية واجبة وفق الإطار الذي تطبّقه جهتكم."),
   },
   {
     q: T("Can an agentic system really run disconnected?", "هل يمكن لنظام وكيل أن يعمل فعلًا دون اتصال؟"),
@@ -64,8 +64,8 @@ export default function sovereign(lang) {
     kicker: T("Sovereign by design", "سيادية بالتصميم"),
     h: T("Serious AI,|inside your own boundary.", "ذكاء اصطناعي جادّ،|داخل حدودكم."),
     lead: T(
-      "For governments and regulated operators, where a system runs and who can reach its data is part of the design brief. Qeonix architects AI platforms that can be deployed within sovereign, private and isolated environments — without giving up the capability that made them worth building.",
-      "بالنسبة للحكومات والمشغّلين الخاضعين للتنظيم، فإن مكان تشغيل النظام ومن يصل إلى بياناته جزء من متطلّبات التصميم. تصمّم كيونكس منصّات ذكاء اصطناعي قابلة للنشر في بيئات سيادية وخاصة ومعزولة — دون التخلّي عن القدرة التي جعلتها جديرة بالبناء."
+      "For governments and regulated operators, where a system runs and who can reach its data is part of the design brief. Qeonix architects AI platforms that can be deployed within sovereign, private and isolated environments, without giving up the capability that made them worth building.",
+      "بالنسبة للحكومات والمشغّلين الخاضعين للتنظيم، فإن مكان تشغيل النظام ومن يصل إلى بياناته جزء من متطلّبات التصميم. تصمّم كيونكس منصّات ذكاء اصطناعي قابلة للنشر في بيئات سيادية وخاصة ومعزولة، دون التخلّي عن القدرة التي جعلتها جديرة بالبناء."
     ),
     meta: [
       { k: T("Residency", "الإقامة"), v: T("UAE and regional deployment options", "خيارات نشر في الإمارات والمنطقة") },
@@ -88,7 +88,7 @@ ${section(`
     ${secHead({
       kicker: T("Control boundaries", "حدود التحكم"),
       h: T("Where things run, stay|and stop.", "أين تعمل الأشياء، وأين تبقى،|وأين تتوقّف."),
-      lead: T("The same five questions, answered per topology — including the one most vendors avoid: whether an external model can be reached at all.", "الأسئلة الخمسة نفسها، مُجابة لكل بنية نشر — بما فيها السؤال الذي يتجنّبه أغلب المورّدين: هل يمكن الوصول إلى نموذج خارجي أصلًا."),
+      lead: T("The same five questions, answered per topology, including the one most vendors avoid: whether an external model can be reached at all.", "الأسئلة الخمسة نفسها، مُجابة لكل بنية نشر، بما فيها السؤال الذي يتجنّبه أغلب المورّدين: هل يمكن الوصول إلى نموذج خارجي أصلًا."),
     }, lang)}
     ${boundaryMatrix(lang)}
   </div>
@@ -145,8 +145,8 @@ ${closer("sovereign", lang)}
       "الذكاء الاصطناعي السيادي والنشر الخاص | كيونكس"
     ),
     description: T(
-      "Sovereign AI from Qeonix: AI platforms architected for UAE and regional data residency, government and private cloud, on-premise and isolated environments — with controlled model access, identity and role-based access, auditability and human oversight.",
-      "الذكاء السيادي من كيونكس: منصّات ذكاء اصطناعي مصمّمة لإقامة البيانات في الإمارات والمنطقة، والسحابة الحكومية والخاصة، والنشر داخل المنشأة والبيئات المعزولة — مع وصول محكوم للنماذج والهوية والوصول حسب الدور وقابلية التدقيق والرقابة البشرية."
+      "Sovereign AI from Qeonix: AI platforms architected for UAE and regional data residency, government and private cloud, on-premise and isolated environments. With controlled model access, identity and role-based access, auditability and human oversight.",
+      "الذكاء السيادي من كيونكس: منصّات ذكاء اصطناعي مصمّمة لإقامة البيانات في الإمارات والمنطقة، والسحابة الحكومية والخاصة، والنشر داخل المنشأة والبيئات المعزولة. مع وصول محكوم للنماذج والهوية والوصول حسب الدور وقابلية التدقيق والرقابة البشرية."
     ),
     og: "sovereign",
     service: { name: LABEL, type: T("Sovereign AI architecture and deployment", "بنية الذكاء الاصطناعي السيادي ونشره") },
