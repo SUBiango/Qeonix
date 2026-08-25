@@ -48,6 +48,7 @@ architecture. Qeonix does not claim third-party certifications on this site.
 
 ## Locations
 - Abu Dhabi, United Arab Emirates: headquarters
+- Dubai, United Arab Emirates: office
 - Paris, France: office
 - Muscat, Oman: in progress
 - Doha, Qatar: in progress
