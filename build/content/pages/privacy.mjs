@@ -7,7 +7,7 @@ const LABEL = T("Privacy", "الخصوصية");
 
 /* Plain prose blocks. Everything stated here is verifiable from the codebase:
    no cookies, no analytics, form data to Netlify Forms + the Zoho Flow proxy,
-   hCaptcha loaded only on form interaction. Keep it that way. If the stack
+   hCaptcha loaded only on form interaction. Keep it that way: if the stack
    changes, this page changes in the same commit. */
 const BLOCKS = [
   {
@@ -63,7 +63,7 @@ const BLOCKS = [
     ps: [
       T("The controller of this website is QEONIX, headquartered in Abu Dhabi, United Arab Emirates. For anything relating to privacy or your personal information, contact info@qeonix.com.",
         "الجهة المسؤولة عن هذا الموقع هي كيونكس، ومقرّها الرئيسي في أبوظبي بدولة الإمارات العربية المتحدة. ولأي أمر يتعلّق بالخصوصية أو معلوماتك الشخصية، تواصل معنا على info@qeonix.com."),
-      T("If our practices change, for example, if we ever introduce analytics, this page will change first, and the date below will move.",
+      T("If our practices change, for example if we ever introduce analytics, this page will change first, and the date below will move.",
         "إذا تغيّرت ممارساتنا، كأن نُدخل يومًا أدوات تحليلات، فستتغيّر هذه الصفحة أولًا، وسيتحدّث التاريخ أدناه."),
     ],
   },
@@ -77,8 +77,8 @@ export default function privacy(lang) {
     kicker: T("Privacy notice", "إشعار الخصوصية"),
     h: T("Short, because there is|little to disclose.", "قصير، لأن ما يستدعي الإفصاح|قليل."),
     lead: T(
-      "We build systems that treat data seriously, so this site practices what we sell: no cookies, no trackers, and personal information collected in exactly one place: the contact form, if you choose to use it.",
-      "نبني أنظمة تتعامل مع البيانات بجدّية، ولذلك يطبّق هذا الموقع ما نقدّمه لعملائنا: لا ملفات تعريف ارتباط، ولا متتبّعات، ولا معلومات شخصية تُجمع إلا في موضع واحد: نموذج التواصل، إن اخترت استخدامه."),
+      "We build systems that treat data seriously, so this site practices what we sell: no cookies, no trackers, and personal information collected in exactly one place, the contact form, if you choose to use it.",
+      "نبني أنظمة تتعامل مع البيانات بجدّية، ولذلك يطبّق هذا الموقع ما نقدّمه لعملائنا: لا ملفات تعريف ارتباط، ولا متتبّعات، ولا معلومات شخصية تُجمع إلا في موضع واحد، نموذج التواصل، إن اخترت استخدامه."),
   }, lang);
 
   const body = `

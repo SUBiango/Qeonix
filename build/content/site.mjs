@@ -85,6 +85,7 @@ export const NAV = [
    only the HQ city is asserted in structured data. */
 export const OFFICES = [
   {
+    id: "auh",
     city: T("Abu Dhabi", "أبوظبي"),
     country: T("United Arab Emirates", "الإمارات العربية المتحدة"),
     cc: "AE",
@@ -92,14 +93,15 @@ export const OFFICES = [
     note: T("Headquarters. Engineering, product and delivery.", "المقر الرئيسي. الهندسة والمنتج والتنفيذ."),
   },
   {
+    id: "dxb",
     city: T("Dubai", "دبي"),
     country: T("United Arab Emirates", "الإمارات العربية المتحدة"),
     cc: "AE",
-    geoKey: "AE-DXB",
     status: "active",
-    note: T("Commercial and delivery presence in the UAE's business hub.", "حضور تجاري وتنفيذي في مركز الأعمال بدولة الإمارات."),
+    note: T("Commercial and delivery presence.", "حضور تجاري وتنفيذي."),
   },
   {
+    id: "par",
     city: T("Paris", "باريس"),
     country: T("France", "فرنسا"),
     cc: "FR",
@@ -107,6 +109,7 @@ export const OFFICES = [
     note: T("European presence for research partnerships and clients.", "الحضور الأوروبي لشراكات البحث والعملاء."),
   },
   {
+    id: "mct",
     city: T("Muscat", "مسقط"),
     country: T("Oman", "عُمان"),
     cc: "OM",
@@ -114,6 +117,7 @@ export const OFFICES = [
     note: T("Establishing in-country presence.", "قيد التأسيس داخل السلطنة."),
   },
   {
+    id: "doh",
     city: T("Doha", "الدوحة"),
     country: T("Qatar", "قطر"),
     cc: "QA",

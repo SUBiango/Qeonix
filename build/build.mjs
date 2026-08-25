@@ -69,10 +69,8 @@ function organizationLd() {
     /* Only the headquarters is asserted as an address. Other locations are
        declared as areas of operation, and the two in progress are omitted
        from structured data until they are trading entities. */
-    areaServed: [...new Set(OFFICES.filter((o) => o.status !== "progress").map((o) => t(o.country, "en")))].map((name) => ({
-      "@type": "Country",
-      name,
-    })),
+    areaServed: [...new Set(OFFICES.filter((o) => o.status !== "progress").map((o) => t(o.country, "en")))]
+      .map((name) => ({ "@type": "Country", name })),
     contactPoint: [{
       "@type": "ContactPoint",
       contactType: "sales",
@@ -80,6 +78,10 @@ function organizationLd() {
       areaServed: ["AE", "FR"],
       availableLanguage: ["English", "Arabic"],
     }],
+    hasCredential: [
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "certification", name: "ISO/IEC 27001: Information security management" },
+      { "@type": "EducationalOccupationalCredential", credentialCategory: "certification", name: "ISO/IEC 42001: AI management systems" },
+    ],
     knowsAbout: [
       "Artificial Intelligence", "Agentic AI", "Multi-agent systems", "Generative AI",
       "Computer Vision", "Decision Intelligence", "Sovereign AI", "Enterprise AI",
@@ -262,10 +264,15 @@ public cloud, dedicated private cloud, on-premise inside the customer's data
 center, or isolated environments designed to support data residency
 requirements. Identity and role-based access, permissions, audit trails,
 observability, human oversight and controlled model access are part of the
-architecture. Qeonix does not claim third-party certifications on this site.
+architecture. Qeonix is certified to ISO/IEC 27001 (information security
+management) and ISO/IEC 42001 (AI management systems).
 
 ## Locations
-${OFFICES.map((o) => `- ${t(o.city, "en")}, ${t(o.country, "en")}: ${o.status === "hq" ? "headquarters" : o.status === "progress" ? "in progress" : "office"}`).join("\n")}
+- Abu Dhabi, United Arab Emirates: headquarters
+- Dubai, United Arab Emirates: office
+- Paris, France: office
+- Muscat, Oman: in progress
+- Doha, Qatar: in progress
 
 ## Contact
 - Website: ${ORIGIN}/

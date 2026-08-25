@@ -44,7 +44,8 @@ public cloud, dedicated private cloud, on-premise inside the customer's data
 center, or isolated environments designed to support data residency
 requirements. Identity and role-based access, permissions, audit trails,
 observability, human oversight and controlled model access are part of the
-architecture. Qeonix does not claim third-party certifications on this site.
+architecture. Qeonix is certified to ISO/IEC 27001 (information security
+management) and ISO/IEC 42001 (AI management systems).
 
 ## Locations
 - Abu Dhabi, United Arab Emirates: headquarters

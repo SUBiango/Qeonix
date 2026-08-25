@@ -12,7 +12,7 @@ const CAPS = [
   { icon: "agent", h: T("AI healthcare assistants", "المساعدون الصحيون بالذكاء الاصطناعي"), p: T("Assistants for scheduling, preparation, navigation and administrative questions, grounded in the provider's own information, with clinical questions routed to clinicians.", "مساعدون للجدولة والتحضير والإرشاد والأسئلة الإدارية، مستندون إلى معلومات المزوّد نفسه، مع توجيه الأسئلة السريرية إلى الأطباء.") },
   { icon: "people", h: T("Provider ecosystems", "منظومات المزوّدين"), p: T("Appointment and service marketplaces connecting payers, providers and patients with availability, eligibility and pricing in one place.", "أسواق مواعيد وخدمات تربط الجهات الممولة والمزوّدين والمرضى بالتوافر والأهلية والتسعير في مكان واحد.") },
   { icon: "shield", h: T("Insurance intelligence", "ذكاء التأمين"), p: T("Eligibility, prior authorization and claims workflows with anomaly signals, reducing the paperwork between a patient and an approval.", "سير عمل للأهلية والموافقات المسبقة والمطالبات مع إشارات الشذوذ، بما يقلّص الأوراق بين المريض والموافقة.") },
-  { icon: "graph", h: T("Healthcare analytics", "التحليلات الصحية"), p: T("Capacity, flow and operational analytics for hospital groups and health authorities: the operational side of care, measured.", "تحليلات السعة والتدفّق والتشغيل لمجموعات المستشفيات والهيئات الصحية: الجانب التشغيلي للرعاية، مقيسًا.") },
+  { icon: "graph", h: T("Healthcare analytics", "التحليلات الصحية"), p: T("Capacity, flow and operational analytics for hospital groups and health authorities, the operational side of care, measured.", "تحليلات السعة والتدفّق والتشغيل لمجموعات المستشفيات والهيئات الصحية، الجانب التشغيلي للرعاية، مقيسًا.") },
 ];
 
 const STACK = [
@@ -82,7 +82,7 @@ ${section(`
   ${secHead({
     kicker: T("In operation", "أثناء التشغيل"),
     h: T("The journey, coordinated|end to end.", "الرحلة، منسَّقة|من طرف إلى طرف."),
-    lead: T("One referral traced through the platform: eligibility, scheduling, instructions, risk flags and the summary back to the referrer: the administrative layer that decides whether care feels coordinated or chaotic.", "إحالة واحدة مُتتبَّعة عبر المنصّة: الأهلية والجدولة والتعليمات ومؤشّرات الخطر والملخّص العائد إلى المُحيل: الطبقة الإدارية التي تحدّد ما إذا كانت الرعاية ستبدو منسَّقة أم فوضوية."),
+    lead: T("One referral traced through the platform: eligibility, scheduling, instructions, risk flags and the summary back to the referrer, the administrative layer that decides whether care feels coordinated or chaotic.", "إحالة واحدة مُتتبَّعة عبر المنصّة: الأهلية والجدولة والتعليمات ومؤشّرات الخطر والملخّص العائد إلى المُحيل، الطبقة الإدارية التي تحدّد ما إذا كانت الرعاية ستبدو منسَّقة أم فوضوية."),
   }, lang)}
   <div class="reveal" data-d="1">${healthConsole(lang)}</div>
 `, { tone: "paper" })}

@@ -1,4 +1,4 @@
-/* Case study template, intentionally NOT wired into any route.
+/* Case study template: intentionally NOT wired into any route.
    When management approves a reference, create build/content/pages/case-<slug>.mjs
    that calls caseStudy() with approved content only, register the route in
    content/site.mjs, and link it from the relevant sector page.

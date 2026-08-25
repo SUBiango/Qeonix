@@ -261,39 +261,40 @@ export function markRule() {
    PRESENCE MAP: offices plotted on an abstract graticule.
    Real lon/lat, equirectangular projection, no coastlines: geography
    without cartographic clutter, in the lattice's visual language.
-   Not mirrored in RTL. Maps keep their orientation.
+   Not mirrored in RTL: maps keep their orientation.
    ------------------------------------------------------------------ */
 export function presenceMap(offices, statuses, lang) {
   const ar = lang === "ar";
   /* project lon [-10..68] lat [14..56] into 760x400 */
   const px = (lon) => Math.round(((lon + 10) / 78) * 760);
   const py = (lat) => Math.round(((56 - lat) / 42) * 400);
-  const GEO = { AE: [54.4, 24.45], "AE-DXB": [55.9, 25.75], FR: [2.35, 48.85], OM: [58.4, 23.6], QA: [51.53, 25.29] };
+  const GEO = { auh: [54.4, 24.45], dxb: [55.27, 25.2], par: [2.35, 48.85], mct: [58.4, 23.6], doh: [51.53, 25.29] };
   /* Per-city label placement: the Gulf cluster sits close together, so each
-     label takes its own quadrant: AD below, Dubai upper-right (nudged out from
-     its true position, which sits right on top of Abu Dhabi at this scale),
-     Doha upper-left, Muscat right. */
+     label takes its own quadrant: AD below, Dubai above, Doha upper-left,
+     Muscat right. */
   const LBL = {
-    AE: { a: "middle", dx: 0, dy: 34, sdy: 50 },
-    "AE-DXB": { a: "start", dx: 12, dy: -10, sdy: 5 },
-    FR: { a: "middle", dx: 0, dy: -18, sdy: -34 },
-    OM: { a: "start", dx: 14, dy: 6, sdy: 21 },
-    QA: { a: "end", dx: -12, dy: -14, sdy: -29 },
+    auh: { a: "middle", dx: 0, dy: 34, sdy: 50 },
+    dxb: { a: "middle", dx: 4, dy: -16, sdy: -31 },
+    par: { a: "middle", dx: 0, dy: -18, sdy: -34 },
+    mct: { a: "start", dx: 14, dy: 6, sdy: 21 },
+    doh: { a: "end", dx: -14, dy: -20, sdy: -35 },
   };
 
   const pts = offices.map((o) => {
-    const [lon, lat] = GEO[o.geoKey || o.cc];
+    const [lon, lat] = GEO[o.id];
     return { ...o, x: px(lon), y: py(lat) };
   });
   const hq = pts.find((p) => p.status === "hq");
 
   const arcs = pts.filter((p) => p !== hq).map((p, i) => {
-    const mx = (hq.x + p.x) / 2, my = Math.min(hq.y, p.y) - 70 - i * 8;
+    const dist = Math.hypot(p.x - hq.x, p.y - hq.y);
+    const lift = Math.max(18, Math.min(78, dist * 0.14) + i * 6);
+    const mx = (hq.x + p.x) / 2, my = Math.min(hq.y, p.y) - lift;
     return `<path class="pm-arc${p.status === "progress" ? " is-soon" : ""}" d="M${hq.x} ${hq.y} Q${mx} ${my} ${p.x} ${p.y}"/>`;
   }).join("");
 
   const nodes = pts.map((p) => {
-    const l = LBL[p.geoKey || p.cc];
+    const l = LBL[p.id];
     return `
     <g class="pm-node is-${p.status}">
       ${p.status === "hq" ? `<circle class="pm-halo" cx="${p.x}" cy="${p.y}" r="7"/>` : ""}
@@ -309,7 +310,7 @@ export function presenceMap(offices, statuses, lang) {
   ].join("");
 
   return `<figure class="pmap reveal" role="img"
-    aria-label="${ar ? "خريطة حضور كيونكس: أبوظبي المقر الرئيسي، ومكتبا دبي وباريس، ومسقط والدوحة قريبًا" : "Qeonix presence map: Abu Dhabi headquarters, Dubai and Paris offices, Muscat and Doha soon"}">
+    aria-label="${ar ? "خريطة حضور كيونكس: أبوظبي المقر الرئيسي، باريس مكتب، مسقط والدوحة قريبًا" : "Qeonix presence map: Abu Dhabi headquarters, Paris office, Muscat and Doha soon"}">
   <svg viewBox="0 0 760 400" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true">
     <g class="pm-grat">${grat}</g>
     ${arcs}

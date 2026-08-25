@@ -28,7 +28,7 @@ const PRACTICES = [
   { h: T("Events over polling", "الأحداث لا الاستطلاع"), p: T("Systems learn about change by being told, not by asking every minute. It is the difference between a live operation and a nightly batch.", "تعلم الأنظمة بالتغيير بالإبلاغ، لا بالسؤال كل دقيقة. وهذا هو الفرق بين عملية حيّة ودفعة ليلية.") },
   { h: T("Boring where it counts", "تقليدية حيث يجب"), p: T("Databases, queues and identity use proven components. Novelty is spent on the problem, not the plumbing.", "قواعد البيانات والطوابير والهوية بمكوّنات مثبتة. ويُدَّخر الجديد للمشكلة، لا للبنية.") },
   { h: T("Observable by default", "قابلة للمراقبة افتراضيًا"), p: T("Tracing, metrics and structured logs ship with the first release, because they cannot be retrofitted during an incident.", "يُشحن التتبّع والمؤشّرات والسجلّات المهيكلة مع الإصدار الأول، لأنها لا تُضاف أثناء الحادث.") },
-  { h: T("Portable across boundaries", "قابلة للنقل عبر الحدود"), p: T("The same platform definition deploys to public cloud, private cloud or an isolated site. Sovereignty must not require a rewrite.", "تعريف المنصّة نفسه يُنشر في سحابة عامة أو خاصة أو موقع معزول، فالسيادة يجب ألا تتطلّب إعادة كتابة.") },
+  { h: T("Portable across boundaries", "قابلة للنقل عبر الحدود"), p: T("The same platform definition deploys to public cloud, private cloud or an isolated site; sovereignty must not require a rewrite.", "تعريف المنصّة نفسه يُنشر في سحابة عامة أو خاصة أو موقع معزول، فالسيادة يجب ألا تتطلّب إعادة كتابة.") },
   { h: T("Run by the builders", "يشغّلها من بناها"), p: T("The team that designs the platform carries it in production. It is remarkable what that does to design decisions.", "الفريق الذي يصمّم المنصّة يتولّاها في الإنتاج. ومدهشٌ ما يفعله ذلك بقرارات التصميم.") },
 ];
 

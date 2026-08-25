@@ -10,9 +10,10 @@ const LABEL = T("About Qeonix", "عن كيونكس");
 
 const FACTS = [
   { k: T("Headquarters", "المقر الرئيسي"), v: T("Abu Dhabi, UAE", "أبوظبي، الإمارات") },
-  { k: T("European presence", "الحضور الأوروبي"), v: T("Paris, France", "باريس، فرنسا") },
+  { k: T("Offices", "المكاتب"), v: T("Dubai · Paris", "دبي · باريس") },
   { k: T("Expanding", "التوسّع"), v: T("Muscat & Doha, soon", "مسقط والدوحة، قريبًا") },
   { k: T("Model", "النموذج"), v: T("Engineering-led, product-oriented", "هندسي القيادة، منتجيّ التوجّه") },
+  { k: T("Certified", "الاعتمادات"), v: T("ISO/IEC 27001 · ISO/IEC 42001", "ISO/IEC 27001 · ISO/IEC 42001") },
 ];
 
 const BELIEFS = [
@@ -37,7 +38,7 @@ const DELIVERY = [
   { h: T("Product & design", "المنتج والتصميم"), p: T("UX and interfaces designed for operators, residents and field crews.", "تجربة وواجهات مصمّمة للمشغّلين والمتعاملين والفرق الميدانية.") },
   { h: T("Engineering", "الهندسة"), p: T("AI, software, data and cybersecurity engineering in one team.", "هندسة الذكاء الاصطناعي والبرمجيات والبيانات والأمن في فريق واحد.") },
   { h: T("Integration", "التكامل"), p: T("Into the estate that exists, under its identity and its constraints.", "مع المنظومة القائمة، تحت هويتها وقيودها.") },
-  { h: T("Deployment", "النشر"), p: T("Cloud, private, on-premise or sovereign, fixed at design time.", "سحابي أو خاص أو داخل المنشأة أو سيادي، يُثبَّت عند التصميم.") },
+  { h: T("Deployment", "النشر"), p: T("Cloud, private, on-premise or sovereign: fixed at design time.", "سحابي أو خاص أو داخل المنشأة أو سيادي: يُثبَّت عند التصميم.") },
   { h: T("Operations", "التشغيل"), p: T("DevOps, MLOps and support, run by the people who built it.", "عمليات التطوير والتعلّم الآلي والدعم، بأيدي من بناه.") },
   { h: T("Evolution", "التطوير"), p: T("Measured, tuned and extended as the mandate grows.", "قياس وضبط وتوسيع مع نموّ التكليف.") },
 ];
@@ -82,7 +83,7 @@ ${section(`
   ${secHead({
     kicker: T("Why Abu Dhabi", "لماذا أبوظبي"),
     h: T("Headquartered here|on purpose.", "المقر هنا|عن قصد."),
-    lead: T("Not as a flag of convenience: because this is where the hardest, most consequential versions of our problems are being solved first.", "ليس كعنوان شكلي، بل لأن أصعب نسخ مشكلاتنا وأكثرها أثرًا تُحَل هنا أولًا."),
+    lead: T("Not as a flag of convenience, because this is where the hardest, most consequential versions of our problems are being solved first.", "ليس كعنوان شكلي، بل لأن أصعب نسخ مشكلاتنا وأكثرها أثرًا تُحَل هنا أولًا."),
   }, lang)}
   ${trustGrid(WHY_AD, lang)}
   <div class="u-mt">${presenceMap(OFFICES, OFFICE_STATUS, lang)}</div>
