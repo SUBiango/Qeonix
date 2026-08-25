@@ -1,4 +1,4 @@
-import { T, tx, esc } from "../../lib/html.mjs";
+import { T, t, tx, esc } from "../../lib/html.mjs";
 import { icon } from "../../lib/icons.mjs";
 import { section, secHead } from "../../lib/components.mjs";
 import { heroFor } from "../../lib/page.mjs";
@@ -41,7 +41,7 @@ function form(lang) {
     msg: T("What has to work?", "ما الذي يجب أن يعمل؟"),
     msgPh: T("The operating reality, the constraint, the outcome you need…", "واقع التشغيل، والقيد، والنتيجة التي تحتاجها…"),
     send: T("Send it to the team", "أرسلها إلى الفريق"),
-    privacy: T("We use your details only to respond to this enquiry.", "نستخدم بياناتك للرد على هذا الاستفسار فقط."),
+    privacy: T('We use your details only to respond to this enquiry. <a href="/privacy/">Privacy notice</a>.', 'نستخدم بياناتك للرد على هذا الاستفسار فقط. <a href="/ar/privacy/">إشعار الخصوصية</a>.'),
     okH: T("Received. Thank you.", "وصلت. شكرًا لك."),
     okP: T("A member of the team, not an autoresponder, will come back to you shortly.", "سيعاود التواصل معك أحد أعضاء الفريق، لا ردّ آلي، قريبًا."),
     intent: T("What brings you here?", "ما الذي جاء بك إلينا؟"),
@@ -118,7 +118,7 @@ function form(lang) {
       <span class="btn-arr" aria-hidden="true">${icon("arrow")}</span>
     </button>
     <p class="form-status" aria-live="polite"></p>
-    <p class="form-note">${tx(S.privacy, lang)}</p>
+    <p class="form-note">${t(S.privacy, lang)}</p>
   </div>
 
   <div class="form-done" aria-live="polite">
@@ -177,8 +177,8 @@ ${section(`
     hideCta: true,
     crumbTrail: hero.crumbTrail,
     title: T(
-      "Contact Qeonix | Start a Conversation",
-      "تواصل مع كيونكس | ابدأ محادثة"
+      "Contact Qeonix: Start a Conversation",
+      "تواصل مع كيونكس: ابدأ محادثة"
     ),
     description: T(
       "Talk to Qeonix about a strategic initiative, a technology partnership or a role. Headquartered in Abu Dhabi with a presence in Paris; Muscat and Doha in progress.",

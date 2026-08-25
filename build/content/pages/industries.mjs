@@ -70,7 +70,7 @@ const SECTORS = [
 const FAQS = [
   {
     q: T("Do you specialize in one industry?", "هل تتخصّصون في قطاع واحد؟"),
-    a: T("We specialize in a pattern: dense physical operations, fragmented data and decisions made later than they should be. The platform capabilities (intelligence, agents, autonomy, data) are common; the domain models, integrations and operating constraints are what change per sector.", "نتخصّص في نمط: عمليات مادية كثيفة وبيانات مبعثرة وقرارات تُتّخذ متأخّرة. القدرات المنصّية (الذكاء والوكلاء والاستقلالية والبيانات) مشتركة؛ أما نماذج المجال والتكاملات وقيود التشغيل فهي ما يتغيّر بين القطاعات."),
+    a: T("We specialize in a pattern: dense physical operations, fragmented data and decisions made later than they should be. The platform capabilities, intelligence, agents, autonomy, data, are common; the domain models, integrations and operating constraints are what change per sector.", "نتخصّص في نمط: عمليات مادية كثيفة وبيانات مبعثرة وقرارات تُتّخذ متأخّرة. القدرات المنصّية، الذكاء والوكلاء والاستقلالية والبيانات، مشتركة؛ أما نماذج المجال والتكاملات وقيود التشغيل فهي ما يتغيّر بين القطاعات."),
   },
   {
     q: T("What if our sector is not listed?", "ماذا لو لم يكن قطاعنا مذكورًا؟"),

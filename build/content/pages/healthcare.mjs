@@ -1,12 +1,13 @@
 import { T } from "../../lib/html.mjs";
 import { section, secHead, capGrid, faq, trustGrid, statement } from "../../lib/components.mjs";
 import { archBoard, flowStack } from "../../lib/diagrams.mjs";
+import { healthConsole } from "../../lib/showcase.mjs";
 import { heroFor, closer } from "../../lib/page.mjs";
 
 const LABEL = T("Healthcare", "الرعاية الصحية");
 
 const CAPS = [
-  { icon: "health", h: T("Digital health platforms", "منصّات الصحة الرقمية"), p: T("Patient-facing portals and apps across appointments, records access, referrals and follow-up: one journey rather than a portal per provider.", "بوابات وتطبيقات للمرضى تشمل المواعيد والاطلاع على السجلّات والإحالات والمتابعة: رحلة واحدة لا بوابة لكل مزوّد.") },
+  { icon: "health", h: T("Digital health platforms", "منصّات الصحة الرقمية"), p: T("Patient-facing portals and apps across appointments, records access, referrals and follow-up, one journey rather than a portal per provider.", "بوابات وتطبيقات للمرضى تشمل المواعيد والاطلاع على السجلّات والإحالات والمتابعة، رحلة واحدة لا بوابة لكل مزوّد.") },
   { icon: "flow", h: T("Care orchestration", "تنسيق الرعاية"), p: T("Referral, follow-up and care-pathway coordination across providers, so a patient's next step never depends on them chasing it.", "تنسيق الإحالات والمتابعة ومسارات الرعاية بين المزوّدين، حتى لا تعتمد خطوة المريض التالية على ملاحقته لها.") },
   { icon: "agent", h: T("AI healthcare assistants", "المساعدون الصحيون بالذكاء الاصطناعي"), p: T("Assistants for scheduling, preparation, navigation and administrative questions, grounded in the provider's own information, with clinical questions routed to clinicians.", "مساعدون للجدولة والتحضير والإرشاد والأسئلة الإدارية، مستندون إلى معلومات المزوّد نفسه، مع توجيه الأسئلة السريرية إلى الأطباء.") },
   { icon: "people", h: T("Provider ecosystems", "منظومات المزوّدين"), p: T("Appointment and service marketplaces connecting payers, providers and patients with availability, eligibility and pricing in one place.", "أسواق مواعيد وخدمات تربط الجهات الممولة والمزوّدين والمرضى بالتوافر والأهلية والتسعير في مكان واحد.") },
@@ -48,7 +49,7 @@ const FAQS = [
   },
   {
     q: T("Where does AI genuinely help in healthcare operations?", "أين يفيد الذكاء الاصطناعي حقًا في العمليات الصحية؟"),
-    a: T("In the unglamorous load: scheduling against capacity, predicting no-shows, processing referral documents, assembling prior authorisations and answering the administrative questions that consume contact-center hours. That is where hours are lost today, and where automation is safe to apply.", "في العبء غير اللافت: الجدولة وفق السعة، والتنبؤ بعدم الحضور، ومعالجة مستندات الإحالة، وتجميع الموافقات المسبقة، والإجابة عن الأسئلة الإدارية التي تستهلك ساعات مراكز الاتصال. هناك تُهدر الساعات اليوم، وهناك تكون الأتمتة آمنة التطبيق."),
+    a: T("In the unglamorous load: scheduling against capacity, predicting no-shows, processing referral documents, assembling prior authorizations and answering the administrative questions that consume contact-center hours. That is where hours are lost today, and where automation is safe to apply.", "في العبء غير اللافت: الجدولة وفق السعة، والتنبؤ بعدم الحضور، ومعالجة مستندات الإحالة، وتجميع الموافقات المسبقة، والإجابة عن الأسئلة الإدارية التي تستهلك ساعات مراكز الاتصال. هناك تُهدر الساعات اليوم، وهناك تكون الأتمتة آمنة التطبيق."),
   },
 ];
 
@@ -76,6 +77,15 @@ ${section(`
   ${secHead({ kicker: T("Capabilities", "القدرات"), h: T("Six things we build in health.", "ستة أشياء نبنيها في الصحة.") }, lang)}
   ${capGrid(CAPS, lang, { cols: 3 })}
 `, { tone: "light" })}
+
+${section(`
+  ${secHead({
+    kicker: T("In operation", "أثناء التشغيل"),
+    h: T("The journey, coordinated|end to end.", "الرحلة، منسَّقة|من طرف إلى طرف."),
+    lead: T("One referral traced through the platform: eligibility, scheduling, instructions, risk flags and the summary back to the referrer: the administrative layer that decides whether care feels coordinated or chaotic.", "إحالة واحدة مُتتبَّعة عبر المنصّة: الأهلية والجدولة والتعليمات ومؤشّرات الخطر والملخّص العائد إلى المُحيل: الطبقة الإدارية التي تحدّد ما إذا كانت الرعاية ستبدو منسَّقة أم فوضوية."),
+  }, lang)}
+  <div class="reveal" data-d="1">${healthConsole(lang)}</div>
+`, { tone: "paper" })}
 
 ${section(`
   ${secHead({

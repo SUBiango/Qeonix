@@ -28,7 +28,7 @@ const PRACTICES = [
   { h: T("Events over polling", "الأحداث لا الاستطلاع"), p: T("Systems learn about change by being told, not by asking every minute. It is the difference between a live operation and a nightly batch.", "تعلم الأنظمة بالتغيير بالإبلاغ، لا بالسؤال كل دقيقة. وهذا هو الفرق بين عملية حيّة ودفعة ليلية.") },
   { h: T("Boring where it counts", "تقليدية حيث يجب"), p: T("Databases, queues and identity use proven components. Novelty is spent on the problem, not the plumbing.", "قواعد البيانات والطوابير والهوية بمكوّنات مثبتة. ويُدَّخر الجديد للمشكلة، لا للبنية.") },
   { h: T("Observable by default", "قابلة للمراقبة افتراضيًا"), p: T("Tracing, metrics and structured logs ship with the first release, because they cannot be retrofitted during an incident.", "يُشحن التتبّع والمؤشّرات والسجلّات المهيكلة مع الإصدار الأول، لأنها لا تُضاف أثناء الحادث.") },
-  { h: T("Portable across boundaries", "قابلة للنقل عبر الحدود"), p: T("The same platform definition deploys to public cloud, private cloud or an isolated site: sovereignty must not require a rewrite.", "تعريف المنصّة نفسه يُنشر في سحابة عامة أو خاصة أو موقع معزول: فالسيادة يجب ألا تتطلّب إعادة كتابة.") },
+  { h: T("Portable across boundaries", "قابلة للنقل عبر الحدود"), p: T("The same platform definition deploys to public cloud, private cloud or an isolated site. Sovereignty must not require a rewrite.", "تعريف المنصّة نفسه يُنشر في سحابة عامة أو خاصة أو موقع معزول، فالسيادة يجب ألا تتطلّب إعادة كتابة.") },
   { h: T("Run by the builders", "يشغّلها من بناها"), p: T("The team that designs the platform carries it in production. It is remarkable what that does to design decisions.", "الفريق الذي يصمّم المنصّة يتولّاها في الإنتاج. ومدهشٌ ما يفعله ذلك بقرارات التصميم.") },
 ];
 
@@ -46,7 +46,7 @@ const FAQS = [
   },
   {
     q: T("Do you take over existing platforms or only build new ones?", "هل تتولّون منصّات قائمة أم تبنون الجديد فقط؟"),
-    a: T("Both. A common engagement is stabilizing and instrumenting an existing estate (contracts, observability, event backbone) and then extending it, rather than proposing a rebuild the organization neither needs nor wants.", "الاثنان. من الارتباطات الشائعة تثبيت منظومة قائمة وتزويدها بالقياس (العقود وقابلية المراقبة والعمود الفقري للأحداث) ثم توسيعها، بدل اقتراح إعادة بناء لا تحتاجها الجهة ولا تريدها."),
+    a: T("Both. A common engagement is stabilizing and instrumenting an existing estate: contracts, observability, event backbone, and then extending it, rather than proposing a rebuild the organization neither needs nor wants.", "الاثنان. من الارتباطات الشائعة تثبيت منظومة قائمة وتزويدها بالقياس: العقود وقابلية المراقبة والعمود الفقري للأحداث، ثم توسيعها، بدل اقتراح إعادة بناء لا تحتاجها الجهة ولا تريدها."),
   },
   {
     q: T("Which technologies do you use?", "أي التقنيات تستخدمون؟"),
@@ -123,8 +123,8 @@ ${closer("platforms", lang)}
       "منصّات البيانات والتكامل وهندسة المنصّات الرقمية | كيونكس"
     ),
     description: T(
-      "Platform engineering from Qeonix: data platforms, integration layers and APIs, event-driven systems, workflow engines, operational dashboards, digital twins and cloud-native or hybrid infrastructure. Portable across public cloud, private cloud and isolated environments.",
-      "هندسة المنصّات من كيونكس: منصّات البيانات وطبقات التكامل وواجهات البرمجة والأنظمة القائمة على الأحداث ومحرّكات سير العمل واللوحات التشغيلية والتوائم الرقمية والبنية السحابية الأصلية أو الهجينة. قابلة للنقل بين السحابة العامة والخاصة والبيئات المعزولة."
+      "Platform engineering from Qeonix: data platforms, integration layers and APIs, event-driven systems, workflow engines, operational dashboards, digital twins and cloud-native or hybrid infrastructure, portable across public cloud, private cloud and isolated environments.",
+      "هندسة المنصّات من كيونكس: منصّات البيانات وطبقات التكامل وواجهات البرمجة والأنظمة القائمة على الأحداث ومحرّكات سير العمل واللوحات التشغيلية والتوائم الرقمية والبنية السحابية الأصلية أو الهجينة، قابلة للنقل بين السحابة العامة والخاصة والبيئات المعزولة."
     ),
     og: "platforms",
     service: { name: LABEL, type: T("Data and digital platform engineering", "هندسة منصّات البيانات والمنصّات الرقمية") },

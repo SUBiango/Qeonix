@@ -9,7 +9,7 @@ import { tx, t, esc, map } from "./html.mjs";
 import { icon } from "./icons.mjs";
 
 /* ------------------------------------------------------------------
-   HERO — "intelligence lattice"
+   HERO: "intelligence lattice"
    A deliberate topology, not a particle soup: a core, an orbit of
    specialized nodes, and signals traveling the edges between them.
    ------------------------------------------------------------------ */
@@ -102,7 +102,7 @@ export function heroLattice() {
 }
 
 /* ------------------------------------------------------------------
-   FLOW — vertical value chain (DATA -> ... -> OUTCOME)
+   FLOW: vertical value chain (DATA -> ... -> OUTCOME)
    steps: [{ k: 'DATA', label, note, icon }]
    ------------------------------------------------------------------ */
 export function flowStack(steps, lang, { id = "flow", dense = false } = {}) {
@@ -123,7 +123,7 @@ export function flowStack(steps, lang, { id = "flow", dense = false } = {}) {
 }
 
 /* ------------------------------------------------------------------
-   ARCHITECTURE BOARD — labelled bands of chips, connected by rails.
+   ARCHITECTURE BOARD: labeled bands of chips, connected by rails.
    bands: [{ label, note, tone, items: [string] }]
    Reads as a real architecture diagram and survives 375px + RTL.
    ------------------------------------------------------------------ */
@@ -149,7 +149,7 @@ export function archBoard(bands, lang, { id = "arch", legend } = {}) {
 }
 
 /* ------------------------------------------------------------------
-   CYCLE — a closed loop rendered as a row plus an explicit return path.
+   CYCLE: a closed loop rendered as a row plus an explicit return path.
    A ring breaks below 900px; a row + return rail never does.
    ------------------------------------------------------------------ */
 export function cycle(steps, lang, { id = "cycle", returnLabel } = {}) {
@@ -173,7 +173,7 @@ export function cycle(steps, lang, { id = "cycle", returnLabel } = {}) {
 }
 
 /* ------------------------------------------------------------------
-   LADDER — maturity progression (chatbot -> ... -> autonomous operation)
+   LADDER: maturity progression (chatbot -> ... -> autonomous operation)
    ------------------------------------------------------------------ */
 export function ladder(rungs, lang, { id = "ladder" } = {}) {
   return `<ol class="ladder reveal" id="${esc(id)}">
@@ -188,7 +188,7 @@ export function ladder(rungs, lang, { id = "ladder" } = {}) {
 }
 
 /* ------------------------------------------------------------------
-   MATRIX — capability domains as a dense technical grid.
+   MATRIX: capability domains as a dense technical grid.
    groups: [{ label, items: [string] }]
    ------------------------------------------------------------------ */
 export function matrix(groups, lang, { id = "matrix" } = {}) {
@@ -204,7 +204,7 @@ export function matrix(groups, lang, { id = "matrix" } = {}) {
 }
 
 /* ------------------------------------------------------------------
-   DEPLOYMENT TIERS — cloud / private / on-prem / sovereign
+   DEPLOYMENT TIERS: cloud / private / on-prem / sovereign
    ------------------------------------------------------------------ */
 export function deployTiers(tiers, lang) {
   return `<ul class="tiers reveal">
@@ -219,7 +219,7 @@ export function deployTiers(tiers, lang) {
 }
 
 /* ------------------------------------------------------------------
-   CITY MESH — domains orbiting a shared intelligence layer.
+   CITY MESH: domains orbiting a shared intelligence layer.
    Rendered as a grid of domain tiles around a central band.
    ------------------------------------------------------------------ */
 export function cityMesh(domains, lang, centre) {
@@ -255,4 +255,96 @@ export function gridfield(cls = "") {
 /* Three-bar brand mark used as a section marker. */
 export function markRule() {
   return '<span class="markrule" aria-hidden="true"><i></i><i></i><i></i></span>';
+}
+
+/* ------------------------------------------------------------------
+   PRESENCE MAP: offices plotted on an abstract graticule.
+   Real lon/lat, equirectangular projection, no coastlines: geography
+   without cartographic clutter, in the lattice's visual language.
+   Not mirrored in RTL. Maps keep their orientation.
+   ------------------------------------------------------------------ */
+export function presenceMap(offices, statuses, lang) {
+  const ar = lang === "ar";
+  /* project lon [-10..68] lat [14..56] into 760x400 */
+  const px = (lon) => Math.round(((lon + 10) / 78) * 760);
+  const py = (lat) => Math.round(((56 - lat) / 42) * 400);
+  const GEO = { AE: [54.4, 24.45], FR: [2.35, 48.85], OM: [58.4, 23.6], QA: [51.53, 25.29] };
+  /* Per-city label placement: the Gulf cluster sits close together, so each
+     label takes its own quadrant: AD below, Doha upper-left, Muscat right. */
+  const LBL = {
+    AE: { a: "middle", dx: 0, dy: 34, sdy: 50 },
+    FR: { a: "middle", dx: 0, dy: -18, sdy: -34 },
+    OM: { a: "start", dx: 14, dy: 6, sdy: 21 },
+    QA: { a: "end", dx: -12, dy: -14, sdy: -29 },
+  };
+
+  const pts = offices.map((o) => {
+    const [lon, lat] = GEO[o.cc];
+    return { ...o, x: px(lon), y: py(lat) };
+  });
+  const hq = pts.find((p) => p.status === "hq");
+
+  const arcs = pts.filter((p) => p !== hq).map((p, i) => {
+    const mx = (hq.x + p.x) / 2, my = Math.min(hq.y, p.y) - 70 - i * 8;
+    return `<path class="pm-arc${p.status === "progress" ? " is-soon" : ""}" d="M${hq.x} ${hq.y} Q${mx} ${my} ${p.x} ${p.y}"/>`;
+  }).join("");
+
+  const nodes = pts.map((p) => {
+    const l = LBL[p.cc];
+    return `
+    <g class="pm-node is-${p.status}">
+      ${p.status === "hq" ? `<circle class="pm-halo" cx="${p.x}" cy="${p.y}" r="7"/>` : ""}
+      <circle class="pm-dot" cx="${p.x}" cy="${p.y}" r="${p.status === "hq" ? 7 : 5}"/>
+      <text class="pm-city" x="${p.x + l.dx}" y="${p.y + l.dy}" text-anchor="${l.a}">${esc(t(p.city, lang))}</text>
+      <text class="pm-status" x="${p.x + l.dx}" y="${p.y + l.sdy}" text-anchor="${l.a}">${esc(t(statuses[p.status], lang))}</text>
+    </g>`;
+  }).join("");
+
+  const grat = [
+    ...Array.from({ length: 9 }, (_, i) => `<line x1="${i * 95}" y1="0" x2="${i * 95}" y2="400"/>`),
+    ...Array.from({ length: 5 }, (_, i) => `<line x1="0" y1="${i * 100}" x2="760" y2="${i * 100}"/>`),
+  ].join("");
+
+  return `<figure class="pmap reveal" role="img"
+    aria-label="${ar ? "خريطة حضور كيونكس: أبوظبي المقر الرئيسي، باريس مكتب، مسقط والدوحة قريبًا" : "Qeonix presence map: Abu Dhabi headquarters, Paris office, Muscat and Doha soon"}">
+  <svg viewBox="0 0 760 400" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true">
+    <g class="pm-grat">${grat}</g>
+    ${arcs}
+    ${nodes}
+  </svg>
+  <figcaption class="pm-cap mono">${ar ? "المقر الرئيسي في أبوظبي · أنظمة مصمّمة للنشر الدولي من اليوم الأول" : "Headquartered in Abu Dhabi · systems designed for international deployment from day one"}</figcaption>
+</figure>`;
+}
+
+/* ------------------------------------------------------------------
+   HANDOVER LANES: the traditional delivery chain versus one line.
+   HTML bars: responsive, RTL-correct, no SVG needed.
+   ------------------------------------------------------------------ */
+export function handoverLanes(lang) {
+  const ar = lang === "ar";
+  const trad = [
+    { k: ar ? "استشارات" : "Consultancy", note: ar ? "توصي وترحل" : "recommends, leaves" },
+    { k: ar ? "شركة تكامل" : "Systems integrator", note: ar ? "يبني ويسلّم" : "builds, hands over" },
+    { k: ar ? "مشغّل" : "Operator", note: ar ? "يرث ويتدبّر" : "inherits, copes" },
+  ];
+  const lost = ar ? "فقدان السياق" : "context lost";
+  return `<div class="lanes reveal">
+    <div class="lane lane-trad">
+      <p class="lane-tag mono">${ar ? "النموذج المعتاد" : "The usual model"}</p>
+      <div class="lane-bars">
+        ${trad.map((s, i) => `
+          ${i ? `<span class="lane-gap" aria-hidden="true"><i></i><em class="mono">${lost}</em></span>` : ""}
+          <span class="lane-seg"><strong>${s.k}</strong><span>${s.note}</span></span>`).join("")}
+      </div>
+    </div>
+    <div class="lane lane-qx">
+      <p class="lane-tag mono">${ar ? "نموذج كيونكس" : "The Qeonix model"}</p>
+      <div class="lane-bars">
+        <span class="lane-seg lane-solid">
+          <strong>${ar ? "فريق واحد، مساءلة واحدة" : "One team, one accountability"}</strong>
+          <span>${ar ? "البنية ← الهندسة ← التشغيل، دون تسليم" : "architecture → engineering → operations, no handover"}</span>
+        </span>
+      </div>
+    </div>
+  </div>`;
 }

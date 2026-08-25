@@ -67,7 +67,7 @@ const FAQS = [
   },
   {
     q: T("Where do you start with an entity that has many services?", "من أين تبدأون مع جهة لديها خدمات كثيرة؟"),
-    a: T("With one high-volume journey that crosses at least two departments. That proves the case spine, the identity integration and the orchestration under real load, and produces a reusable pattern for the rest of the catalogue.", "من رحلة واحدة عالية الحجم تعبر إدارتين على الأقل. فذلك يُثبت العمود الفقري للحالة والتكامل مع الهوية والتنسيق تحت حمل حقيقي، وينتج نمطًا قابلًا لإعادة الاستخدام لبقية دليل الخدمات."),
+    a: T("With one high-volume journey that crosses at least two departments. That proves the case spine, the identity integration and the orchestration under real load, and produces a reusable pattern for the rest of the catalog.", "من رحلة واحدة عالية الحجم تعبر إدارتين على الأقل. فذلك يُثبت العمود الفقري للحالة والتكامل مع الهوية والتنسيق تحت حمل حقيقي، وينتج نمطًا قابلًا لإعادة الاستخدام لبقية دليل الخدمات."),
   },
 ];
 
@@ -169,8 +169,8 @@ ${closer("government", lang)}
       "منصّات الحكومة الذكية والحكومة الرقمية | كيونكس"
     ),
     description: T(
-      "Digital government platforms from Qeonix: unified service surfaces and super-apps, cross-agency orchestration, government AI assistants, permitting and licensing journeys, case management, payments and digital identity integration. Deployable in government cloud or on-premise.",
-      "منصّات حكومة رقمية من كيونكس: واجهات خدمات موحّدة وتطبيقات شاملة، وتنسيق بين الجهات، ومساعدون حكوميون بالذكاء الاصطناعي، ورحلات التصاريح والتراخيص، وإدارة الحالات، والمدفوعات والتكامل مع الهوية الرقمية. قابلة للنشر في سحابة حكومية أو داخل المنشأة."
+      "Digital government platforms from Qeonix: unified service surfaces and super-apps, cross-agency orchestration, government AI assistants, permitting and licensing journeys, case management, payments and digital identity integration, deployable in government cloud or on-premise.",
+      "منصّات حكومة رقمية من كيونكس: واجهات خدمات موحّدة وتطبيقات شاملة، وتنسيق بين الجهات، ومساعدون حكوميون بالذكاء الاصطناعي، ورحلات التصاريح والتراخيص، وإدارة الحالات، والمدفوعات والتكامل مع الهوية الرقمية، قابلة للنشر في سحابة حكومية أو داخل المنشأة."
     ),
     og: "government",
     service: { name: LABEL, type: T("Digital government platform engineering", "هندسة منصّات الحكومة الرقمية") },
