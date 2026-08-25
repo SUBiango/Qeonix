@@ -251,7 +251,7 @@ ${page.body}
 </main>
 ${page.hideCta ? "" : ctaBand(lang, page.cta)}
 ${footer(page, lang)}
-<script src="/js/qeonix.js?v=5" defer></script>
+<script src="/js/qeonix.js?v=6" defer></script>
 </body>
 </html>
 `;
