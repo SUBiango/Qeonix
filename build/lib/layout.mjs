@@ -89,7 +89,7 @@ ${page.noindex ? '<meta name="robots" content="noindex,follow">' : '<meta name="
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${esc(fontHref(lang))}">
-<link rel="stylesheet" href="/css/qeonix.css?v=20">
+<link rel="stylesheet" href="/css/qeonix.css?v=21">
 ${(page.jsonld || []).map((b) => `<script type="application/ld+json">${escJsonLd(b)}</script>`).join("\n")}`;
 }
 
