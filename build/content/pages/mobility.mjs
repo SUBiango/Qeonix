@@ -52,7 +52,7 @@ const FAQS = [
   },
   {
     q: T("Can you work with our existing operators and vendors?", "هل تعملون مع مشغّلينا ومورّدينا الحاليين؟"),
-    a: T("Yes, that is the design assumption. Operators keep their fleet, ticketing and depot systems; the platform federates across them through APIs and agreed data contracts, and adds the layers that none of them individually own: the journey, the settlement and the network view.", "نعم، وهذا هو الافتراض التصميمي. يحتفظ المشغّلون بأنظمة أساطيلهم وتذاكرهم ومستودعاتهم؛ وتوحّد المنصّة بينها عبر واجهات وعقود بيانات متّفق عليها، وتضيف الطبقات التي لا يملكها أيٌّ منهم منفردًا: الرحلة والتسوية وصورة الشبكة."),
+    a: T("Yes: that is the design assumption. Operators keep their fleet, ticketing and depot systems; the platform federates across them through APIs and agreed data contracts, and adds the layers that none of them individually own: the journey, the settlement and the network view.", "نعم، وهذا هو الافتراض التصميمي. يحتفظ المشغّلون بأنظمة أساطيلهم وتذاكرهم ومستودعاتهم؛ وتوحّد المنصّة بينها عبر واجهات وعقود بيانات متّفق عليها، وتضيف الطبقات التي لا يملكها أيٌّ منهم منفردًا: الرحلة والتسوية وصورة الشبكة."),
   },
   {
     q: T("Where does AI actually help in mobility?", "أين يفيد الذكاء الاصطناعي فعليًا في التنقل؟"),
@@ -67,8 +67,8 @@ export default function mobility(lang) {
     kicker: T("Sector · Transport & mobility", "قطاع · النقل والتنقل"),
     h: T("The journey is the product.|Everything else is plumbing.", "الرحلة هي المنتج.|وكل ما عداها بنية تحتية."),
     lead: T(
-      "Qeonix builds mobility platforms where modes, operators and infrastructure behave as one network: from journey planning and payment to fleet orchestration, tolling and the EV ecosystem.",
-      "تبني كيونكس منصّات تنقل تجعل الوسائط والمشغّلين والبنية التحتية تعمل كشبكة واحدة: من تخطيط الرحلة والدفع إلى تنسيق الأساطيل والتعرفة ومنظومة المركبات الكهربائية."
+      "Qeonix builds mobility platforms where modes, operators and infrastructure behave as one network, from journey planning and payment to fleet orchestration, tolling and the EV ecosystem.",
+      "تبني كيونكس منصّات تنقل تجعل الوسائط والمشغّلين والبنية التحتية تعمل كشبكة واحدة، من تخطيط الرحلة والدفع إلى تنسيق الأساطيل والتعرفة ومنظومة المركبات الكهربائية."
     ),
     meta: [
       { k: T("Span", "المدى"), v: T("Traveler, operator, network, curb", "المتنقّل والمشغّل والشبكة والرصيف") },

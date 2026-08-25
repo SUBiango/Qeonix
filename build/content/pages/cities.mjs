@@ -44,7 +44,7 @@ const LIFECYCLE = [
 const CAPS = [
   { icon: "radar", h: T("City command center", "مركز قيادة المدينة"), p: T("A live operational picture across departments, with incident management and multi-agency coordination rather than eight screens showing eight systems.", "صورة تشغيلية مباشرة عبر الإدارات، مع إدارة الحوادث والتنسيق متعدّد الجهات، بدل ثماني شاشات تعرض ثمانية أنظمة.") },
   { icon: "grid", h: T("Connected infrastructure & IoT", "البنية التحتية المتصلة وإنترنت الأشياء"), p: T("Sensor, meter and camera estates brought into one telemetry layer with device management, health monitoring and a sane data contract.", "منظومات المستشعرات والعدّادات والكاميرات في طبقة قياس واحدة مع إدارة الأجهزة ومراقبة سلامتها وعقد بيانات منضبط.") },
-  { icon: "package", h: T("Field operations", "العمليات الميدانية"), p: T("Crew scheduling, mobile work orders, route optimization and evidence capture: the part of a smart city program that is usually left out.", "جدولة الفرق وأوامر العمل المتنقّلة وتحسين المسارات والتقاط الأدلّة: وهو الجزء الذي يُهمَل عادةً في برامج المدن الذكية.") },
+  { icon: "package", h: T("Field operations", "العمليات الميدانية"), p: T("Crew scheduling, mobile work orders, route optimization and evidence capture, the part of a smart city program that is usually left out.", "جدولة الفرق وأوامر العمل المتنقّلة وتحسين المسارات والتقاط الأدلّة، وهو الجزء الذي يُهمَل عادةً في برامج المدن الذكية.") },
   { icon: "leaf", h: T("Environment & sustainability", "البيئة والاستدامة"), p: T("Air quality, noise, water and waste monitored continuously and tied to the operational response, not only to an annual report.", "جودة الهواء والضوضاء والمياه والنفايات تُرصد باستمرار وتُربط بالاستجابة التشغيلية، لا بتقرير سنوي فقط.") },
   { icon: "layers", h: T("Digital twin", "التوأم الرقمي"), p: T("A spatial model of assets and networks used for planning, impact assessment and scenario testing before work is committed.", "نموذج مكاني للأصول والشبكات يُستخدم للتخطيط وتقييم الأثر واختبار السيناريوهات قبل اعتماد الأعمال.") },
   { icon: "vehicle", h: T("Mobility & parking", "التنقل والمواقف"), p: T("Traffic, parking, tolling and EV infrastructure treated as one demand-management problem rather than four procurements.", "المرور والمواقف والتعرفة وبنية شحن المركبات الكهربائية كمسألة إدارة طلب واحدة، لا كأربع مناقصات.") },
@@ -71,7 +71,7 @@ const FAQS = [
   },
   {
     q: T("We already have systems from several vendors. Does that block this?", "لدينا أنظمة من عدّة مورّدين. هل يعيق ذلك المشروع؟"),
-    a: T("No, it is the normal starting condition. The integration and data layer is designed around a mixed estate with different ages, protocols and data quality. Replacing everything is almost never the right first move.", "لا، بل هذه هي الحالة الطبيعية للانطلاق. تُصمَّم طبقة التكامل والبيانات حول منظومة متنوّعة بأعمار وبروتوكولات وجودة بيانات مختلفة. واستبدال كل شيء نادرًا ما يكون الخطوة الأولى الصحيحة."),
+    a: T("No: it is the normal starting condition. The integration and data layer is designed around a mixed estate with different ages, protocols and data quality. Replacing everything is almost never the right first move.", "لا، بل هذه هي الحالة الطبيعية للانطلاق. تُصمَّم طبقة التكامل والبيانات حول منظومة متنوّعة بأعمار وبروتوكولات وجودة بيانات مختلفة. واستبدال كل شيء نادرًا ما يكون الخطوة الأولى الصحيحة."),
   },
   {
     q: T("How long before something is running?", "كم يستغرق الأمر قبل تشغيل شيء فعلي؟"),
@@ -87,8 +87,8 @@ export default function cities(lang) {
     kicker: T("Sector · Cities & urban operations", "قطاع · المدن والعمليات الحضرية"),
     h: T("A city is not twelve systems.|It is one operation.", "المدينة ليست اثني عشر نظامًا.|إنها عملية واحدة."),
     lead: T(
-      "Services, mobility, utilities, waste, permits and field crews usually meet only in a monthly report. Qeonix builds the layer where they meet in real time: from a resident's request to the crew that closes it.",
-      "الخدمات والتنقل والمرافق والنفايات والتصاريح والفرق الميدانية لا تلتقي عادةً إلا في تقرير شهري. تبني كيونكس الطبقة التي تلتقي فيها آنيًّا: من طلب المتعامل إلى الفريق الذي يُنجزه."
+      "Services, mobility, utilities, waste, permits and field crews usually meet only in a monthly report. Qeonix builds the layer where they meet in real time, from a resident's request to the crew that closes it.",
+      "الخدمات والتنقل والمرافق والنفايات والتصاريح والفرق الميدانية لا تلتقي عادةً إلا في تقرير شهري. تبني كيونكس الطبقة التي تلتقي فيها آنيًّا، من طلب المتعامل إلى الفريق الذي يُنجزه."
     ),
     meta: [
       { k: T("Span", "المدى"), v: T("Citizen to field crew, one loop", "من المتعامل إلى الفريق الميداني، حلقة واحدة") },

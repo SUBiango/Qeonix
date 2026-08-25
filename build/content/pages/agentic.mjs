@@ -36,7 +36,7 @@ const AGENTS = [
 
 const CONTROLS = [
   { icon: "key", h: T("Scoped permissions", "صلاحيات محدّدة النطاق"), p: T("An agent is granted named tools and named data, not a role that happens to be broad. Scope is reviewable and revocable at any time.", "يُمنح الوكيل أدوات محدّدة وبيانات محدّدة بالاسم، لا دورًا واسعًا بالصدفة. والنطاق قابل للمراجعة والسحب في أي وقت.") },
-  { icon: "people", h: T("Human-in-the-loop", "الإنسان ضمن الحلقة"), p: T("Consequential steps: money, personal data, a physical dispatch, an irreversible status change, stop for a named approver.", "الخطوات ذات الأثر: المال والبيانات الشخصية والإرسال الميداني وأي تغيير غير قابل للعكس، تتوقّف عند مُعتمِد محدّد بالاسم.") },
+  { icon: "people", h: T("Human-in-the-loop", "الإنسان ضمن الحلقة"), p: T("Consequential steps, such as money, personal data, a physical dispatch or an irreversible status change, stop for a named approver.", "الخطوات ذات الأثر، مثل المال والبيانات الشخصية والإرسال الميداني وأي تغيير غير قابل للعكس، تتوقّف عند مُعتمِد محدّد بالاسم.") },
   { icon: "eye", h: T("Traceable reasoning", "استدلال قابل للتتبّع"), p: T("Inputs, retrieved context, tool calls and outputs are recorded so a reviewer can reconstruct a decision months later.", "تُسجَّل المدخلات والسياق المسترجَع واستدعاءات الأدوات والمخرجات، ليتمكّن المراجع من إعادة بناء القرار بعد أشهر.") },
   { icon: "model", h: T("Model flexibility", "مرونة النماذج"), p: T("Workloads route to open-source or commercial models on merit. No single provider becomes a structural dependency.", "تُوجَّه الأعباء إلى نماذج مفتوحة أو تجارية بحسب الجدارة. ولا يتحوّل أي مزوّد إلى اعتماد بنيوي.") },
   { icon: "target", h: T("Evaluation before rollout", "تقييم قبل الإطلاق"), p: T("Agents ship against evaluation sets built from real cases, and regressions are caught before a workflow is widened.", "تُطلق الوكلاء وفق مجموعات تقييم مبنية على حالات حقيقية، وتُلتقط الانحدارات قبل توسيع أي سير عمل.") },
@@ -90,8 +90,8 @@ export default function agentic(lang) {
     kicker: T("Qeonix Intelligence · Agentic AI", "ذكاء كيونكس · الذكاء الاصطناعي الوكيل"),
     h: T("The AI operating layer|for work that has consequences.", "طبقة تشغيل الذكاء الاصطناعي|للأعمال ذات الأثر."),
     lead: T(
-      "Agents that understand a request, reason about it, call your real systems and finish the job, inside permissions your security team set, with an audit trail your regulator can read.",
-      "وكلاء يفهمون الطلب ويستنتجون ويستدعون أنظمتكم الفعلية وينجزون العمل، ضمن صلاحيات يضعها فريق الأمن لديكم، وبسجل تدقيق يستطيع جهاتكم الرقابية قراءته."
+      "Agents that understand a request, reason about it, call your real systems and finish the job: inside permissions your security team set, with an audit trail your regulator can read.",
+      "وكلاء يفهمون الطلب ويستنتجون ويستدعون أنظمتكم الفعلية وينجزون العمل: ضمن صلاحيات يضعها فريق الأمن لديكم، وبسجل تدقيق يستطيع جهاتكم الرقابية قراءته."
     ),
     meta: [
       { k: T("Deployment", "النشر"), v: T("Cloud, private, on-premise, sovereign", "سحابة عامة أو خاصة أو داخل المنشأة أو سيادية") },
@@ -107,7 +107,7 @@ ${section(`
   ${secHead({
     kicker: T("The distinction", "الفارق"),
     h: T("Everyone has a chatbot.|The question is what happens next.", "لدى الجميع روبوت محادثة.|السؤال هو ما الذي يحدث بعده."),
-    lead: T("Each rung adds capability and removes a human from a step. Each one also raises the bar on governance, which is the part most programs discover late.", "كل درجة تضيف قدرة وتزيح إنسانًا عن خطوة. وكل درجة ترفع أيضًا سقف الحوكمة، وهو ما تكتشفه أغلب البرامج متأخّرًا."),
+    lead: T("Each rung adds capability and removes a human from a step. Each one also raises the bar on governance: the part most programs discover late.", "كل درجة تضيف قدرة وتزيح إنسانًا عن خطوة. وكل درجة ترفع أيضًا سقف الحوكمة: وهو ما تكتشفه أغلب البرامج متأخّرًا."),
   }, lang)}
   ${ladder(RUNGS, lang)}
 `, { tone: "light" })}
@@ -199,8 +199,8 @@ ${closer("agentic", lang)}
       "منصّة الذكاء الاصطناعي الوكيل للحكومات والمؤسسات | كيونكس"
     ),
     description: T(
-      "Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit, deployable in cloud, private, on-premise or sovereign environments.",
-      "ذكاء اصطناعي وكيل بمستوى المؤسسات والجهات الحكومية: تنسيق متعدّد الوكلاء، واستدعاء الأدوات وواجهات البرمجة، وضوابط الإنسان ضمن الحلقة، وصلاحيات محدّدة النطاق، وقابلية مراقبة وتدقيق، قابل للنشر في السحابة أو بيئة خاصة أو داخل المنشأة أو بيئة سيادية."
+      "Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit; deployable in cloud, private, on-premise or sovereign environments.",
+      "ذكاء اصطناعي وكيل بمستوى المؤسسات والجهات الحكومية: تنسيق متعدّد الوكلاء، واستدعاء الأدوات وواجهات البرمجة، وضوابط الإنسان ضمن الحلقة، وصلاحيات محدّدة النطاق، وقابلية مراقبة وتدقيق؛ قابل للنشر في السحابة أو بيئة خاصة أو داخل المنشأة أو بيئة سيادية."
     ),
     og: "agentic",
     service: { name: LABEL, type: T("Agentic AI platform engineering", "هندسة منصّات الذكاء الاصطناعي الوكيل") },

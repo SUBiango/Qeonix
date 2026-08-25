@@ -1,5 +1,5 @@
 /* Operational product showcases.
-   High-fidelity conceptual interfaces built in HTML/CSS/SVG, the point is to
+   High-fidelity conceptual interfaces built in HTML/CSS/SVG: the point is to
    show the *kind* of operating software Qeonix engineers, not to imitate any
    customer environment. Rules enforced here:
      - Qeonix-branded, neutral environments only (no agency or customer names,
@@ -13,7 +13,7 @@
 import { T, tx, t, esc } from "./html.mjs";
 import { icon } from "./icons.mjs";
 
-/* Console chrome. Consoles are intentionally dark on any page tone,
+/* Console chrome. Consoles are intentionally dark on any page tone:
    operational software reads as itself, and the contrast gives the page its
    proof moments. */
 export function consoleFrame({ name, env, panes, cls = "" }, lang) {
@@ -26,7 +26,7 @@ export function consoleFrame({ name, env, panes, cls = "" }, lang) {
   </div>
   <div class="qxc-body">${panes}</div>
   <figcaption class="qxc-cap mono">${lang === "ar"
-    ? "بيئة منتج توضيحية: واجهة منصّة كيونكس، وبيانات للعرض فقط"
+    ? "بيئة منتج توضيحية، واجهة منصّة كيونكس، وبيانات للعرض فقط"
     : "Conceptual product environment: Qeonix platform UI, illustrative data"}</figcaption>
 </figure>`;
 }
@@ -64,7 +64,7 @@ export function agenticTrace(lang, { interactive = false } = {}) {
     [S("Permissions", "الصلاحيات"), lang === "ar" ? "قراءة السجل · إنشاء حالة · لا مدفوعات" : "registry read · case create · no payments"],
     [S("Model route", "مسار النموذج"), lang === "ar" ? "استدلال داخل الحدود" : "in-boundary inference"],
     [S("Tools allowed", "الأدوات المتاحة"), "4 / 31"],
-    [S("Escalation", "التصعيد"), lang === "ar" ? "موظف مناوب: قسم التراخيص" : "duty officer: licensing"],
+    [S("Escalation", "التصعيد"), lang === "ar" ? "موظف مناوب، قسم التراخيص" : "duty officer, licensing"],
   ].map(([k, v]) => `<div class="qxk"><span class="qxk-k mono">${tx(k, lang)}</span><span class="qxk-v">${esc(t(v, lang))}</span></div>`).join("");
 
   const controls = interactive ? `

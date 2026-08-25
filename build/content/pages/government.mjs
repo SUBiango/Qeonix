@@ -24,7 +24,7 @@ const PLATFORMS = [
   { icon: "agent", h: T("Government AI assistants", "المساعدون الحكوميون بالذكاء الاصطناعي"), p: T("Assistants for residents and for case officers, grounded in the actual regulation and the actual record, answering in Arabic and English.", "مساعدون للمتعاملين ولموظفي الحالات، مستندون إلى اللوائح الفعلية والسجل الفعلي، ويجيبون بالعربية والإنجليزية.") },
   { icon: "building", h: T("Permitting and licensing", "التصاريح والتراخيص"), p: T("Application-to-approval journeys with rule evaluation, inspection scheduling, conditional approvals and renewal handled as one lifecycle.", "رحلات من الطلب إلى الموافقة مع تقييم القواعد وجدولة التفتيش والموافقات المشروطة والتجديد كدورة حياة واحدة.") },
   { icon: "package", h: T("Case management", "إدارة الحالات"), p: T("A single case spine across channels and departments, so a resident is not the integration layer between two agencies.", "عمود فقري واحد للحالة عبر القنوات والإدارات، حتى لا يكون المتعامل هو طبقة التكامل بين جهتين.") },
-  { icon: "radar", h: T("Government operations", "العمليات الحكومية"), p: T("Operational command over service performance, backlog, field capacity and escalation: the view a director general actually needs.", "قيادة تشغيلية لأداء الخدمة والمتراكم والطاقة الميدانية والتصعيد: الصورة التي يحتاجها المدير العام فعلًا.") },
+  { icon: "radar", h: T("Government operations", "العمليات الحكومية"), p: T("Operational command over service performance, backlog, field capacity and escalation, the view a director general actually needs.", "قيادة تشغيلية لأداء الخدمة والمتراكم والطاقة الميدانية والتصعيد، الصورة التي يحتاجها المدير العام فعلًا.") },
 ];
 
 const STACK = [
@@ -79,7 +79,7 @@ export default function government(lang) {
     kicker: T("Sector · Government & public sector", "قطاع · الحكومة والقطاع العام"),
     h: T("Government that behaves|like one organization.", "حكومة تتصرّف|كمؤسسة واحدة."),
     lead: T(
-      "Residents do not experience departments. They experience a wait. Qeonix builds the orchestration, intelligence and shared services that let a public entity present one front door and close cases behind it.",
+      "Residents do not experience departments, they experience a wait. Qeonix builds the orchestration, intelligence and shared services that let a public entity present one front door and close cases behind it.",
       "لا يختبر المتعاملون الإدارات، بل يختبرون الانتظار. تبني كيونكس طبقة التنسيق والذكاء والخدمات المشتركة التي تتيح للجهة العامة تقديم باب واحد وإغلاق المعاملات خلفه."
     ),
     meta: [

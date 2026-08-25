@@ -33,7 +33,7 @@ const PROCESS = [
 ];
 
 const LANGUAGE = [
-  { h: T("“Designed for”", "«مصمَّمة لـ»"), p: T("We describe what the architecture is designed for and can be deployed within. We do not claim certifications this site has not verified.", "نصف ما صُمِّمت له البنية وما يمكن نشرها ضمنه. ولا ندّعي شهادات لم يجرِ التحقّق منها.") },
+  { h: T("Certified where it counts", "معتمدة حيث يهم"), p: T("Qeonix is certified to ISO/IEC 27001 for information security management and ISO/IEC 42001 for AI management systems: the discipline behind sovereign deployments, independently audited.", "كيونكس معتمدة وفق ISO/IEC 27001 لإدارة أمن المعلومات وISO/IEC 42001 لأنظمة إدارة الذكاء الاصطناعي: الانضباط الذي تقوم عليه عمليات النشر السيادية، بتدقيق مستقل.") },
   { h: T("Verified, then stated", "تحقّق ثم تصريح"), p: T("Compliance claims are made in a due-diligence process against your framework, where they can be evidenced, not in marketing copy.", "تُقدَّم ادّعاءات الالتزام في عملية عناية واجبة وفق إطاركم، حيث يمكن إثباتها، لا في نص تسويقي.") },
   { h: T("Your framework leads", "إطاركم هو المرجع"), p: T("Government and enterprise customers bring their own security and data frameworks. Our architectures are built to be assessed against them.", "تأتي الجهات الحكومية والمؤسسات بأطرها الأمنية والبياناتية. وتُبنى بنانا لتُقيَّم وفقها.") },
 ];
@@ -49,7 +49,7 @@ const FAQS = [
   },
   {
     q: T("Is Qeonix certified against specific security standards?", "هل كيونكس معتمدة وفق معايير أمنية محدّدة؟"),
-    a: T("We do not publish certification claims on this site. Security and compliance posture is shared and evidenced directly in a due-diligence process against the framework your organization applies.", "لا ننشر ادّعاءات اعتماد على هذا الموقع. تُعرض حالة الأمن والالتزام وتُثبَت مباشرةً في عملية عناية واجبة وفق الإطار الذي تطبّقه جهتكم."),
+    a: T("Yes. Qeonix holds ISO/IEC 27001 certification for information security management and ISO/IEC 42001 certification for AI management systems. Beyond those, security and compliance posture is evidenced directly in a due-diligence process against the framework your organization applies.", "نعم. تحمل كيونكس اعتماد ISO/IEC 27001 لإدارة أمن المعلومات واعتماد ISO/IEC 42001 لأنظمة إدارة الذكاء الاصطناعي. وفيما يتجاوزهما، تُعرض حالة الأمن والالتزام وتُثبَت مباشرةً في عملية عناية واجبة وفق الإطار الذي تطبّقه جهتكم."),
   },
   {
     q: T("Can an agentic system really run disconnected?", "هل يمكن لنظام وكيل أن يعمل فعلًا دون اتصال؟"),

@@ -48,7 +48,7 @@ const BUILD = [
   {
     icon: "city", href: "cities",
     h: T("Smart Cities", "المدن الذكية"),
-    p: T("A city operating layer that connects services, infrastructure, command centers and field crews: from a resident's request to the crew that closes it.", "طبقة تشغيل للمدينة تربط الخدمات والبنية التحتية ومراكز القيادة والفرق الميدانية: من طلب المتعامل إلى الفريق الذي يُنجزه."),
+    p: T("A city operating layer that connects services, infrastructure, command centers and field crews, from a resident's request to the crew that closes it.", "طبقة تشغيل للمدينة تربط الخدمات والبنية التحتية ومراكز القيادة والفرق الميدانية، من طلب المتعامل إلى الفريق الذي يُنجزه."),
     tags: [T("Command & control", "القيادة والتحكم"), T("Connected infrastructure", "البنية التحتية المتصلة"), T("Field operations", "العمليات الميدانية"), T("Digital twins", "التوائم الرقمية")],
   },
   {
@@ -164,6 +164,7 @@ ${section(`
     { k: T("Deployment topologies", "بنى النشر"), v: T("4: cloud through sovereign", "٤: من السحابة إلى السيادية") },
     { k: T("Agent actions audited", "إجراءات الوكلاء المدقَّقة"), v: T("100%: by architecture", "١٠٠٪: بحكم البنية") },
     { k: T("Trackers on this site", "المتتبّعات في هذا الموقع"), v: T("0: we practice what we sell", "٠: نطبّق ما نقدّمه") },
+    { k: T("Certified", "الاعتمادات"), v: T("ISO/IEC 27001 · 42001", "ISO/IEC 27001 · 42001") },
   ], lang)}</div>
 `, { id: "stack", tone: "paper" })}
 
@@ -181,7 +182,7 @@ ${section(`
   ${secHead({
     kicker: T("Technology in operation", "التقنية أثناء التشغيل"),
     h: T("Enough architecture.|This is what the software looks like.", "يكفي حديثًا عن البنية.|هكذا تبدو البرمجيات فعلًا."),
-    lead: T("Three Qeonix-engineered operating environments: the consoles residents never see and operators live in. Conceptual environments, real engineering.", "ثلاث بيئات تشغيل من هندسة كيونكس: اللوحات التي لا يراها المتعاملون ويعيش فيها المشغّلون. بيئات توضيحية، وهندسة حقيقية."),
+    lead: T("Three Qeonix-engineered operating environments, the consoles residents never see and operators live in. Conceptual environments, real engineering.", "ثلاث بيئات تشغيل من هندسة كيونكس، اللوحات التي لا يراها المتعاملون ويعيش فيها المشغّلون. بيئات توضيحية، وهندسة حقيقية."),
   }, lang)}
 
   <div class="show reveal">
@@ -198,7 +199,7 @@ ${section(`
     <div class="show-copy">
       <p class="kicker mono">${markRule()}<span>02 · ${ar ? "منصّة الحكومة والمدينة" : "Government & city platform"}</span></p>
       <h3 class="h3">${ar ? "المدينة كقائمة عمل واحدة." : "The city as one queue of work."}</h3>
-      <p>${ar ? "طلبات الخدمة واتفاقيات المستوى وصحة التكامل والفرق الميدانية: في صورة تشغيلية واحدة تُدار منها المدينة." : "Service requests, SLAs, integration health and field crews: one operational picture the city is actually run from."}</p>
+      <p>${ar ? "طلبات الخدمة واتفاقيات المستوى وصحة التكامل والفرق الميدانية، في صورة تشغيلية واحدة تُدار منها المدينة." : "Service requests, SLAs, integration health and field crews, one operational picture the city is actually run from."}</p>
       <p class="show-cta">${btn(ar ? "الحكومة الذكية" : "Smart Government", L("government"), { kind: "ghost", lang })}
       ${btn(ar ? "جرّب التوأم الرقمي التفاعلي" : "Try the interactive city twin", L("cities") + "#twin", { kind: "quiet", lang })}</p>
     </div>
@@ -246,7 +247,7 @@ ${section(`
   ${secHead({
     kicker: T("Built differently", "مبنيّة بطريقة مختلفة"),
     h: T("What changes when one team|owns the whole system.", "ما الذي يتغيّر حين يملك فريق واحد|النظام بأكمله."),
-    lead: T("Not a list of virtues, but a list of consequences. Each of these is what an operator inherits because architecture, engineering and operations never changed hands.", "ليست قائمة فضائل، بل قائمة نتائج. كلٌّ ممّا يلي هو ما يرثه المشغّل لأن البنية والهندسة والتشغيل لم تنتقل بين أيدٍ متعدّدة."),
+    lead: T("Not a list of virtues, a list of consequences. Each of these is what an operator inherits because architecture, engineering and operations never changed hands.", "ليست قائمة فضائل، بل قائمة نتائج. كلٌّ ممّا يلي هو ما يرثه المشغّل لأن البنية والهندسة والتشغيل لم تنتقل بين أيدٍ متعدّدة."),
   }, lang)}
   ${handoverLanes(lang)}
   <div class="u-mt">${pillars(WHY, lang)}</div>

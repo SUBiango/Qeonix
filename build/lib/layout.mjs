@@ -89,7 +89,7 @@ ${page.noindex ? '<meta name="robots" content="noindex,follow">' : '<meta name="
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${esc(fontHref(lang))}">
-<link rel="stylesheet" href="/css/qeonix.css?v=21">
+<link rel="stylesheet" href="/css/qeonix.css?v=22">
 ${(page.jsonld || []).map((b) => `<script type="application/ld+json">${escJsonLd(b)}</script>`).join("\n")}`;
 }
 
@@ -228,6 +228,7 @@ function footer(page, lang) {
 
     <div class="ftr-bot">
       <p>© ${year} ${tx(BRAND.name, lang)}. ${tx(FOOTER.rights, lang)}</p>
+      <p class="ftr-certs mono">${lang === "ar" ? "معتمدة وفق" : "Certified"} ISO/IEC 27001 · ISO/IEC 42001</p>
       <p class="ftr-motto mono">${tx(FOOTER.motto, lang)}</p>
       <a class="ftr-lang mono" href="${esc(url(page.route, other))}" lang="${other}" hreflang="${other}">${esc(UI.langSwitch[lang])}</a>
     </div>
@@ -251,7 +252,7 @@ ${page.body}
 </main>
 ${page.hideCta ? "" : ctaBand(lang, page.cta)}
 ${footer(page, lang)}
-<script src="/js/qeonix.js?v=6" defer></script>
+<script src="/js/qeonix.js?v=7" defer></script>
 </body>
 </html>
 `;
