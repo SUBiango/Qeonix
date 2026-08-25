@@ -69,9 +69,9 @@ function organizationLd() {
     /* Only the headquarters is asserted as an address. Other locations are
        declared as areas of operation, and the two in progress are omitted
        from structured data until they are trading entities. */
-    areaServed: OFFICES.filter((o) => o.status !== "progress").map((o) => ({
+    areaServed: [...new Set(OFFICES.filter((o) => o.status !== "progress").map((o) => t(o.country, "en")))].map((name) => ({
       "@type": "Country",
-      name: t(o.country, "en"),
+      name,
     })),
     contactPoint: [{
       "@type": "ContactPoint",
@@ -265,10 +265,7 @@ observability, human oversight and controlled model access are part of the
 architecture. Qeonix does not claim third-party certifications on this site.
 
 ## Locations
-- Abu Dhabi, United Arab Emirates: headquarters
-- Paris, France: office
-- Muscat, Oman: in progress
-- Doha, Qatar: in progress
+${OFFICES.map((o) => `- ${t(o.city, "en")}, ${t(o.country, "en")}: ${o.status === "hq" ? "headquarters" : o.status === "progress" ? "in progress" : "office"}`).join("\n")}
 
 ## Contact
 - Website: ${ORIGIN}/

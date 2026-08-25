@@ -92,6 +92,14 @@ export const OFFICES = [
     note: T("Headquarters. Engineering, product and delivery.", "المقر الرئيسي. الهندسة والمنتج والتنفيذ."),
   },
   {
+    city: T("Dubai", "دبي"),
+    country: T("United Arab Emirates", "الإمارات العربية المتحدة"),
+    cc: "AE",
+    geoKey: "AE-DXB",
+    status: "active",
+    note: T("Commercial and delivery presence in the UAE's business hub.", "حضور تجاري وتنفيذي في مركز الأعمال بدولة الإمارات."),
+  },
+  {
     city: T("Paris", "باريس"),
     country: T("France", "فرنسا"),
     cc: "FR",
