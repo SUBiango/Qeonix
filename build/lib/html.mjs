@@ -12,7 +12,7 @@ export function esc(v) {
     .replace(/'/g, "&#39;");
 }
 
-/** Escape for a JSON-LD <script> block (only `<` needs neutralising). */
+/** Escape for a JSON-LD <script> block (only `<` needs neutralizing). */
 export function escJsonLd(obj) {
   return JSON.stringify(obj, null, 2).replace(/</g, "\\u003c");
 }
@@ -64,7 +64,7 @@ export function slug(s) {
     .replace(/^-|-$/g, "");
 }
 
-/* NOTE: never emit `style="..."` attributes — the CSP has no 'unsafe-inline'
+/* NOTE: never emit `style="..."` attributes: the CSP has no 'unsafe-inline'
    in style-src. Stagger/index values travel as data attributes instead and are
    read by attribute selectors in the stylesheet. */
 

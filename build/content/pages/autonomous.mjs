@@ -18,7 +18,7 @@ const LOOP = [
 const PLATFORMS = [
   { icon: "drone", h: T("Aerial intelligence", "الاستطلاع الجوي"), p: T("Programmed drone missions over sites, corridors and coastlines, producing a comparable survey every cycle instead of a one-off photo set.", "مهام مبرمجة للطائرات المسيّرة فوق المواقع والممرّات والسواحل، تُنتج مسحًا قابلًا للمقارنة في كل دورة بدل مجموعة صور لمرة واحدة.") },
   { icon: "robot", h: T("Ground robotics", "الروبوتات الأرضية"), p: T("Inspection and material-handling robots for industrial floors, utility corridors and environments where a repeated human pass is expensive or hazardous.", "روبوتات للفحص ومناولة المواد في الأرضيات الصناعية وممرّات المرافق والبيئات التي يكون فيها المرور البشري المتكرّر مكلفًا أو خطرًا.") },
-  { icon: "vision", h: T("Autonomous inspection", "الفحص الذاتي"), p: T("Defect detection and condition scoring on assets (structures, pavements, networks, plant), with change tracked between passes.", "كشف العيوب وتقييم الحالة على الأصول (المنشآت والأرصفة والشبكات والمعامل)، مع تتبّع التغيّر بين الجولات.") },
+  { icon: "vision", h: T("Autonomous inspection", "الفحص الذاتي"), p: T("Defect detection and condition scoring on assets: structures, pavements, networks, plant, with change tracked between passes.", "كشف العيوب وتقييم الحالة على الأصول: المنشآت والأرصفة والشبكات والمعامل، مع تتبّع التغيّر بين الجولات.") },
   { icon: "radar", h: T("Remote operations", "التشغيل عن بُعد"), p: T("Supervised control from an operations center, with tele-operation for the exceptions the autonomy stack is not cleared to handle.", "تحكّم مُشرَف عليه من مركز العمليات، مع تشغيل عن بُعد للحالات الاستثنائية غير المصرَّح لطبقة الاستقلالية بمعالجتها.") },
   { icon: "vehicle", h: T("Fleet intelligence", "ذكاء الأساطيل"), p: T("Vehicle and asset telemetry turned into utilization, condition and predictive maintenance rather than a map of dots.", "تحويل قياسات المركبات والأصول إلى معدّلات استخدام وحالة وصيانة تنبؤية، لا إلى خريطة نقاط.") },
   { icon: "factory", h: T("Industrial automation", "الأتمتة الصناعية"), p: T("Vision-guided quality, throughput and safety systems integrated with the control systems already on the line.", "أنظمة جودة وإنتاجية وسلامة موجَّهة بالرؤية الحاسوبية، مدمجة مع أنظمة التحكّم القائمة على الخط.") },
@@ -69,8 +69,8 @@ export default function autonomous(lang) {
     kicker: T("Capability · Physical AI", "قدرة · الذكاء المادي"),
     h: T("When intelligence|leaves the screen.", "حين يغادر الذكاء|الشاشة."),
     lead: T(
-      "Inspection, monitoring and response carried out by machines that see, decide and act: supervised, on a schedule, in places where a repeated human pass is expensive, slow or unsafe.",
-      "فحص ومراقبة واستجابة تنفّذها آلات ترى وتقرّر وتنفّذ: تحت إشراف، ووفق جدول، في أماكن يكون فيها المرور البشري المتكرّر مكلفًا أو بطيئًا أو غير آمن."
+      "Inspection, monitoring and response carried out by machines that see, decide and act, supervised, on a schedule, in places where a repeated human pass is expensive, slow or unsafe.",
+      "فحص ومراقبة واستجابة تنفّذها آلات ترى وتقرّر وتنفّذ، تحت إشراف، ووفق جدول، في أماكن يكون فيها المرور البشري المتكرّر مكلفًا أو بطيئًا أو غير آمن."
     ),
     meta: [
       { k: T("Modalities", "الوسائط"), v: T("Aerial, ground, fixed, vehicle-mounted", "جوية وأرضية وثابتة ومركّبة على المركبات") },
@@ -86,7 +86,7 @@ ${section(`
   ${secHead({
     kicker: T("The chain", "السلسلة"),
     h: T("Sense, understand, decide, act, learn.", "استشعار، فهم، قرار، تنفيذ، تعلّم."),
-    lead: T("Physical AI is not a robot. It is a closed loop, and the value is in closing it: most deployments stop at capture and never reach a work order.", "الذكاء المادي ليس روبوتًا. إنه حلقة مغلقة، والقيمة في إغلاقها: إذ تتوقّف أغلب عمليات النشر عند الالتقاط ولا تصل إلى أمر عمل."),
+    lead: T("Physical AI is not a robot. It is a closed loop, and the value is in closing it: most deployments stop at capture and never reach a work order.", "الذكاء المادي ليس روبوتًا. إنه حلقة مغلقة، والقيمة في إغلاقها، إذ تتوقّف أغلب عمليات النشر عند الالتقاط ولا تصل إلى أمر عمل."),
     align: "center",
   }, lang)}
   ${cycle(LOOP, lang, { id: "auto-loop", returnLabel: T("Confirmed outcomes retrain the model", "النتائج المؤكَّدة تعيد تدريب النموذج") })}
@@ -146,8 +146,8 @@ ${closer("autonomous", lang)}
       "الأنظمة ذاتية التشغيل والروبوتات وتقنيات الطائرات المسيّرة | كيونكس"
     ),
     description: T(
-      "Physical AI from Qeonix: aerial intelligence, ground robotics, autonomous inspection, remote operations and fleet intelligence. Supervised autonomy that produces work orders and auditable evidence, integrated with asset and maintenance systems.",
-      "الذكاء المادي من كيونكس: الاستطلاع الجوي والروبوتات الأرضية والفحص الذاتي والتشغيل عن بُعد وذكاء الأساطيل. استقلالية مُشرَف عليها تُنتج أوامر عمل وأدلّة قابلة للتدقيق، بتكامل مع أنظمة الأصول والصيانة."
+      "Physical AI from Qeonix: aerial intelligence, ground robotics, autonomous inspection, remote operations and fleet intelligence, supervised autonomy that produces work orders and auditable evidence, integrated with asset and maintenance systems.",
+      "الذكاء المادي من كيونكس: الاستطلاع الجوي والروبوتات الأرضية والفحص الذاتي والتشغيل عن بُعد وذكاء الأساطيل، استقلالية مُشرَف عليها تُنتج أوامر عمل وأدلّة قابلة للتدقيق، بتكامل مع أنظمة الأصول والصيانة."
     ),
     og: "autonomous",
     service: { name: LABEL, type: T("Autonomous systems engineering", "هندسة الأنظمة ذاتية التشغيل") },

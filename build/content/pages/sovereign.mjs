@@ -145,8 +145,8 @@ ${closer("sovereign", lang)}
       "الذكاء الاصطناعي السيادي والنشر الخاص | كيونكس"
     ),
     description: T(
-      "Sovereign AI from Qeonix: AI platforms architected for UAE and regional data residency, government and private cloud, on-premise and isolated environments. With controlled model access, identity and role-based access, auditability and human oversight.",
-      "الذكاء السيادي من كيونكس: منصّات ذكاء اصطناعي مصمّمة لإقامة البيانات في الإمارات والمنطقة، والسحابة الحكومية والخاصة، والنشر داخل المنشأة والبيئات المعزولة. مع وصول محكوم للنماذج والهوية والوصول حسب الدور وقابلية التدقيق والرقابة البشرية."
+      "Sovereign AI from Qeonix: AI platforms architected for UAE and regional data residency, government and private cloud, on-premise and isolated environments, with controlled model access, identity and role-based access, auditability and human oversight.",
+      "الذكاء السيادي من كيونكس: منصّات ذكاء اصطناعي مصمّمة لإقامة البيانات في الإمارات والمنطقة، والسحابة الحكومية والخاصة، والنشر داخل المنشأة والبيئات المعزولة، مع وصول محكوم للنماذج والهوية والوصول حسب الدور وقابلية التدقيق والرقابة البشرية."
     ),
     og: "sovereign",
     service: { name: LABEL, type: T("Sovereign AI architecture and deployment", "بنية الذكاء الاصطناعي السيادي ونشره") },

@@ -134,8 +134,8 @@ ${closer("ai", lang)}
       "الذكاء الاصطناعي وذكاء القرار | كيونكس أبوظبي"
     ),
     description: T(
-      "Applied AI for live operations: decision intelligence, computer vision, predictive analytics, generative AI and enterprise AI. Engineered on your own data, integrated into existing workflows, and deployable inside your own environment.",
-      "ذكاء اصطناعي تطبيقي للعمليات الفعلية: ذكاء القرار والرؤية الحاسوبية والتحليلات التنبؤية والذكاء التوليدي والذكاء المؤسسي. مهندَس على بياناتكم، ومدمج في سير عملكم القائم، وقابل للنشر داخل بيئتكم."
+      "Applied AI for live operations: decision intelligence, computer vision, predictive analytics, generative AI and enterprise AI, engineered on your own data, integrated into existing workflows, and deployable inside your own environment.",
+      "ذكاء اصطناعي تطبيقي للعمليات الفعلية: ذكاء القرار والرؤية الحاسوبية والتحليلات التنبؤية والذكاء التوليدي والذكاء المؤسسي، مهندَس على بياناتكم، ومدمج في سير عملكم القائم، وقابل للنشر داخل بيئتكم."
     ),
     og: "ai",
     service: { name: LABEL, type: T("Artificial intelligence engineering", "هندسة الذكاء الاصطناعي") },

@@ -35,7 +35,7 @@ const PRINCIPLES = [
   { icon: "people", h: T("The traveler is the integration test", "المتنقّل هو اختبار التكامل"), p: T("If a journey needs three apps and two accounts, the architecture has failed regardless of what the diagram says.", "إن احتاجت الرحلة ثلاثة تطبيقات وحسابين، فقد فشلت البنية مهما قال المخطّط.") },
   { icon: "api", h: T("Operators keep their systems", "يحتفظ المشغّلون بأنظمتهم"), p: T("The platform federates ticketing, telemetry and settlement across operators instead of forcing a migration nobody signed up for.", "توحّد المنصّة التذاكر والقياس والتسويات عبر المشغّلين بدل فرض هجرة لم يوافق عليها أحد.") },
   { icon: "eye", h: T("Policy needs evidence", "السياسة تحتاج أدلّة"), p: T("Pricing, access and curb decisions are simulated against real network state before they are imposed on it.", "تُحاكى قرارات التسعير والوصول والأرصفة على حالة الشبكة الحقيقية قبل فرضها عليها.") },
-  { icon: "shield", h: T("Payments are audited infrastructure", "المدفوعات بنية خاضعة للتدقيق"), p: T("Multi-operator settlement is treated with the same rigor as the tolling gantry, because a dispute will test both.", "تُعامل التسويات متعدّدة المشغّلين بصرامة بوابة التعرفة نفسها، لأن أي نزاع سيختبر الاثنين.") },
+  { icon: "shield", h: T("Payments are audited infrastructure", "المدفوعات بنية خاضعة للتدقيق"), p: T("Multi-operator settlement is treated with the same rigour as the tolling gantry, because a dispute will test both.", "تُعامل التسويات متعدّدة المشغّلين بصرامة بوابة التعرفة نفسها، لأن أي نزاع سيختبر الاثنين.") },
 ];
 
 const COVERAGE = [
@@ -67,8 +67,8 @@ export default function mobility(lang) {
     kicker: T("Sector · Transport & mobility", "قطاع · النقل والتنقل"),
     h: T("The journey is the product.|Everything else is plumbing.", "الرحلة هي المنتج.|وكل ما عداها بنية تحتية."),
     lead: T(
-      "Qeonix builds mobility platforms where modes, operators and infrastructure behave as one network, from journey planning and payment to fleet orchestration, tolling and the EV ecosystem.",
-      "تبني كيونكس منصّات تنقل تجعل الوسائط والمشغّلين والبنية التحتية تعمل كشبكة واحدة، من تخطيط الرحلة والدفع إلى تنسيق الأساطيل والتعرفة ومنظومة المركبات الكهربائية."
+      "Qeonix builds mobility platforms where modes, operators and infrastructure behave as one network: from journey planning and payment to fleet orchestration, tolling and the EV ecosystem.",
+      "تبني كيونكس منصّات تنقل تجعل الوسائط والمشغّلين والبنية التحتية تعمل كشبكة واحدة: من تخطيط الرحلة والدفع إلى تنسيق الأساطيل والتعرفة ومنظومة المركبات الكهربائية."
     ),
     meta: [
       { k: T("Span", "المدى"), v: T("Traveler, operator, network, curb", "المتنقّل والمشغّل والشبكة والرصيف") },
@@ -89,7 +89,7 @@ ${section(`
   ${secHead({
     kicker: T("In operation", "أثناء التشغيل"),
     h: T("The network, run as one system.", "الشبكة، تُدار كنظام واحد."),
-    lead: T("A stadium event, an incident on a corridor, an EV network at load: the platform rebalancing all three while the control room supervises.", "فعالية في الاستاد، وحادث على ممر، وشبكة شحن تحت الحمل: والمنصّة تعيد التوازن للثلاثة بينما تشرف غرفة التحكم."),
+    lead: T("A stadium event, an incident on a corridor, an EV network at load, and the platform rebalancing all three while the control room supervises.", "فعالية في الاستاد، وحادث على ممر، وشبكة شحن تحت الحمل، والمنصّة تعيد التوازن للثلاثة بينما تشرف غرفة التحكم."),
   }, lang)}
   <div class="reveal" data-d="1">${mobilityConsole(lang)}</div>
 `, { tone: "paper" })}
@@ -138,8 +138,8 @@ ${closer("mobility", lang)}
       "التنقل المتصل وأنظمة النقل الذكية | كيونكس"
     ),
     description: T(
-      "Mobility platforms from Qeonix: Mobility-as-a-Service, multimodal journey planning, fleet orchestration, intelligent transportation systems, parking and tolling, EV charging ecosystems and logistics mobility. Federated across existing operators.",
-      "منصّات تنقل من كيونكس: التنقل كخدمة، وتخطيط الرحلات متعدّد الوسائط، وتنسيق الأساطيل، وأنظمة النقل الذكية، والمواقف والتعرفة، ومنظومات شحن المركبات الكهربائية ولوجستيات التنقل. بتوحيد عبر المشغّلين القائمين."
+      "Mobility platforms from Qeonix: Mobility-as-a-Service, multimodal journey planning, fleet orchestration, intelligent transportation systems, parking and tolling, EV charging ecosystems and logistics mobility, federated across existing operators.",
+      "منصّات تنقل من كيونكس: التنقل كخدمة، وتخطيط الرحلات متعدّد الوسائط، وتنسيق الأساطيل، وأنظمة النقل الذكية، والمواقف والتعرفة، ومنظومات شحن المركبات الكهربائية ولوجستيات التنقل، بتوحيد عبر المشغّلين القائمين."
     ),
     og: "mobility",
     service: { name: LABEL, type: T("Mobility platform engineering", "هندسة منصّات التنقل") },

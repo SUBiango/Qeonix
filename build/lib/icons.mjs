@@ -1,4 +1,4 @@
-/* Line-icon set. Single 24x24 grid, 1.6 stroke, round caps — one drawing
+/* Line-icon set. Single 24x24 grid, 1.6 stroke, round caps, one drawing
    system so icons read as a family rather than a pile of downloads. */
 
 const P = {

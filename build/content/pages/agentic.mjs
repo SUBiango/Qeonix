@@ -36,7 +36,7 @@ const AGENTS = [
 
 const CONTROLS = [
   { icon: "key", h: T("Scoped permissions", "صلاحيات محدّدة النطاق"), p: T("An agent is granted named tools and named data, not a role that happens to be broad. Scope is reviewable and revocable at any time.", "يُمنح الوكيل أدوات محدّدة وبيانات محدّدة بالاسم، لا دورًا واسعًا بالصدفة. والنطاق قابل للمراجعة والسحب في أي وقت.") },
-  { icon: "people", h: T("Human-in-the-loop", "الإنسان ضمن الحلقة"), p: T("Consequential steps (money, personal data, a physical dispatch, an irreversible status change) stop for a named approver.", "الخطوات ذات الأثر (المال والبيانات الشخصية والإرسال الميداني وأي تغيير غير قابل للعكس) تتوقّف عند مُعتمِد محدّد بالاسم.") },
+  { icon: "people", h: T("Human-in-the-loop", "الإنسان ضمن الحلقة"), p: T("Consequential steps: money, personal data, a physical dispatch, an irreversible status change, stop for a named approver.", "الخطوات ذات الأثر: المال والبيانات الشخصية والإرسال الميداني وأي تغيير غير قابل للعكس، تتوقّف عند مُعتمِد محدّد بالاسم.") },
   { icon: "eye", h: T("Traceable reasoning", "استدلال قابل للتتبّع"), p: T("Inputs, retrieved context, tool calls and outputs are recorded so a reviewer can reconstruct a decision months later.", "تُسجَّل المدخلات والسياق المسترجَع واستدعاءات الأدوات والمخرجات، ليتمكّن المراجع من إعادة بناء القرار بعد أشهر.") },
   { icon: "model", h: T("Model flexibility", "مرونة النماذج"), p: T("Workloads route to open-source or commercial models on merit. No single provider becomes a structural dependency.", "تُوجَّه الأعباء إلى نماذج مفتوحة أو تجارية بحسب الجدارة. ولا يتحوّل أي مزوّد إلى اعتماد بنيوي.") },
   { icon: "target", h: T("Evaluation before rollout", "تقييم قبل الإطلاق"), p: T("Agents ship against evaluation sets built from real cases, and regressions are caught before a workflow is widened.", "تُطلق الوكلاء وفق مجموعات تقييم مبنية على حالات حقيقية، وتُلتقط الانحدارات قبل توسيع أي سير عمل.") },
@@ -116,9 +116,9 @@ ${section(`
   ${secHead({
     kicker: T("In operation", "أثناء التشغيل"),
     h: T("What a run actually looks like.", "كيف يبدو التشغيل فعليًا."),
-    lead: T("One request, traced end to end: the plan, the tool calls, the policy check, the human checkpoint and the audit record. This is the difference between an agent and a chatbot, on one screen.", "طلب واحد مُتتبَّع من طرف إلى طرف: الخطة واستدعاءات الأدوات وفحص السياسات ونقطة المراجعة البشرية وسجل التدقيق. هذا هو الفرق بين الوكيل وروبوت المحادثة، في شاشة واحدة."),
+    lead: T("Run the request yourself. The plan forms, tools fire, and then the system stops, because the consequential step waits for you. That pause is the entire governance model, and you are about to feel it.", "شغّل الطلب بنفسك. تتشكّل الخطة وتُستدعى الأدوات ثم يتوقّف النظام، لأن الخطوة ذات الأثر تنتظرك أنت. تلك الوقفة هي نموذج الحوكمة بأكمله، وستلمسها بنفسك الآن."),
   }, lang)}
-  <div class="reveal" data-d="1">${agenticTrace(lang)}</div>
+  <div class="reveal" data-d="1">${agenticTrace(lang, { interactive: true })}</div>
 `, { tone: "paper" })}
 
 ${section(`
@@ -199,8 +199,8 @@ ${closer("agentic", lang)}
       "منصّة الذكاء الاصطناعي الوكيل للحكومات والمؤسسات | كيونكس"
     ),
     description: T(
-      "Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit. Deployable in cloud, private, on-premise or sovereign environments.",
-      "ذكاء اصطناعي وكيل بمستوى المؤسسات والجهات الحكومية: تنسيق متعدّد الوكلاء، واستدعاء الأدوات وواجهات البرمجة، وضوابط الإنسان ضمن الحلقة، وصلاحيات محدّدة النطاق، وقابلية مراقبة وتدقيق. قابل للنشر في السحابة أو بيئة خاصة أو داخل المنشأة أو بيئة سيادية."
+      "Enterprise and government-grade agentic AI: multi-agent orchestration, tool and API calling, human-in-the-loop controls, scoped permissions, observability and audit, deployable in cloud, private, on-premise or sovereign environments.",
+      "ذكاء اصطناعي وكيل بمستوى المؤسسات والجهات الحكومية: تنسيق متعدّد الوكلاء، واستدعاء الأدوات وواجهات البرمجة، وضوابط الإنسان ضمن الحلقة، وصلاحيات محدّدة النطاق، وقابلية مراقبة وتدقيق، قابل للنشر في السحابة أو بيئة خاصة أو داخل المنشأة أو بيئة سيادية."
     ),
     og: "agentic",
     service: { name: LABEL, type: T("Agentic AI platform engineering", "هندسة منصّات الذكاء الاصطناعي الوكيل") },

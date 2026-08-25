@@ -2,6 +2,8 @@ import { T, tx } from "../../lib/html.mjs";
 import { section, secHead, btn, pillars, factStrip, statement, track, approvalSlot, trustGrid } from "../../lib/components.mjs";
 import { heroFor, closer } from "../../lib/page.mjs";
 import { officeList } from "../../lib/layout.mjs";
+import { presenceMap } from "../../lib/diagrams.mjs";
+import { OFFICES, OFFICE_STATUS } from "../site.mjs";
 import { url, UI } from "../site.mjs";
 
 const LABEL = T("About Qeonix", "عن كيونكس");
@@ -35,7 +37,7 @@ const DELIVERY = [
   { h: T("Product & design", "المنتج والتصميم"), p: T("UX and interfaces designed for operators, residents and field crews.", "تجربة وواجهات مصمّمة للمشغّلين والمتعاملين والفرق الميدانية.") },
   { h: T("Engineering", "الهندسة"), p: T("AI, software, data and cybersecurity engineering in one team.", "هندسة الذكاء الاصطناعي والبرمجيات والبيانات والأمن في فريق واحد.") },
   { h: T("Integration", "التكامل"), p: T("Into the estate that exists, under its identity and its constraints.", "مع المنظومة القائمة، تحت هويتها وقيودها.") },
-  { h: T("Deployment", "النشر"), p: T("Cloud, private, on-premise or sovereign: fixed at design time.", "سحابي أو خاص أو داخل المنشأة أو سيادي: يُثبَّت عند التصميم.") },
+  { h: T("Deployment", "النشر"), p: T("Cloud, private, on-premise or sovereign, fixed at design time.", "سحابي أو خاص أو داخل المنشأة أو سيادي، يُثبَّت عند التصميم.") },
   { h: T("Operations", "التشغيل"), p: T("DevOps, MLOps and support, run by the people who built it.", "عمليات التطوير والتعلّم الآلي والدعم، بأيدي من بناه.") },
   { h: T("Evolution", "التطوير"), p: T("Measured, tuned and extended as the mandate grows.", "قياس وضبط وتوسيع مع نموّ التكليف.") },
 ];
@@ -80,18 +82,19 @@ ${section(`
   ${secHead({
     kicker: T("Why Abu Dhabi", "لماذا أبوظبي"),
     h: T("Headquartered here|on purpose.", "المقر هنا|عن قصد."),
-    lead: T("Not as a flag of convenience: this is where the hardest, most consequential versions of our problems are being solved first.", "ليس كعنوان شكلي: بل لأن أصعب نسخ مشكلاتنا وأكثرها أثرًا تُحَل هنا أولًا."),
+    lead: T("Not as a flag of convenience: because this is where the hardest, most consequential versions of our problems are being solved first.", "ليس كعنوان شكلي، بل لأن أصعب نسخ مشكلاتنا وأكثرها أثرًا تُحَل هنا أولًا."),
   }, lang)}
   ${trustGrid(WHY_AD, lang)}
+  <div class="u-mt">${presenceMap(OFFICES, OFFICE_STATUS, lang)}</div>
 `, { tone: "deep", grid: true })}
 
 ${section(`
   ${secHead({
-    kicker: T("Where this capability comes from", "من أين تأتي هذه القدرة"),
-    h: T("Not assembled yesterday.", "لم تُجمَّع بين ليلة وضحاها."),
-    lead: T("Qeonix is a young name carrying experienced hands: its teams were building enterprise platforms, AI systems and national-scale digital services long before they were building them here, under one roof and one architecture.", "كيونكس اسم حديث تحمله أيادٍ خبيرة: فِرقها كانت تبني المنصّات المؤسسية وأنظمة الذكاء الاصطناعي والخدمات الرقمية واسعة النطاق قبل أن تبنيها هنا بزمن، تحت سقف واحد وبنية واحدة."),
+    kicker: T("Provenance", "الجذور"),
+    h: T("Built on experience.|Aimed at what comes next.", "مبنيّة على الخبرة.|ومتّجهة إلى ما هو قادم."),
+    lead: T("The teams behind Qeonix have spent their careers building enterprise platforms, AI systems and national-scale digital services. Qeonix brings that experience under one roof, one architecture and one standard.", "أمضت الفرق التي تقف خلف كيونكس مسيرتها المهنية في بناء المنصّات المؤسسية وأنظمة الذكاء الاصطناعي والخدمات الرقمية واسعة النطاق. وتجمع كيونكس تلك الخبرة تحت سقف واحد وبنية واحدة ومعيار واحد."),
   }, lang)}
-  <!-- HERITAGE / PROOF POINTS — insert only management-approved facts here.
+  <!-- HERITAGE / PROOF POINTS: insert only management-approved facts here.
        Candidates awaiting approval (do NOT publish without sign-off):
          - founding team backgrounds and prior organizations
          - collective years of engineering / delivery experience
@@ -147,8 +150,8 @@ ${closer("about", lang)}
     solidHeader: true,
     crumbTrail: hero.crumbTrail,
     title: T(
-      "About Qeonix | AI & Intelligent Systems Company, Abu Dhabi",
-      "عن كيونكس | شركة الذكاء الاصطناعي والأنظمة الذكية، أبوظبي"
+      "About Qeonix: AI & Intelligent Systems Company, Abu Dhabi",
+      "عن كيونكس: شركة الذكاء الاصطناعي والأنظمة الذكية، أبوظبي"
     ),
     description: T(
       "Qeonix is an Abu Dhabi-headquartered engineering company building AI, agentic systems, autonomous technology and smart city platforms for governments and enterprises, with a presence in Paris and offices in Muscat and Doha in progress.",

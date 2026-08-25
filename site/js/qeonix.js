@@ -208,6 +208,145 @@
     io.observe(lat);
   })();
 
+  /* ------------------------------------------------------- digital twin */
+  (function twin() {
+    var root = $(".qx-twin");
+    if (!root) return;
+    var btns = $$("[data-twin-btn]", root);
+    var rows = $$(".twin-row", root);
+    var idle = $(".twin-idle", root);
+    var kpis = $$("[data-twin-kpi]", root);
+    if (!btns.length) return;
+
+    var timers = [];
+    var STEP_MS = 1100;
+
+    function clearTimers() {
+      timers.forEach(clearTimeout);
+      timers = [];
+    }
+    function setKpis(btn) {
+      kpis.forEach(function (el) {
+        var v = btn ? btn.getAttribute("data-kpi-" + el.getAttribute("data-twin-kpi")) : null;
+        el.textContent = v || el.getAttribute("data-idle");
+      });
+    }
+    function resetVisual() {
+      root.classList.remove("run-incident", "run-fault", "run-event", "is-done");
+    }
+    function reset() {
+      clearTimers();
+      resetVisual();
+      rows.forEach(function (r) { r.hidden = true; });
+      btns.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+      setKpis(null);
+      if (idle) idle.hidden = false;
+    }
+
+    function run(btn) {
+      var key = btn.getAttribute("data-twin-btn");
+      var replay = btn.getAttribute("aria-pressed") === "true";
+      reset();
+      if (replay) return; /* second click on the active scenario stops it */
+
+      btn.setAttribute("aria-pressed", "true");
+      if (idle) idle.hidden = true;
+      root.classList.add("run-" + key);
+
+      var steps = rows.filter(function (r) { return r.getAttribute("data-scn") === key; });
+
+      if (reduced.matches) {
+        steps.forEach(function (r) { r.hidden = false; });
+        setKpis(null);
+        root.classList.add("is-done");
+        return;
+      }
+
+      setKpis(btn);
+      steps.forEach(function (r, i) {
+        timers.push(window.setTimeout(function () {
+          r.hidden = false;
+          if (i === steps.length - 1) {
+            root.classList.add("is-done");
+            setKpis(null);
+          }
+        }, 350 + i * STEP_MS));
+      });
+    }
+
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () { run(b); });
+    });
+
+  })();
+
+  /* --------------------------------------------- agent run: step-through */
+  (function stepRun() {
+    var root = $(".qx-agentic.is-steprun");
+    if (!root) return;
+    var rows = $$(".qx-trace .qxr", root);
+    var runBtn = $(".steprun-run", root);
+    var approveBtn = $(".steprun-approve", root);
+    if (!rows.length || !runBtn) return;
+
+    var timers = [];
+    var STEP_MS = 950;
+
+    /* Arm: hide all rows until run. Without JS the full trace stays visible. */
+    rows.forEach(function (r) { r.setAttribute("data-armed", "true"); });
+
+    function label(state) {
+      $$("span[data-when]", runBtn).forEach(function (el) {
+        el.hidden = el.getAttribute("data-when") !== state;
+      });
+    }
+    function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+    function reset() {
+      clearTimers();
+      rows.forEach(function (r) { r.classList.remove("is-shown", "is-approved"); });
+      var ok = $(".qxr-s-ok", root);
+      if (ok) ok.hidden = true;
+      approveBtn.hidden = true;
+      label("idle");
+    }
+
+    function playFrom(start) {
+      var i = start;
+      function next() {
+        if (i >= rows.length) { label("done"); return; }
+        var row = rows[i];
+        row.classList.add("is-shown");
+        var isCheckpoint = row.classList.contains("is-human") && !row.classList.contains("is-approved");
+        i += 1;
+        if (isCheckpoint) {
+          approveBtn.hidden = false;
+          approveBtn.focus({ preventScroll: true });
+          return; /* wait for the human */
+        }
+        timers.push(window.setTimeout(next, reduced.matches ? 0 : STEP_MS));
+      }
+      next();
+    }
+
+    runBtn.addEventListener("click", function () {
+      reset();
+      playFrom(0);
+    });
+
+    approveBtn.addEventListener("click", function () {
+      approveBtn.hidden = true;
+      var human = $(".qxr.is-human", root);
+      if (human) {
+        human.classList.add("is-approved");
+        var ok = $(".qxr-s-ok", human);
+        if (ok) ok.hidden = false;
+      }
+      var resume = rows.indexOf(human) + 1;
+      timers.push(window.setTimeout(function () { playFrom(resume); }, reduced.matches ? 0 : 500));
+      runBtn.focus({ preventScroll: true });
+    });
+  })();
+
   /* ---------------------------------------------------------- contact form */
   (function contactForm() {
     var form = $("#leadForm");

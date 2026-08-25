@@ -29,6 +29,7 @@ export const ROUTES = {
   sovereign: { path: "sovereign-ai/", file: "sovereign-ai/index.html" },
   about: { path: "about/", file: "about/index.html" },
   contact: { path: "contact/", file: "contact/index.html" },
+  privacy: { path: "privacy/", file: "privacy/index.html" },
 };
 
 /** Absolute in-site href for a route key in a given language. */
@@ -67,7 +68,12 @@ export const NAV = [
     children: [
       { key: "government", label: T("Smart Government", "الحكومة الذكية"), note: T("Digital services, orchestration, government AI.", "الخدمات الرقمية والتنسيق والذكاء الاصطناعي الحكومي."), icon: "building", featured: true },
       { key: "healthcare", label: T("Healthcare", "الرعاية الصحية"), note: T("Digital health platforms and care orchestration.", "منصّات الصحة الرقمية وتنسيق الرعاية."), icon: "health" },
-      { key: "industries", label: T("All industries", "جميع القطاعات"), note: T("Energy, industrial, logistics, aviation, real estate.", "الطاقة والصناعة واللوجستيات والطيران والعقارات."), icon: "grid" },
+      { key: "industries", hash: "#energy", label: T("Energy & Utilities", "الطاقة والمرافق"), note: T("Monitoring, optimization and response for critical infrastructure.", "المراقبة والتحسين والاستجابة للبنية التحتية الحيوية."), icon: "bolt" },
+      { key: "industries", hash: "#industrial", label: T("Industrial & Manufacturing", "الصناعة والتصنيع"), note: T("Automation, robotics and vision on the line.", "الأتمتة والروبوتات والرؤية الحاسوبية على خط الإنتاج."), icon: "factory" },
+      { key: "industries", hash: "#logistics", label: T("Logistics & Supply Chain", "اللوجستيات وسلاسل الإمداد"), note: T("Visibility and control across assets and distribution.", "وضوح وتحكّم عبر الأصول والتوزيع."), icon: "package" },
+      { key: "industries", hash: "#aviation", label: T("Aviation & Aerospace", "الطيران والفضاء"), note: T("Autonomous inspection and airside operations.", "الفحص الذاتي وعمليات الساحة الجوية."), icon: "plane" },
+      { key: "industries", hash: "#realestate", label: T("Real Estate & Urban", "العقارات والتطوير العمراني"), note: T("Smarter buildings, communities and districts.", "مبانٍ ومجتمعات وأحياء أكثر ذكاءً."), icon: "city" },
+      { key: "industries", label: T("All industries", "جميع القطاعات"), note: T("The full sector map in one view.", "خريطة القطاعات كاملة في صفحة واحدة."), icon: "grid" },
     ],
   },
   { key: "sovereign", label: T("Sovereign AI", "الذكاء السيادي") },
@@ -75,7 +81,7 @@ export const NAV = [
 ];
 
 /* ---------------- offices ---------------- */
-/* status: hq | active | progress. Street addresses are intentionally omitted —
+/* status: hq | active | progress. Street addresses are intentionally omitted:
    only the HQ city is asserted in structured data. */
 export const OFFICES = [
   {
@@ -118,8 +124,8 @@ export const OFFICE_STATUS = {
 
 export const FOOTER = {
   blurb: T(
-    "Qeonix designs, engineers and deploys the intelligent systems that governments, cities and enterprises run on, from decision intelligence and agentic AI to autonomous operations and connected infrastructure.",
-    "تصمّم كيونكس وتهندس وتنشر الأنظمة الذكية التي تعتمد عليها الحكومات والمدن والمؤسسات، من ذكاء القرار والذكاء الاصطناعي الوكيل إلى العمليات ذاتية التشغيل والبنية التحتية المتصلة."
+    "Qeonix designs, engineers and deploys the intelligent systems that governments, cities and enterprises run on: from decision intelligence and agentic AI to autonomous operations and connected infrastructure.",
+    "تصمّم كيونكس وتهندس وتنشر الأنظمة الذكية التي تعتمد عليها الحكومات والمدن والمؤسسات: من ذكاء القرار والذكاء الاصطناعي الوكيل إلى العمليات ذاتية التشغيل والبنية التحتية المتصلة."
   ),
   columns: [
     {
@@ -149,6 +155,7 @@ export const FOOTER = {
         { key: "contact", label: T("Contact", "تواصل معنا") },
         { key: "about", hash: "#delivery", label: T("How we deliver", "كيف ننفّذ") },
         { key: "about", hash: "#careers", label: T("Careers", "الوظائف") },
+        { key: "privacy", label: T("Privacy", "الخصوصية") },
       ],
     },
   ],

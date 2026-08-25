@@ -89,7 +89,7 @@ ${page.noindex ? '<meta name="robots" content="noindex,follow">' : '<meta name="
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${esc(fontHref(lang))}">
-<link rel="stylesheet" href="/css/qeonix.css?v=11">
+<link rel="stylesheet" href="/css/qeonix.css?v=20">
 ${(page.jsonld || []).map((b) => `<script type="application/ld+json">${escJsonLd(b)}</script>`).join("\n")}`;
 }
 
@@ -108,7 +108,7 @@ function navItem(item, lang, current) {
           <p class="mega-note mono">${tx(item.note, lang)}</p>
           <ul class="mega-list">
             ${item.children.map((c) => `<li${c.featured ? ' class="is-featured"' : ""}>
-              <a href="${esc(url(c.key, lang))}"${c.key === current ? ' aria-current="page"' : ""}>
+              <a href="${esc(url(c.key, lang) + (c.hash || ""))}"${c.key === current && !c.hash ? ' aria-current="page"' : ""}>
                 <span class="mega-ico" aria-hidden="true">${icon(c.icon)}</span>
                 <span class="mega-txt">
                   <strong>${tx(c.label, lang)}</strong>
@@ -251,7 +251,7 @@ ${page.body}
 </main>
 ${page.hideCta ? "" : ctaBand(lang, page.cta)}
 ${footer(page, lang)}
-<script src="/js/qeonix.js?v=3" defer></script>
+<script src="/js/qeonix.js?v=5" defer></script>
 </body>
 </html>
 `;

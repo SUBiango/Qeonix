@@ -1,7 +1,7 @@
 import { T } from "../../lib/html.mjs";
 import { section, secHead, btn, capGrid, faq, trustGrid, statement } from "../../lib/components.mjs";
 import { archBoard, cityMesh, matrix, flowStack } from "../../lib/diagrams.mjs";
-import { govOpsConsole } from "../../lib/showcase.mjs";
+import { govOpsConsole, cityTwin } from "../../lib/showcase.mjs";
 import { heroFor, closer } from "../../lib/page.mjs";
 import { url } from "../site.mjs";
 
@@ -87,8 +87,8 @@ export default function cities(lang) {
     kicker: T("Sector · Cities & urban operations", "قطاع · المدن والعمليات الحضرية"),
     h: T("A city is not twelve systems.|It is one operation.", "المدينة ليست اثني عشر نظامًا.|إنها عملية واحدة."),
     lead: T(
-      "Services, mobility, utilities, waste, permits and field crews usually meet only in a monthly report. Qeonix builds the layer where they meet in real time, from a resident's request to the crew that closes it.",
-      "الخدمات والتنقل والمرافق والنفايات والتصاريح والفرق الميدانية لا تلتقي عادةً إلا في تقرير شهري. تبني كيونكس الطبقة التي تلتقي فيها آنيًّا، من طلب المتعامل إلى الفريق الذي يُنجزه."
+      "Services, mobility, utilities, waste, permits and field crews usually meet only in a monthly report. Qeonix builds the layer where they meet in real time: from a resident's request to the crew that closes it.",
+      "الخدمات والتنقل والمرافق والنفايات والتصاريح والفرق الميدانية لا تلتقي عادةً إلا في تقرير شهري. تبني كيونكس الطبقة التي تلتقي فيها آنيًّا: من طلب المتعامل إلى الفريق الذي يُنجزه."
     ),
     meta: [
       { k: T("Span", "المدى"), v: T("Citizen to field crew, one loop", "من المتعامل إلى الفريق الميداني، حلقة واحدة") },
@@ -140,6 +140,15 @@ ${section(`
 `, { tone: "light" })}
 
 ${section(`
+  ${secHead({
+    kicker: T("Interactive", "تفاعلي"),
+    h: T("Break something.|Watch the city fix it.", "عطّل شيئًا.|وراقب المدينة وهي تصلحه."),
+    lead: T("A live, playable district. Trigger a road incident, an asset fault or a stadium crowd, then watch sense, decide, dispatch and resolve happen in front of you. This is the loop every Qeonix city system is built around.", "حيّ حي وقابل للتجربة. أطلق حادث طريق أو عطل أصل أو حشد استاد، ثم راقب الاستشعار والقرار والإرسال والإنجاز تحدث أمامك. هذه هي الحلقة التي يُبنى حولها كل نظام مدن من كيونكس."),
+  }, lang)}
+  <div class="reveal" data-d="1">${cityTwin(lang)}</div>
+`, { id: "twin", tone: "paper" })}
+
+${section(`
   ${secHead({ kicker: T("Capabilities", "القدرات"), h: T("Six places we do the work.", "ستة مواضع نؤدّي فيها العمل.") }, lang)}
   ${capGrid(CAPS, lang, { cols: 3 })}
 `, { tone: "light" })}
@@ -175,8 +184,8 @@ ${closer("cities", lang)}
       "منصّات المدن الذكية وعمليات المدينة | كيونكس"
     ),
     description: T(
-      "A city operating layer from Qeonix: command and control centers, connected infrastructure and IoT, service request lifecycle, field operations, utilities, waste, mobility, parking, EV, environmental monitoring and digital twins. Integrated across a mixed multi-vendor estate.",
-      "طبقة تشغيل للمدينة من كيونكس: مراكز القيادة والتحكم، والبنية التحتية المتصلة وإنترنت الأشياء، ودورة حياة طلبات الخدمة، والعمليات الميدانية، والمرافق والنفايات والتنقل والمواقف والمركبات الكهربائية والرصد البيئي والتوائم الرقمية. بتكامل عبر منظومة متعدّدة المورّدين."
+      "A city operating layer from Qeonix: command and control centers, connected infrastructure and IoT, service request lifecycle, field operations, utilities, waste, mobility, parking, EV, environmental monitoring and digital twins, integrated across a mixed multi-vendor estate.",
+      "طبقة تشغيل للمدينة من كيونكس: مراكز القيادة والتحكم، والبنية التحتية المتصلة وإنترنت الأشياء، ودورة حياة طلبات الخدمة، والعمليات الميدانية، والمرافق والنفايات والتنقل والمواقف والمركبات الكهربائية والرصد البيئي والتوائم الرقمية، بتكامل عبر منظومة متعدّدة المورّدين."
     ),
     og: "cities",
     service: { name: LABEL, type: T("Smart city platform engineering", "هندسة منصّات المدن الذكية") },

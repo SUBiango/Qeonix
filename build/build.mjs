@@ -32,6 +32,7 @@ import industries from "./content/pages/industries.mjs";
 import sovereign from "./content/pages/sovereign.mjs";
 import about from "./content/pages/about.mjs";
 import contact from "./content/pages/contact.mjs";
+import privacy from "./content/pages/privacy.mjs";
 import notFound from "./content/pages/404.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -39,7 +40,7 @@ const OUT = join(ROOT, "site");
 
 const PAGES = {
   home, ai, agentic, autonomous, cities, government,
-  mobility, platforms, healthcare, industries, sovereign, about, contact,
+  mobility, platforms, healthcare, industries, sovereign, about, contact, privacy,
 };
 
 /* Directories the generator owns. Everything else in site/ (images, css, js,
@@ -116,7 +117,7 @@ function breadcrumbLd(page, lang) {
 }
 
 /* Only emitted when the questions and answers are the exact strings rendered
-   on the page — Google requires the visible content to match. */
+   on the page: Google requires the visible content to match. */
 function faqLd(page, lang) {
   if (!page.faqSchema || !page.faqSchema.length) return null;
   return {
