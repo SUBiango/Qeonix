@@ -450,30 +450,27 @@
         body: new URLSearchParams(fd).toString(),
       }).then(function (r) { if (!r.ok) throw new Error("forms " + r.status); return "forms"; });
 
-      var any = Promise.any
-        ? Promise.any([crm, record])
-        : new Promise(function (res, rej) {
-            var left = 2, done = false;
-            [crm, record].forEach(function (p) {
-              p.then(function (v) { if (!done) { done = true; res(v); } })
-               .catch(function () { if (--left === 0 && !done) rej(); });
-            });
-          });
+      Promise.allSettled([crm, record]).then(function (results) {
+        var crmOk = results[0].status === "fulfilled";
+        var formsOk = results[1].status === "fulfilled";
+        if (!crmOk) console.warn("Lead submission (Zoho) failed:", results[0].reason);
+        if (!formsOk) console.warn("Lead submission (Netlify Forms) failed:", results[1].reason);
 
-      any.then(function () {
-        form.classList.remove("is-busy");
-        form.classList.add("is-sent");
-        var done = $(".form-done", form);
-        if (done) {
-          done.setAttribute("tabindex", "-1");
-          done.focus({ preventScroll: true });
-          done.scrollIntoView({ behavior: reduced.matches ? "auto" : "smooth", block: "center" });
+        if (crmOk || formsOk) {
+          form.classList.remove("is-busy");
+          form.classList.add("is-sent");
+          var done = $(".form-done", form);
+          if (done) {
+            done.setAttribute("tabindex", "-1");
+            done.focus({ preventScroll: true });
+            done.scrollIntoView({ behavior: reduced.matches ? "auto" : "smooth", block: "center" });
+          }
+        } else {
+          form.classList.remove("is-busy");
+          if (submit) submit.removeAttribute("aria-disabled");
+          if (window.hcaptcha) { try { window.hcaptcha.reset(); } catch (err) {} }
+          showError(i18n.msgError || "Something went wrong. Please email info@qeonix.com.");
         }
-      }).catch(function () {
-        form.classList.remove("is-busy");
-        if (submit) submit.removeAttribute("aria-disabled");
-        if (window.hcaptcha) { try { window.hcaptcha.reset(); } catch (err) {} }
-        showError(i18n.msgError || "Something went wrong. Please email info@qeonix.com.");
       });
     });
   })();
