@@ -12,7 +12,7 @@
 
 import { T, tx, t, esc } from "./html.mjs";
 
-/** Approved metrics: [{ n, label, context? }], where n is the approved figure. */
+/** Approved metrics: [{ n, label, context? }]; n is the approved figure. */
 export function metricStrip(metrics, lang) {
   if (!Array.isArray(metrics) || !metrics.length) return "";
   return `<ul class="metrics reveal">

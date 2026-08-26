@@ -6,7 +6,7 @@ import { presenceMap } from "../../lib/diagrams.mjs";
 import { OFFICES, OFFICE_STATUS } from "../site.mjs";
 import { url, UI } from "../site.mjs";
 
-const LABEL = T("About Qeonix", "عن كيونكس");
+const LABEL = T("About Qeonix", "عن كيونيكس");
 
 const FACTS = [
   { k: T("Headquarters", "المقر الرئيسي"), v: T("Abu Dhabi, UAE", "أبوظبي، الإمارات") },
@@ -38,7 +38,7 @@ const DELIVERY = [
   { h: T("Product & design", "المنتج والتصميم"), p: T("UX and interfaces designed for operators, residents and field crews.", "تجربة وواجهات مصمّمة للمشغّلين والمتعاملين والفرق الميدانية.") },
   { h: T("Engineering", "الهندسة"), p: T("AI, software, data and cybersecurity engineering in one team.", "هندسة الذكاء الاصطناعي والبرمجيات والبيانات والأمن في فريق واحد.") },
   { h: T("Integration", "التكامل"), p: T("Into the estate that exists, under its identity and its constraints.", "مع المنظومة القائمة، تحت هويتها وقيودها.") },
-  { h: T("Deployment", "النشر"), p: T("Cloud, private, on-premise or sovereign: fixed at design time.", "سحابي أو خاص أو داخل المنشأة أو سيادي: يُثبَّت عند التصميم.") },
+  { h: T("Deployment", "النشر"), p: T("Cloud, private, on-premise or sovereign, fixed at design time.", "سحابي أو خاص أو داخل المنشأة أو سيادي، يُثبَّت عند التصميم.") },
   { h: T("Operations", "التشغيل"), p: T("DevOps, MLOps and support, run by the people who built it.", "عمليات التطوير والتعلّم الآلي والدعم، بأيدي من بناه.") },
   { h: T("Evolution", "التطوير"), p: T("Measured, tuned and extended as the mandate grows.", "قياس وضبط وتوسيع مع نموّ التكليف.") },
 ];
@@ -54,7 +54,7 @@ export default function about(lang) {
     h: T("An engineering company|in a market that demands one.", "شركة هندسية|في سوق يشترط ذلك."),
     lead: T(
       "Qeonix was built in Abu Dhabi to do one thing well: turn emerging technology into systems that governments, cities and enterprises can actually run, and stand behind them in production.",
-      "أُسّست كيونكس في أبوظبي لتُتقن أمرًا واحدًا: تحويل التقنيات الناشئة إلى أنظمة تستطيع الحكومات والمدن والمؤسسات تشغيلها فعلًا، والوقوف خلفها في الإنتاج."
+      "أُسّست كيونيكس في أبوظبي لتُتقن أمرًا واحدًا: تحويل التقنيات الناشئة إلى أنظمة تستطيع الحكومات والمدن والمؤسسات تشغيلها فعلًا، والوقوف خلفها في الإنتاج."
     ),
     meta: [
       { k: T("Identity", "الهوية"), v: T("Abu Dhabi-born, globally ambitious", "وُلدت في أبوظبي، بطموح عالمي") },
@@ -93,7 +93,7 @@ ${section(`
   ${secHead({
     kicker: T("Provenance", "الجذور"),
     h: T("Built on experience.|Aimed at what comes next.", "مبنيّة على الخبرة.|ومتّجهة إلى ما هو قادم."),
-    lead: T("The teams behind Qeonix have spent their careers building enterprise platforms, AI systems and national-scale digital services. Qeonix brings that experience under one roof, one architecture and one standard.", "أمضت الفرق التي تقف خلف كيونكس مسيرتها المهنية في بناء المنصّات المؤسسية وأنظمة الذكاء الاصطناعي والخدمات الرقمية واسعة النطاق. وتجمع كيونكس تلك الخبرة تحت سقف واحد وبنية واحدة ومعيار واحد."),
+    lead: T("The teams behind Qeonix have spent their careers building enterprise platforms, AI systems and national-scale digital services. Qeonix brings that experience under one roof, one architecture and one standard.", "أمضت الفرق التي تقف خلف كيونيكس مسيرتها المهنية في بناء المنصّات المؤسسية وأنظمة الذكاء الاصطناعي والخدمات الرقمية واسعة النطاق. وتجمع كيونيكس تلك الخبرة تحت سقف واحد وبنية واحدة ومعيار واحد."),
   }, lang)}
   <!-- HERITAGE / PROOF POINTS: insert only management-approved facts here.
        Candidates awaiting approval (do NOT publish without sign-off):
@@ -140,7 +140,7 @@ ${section(`
 
 ${section(statement({
   text: T("Live Tomorrow,|Today.", "عِش الغد،|اليوم."),
-  attribution: T("Qeonix", "كيونكس"),
+  attribution: T("Qeonix", "كيونيكس"),
 }, lang), { tone: "accent", cls: "sec-tight" })}
 
 ${closer("about", lang)}
@@ -152,11 +152,11 @@ ${closer("about", lang)}
     crumbTrail: hero.crumbTrail,
     title: T(
       "About Qeonix: AI & Intelligent Systems Company, Abu Dhabi",
-      "عن كيونكس: شركة الذكاء الاصطناعي والأنظمة الذكية، أبوظبي"
+      "عن كيونيكس: شركة الذكاء الاصطناعي والأنظمة الذكية، أبوظبي"
     ),
     description: T(
       "Qeonix is an Abu Dhabi-headquartered engineering company building AI, agentic systems, autonomous technology and smart city platforms for governments and enterprises, with a presence in Paris and offices in Muscat and Doha in progress.",
-      "كيونكس شركة هندسية مقرّها أبوظبي تبني الذكاء الاصطناعي والأنظمة الوكيلة والتقنيات ذاتية التشغيل ومنصّات المدن الذكية للحكومات والمؤسسات، مع حضور في باريس ومكتبين قيد التأسيس في مسقط والدوحة."
+      "كيونيكس شركة هندسية مقرّها أبوظبي تبني الذكاء الاصطناعي والأنظمة الوكيلة والتقنيات ذاتية التشغيل ومنصّات المدن الذكية للحكومات والمؤسسات، مع حضور في باريس ومكتبين قيد التأسيس في مسقط والدوحة."
     ),
     og: "about",
     body,

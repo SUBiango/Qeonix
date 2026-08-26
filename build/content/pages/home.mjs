@@ -94,16 +94,16 @@ WHY.forEach((w, i) => { w.p = T(w.p, WHY_AR[i]); });
 
 const FAQS = [
   {
-    q: T("What does Qeonix actually build?", "ماذا تبني كيونكس فعليًا؟"),
+    q: T("What does Qeonix actually build?", "ماذا تبني كيونيكس فعليًا؟"),
     a: T("Intelligent systems that run in live operation: decision intelligence and computer vision, agentic AI platforms, autonomous systems such as robotics and drones, and the data, integration and workflow platforms underneath them. We architect, engineer and deploy them, and we operate them once they are carrying load.", "أنظمة ذكية تعمل في التشغيل الفعلي: ذكاء القرار والرؤية الحاسوبية، ومنصّات الذكاء الاصطناعي الوكيل، والأنظمة ذاتية التشغيل كالروبوتات والطائرات المسيّرة، ومنصّات البيانات والتكامل وسير العمل التي تسندها. نصمّم بنيتها ونهندسها وننشرها، ونشغّلها بعد دخولها الخدمة."),
   },
   {
-    q: T("Is Qeonix a systems integrator?", "هل كيونكس شركة تكامل أنظمة؟"),
+    q: T("Is Qeonix a systems integrator?", "هل كيونيكس شركة تكامل أنظمة؟"),
     a: T("Integration is part of what we do, because nothing useful gets deployed into an empty environment. But we are an engineering and product organization first: we design and build the platform and the intelligence layer, then integrate them with what is already running.", "التكامل جزء من عملنا، لأن لا شيء نافع يُنشر في بيئة فارغة. لكننا في المقام الأول شركة هندسة ومنتجات: نصمّم ونبني المنصّة وطبقة الذكاء، ثم ندمجها مع ما هو قائم بالفعل."),
   },
   {
-    q: T("Can Qeonix systems be deployed in a sovereign or on-premise environment?", "هل يمكن نشر أنظمة كيونكس في بيئة سيادية أو داخل المنشأة؟"),
-    a: T("Yes, deployment topology is an architectural decision we take with you at the start. Options include public cloud, dedicated private cloud, on-premise inside your own data center, and isolated environments designed for data residency requirements. Model access and inference can be constrained to the same boundary.", "نعم، فبنية النشر قرار هندسي نتّخذه معكم منذ البداية. تشمل الخيارات السحابة العامة، والسحابة الخاصة المخصّصة، والنشر داخل مركز بياناتكم، وبيئات معزولة مصمّمة لمتطلّبات إقامة البيانات. ويمكن حصر الوصول إلى النماذج والاستدلال داخل الحدود نفسها."),
+    q: T("Can Qeonix systems be deployed in a sovereign or on-premise environment?", "هل يمكن نشر أنظمة كيونيكس في بيئة سيادية أو داخل المنشأة؟"),
+    a: T("Yes: deployment topology is an architectural decision we take with you at the start. Options include public cloud, dedicated private cloud, on-premise inside your own data center, and isolated environments designed for data residency requirements. Model access and inference can be constrained to the same boundary.", "نعم، فبنية النشر قرار هندسي نتّخذه معكم منذ البداية. تشمل الخيارات السحابة العامة، والسحابة الخاصة المخصّصة، والنشر داخل مركز بياناتكم، وبيئات معزولة مصمّمة لمتطلّبات إقامة البيانات. ويمكن حصر الوصول إلى النماذج والاستدلال داخل الحدود نفسها."),
   },
   {
     q: T("How do you keep agentic systems under control?", "كيف تُبقون الأنظمة الوكيلة تحت السيطرة؟"),
@@ -114,7 +114,7 @@ const FAQS = [
     a: T("Yes. Every engagement starts from the estate that exists: core systems, identity, networks, data contracts and the vendors already under contract. The architecture is designed around those constraints rather than assuming a replacement program.", "نعم. يبدأ كل ارتباط من المنظومة القائمة فعلًا: الأنظمة الأساسية والهوية والشبكات وعقود البيانات والمورّدون المتعاقَد معهم. وتُصمَّم البنية حول هذه القيود، لا بافتراض برنامج استبدال شامل."),
   },
   {
-    q: T("Where is Qeonix based?", "أين مقر كيونكس؟"),
+    q: T("Where is Qeonix based?", "أين مقر كيونيكس؟"),
     a: T("Headquarters are in Abu Dhabi, United Arab Emirates, with a presence in Paris, France. Offices in Muscat, Oman and Doha, Qatar are in progress.", "المقر الرئيسي في أبوظبي بالإمارات العربية المتحدة، مع حضور في باريس بفرنسا. ومكتبا مسقط في سلطنة عُمان والدوحة في قطر قيد التأسيس."),
   },
 ];
@@ -154,7 +154,7 @@ export default function home(lang) {
 
 ${section(`
   ${secHead({
-    kicker: T("The Qeonix stack", "منظومة كيونكس"),
+    kicker: T("The Qeonix stack", "منظومة كيونيكس"),
     h: T("Three bars.|One system.", "ثلاثة أشرطة.|نظام واحد."),
     lead: T("Our mark is our architecture: a reusable intelligence foundation, the domain platforms built on it, and the interfaces people and machines actually use. It is why complex systems ship in months, not years.", "شعارنا هو بنيتنا: أساس ذكي قابل لإعادة الاستخدام، ومنصّات قطاعية مبنية عليه، وواجهات يستخدمها الأشخاص والآلات فعلًا. ولهذا تُنجَز الأنظمة المعقّدة في شهور لا سنوات."),
   }, lang)}
@@ -182,7 +182,7 @@ ${section(`
   ${secHead({
     kicker: T("Technology in operation", "التقنية أثناء التشغيل"),
     h: T("Enough architecture.|This is what the software looks like.", "يكفي حديثًا عن البنية.|هكذا تبدو البرمجيات فعلًا."),
-    lead: T("Three Qeonix-engineered operating environments, the consoles residents never see and operators live in. Conceptual environments, real engineering.", "ثلاث بيئات تشغيل من هندسة كيونكس، اللوحات التي لا يراها المتعاملون ويعيش فيها المشغّلون. بيئات توضيحية، وهندسة حقيقية."),
+    lead: T("Three Qeonix-engineered operating environments, the consoles residents never see and operators live in. Conceptual environments, real engineering.", "ثلاث بيئات تشغيل من هندسة كيونيكس، اللوحات التي لا يراها المتعاملون ويعيش فيها المشغّلون. بيئات توضيحية، وهندسة حقيقية."),
   }, lang)}
 
   <div class="show reveal">
@@ -220,7 +220,7 @@ ${section(`
 
 ${section(statement({
   text: T("Designed to work|beyond the demo.", "مصمّمة لتعمل|أبعد من العرض التجريبي."),
-  attribution: T("The standard every Qeonix system is held to", "المعيار الذي يُحاكم إليه كل نظام تبنيه كيونكس"),
+  attribution: T("The standard every Qeonix system is held to", "المعيار الذي يُحاكم إليه كل نظام تبنيه كيونيكس"),
 }, lang), { tone: "accent", cls: "sec-tight" })}
 
 ${section(`
@@ -273,12 +273,12 @@ ${section(`
     bodyClass: "has-light-top",
     title: T(
       "Qeonix: AI, Autonomous Systems & Smart Government Technology | Abu Dhabi",
-      "كيونكس: الذكاء الاصطناعي والأنظمة ذاتية التشغيل وتقنيات الحكومة الذكية | أبوظبي"
+      "كيونيكس: الذكاء الاصطناعي والأنظمة ذاتية التشغيل وتقنيات الحكومة الذكية | أبوظبي"
     ),
-    ogTitle: T("Qeonix: Live Tomorrow, Today.", "كيونكس: المستقبل بين يديك."),
+    ogTitle: T("Qeonix: Live Tomorrow, Today.", "كيونيكس: عِش الغد، اليوم."),
     description: T(
       "Qeonix designs, engineers and deploys the intelligent systems governments, cities and enterprises run on: decision intelligence, agentic AI, autonomous systems and connected infrastructure. Headquartered in Abu Dhabi.",
-      "تصمّم كيونكس وتهندس وتنشر الأنظمة الذكية التي تعتمد عليها الحكومات والمدن والمؤسسات: ذكاء القرار والذكاء الاصطناعي الوكيل والأنظمة ذاتية التشغيل والبنية التحتية المتصلة. المقر الرئيسي في أبوظبي."
+      "تصمّم كيونيكس وتهندس وتنشر الأنظمة الذكية التي تعتمد عليها الحكومات والمدن والمؤسسات: ذكاء القرار والذكاء الاصطناعي الوكيل والأنظمة ذاتية التشغيل والبنية التحتية المتصلة. المقر الرئيسي في أبوظبي."
     ),
     og: "home",
     faqSchema: FAQS,

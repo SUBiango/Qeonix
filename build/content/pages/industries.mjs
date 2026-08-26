@@ -70,7 +70,7 @@ const SECTORS = [
 const FAQS = [
   {
     q: T("Do you specialize in one industry?", "هل تتخصّصون في قطاع واحد؟"),
-    a: T("We specialize in a pattern: dense physical operations, fragmented data and decisions made later than they should be. The platform capabilities, namely intelligence, agents, autonomy and data, are common; the domain models, integrations and operating constraints are what change per sector.", "نتخصّص في نمط: عمليات مادية كثيفة وبيانات مبعثرة وقرارات تُتّخذ متأخّرة. القدرات المنصّية، أي الذكاء والوكلاء والاستقلالية والبيانات، مشتركة؛ أما نماذج المجال والتكاملات وقيود التشغيل فهي ما يتغيّر بين القطاعات."),
+    a: T("We specialize in a pattern: dense physical operations, fragmented data and decisions made later than they should be. The platform capabilities, such as intelligence, agents, autonomy and data, are common; the domain models, integrations and operating constraints are what change per sector.", "نتخصّص في نمط: عمليات مادية كثيفة وبيانات مبعثرة وقرارات تُتّخذ متأخّرة. القدرات المنصّية، مثل الذكاء والوكلاء والاستقلالية والبيانات، مشتركة؛ أما نماذج المجال والتكاملات وقيود التشغيل فهي ما يتغيّر بين القطاعات."),
   },
   {
     q: T("What if our sector is not listed?", "ماذا لو لم يكن قطاعنا مذكورًا؟"),
@@ -135,11 +135,11 @@ ${closer("industries", lang)}
     crumbTrail: hero.crumbTrail,
     title: T(
       "Industries: AI & Intelligent Systems by Sector | Qeonix",
-      "القطاعات: الذكاء الاصطناعي والأنظمة الذكية حسب القطاع | كيونكس"
+      "القطاعات: الذكاء الاصطناعي والأنظمة الذكية حسب القطاع | كيونيكس"
     ),
     description: T(
       "Where Qeonix systems operate: government, transportation, energy and utilities, industrial and manufacturing, logistics, aviation and aerospace, healthcare, and real estate and urban development.",
-      "حيث تعمل أنظمة كيونكس: الحكومة والنقل والطاقة والمرافق والصناعة والتصنيع واللوجستيات والطيران والفضاء والرعاية الصحية والعقارات والتطوير العمراني."
+      "حيث تعمل أنظمة كيونيكس: الحكومة والنقل والطاقة والمرافق والصناعة والتصنيع واللوجستيات والطيران والفضاء والرعاية الصحية والعقارات والتطوير العمراني."
     ),
     og: "industries",
     faqSchema: FAQS,

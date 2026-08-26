@@ -79,8 +79,8 @@ export default function government(lang) {
     kicker: T("Sector · Government & public sector", "قطاع · الحكومة والقطاع العام"),
     h: T("Government that behaves|like one organization.", "حكومة تتصرّف|كمؤسسة واحدة."),
     lead: T(
-      "Residents do not experience departments, they experience a wait. Qeonix builds the orchestration, intelligence and shared services that let a public entity present one front door and close cases behind it.",
-      "لا يختبر المتعاملون الإدارات، بل يختبرون الانتظار. تبني كيونكس طبقة التنسيق والذكاء والخدمات المشتركة التي تتيح للجهة العامة تقديم باب واحد وإغلاق المعاملات خلفه."
+      "Residents do not experience departments; they experience a wait. Qeonix builds the orchestration, intelligence and shared services that let a public entity present one front door and close cases behind it.",
+      "لا يختبر المتعاملون الإدارات، بل يختبرون الانتظار. تبني كيونيكس طبقة التنسيق والذكاء والخدمات المشتركة التي تتيح للجهة العامة تقديم باب واحد وإغلاق المعاملات خلفه."
     ),
     meta: [
       { k: T("Scope", "النطاق"), v: T("Services, orchestration, operations", "الخدمات والتنسيق والعمليات") },
@@ -166,11 +166,11 @@ ${closer("government", lang)}
     crumbTrail: hero.crumbTrail,
     title: T(
       "Smart Government & Digital Government Platforms | Qeonix",
-      "منصّات الحكومة الذكية والحكومة الرقمية | كيونكس"
+      "منصّات الحكومة الذكية والحكومة الرقمية | كيونيكس"
     ),
     description: T(
       "Digital government platforms from Qeonix: unified service surfaces and super-apps, cross-agency orchestration, government AI assistants, permitting and licensing journeys, case management, payments and digital identity integration, deployable in government cloud or on-premise.",
-      "منصّات حكومة رقمية من كيونكس: واجهات خدمات موحّدة وتطبيقات شاملة، وتنسيق بين الجهات، ومساعدون حكوميون بالذكاء الاصطناعي، ورحلات التصاريح والتراخيص، وإدارة الحالات، والمدفوعات والتكامل مع الهوية الرقمية، قابلة للنشر في سحابة حكومية أو داخل المنشأة."
+      "منصّات حكومة رقمية من كيونيكس: واجهات خدمات موحّدة وتطبيقات شاملة، وتنسيق بين الجهات، ومساعدون حكوميون بالذكاء الاصطناعي، ورحلات التصاريح والتراخيص، وإدارة الحالات، والمدفوعات والتكامل مع الهوية الرقمية، قابلة للنشر في سحابة حكومية أو داخل المنشأة."
     ),
     og: "government",
     service: { name: LABEL, type: T("Digital government platform engineering", "هندسة منصّات الحكومة الرقمية") },

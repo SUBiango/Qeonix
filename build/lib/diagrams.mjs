@@ -88,9 +88,9 @@ export function heroLattice() {
     <g class="lat-core">
       <circle cx="470" cy="470" r="58" class="lat-core-disc"/>
       <g class="lat-core-mark">
-        <rect x="446" y="452.5" width="48" height="7"/>
-        <rect x="446" y="466.5" width="48" height="7"/>
-        <rect x="446" y="480.5" width="48" height="7"/>
+        <rect x="446" y="445" width="48" height="10"/>
+        <rect x="446" y="465" width="48" height="10"/>
+        <rect x="446" y="485" width="48" height="10"/>
       </g>
     </g>
 
@@ -261,7 +261,7 @@ export function markRule() {
    PRESENCE MAP: offices plotted on an abstract graticule.
    Real lon/lat, equirectangular projection, no coastlines: geography
    without cartographic clutter, in the lattice's visual language.
-   Not mirrored in RTL: maps keep their orientation.
+   Not mirrored in RTL. Maps keep their orientation.
    ------------------------------------------------------------------ */
 export function presenceMap(offices, statuses, lang) {
   const ar = lang === "ar";
@@ -310,7 +310,7 @@ export function presenceMap(offices, statuses, lang) {
   ].join("");
 
   return `<figure class="pmap reveal" role="img"
-    aria-label="${ar ? "خريطة حضور كيونكس: أبوظبي المقر الرئيسي، باريس مكتب، مسقط والدوحة قريبًا" : "Qeonix presence map: Abu Dhabi headquarters, Paris office, Muscat and Doha soon"}">
+    aria-label="${ar ? "خريطة حضور كيونيكس: أبوظبي المقر الرئيسي، باريس مكتب، مسقط والدوحة قريبًا" : "Qeonix presence map: Abu Dhabi headquarters, Paris office, Muscat and Doha soon"}">
   <svg viewBox="0 0 760 400" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true">
     <g class="pm-grat">${grat}</g>
     ${arcs}
@@ -342,7 +342,7 @@ export function handoverLanes(lang) {
       </div>
     </div>
     <div class="lane lane-qx">
-      <p class="lane-tag mono">${ar ? "نموذج كيونكس" : "The Qeonix model"}</p>
+      <p class="lane-tag mono">${ar ? "نموذج كيونيكس" : "The Qeonix model"}</p>
       <div class="lane-bars">
         <span class="lane-seg lane-solid">
           <strong>${ar ? "فريق واحد، مساءلة واحدة" : "One team, one accountability"}</strong>
