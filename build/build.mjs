@@ -119,7 +119,7 @@ function breadcrumbLd(page, lang) {
 }
 
 /* Only emitted when the questions and answers are the exact strings rendered
-   on the page: Google requires the visible content to match. */
+   on the page; Google requires the visible content to match. */
 function faqLd(page, lang) {
   if (!page.faqSchema || !page.faqSchema.length) return null;
   return {

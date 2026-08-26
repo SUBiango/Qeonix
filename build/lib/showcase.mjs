@@ -26,7 +26,7 @@ export function consoleFrame({ name, env, panes, cls = "" }, lang) {
   </div>
   <div class="qxc-body">${panes}</div>
   <figcaption class="qxc-cap mono">${lang === "ar"
-    ? "بيئة منتج توضيحية، واجهة منصّة كيونكس، وبيانات للعرض فقط"
+    ? "بيئة منتج توضيحية: واجهة منصّة كيونيكس، وبيانات للعرض فقط"
     : "Conceptual product environment: Qeonix platform UI, illustrative data"}</figcaption>
 </figure>`;
 }
@@ -93,7 +93,7 @@ export function agenticTrace(lang, { interactive = false } = {}) {
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Agentic Platform: Operations Console", "منصّة كيونكس الوكيلة: لوحة العمليات"),
+    name: S("Qeonix Agentic Platform: Operations Console", "منصّة كيونيكس الوكيلة: لوحة العمليات"),
     env: S("Sovereign deployment", "نشر سيادي"),
     panes, cls: interactive ? "qx-agentic is-steprun" : "qx-agentic",
   }, lang);
@@ -145,7 +145,7 @@ export function govOpsConsole(lang) {
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Government Platform: City Operations", "منصّة كيونكس الحكومية: عمليات المدينة"),
+    name: S("Qeonix Government Platform: City Operations", "منصّة كيونيكس الحكومية: عمليات المدينة"),
     env: S("Government cloud", "سحابة حكومية"),
     panes, cls: "qx-gov",
   }, lang);
@@ -189,7 +189,7 @@ export function missionConsole(lang) {
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Autonomy: Mission Control", "استقلالية كيونكس: قيادة المهام"),
+    name: S("Qeonix Autonomy: Mission Control", "استقلالية كيونيكس: قيادة المهام"),
     env: S("On-premise", "داخل المنشأة"),
     panes, cls: "qx-mission",
   }, lang);
@@ -226,7 +226,7 @@ export function mobilityConsole(lang) {
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Mobility: Network Operations", "تنقل كيونكس: عمليات الشبكة"),
+    name: S("Qeonix Mobility: Network Operations", "تنقل كيونيكس: عمليات الشبكة"),
     env: S("Private cloud", "سحابة خاصة"),
     panes, cls: "qx-mobility",
   }, lang);
@@ -251,7 +251,7 @@ export function platformStack(lang) {
       items: [S("Government", "الحكومة"), S("Cities", "المدن"), S("Mobility", "التنقل"), S("Healthcare", "الرعاية الصحية"), S("Autonomous operations", "العمليات ذاتية التشغيل")],
     },
     {
-      k: S("Qeonix intelligence foundation", "أساس كيونكس الذكي"),
+      k: S("Qeonix intelligence foundation", "أساس كيونيكس الذكي"),
       note: S("Reusable, governed, deployable inside your boundary", "قابل لإعادة الاستخدام، محكوم، وقابل للنشر داخل حدودكم"),
       items: [S("AI & vision", "الذكاء والرؤية"), S("Agents & orchestration", "الوكلاء والتنسيق"), S("Data", "البيانات"), S("Identity", "الهوية"), S("Workflow", "سير العمل"), S("Integration", "التكامل"), S("Observability", "قابلية المراقبة"), S("Security", "الأمن")],
     },
@@ -268,7 +268,7 @@ export function platformStack(lang) {
     </div>
     ${i < 2 ? `<div class="stk-gap" aria-hidden="true"><span></span><span></span><span></span></div>` : ""}`).join("");
 
-  return `<div class="stack reveal" aria-label="${ar ? "منظومة التشغيل من كيونكس" : "The Qeonix operating stack"}">
+  return `<div class="stack reveal" aria-label="${ar ? "منظومة التشغيل من كيونيكس" : "The Qeonix operating stack"}">
   <div class="stk-legend" aria-hidden="true">
     <span class="stk-e"><i></i><i></i><i></i></span>
     <span class="stk-cap mono">${ar ? "الأشرطة الثلاثة" : "The three bars"}</span>
@@ -401,7 +401,7 @@ export function cityTwin(lang) {
 
     <g class="twm-depot">
       <rect x="46" y="66" width="52" height="40" rx="7"/>
-      <path d="M58 86h28M58 94h18" class="twm-depot-mark"/>
+      <path d="M60 76h24M60 86h24M60 96h24" class="twm-depot-mark"/>
       ${label(72, 126, "Depot", "المستودع")}
     </g>
 
@@ -461,7 +461,7 @@ export function cityTwin(lang) {
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Digital Twin: District Simulation", "التوأم الرقمي من كيونكس: محاكاة حي"),
+    name: S("Qeonix Digital Twin: District Simulation", "التوأم الرقمي من كيونيكس: محاكاة حي"),
     env: S("Interactive demo", "عرض تفاعلي"),
     panes, cls: "qx-twin",
   }, lang);
@@ -470,7 +470,7 @@ export function cityTwin(lang) {
 /* ------------------------------------------------------------------
    5 · HEALTHCARE: care orchestration, strictly administrative.
    No clinical decision-making is depicted: the console coordinates
-   referrals, eligibility, scheduling and follow-up: the operational
+   referrals, eligibility, scheduling and follow-up, the operational
    layer of care, not the medicine.
    ------------------------------------------------------------------ */
 export function healthConsole(lang) {
@@ -514,7 +514,7 @@ export function healthConsole(lang) {
   </aside>`;
 
   return consoleFrame({
-    name: S("Qeonix Health: Care Orchestration", "صحة كيونكس: تنسيق الرعاية"),
+    name: S("Qeonix Health: Care Orchestration", "صحة كيونيكس: تنسيق الرعاية"),
     env: S("Private cloud", "سحابة خاصة"),
     panes, cls: "qx-health-console",
   }, lang);

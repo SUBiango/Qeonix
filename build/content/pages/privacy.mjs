@@ -22,7 +22,7 @@ const BLOCKS = [
   {
     h: T("What we collect, and when", "ما الذي نجمعه، ومتى"),
     ps: [
-      T("We collect personal information in exactly one place: the contact form. If you submit it, we receive what you typed: your name, work email, optional phone number, organization, sector, the nature of your enquiry and your message.",
+      T("We collect personal information in exactly one place: the contact form. If you submit it, we receive what you typed: your name, work email, optional phone number, organization, sector, the nature of your inquiry and your message.",
         "نجمع المعلومات الشخصية في موضع واحد فقط: نموذج التواصل. فإذا أرسلته، نتلقّى ما كتبته: اسمك وبريدك الإلكتروني للعمل ورقم هاتفك (اختياري) وجهتك وقطاعك وطبيعة استفسارك ورسالتك."),
       T("Our hosting provider also keeps standard, short-lived technical logs (such as IP addresses) for security and abuse prevention, as effectively every website's infrastructure does.",
         "كما يحتفظ مزوّد الاستضافة لدينا بسجلّات تقنية قياسية قصيرة الأمد (مثل عناوين IP) لأغراض الأمن ومنع إساءة الاستخدام، شأن البنية التحتية لأي موقع تقريبًا."),
@@ -31,7 +31,7 @@ const BLOCKS = [
   {
     h: T("What we do with it", "ماذا نفعل بها"),
     ps: [
-      T("We use your details for one purpose: responding to your enquiry and, where it leads somewhere, conducting the business relationship that follows. We do not sell personal information, share it for marketing, or add you to mailing lists you did not ask for.",
+      T("We use your details for one purpose: responding to your inquiry and, where it leads somewhere, conducting the business relationship that follows. We do not sell personal information, share it for marketing, or add you to mailing lists you did not ask for.",
         "نستخدم بياناتك لغرض واحد: الرد على استفسارك، وإدارة العلاقة المهنية التي قد تنشأ عنه. ولا نبيع المعلومات الشخصية، ولا نشاركها لأغراض تسويقية، ولا نضيفك إلى قوائم بريدية لم تطلبها."),
     ],
   },
@@ -47,7 +47,7 @@ const BLOCKS = [
   {
     h: T("How long we keep it", "مدة الاحتفاظ"),
     ps: [
-      T("Enquiry data is kept for as long as it is needed to handle your enquiry and any business relationship that follows, and is deleted when it no longer serves that purpose.",
+      T("Inquiry data is kept for as long as it is needed to handle your inquiry and any business relationship that follows, and is deleted when it no longer serves that purpose.",
         "نحتفظ ببيانات الاستفسار ما دامت لازمة لمعالجته ولأي علاقة عمل تنشأ عنه، وتُحذف حين لا تعود تخدم هذا الغرض."),
     ],
   },
@@ -62,7 +62,7 @@ const BLOCKS = [
     h: T("Who we are, and where", "من نحن، وأين"),
     ps: [
       T("The controller of this website is QEONIX, headquartered in Abu Dhabi, United Arab Emirates. For anything relating to privacy or your personal information, contact info@qeonix.com.",
-        "الجهة المسؤولة عن هذا الموقع هي كيونكس، ومقرّها الرئيسي في أبوظبي بدولة الإمارات العربية المتحدة. ولأي أمر يتعلّق بالخصوصية أو معلوماتك الشخصية، تواصل معنا على info@qeonix.com."),
+        "الجهة المسؤولة عن هذا الموقع هي كيونيكس، ومقرّها الرئيسي في أبوظبي بدولة الإمارات العربية المتحدة. ولأي أمر يتعلّق بالخصوصية أو معلوماتك الشخصية، تواصل معنا على info@qeonix.com."),
       T("If our practices change, for example if we ever introduce analytics, this page will change first, and the date below will move.",
         "إذا تغيّرت ممارساتنا، كأن نُدخل يومًا أدوات تحليلات، فستتغيّر هذه الصفحة أولًا، وسيتحدّث التاريخ أدناه."),
     ],
@@ -101,10 +101,10 @@ ${section(`
     solidHeader: true,
     hideCta: true,
     crumbTrail: hero.crumbTrail,
-    title: T("Privacy Notice | Qeonix", "إشعار الخصوصية | كيونكس"),
+    title: T("Privacy Notice | Qeonix", "إشعار الخصوصية | كيونيكس"),
     description: T(
-      "How the Qeonix website handles personal information: no cookies, no analytics, no trackers; data is collected only through the contact form and used solely to respond to your enquiry.",
-      "كيف يتعامل موقع كيونكس مع المعلومات الشخصية: لا ملفات تعريف ارتباط ولا تحليلات ولا متتبّعات؛ تُجمع البيانات عبر نموذج التواصل فقط وتُستخدم حصرًا للرد على استفسارك."
+      "How the Qeonix website handles personal information: no cookies, no analytics, no trackers, data is collected only through the contact form and used solely to respond to your inquiry.",
+      "كيف يتعامل موقع كيونيكس مع المعلومات الشخصية: لا ملفات تعريف ارتباط ولا تحليلات ولا متتبّعات، تُجمع البيانات عبر نموذج التواصل فقط وتُستخدم حصرًا للرد على استفسارك."
     ),
     og: "default",
     body,

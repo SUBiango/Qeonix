@@ -206,8 +206,8 @@ h1,h2,h3,h4{font-weight:600;line-height:1.06;letter-spacing:-.028em;text-wrap:ba
 /* kicker + three-bar brand marker */
 .kicker{display:flex;align-items:center;gap:.75rem;color:var(--accent)}
 /* Matches the wordmark's "E": three equal bars, square corners, 1:1 bar/gap. */
-.markrule{display:inline-flex;flex-direction:column;gap:2px;flex:none}
-.markrule i{display:block;width:14px;height:2px;background:currentColor}
+.markrule{display:inline-flex;flex-direction:column;gap:3px;flex:none}
+.markrule i{display:block;width:14px;height:3px;background:currentColor}
 
 /* architectural grid overlay for dark/accent surfaces */
 .gridfield{
@@ -307,6 +307,11 @@ body.has-light-top .nav-a[aria-current="page"]::after{background:var(--electric)
 .megamenu{
   position:absolute;inset-block-start:calc(var(--hdr-h) - 6px);inset-inline-start:50%;
   transform:translateX(-50%);
+}
+/* inset-inline-start flips to the right edge in RTL, but translateX is
+   physical — mirror the shift so the panel stays centred under the trigger */
+[dir="rtl"] .megamenu{transform:translateX(50%)}
+.megamenu{
   width:min(760px,calc(100vw - 2 * var(--gutter)));
   padding-block-start:10px;
 }
@@ -341,10 +346,11 @@ body.has-light-top .nav-a[aria-current="page"]::after{background:var(--electric)
 /* --- burger + drawer --- */
 .burger{display:none;width:44px;height:44px;border-radius:11px;align-items:center;justify-content:center;color:inherit}
 .burger span{display:flex;flex-direction:column;gap:4px;width:21px}
-.burger i{display:block;width:21px;height:2px;background:currentColor;transition:transform .32s var(--ease),opacity .2s}
-.burger[aria-expanded="true"] i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger i{display:block;width:21px;height:4px;background:var(--electric-lift);transition:transform .32s var(--ease),opacity .2s}
+body.has-light-top .hdr .burger i{background:var(--electric)}
+.burger[aria-expanded="true"] i:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .burger[aria-expanded="true"] i:nth-child(2){opacity:0}
-.burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
 .nav-scrim{position:fixed;inset:0;z-index:880;background:rgba(6,7,15,.5);opacity:0;transition:opacity .3s}
 .nav-scrim.in{opacity:1}
@@ -1131,8 +1137,8 @@ form.is-sent .form-done{display:block}
   padding:.7rem 1rem;background:#070812;
   border-bottom:1px solid rgba(244,245,252,.08);
 }
-.qxc-mark{display:inline-flex;flex-direction:column;gap:2px;flex:none}
-.qxc-mark i{width:12px;height:2px;background:var(--electric-lift)}
+.qxc-mark{display:inline-flex;flex-direction:column;gap:2.5px;flex:none}
+.qxc-mark i{width:12px;height:2.5px;background:var(--electric-lift)}
 .qxc-name{flex:1;min-width:0;font-size:.8rem;font-weight:550;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .qxc-env{margin-inline-start:auto;flex:none;color:var(--electric-lift);font-size:.6rem;
   padding:.28rem .6rem;border:1px solid rgba(75,79,240,.35);border-radius:100px;background:rgba(75,79,240,.1)}
@@ -1266,10 +1272,8 @@ form.is-sent .form-done{display:block}
 /* ---- signature stack (the three bars, read as the operating stack) ---- */
 .stack{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:stretch}
 .stk-legend{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
-.stk-e{display:flex;flex-direction:column;gap:10px}
-.stk-e i{display:block;width:44px;height:10px;background:var(--accent)}
-.stk-e i:nth-child(2){opacity:.55}
-.stk-e i:nth-child(3){opacity:.25}
+.stk-e{display:flex;flex-direction:column;gap:9px}
+.stk-e i{display:block;width:44px;height:9px;background:var(--accent)}
 .stk-cap{color:var(--fg-3);writing-mode:vertical-rl;letter-spacing:.2em}
 [dir="rtl"] .stk-cap{writing-mode:vertical-lr}
 .stk-bars{display:flex;flex-direction:column}
@@ -1344,7 +1348,7 @@ form.is-sent .form-done{display:block}
 .twm-label{fill:rgba(244,245,252,.42);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 [dir="rtl"] .twm-label{font-family:var(--font-ar);text-transform:none;font-size:12.5px;letter-spacing:0}
 .twm-depot rect{fill:rgba(75,79,240,.14);stroke:var(--electric-lift);stroke-width:1.4}
-.twm-depot-mark{stroke:var(--electric-lift);stroke-width:2;fill:none;stroke-linecap:round}
+.twm-depot-mark{stroke:var(--electric-lift);stroke-width:5;fill:none}
 .twm-light circle{fill:rgba(244,245,252,.12);stroke:rgba(244,245,252,.5);stroke-width:1.4;transition:fill .4s,stroke .4s}
 .twm-rays{stroke:rgba(244,245,252,.35);stroke-width:1.6;stroke-linecap:round;transition:stroke .4s,opacity .4s}
 .twm-stadium ellipse{fill:none;stroke:rgba(244,245,252,.3);stroke-width:1.5;transition:stroke .4s}
@@ -1569,6 +1573,10 @@ form.is-sent .form-done{display:block}
   .stack.in .stk-bar{animation:none}
 }
 
+/* footer certification line */
+.ftr-certs{color:var(--dtx-2)}
+.ftr-certs::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--electric-lift);margin-inline-end:.5rem;vertical-align:1px}
+
 /* -------------------------------------------- 42. proof components (dormant) */
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--rule);border-block:1px solid var(--rule)}
 .metric{background:var(--bg);padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:.3rem}
@@ -1586,7 +1594,3 @@ form.is-sent .form-done{display:block}
 [dir="rtl"] .pquote{padding:.4rem 1.5rem .4rem 0}
 .pquote p{font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:500;letter-spacing:-.02em;line-height:1.45}
 .pquote footer{margin-top:.8rem;color:var(--fg-3);font-size:.9rem}
-
-/* footer certification line */
-.ftr-certs{color:var(--dtx-2)}
-.ftr-certs::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--electric-lift);margin-inline-end:.5rem;vertical-align:1px}

@@ -7,11 +7,11 @@ import { TIERS } from "../shared.mjs";
 const LABEL = T("Data & Platforms", "البيانات والمنصّات");
 
 const CAPS = [
-  { icon: "layers", h: T("Data platforms", "منصّات البيانات"), p: T("Ingestion, modeling, quality and governance for operational and analytical workloads, engineered so the AI on top of it has something honest to stand on.", "الاستيعاب والنمذجة والجودة والحوكمة للأعباء التشغيلية والتحليلية، مهندَسة ليقف الذكاء فوقها على أساس صادق.") },
+  { icon: "layers", h: T("Data platforms", "منصّات البيانات"), p: T("Ingestion, modeling, quality and governance for operational and analytical workloads: engineered so the AI on top of it has something honest to stand on.", "الاستيعاب والنمذجة والجودة والحوكمة للأعباء التشغيلية والتحليلية: مهندَسة ليقف الذكاء فوقها على أساس صادق.") },
   { icon: "api", h: T("Integration & APIs", "التكامل وواجهات البرمجة"), p: T("The connective layer across a mixed estate: API design, event streams, legacy adapters and the data contracts that keep them from decaying.", "الطبقة الرابطة عبر منظومة متنوّعة: تصميم الواجهات وتدفّقات الأحداث ومحوّلات الأنظمة القديمة وعقود البيانات التي تحميها من التآكل.") },
   { icon: "flow", h: T("Workflow engines", "محرّكات سير العمل"), p: T("Long-running processes with state, retries, human steps and SLAs: the machinery underneath case management and orchestration.", "عمليات طويلة الأمد بحالة وإعادات محاولة وخطوات بشرية واتفاقيات خدمة: الآلية التي تسند إدارة الحالات والتنسيق.") },
   { icon: "cloud", h: T("Cloud-native & hybrid", "السحابة الأصلية والهجينة"), p: T("Containerized, infrastructure-as-code platforms that run the same way in public cloud, private cloud or an isolated site.", "منصّات حاويات وبنية-كتعليمات-برمجية تعمل بالطريقة نفسها في السحابة العامة أو الخاصة أو موقع معزول.") },
-  { icon: "eye", h: T("Operational dashboards", "اللوحات التشغيلية"), p: T("Command views built on governed metrics with drill-down to the record, designed for the person on shift, not the steering committee.", "شاشات قيادة مبنية على مؤشّرات محكومة مع تفصيل حتى السجل، مصمّمة لمن هو في الوردية، لا للجنة التوجيهية.") },
+  { icon: "eye", h: T("Operational dashboards", "اللوحات التشغيلية"), p: T("Command views built on governed metrics with drill-down to the record: designed for the person on shift, not the steering committee.", "شاشات قيادة مبنية على مؤشّرات محكومة مع تفصيل حتى السجل: مصمّمة لمن هو في الوردية، لا للجنة التوجيهية.") },
   { icon: "grid", h: T("Digital twins", "التوائم الرقمية"), p: T("Spatial and network models of physical estates, kept live by telemetry, used for planning and scenario testing before committing work.", "نماذج مكانية وشبكية للأصول المادية تُبقيها القياسات حيّة، وتُستخدم للتخطيط واختبار السيناريوهات قبل اعتماد الأعمال.") },
 ];
 
@@ -28,7 +28,7 @@ const PRACTICES = [
   { h: T("Events over polling", "الأحداث لا الاستطلاع"), p: T("Systems learn about change by being told, not by asking every minute. It is the difference between a live operation and a nightly batch.", "تعلم الأنظمة بالتغيير بالإبلاغ، لا بالسؤال كل دقيقة. وهذا هو الفرق بين عملية حيّة ودفعة ليلية.") },
   { h: T("Boring where it counts", "تقليدية حيث يجب"), p: T("Databases, queues and identity use proven components. Novelty is spent on the problem, not the plumbing.", "قواعد البيانات والطوابير والهوية بمكوّنات مثبتة. ويُدَّخر الجديد للمشكلة، لا للبنية.") },
   { h: T("Observable by default", "قابلة للمراقبة افتراضيًا"), p: T("Tracing, metrics and structured logs ship with the first release, because they cannot be retrofitted during an incident.", "يُشحن التتبّع والمؤشّرات والسجلّات المهيكلة مع الإصدار الأول، لأنها لا تُضاف أثناء الحادث.") },
-  { h: T("Portable across boundaries", "قابلة للنقل عبر الحدود"), p: T("The same platform definition deploys to public cloud, private cloud or an isolated site; sovereignty must not require a rewrite.", "تعريف المنصّة نفسه يُنشر في سحابة عامة أو خاصة أو موقع معزول، فالسيادة يجب ألا تتطلّب إعادة كتابة.") },
+  { h: T("Portable across boundaries", "قابلة للنقل عبر الحدود"), p: T("The same platform definition deploys to public cloud, private cloud or an isolated site; sovereignty must not require a rewrite.", "تعريف المنصّة نفسه يُنشر في سحابة عامة أو خاصة أو موقع معزول؛ فالسيادة يجب ألا تتطلّب إعادة كتابة.") },
   { h: T("Run by the builders", "يشغّلها من بناها"), p: T("The team that designs the platform carries it in production. It is remarkable what that does to design decisions.", "الفريق الذي يصمّم المنصّة يتولّاها في الإنتاج. ومدهشٌ ما يفعله ذلك بقرارات التصميم.") },
 ];
 
@@ -120,11 +120,11 @@ ${closer("platforms", lang)}
     crumbTrail: hero.crumbTrail,
     title: T(
       "Data Platforms, Integration & Digital Platform Engineering | Qeonix",
-      "منصّات البيانات والتكامل وهندسة المنصّات الرقمية | كيونكس"
+      "منصّات البيانات والتكامل وهندسة المنصّات الرقمية | كيونيكس"
     ),
     description: T(
       "Platform engineering from Qeonix: data platforms, integration layers and APIs, event-driven systems, workflow engines, operational dashboards, digital twins and cloud-native or hybrid infrastructure, portable across public cloud, private cloud and isolated environments.",
-      "هندسة المنصّات من كيونكس: منصّات البيانات وطبقات التكامل وواجهات البرمجة والأنظمة القائمة على الأحداث ومحرّكات سير العمل واللوحات التشغيلية والتوائم الرقمية والبنية السحابية الأصلية أو الهجينة، قابلة للنقل بين السحابة العامة والخاصة والبيئات المعزولة."
+      "هندسة المنصّات من كيونيكس: منصّات البيانات وطبقات التكامل وواجهات البرمجة والأنظمة القائمة على الأحداث ومحرّكات سير العمل واللوحات التشغيلية والتوائم الرقمية والبنية السحابية الأصلية أو الهجينة، قابلة للنقل بين السحابة العامة والخاصة والبيئات المعزولة."
     ),
     og: "platforms",
     service: { name: LABEL, type: T("Data and digital platform engineering", "هندسة منصّات البيانات والمنصّات الرقمية") },

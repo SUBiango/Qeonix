@@ -44,7 +44,7 @@ const LIFECYCLE = [
 const CAPS = [
   { icon: "radar", h: T("City command center", "مركز قيادة المدينة"), p: T("A live operational picture across departments, with incident management and multi-agency coordination rather than eight screens showing eight systems.", "صورة تشغيلية مباشرة عبر الإدارات، مع إدارة الحوادث والتنسيق متعدّد الجهات، بدل ثماني شاشات تعرض ثمانية أنظمة.") },
   { icon: "grid", h: T("Connected infrastructure & IoT", "البنية التحتية المتصلة وإنترنت الأشياء"), p: T("Sensor, meter and camera estates brought into one telemetry layer with device management, health monitoring and a sane data contract.", "منظومات المستشعرات والعدّادات والكاميرات في طبقة قياس واحدة مع إدارة الأجهزة ومراقبة سلامتها وعقد بيانات منضبط.") },
-  { icon: "package", h: T("Field operations", "العمليات الميدانية"), p: T("Crew scheduling, mobile work orders, route optimization and evidence capture, the part of a smart city program that is usually left out.", "جدولة الفرق وأوامر العمل المتنقّلة وتحسين المسارات والتقاط الأدلّة، وهو الجزء الذي يُهمَل عادةً في برامج المدن الذكية.") },
+  { icon: "package", h: T("Field operations", "العمليات الميدانية"), p: T("Crew scheduling, mobile work orders, route optimization and evidence capture: the part of a smart city program that is usually left out.", "جدولة الفرق وأوامر العمل المتنقّلة وتحسين المسارات والتقاط الأدلّة: وهو الجزء الذي يُهمَل عادةً في برامج المدن الذكية.") },
   { icon: "leaf", h: T("Environment & sustainability", "البيئة والاستدامة"), p: T("Air quality, noise, water and waste monitored continuously and tied to the operational response, not only to an annual report.", "جودة الهواء والضوضاء والمياه والنفايات تُرصد باستمرار وتُربط بالاستجابة التشغيلية، لا بتقرير سنوي فقط.") },
   { icon: "layers", h: T("Digital twin", "التوأم الرقمي"), p: T("A spatial model of assets and networks used for planning, impact assessment and scenario testing before work is committed.", "نموذج مكاني للأصول والشبكات يُستخدم للتخطيط وتقييم الأثر واختبار السيناريوهات قبل اعتماد الأعمال.") },
   { icon: "vehicle", h: T("Mobility & parking", "التنقل والمواقف"), p: T("Traffic, parking, tolling and EV infrastructure treated as one demand-management problem rather than four procurements.", "المرور والمواقف والتعرفة وبنية شحن المركبات الكهربائية كمسألة إدارة طلب واحدة، لا كأربع مناقصات.") },
@@ -88,7 +88,7 @@ export default function cities(lang) {
     h: T("A city is not twelve systems.|It is one operation.", "المدينة ليست اثني عشر نظامًا.|إنها عملية واحدة."),
     lead: T(
       "Services, mobility, utilities, waste, permits and field crews usually meet only in a monthly report. Qeonix builds the layer where they meet in real time, from a resident's request to the crew that closes it.",
-      "الخدمات والتنقل والمرافق والنفايات والتصاريح والفرق الميدانية لا تلتقي عادةً إلا في تقرير شهري. تبني كيونكس الطبقة التي تلتقي فيها آنيًّا، من طلب المتعامل إلى الفريق الذي يُنجزه."
+      "الخدمات والتنقل والمرافق والنفايات والتصاريح والفرق الميدانية لا تلتقي عادةً إلا في تقرير شهري. تبني كيونيكس الطبقة التي تلتقي فيها آنيًّا، من طلب المتعامل إلى الفريق الذي يُنجزه."
     ),
     meta: [
       { k: T("Span", "المدى"), v: T("Citizen to field crew, one loop", "من المتعامل إلى الفريق الميداني، حلقة واحدة") },
@@ -107,7 +107,7 @@ ${section(`
     lead: T("These are the systems a city already owns. What is missing is almost always the layer that lets them share a picture, a queue and an audit trail.", "هذه هي الأنظمة التي تملكها المدينة أصلًا. والمفقود دائمًا تقريبًا هو الطبقة التي تتيح لها صورة وقائمة عمل وسجل تدقيق مشتركة."),
   }, lang)}
   ${cityMesh(DOMAINS, lang, {
-    kicker: T("Qeonix layer", "طبقة كيونكس"),
+    kicker: T("Qeonix layer", "طبقة كيونيكس"),
     label: T("Shared data · shared identity · shared orchestration", "بيانات مشتركة · هوية مشتركة · تنسيق مشترك"),
     note: T("One picture of the city, one queue of work, one audit trail.", "صورة واحدة للمدينة، وقائمة عمل واحدة، وسجل تدقيق واحد."),
   })}
@@ -143,7 +143,7 @@ ${section(`
   ${secHead({
     kicker: T("Interactive", "تفاعلي"),
     h: T("Break something.|Watch the city fix it.", "عطّل شيئًا.|وراقب المدينة وهي تصلحه."),
-    lead: T("A live, playable district. Trigger a road incident, an asset fault or a stadium crowd, then watch sense, decide, dispatch and resolve happen in front of you. This is the loop every Qeonix city system is built around.", "حيّ حي وقابل للتجربة. أطلق حادث طريق أو عطل أصل أو حشد استاد، ثم راقب الاستشعار والقرار والإرسال والإنجاز تحدث أمامك. هذه هي الحلقة التي يُبنى حولها كل نظام مدن من كيونكس."),
+    lead: T("A live, playable district. Trigger a road incident, an asset fault or a stadium crowd. Then watch sense, decide, dispatch and resolve happen in front of you. This is the loop every Qeonix city system is built around.", "حيّ حي وقابل للتجربة. أطلق حادث طريق أو عطل أصل أو حشد استاد. ثم راقب الاستشعار والقرار والإرسال والإنجاز تحدث أمامك. هذه هي الحلقة التي يُبنى حولها كل نظام مدن من كيونيكس."),
   }, lang)}
   <div class="reveal" data-d="1">${cityTwin(lang)}</div>
 `, { id: "twin", tone: "paper" })}
@@ -181,11 +181,11 @@ ${closer("cities", lang)}
     crumbTrail: hero.crumbTrail,
     title: T(
       "Smart City Platforms & City Operations | Qeonix",
-      "منصّات المدن الذكية وعمليات المدينة | كيونكس"
+      "منصّات المدن الذكية وعمليات المدينة | كيونيكس"
     ),
     description: T(
       "A city operating layer from Qeonix: command and control centers, connected infrastructure and IoT, service request lifecycle, field operations, utilities, waste, mobility, parking, EV, environmental monitoring and digital twins, integrated across a mixed multi-vendor estate.",
-      "طبقة تشغيل للمدينة من كيونكس: مراكز القيادة والتحكم، والبنية التحتية المتصلة وإنترنت الأشياء، ودورة حياة طلبات الخدمة، والعمليات الميدانية، والمرافق والنفايات والتنقل والمواقف والمركبات الكهربائية والرصد البيئي والتوائم الرقمية، بتكامل عبر منظومة متعدّدة المورّدين."
+      "طبقة تشغيل للمدينة من كيونيكس: مراكز القيادة والتحكم، والبنية التحتية المتصلة وإنترنت الأشياء، ودورة حياة طلبات الخدمة، والعمليات الميدانية، والمرافق والنفايات والتنقل والمواقف والمركبات الكهربائية والرصد البيئي والتوائم الرقمية، بتكامل عبر منظومة متعدّدة المورّدين."
     ),
     og: "cities",
     service: { name: LABEL, type: T("Smart city platform engineering", "هندسة منصّات المدن الذكية") },

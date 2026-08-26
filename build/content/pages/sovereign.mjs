@@ -33,7 +33,7 @@ const PROCESS = [
 ];
 
 const LANGUAGE = [
-  { h: T("Certified where it counts", "معتمدة حيث يهم"), p: T("Qeonix is certified to ISO/IEC 27001 for information security management and ISO/IEC 42001 for AI management systems: the discipline behind sovereign deployments, independently audited.", "كيونكس معتمدة وفق ISO/IEC 27001 لإدارة أمن المعلومات وISO/IEC 42001 لأنظمة إدارة الذكاء الاصطناعي: الانضباط الذي تقوم عليه عمليات النشر السيادية، بتدقيق مستقل.") },
+  { h: T("Certified where it counts", "معتمدة حيث يهم"), p: T("Qeonix is certified to ISO/IEC 27001 for information security management and ISO/IEC 42001 for AI management systems, the discipline behind sovereign deployments, independently audited.", "كيونيكس معتمدة وفق ISO/IEC 27001 لإدارة أمن المعلومات وISO/IEC 42001 لأنظمة إدارة الذكاء الاصطناعي، الانضباط الذي تقوم عليه عمليات النشر السيادية، بتدقيق مستقل.") },
   { h: T("Verified, then stated", "تحقّق ثم تصريح"), p: T("Compliance claims are made in a due-diligence process against your framework, where they can be evidenced, not in marketing copy.", "تُقدَّم ادّعاءات الالتزام في عملية عناية واجبة وفق إطاركم، حيث يمكن إثباتها، لا في نص تسويقي.") },
   { h: T("Your framework leads", "إطاركم هو المرجع"), p: T("Government and enterprise customers bring their own security and data frameworks. Our architectures are built to be assessed against them.", "تأتي الجهات الحكومية والمؤسسات بأطرها الأمنية والبياناتية. وتُبنى بنانا لتُقيَّم وفقها.") },
 ];
@@ -48,8 +48,8 @@ const FAQS = [
     a: T("Less than it used to. Self-hostable models have closed much of the gap for a large share of enterprise workloads, and routing lets each task use the strongest model permitted for its data class. The trade-off is engineering effort, which is exactly the part we take on.", "أقل مما كانت تعنيه. فقد قلّصت النماذج القابلة للاستضافة الذاتية معظم الفجوة لشريحة واسعة من الأعباء المؤسسية، ويتيح التوجيه لكل مهمة استخدام أقوى نموذج مسموح به لفئة بياناتها. أما الثمن فهو جهد هندسي، وهو تحديدًا الجزء الذي نتولّاه."),
   },
   {
-    q: T("Is Qeonix certified against specific security standards?", "هل كيونكس معتمدة وفق معايير أمنية محدّدة؟"),
-    a: T("Yes. Qeonix holds ISO/IEC 27001 certification for information security management and ISO/IEC 42001 certification for AI management systems. Beyond those, security and compliance posture is evidenced directly in a due-diligence process against the framework your organization applies.", "نعم. تحمل كيونكس اعتماد ISO/IEC 27001 لإدارة أمن المعلومات واعتماد ISO/IEC 42001 لأنظمة إدارة الذكاء الاصطناعي. وفيما يتجاوزهما، تُعرض حالة الأمن والالتزام وتُثبَت مباشرةً في عملية عناية واجبة وفق الإطار الذي تطبّقه جهتكم."),
+    q: T("Is Qeonix certified against specific security standards?", "هل كيونيكس معتمدة وفق معايير أمنية محدّدة؟"),
+    a: T("Yes. Qeonix holds ISO/IEC 27001 certification for information security management and ISO/IEC 42001 certification for AI management systems. Beyond those, security and compliance posture is evidenced directly in a due-diligence process against the framework your organization applies.", "نعم. تحمل كيونيكس اعتماد ISO/IEC 27001 لإدارة أمن المعلومات واعتماد ISO/IEC 42001 لأنظمة إدارة الذكاء الاصطناعي. وفيما يتجاوزهما، تُعرض حالة الأمن والالتزام وتُثبَت مباشرةً في عملية عناية واجبة وفق الإطار الذي تطبّقه جهتكم."),
   },
   {
     q: T("Can an agentic system really run disconnected?", "هل يمكن لنظام وكيل أن يعمل فعلًا دون اتصال؟"),
@@ -65,7 +65,7 @@ export default function sovereign(lang) {
     h: T("Serious AI,|inside your own boundary.", "ذكاء اصطناعي جادّ،|داخل حدودكم."),
     lead: T(
       "For governments and regulated operators, where a system runs and who can reach its data is part of the design brief. Qeonix architects AI platforms that can be deployed within sovereign, private and isolated environments, without giving up the capability that made them worth building.",
-      "بالنسبة للحكومات والمشغّلين الخاضعين للتنظيم، فإن مكان تشغيل النظام ومن يصل إلى بياناته جزء من متطلّبات التصميم. تصمّم كيونكس منصّات ذكاء اصطناعي قابلة للنشر في بيئات سيادية وخاصة ومعزولة، دون التخلّي عن القدرة التي جعلتها جديرة بالبناء."
+      "بالنسبة للحكومات والمشغّلين الخاضعين للتنظيم، فإن مكان تشغيل النظام ومن يصل إلى بياناته جزء من متطلّبات التصميم. تصمّم كيونيكس منصّات ذكاء اصطناعي قابلة للنشر في بيئات سيادية وخاصة ومعزولة، دون التخلّي عن القدرة التي جعلتها جديرة بالبناء."
     ),
     meta: [
       { k: T("Residency", "الإقامة"), v: T("UAE and regional deployment options", "خيارات نشر في الإمارات والمنطقة") },
@@ -142,11 +142,11 @@ ${closer("sovereign", lang)}
     crumbTrail: hero.crumbTrail,
     title: T(
       "Sovereign AI & Private AI Deployment | Qeonix",
-      "الذكاء الاصطناعي السيادي والنشر الخاص | كيونكس"
+      "الذكاء الاصطناعي السيادي والنشر الخاص | كيونيكس"
     ),
     description: T(
       "Sovereign AI from Qeonix: AI platforms architected for UAE and regional data residency, government and private cloud, on-premise and isolated environments, with controlled model access, identity and role-based access, auditability and human oversight.",
-      "الذكاء السيادي من كيونكس: منصّات ذكاء اصطناعي مصمّمة لإقامة البيانات في الإمارات والمنطقة، والسحابة الحكومية والخاصة، والنشر داخل المنشأة والبيئات المعزولة، مع وصول محكوم للنماذج والهوية والوصول حسب الدور وقابلية التدقيق والرقابة البشرية."
+      "الذكاء السيادي من كيونيكس: منصّات ذكاء اصطناعي مصمّمة لإقامة البيانات في الإمارات والمنطقة، والسحابة الحكومية والخاصة، والنشر داخل المنشأة والبيئات المعزولة، مع وصول محكوم للنماذج والهوية والوصول حسب الدور وقابلية التدقيق والرقابة البشرية."
     ),
     og: "sovereign",
     service: { name: LABEL, type: T("Sovereign AI architecture and deployment", "بنية الذكاء الاصطناعي السيادي ونشره") },

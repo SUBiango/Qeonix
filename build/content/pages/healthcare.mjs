@@ -33,14 +33,14 @@ const JOURNEY = [
 
 const BOUNDARIES = [
   { icon: "shield", h: T("Administrative AI, clinical humans", "ذكاء إداري وبشر سريريون"), p: T("Our systems optimize scheduling, coordination, documents and operations. Diagnosis and treatment decisions belong to clinicians, and the architecture enforces that boundary.", "تُحسّن أنظمتنا الجدولة والتنسيق والمستندات والعمليات. أما قرارات التشخيص والعلاج فللأطباء، والبنية تفرض هذا الحدّ.") },
-  { icon: "key", h: T("Consent is architecture", "الموافقة بنية"), p: T("Who may see what, for which purpose, for how long: modeled explicitly and enforced at the access layer, not in a policy document.", "من يرى ماذا، ولأي غرض، ولأي مدة: يُنمذج صراحةً ويُفرض عند طبقة الوصول، لا في وثيقة سياسات.") },
+  { icon: "key", h: T("Consent is architecture", "الموافقة بنية"), p: T("Who may see what, for which purpose, for how long, modeled explicitly and enforced at the access layer, not in a policy document.", "من يرى ماذا، ولأي غرض، ولأي مدة، يُنمذج صراحةً ويُفرض عند طبقة الوصول، لا في وثيقة سياسات.") },
   { icon: "pin", h: T("Health data stays put", "البيانات الصحية تبقى في مكانها"), p: T("Deployments are architected for the residency and localization obligations that apply to health data in the jurisdiction.", "تُصمَّم عمليات النشر وفق التزامات الإقامة والتوطين المطبَّقة على البيانات الصحية في النطاق القضائي.") },
   { icon: "eye", h: T("Every access is accountable", "كل وصول مُساءَل"), p: T("Access to a record is logged, attributable and reviewable, including access by an AI assistant acting for a staff member.", "كل اطلاع على سجل مُسجَّل ومنسوب وقابل للمراجعة، بما في ذلك اطلاع مساعد ذكاء اصطناعي يعمل لموظف.") },
 ];
 
 const FAQS = [
   {
-    q: T("Does Qeonix build diagnostic AI?", "هل تبني كيونكس ذكاءً تشخيصيًا؟"),
+    q: T("Does Qeonix build diagnostic AI?", "هل تبني كيونيكس ذكاءً تشخيصيًا؟"),
     a: T("No. We build the administrative and operational layer of healthcare: scheduling, orchestration, document processing, analytics and patient experience. Clinical decision-making stays with clinicians, and our assistants are designed to route clinical questions to them rather than answer them.", "لا. نبني الطبقة الإدارية والتشغيلية للرعاية الصحية: الجدولة والتنسيق ومعالجة المستندات والتحليلات وتجربة المريض. يبقى القرار السريري للأطباء، ومساعدونا مصمّمون لتوجيه الأسئلة السريرية إليهم لا للإجابة عنها."),
   },
   {
@@ -61,7 +61,7 @@ export default function healthcare(lang) {
     h: T("Care is clinical.|Everything around it is a system.", "الرعاية سريرية.|وكل ما حولها نظام."),
     lead: T(
       "Qeonix builds the operational layer of healthcare: patient journeys, care orchestration, provider ecosystems and insurance workflows, so clinical time is spent on care, not coordination.",
-      "تبني كيونكس الطبقة التشغيلية للرعاية الصحية: رحلات المرضى وتنسيق الرعاية ومنظومات المزوّدين وسير عمل التأمين، ليُصرف الوقت السريري على الرعاية لا التنسيق."
+      "تبني كيونيكس الطبقة التشغيلية للرعاية الصحية: رحلات المرضى وتنسيق الرعاية ومنظومات المزوّدين وسير عمل التأمين، ليُصرف الوقت السريري على الرعاية لا التنسيق."
     ),
     meta: [
       { k: T("Scope", "النطاق"), v: T("Administrative and operational, not diagnostic", "إداري وتشغيلي، لا تشخيصي") },
@@ -123,11 +123,11 @@ ${closer("healthcare", lang)}
     crumbTrail: hero.crumbTrail,
     title: T(
       "Digital Health Platforms & Care Orchestration | Qeonix",
-      "منصّات الصحة الرقمية وتنسيق الرعاية | كيونكس"
+      "منصّات الصحة الرقمية وتنسيق الرعاية | كيونيكس"
     ),
     description: T(
       "Healthcare platforms from Qeonix: digital health platforms, patient journeys, provider ecosystems, appointment marketplaces, AI healthcare assistants for administrative work, insurance intelligence, EHR and FHIR interoperability, and healthcare analytics.",
-      "منصّات صحية من كيونكس: منصّات الصحة الرقمية ورحلات المرضى ومنظومات المزوّدين وأسواق المواعيد والمساعدون الصحيون بالذكاء الاصطناعي للأعمال الإدارية وذكاء التأمين والتشغيل البيني مع السجلّات الإلكترونية وFHIR والتحليلات الصحية."
+      "منصّات صحية من كيونيكس: منصّات الصحة الرقمية ورحلات المرضى ومنظومات المزوّدين وأسواق المواعيد والمساعدون الصحيون بالذكاء الاصطناعي للأعمال الإدارية وذكاء التأمين والتشغيل البيني مع السجلّات الإلكترونية وFHIR والتحليلات الصحية."
     ),
     og: "healthcare",
     service: { name: LABEL, type: T("Digital health platform engineering", "هندسة منصّات الصحة الرقمية") },

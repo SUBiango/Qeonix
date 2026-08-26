@@ -1,4 +1,4 @@
-/* Case study template: intentionally NOT wired into any route.
+/* Case study template, intentionally NOT wired into any route.
    When management approves a reference, create build/content/pages/case-<slug>.mjs
    that calls caseStudy() with approved content only, register the route in
    content/site.mjs, and link it from the relevant sector page.
@@ -25,7 +25,7 @@ export function caseStudy(cs, lang) {
   return `
 ${block(T("The challenge", "التحدي"), cs.challenge.h, `<p class="lead">${tx(cs.challenge.p, lang)}</p>`)}
 ${block(T("Operating environment", "بيئة التشغيل"), cs.environment.h, `<p class="lead">${tx(cs.environment.p, lang)}</p>`)}
-${block(T("Architecture & Qeonix role", "البنية ودور كيونكس"), cs.role.h, `
+${block(T("Architecture & Qeonix role", "البنية ودور كيونيكس"), cs.role.h, `
   <p class="lead">${tx(cs.role.p, lang)}</p>
   ${cs.technology ? `<ul class="cap-tags u-mt-s">${cs.technology.map((x) => `<li>${tx(x, lang)}</li>`).join("")}</ul>` : ""}
 `)}

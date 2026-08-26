@@ -51,7 +51,7 @@ export const NAV = [
   {
     id: "capabilities",
     label: T("Capabilities", "القدرات"),
-    note: T("What Qeonix designs, engineers and operates.", "ما تصمّمه كيونكس وتهندسه وتشغّله."),
+    note: T("What Qeonix designs, engineers and operates.", "ما تصمّمه كيونيكس وتهندسه وتشغّله."),
     children: [
       { key: "ai", label: T("Intelligence & AI", "الذكاء الاصطناعي"), note: T("Decision intelligence, computer vision, enterprise AI.", "ذكاء القرار، والرؤية الحاسوبية، والذكاء الاصطناعي المؤسسي."), icon: "chip" },
       { key: "agentic", label: T("Agentic AI", "الذكاء الاصطناعي الوكيل"), note: T("Agents that reason, act and stay under control.", "وكلاء يستنتجون وينفّذون تحت رقابة كاملة."), icon: "agent", featured: true },
@@ -77,11 +77,11 @@ export const NAV = [
     ],
   },
   { key: "sovereign", label: T("Sovereign AI", "الذكاء السيادي") },
-  { key: "about", label: T("About", "عن كيونكس") },
+  { key: "about", label: T("About", "عن كيونيكس") },
 ];
 
 /* ---------------- offices ---------------- */
-/* status: hq | active | progress. Street addresses are intentionally omitted:
+/* status: hq | active | progress. Street addresses are intentionally omitted;
    only the HQ city is asserted in structured data. */
 export const OFFICES = [
   {
@@ -137,7 +137,7 @@ export const OFFICE_STATUS = {
 export const FOOTER = {
   blurb: T(
     "Qeonix designs, engineers and deploys the intelligent systems that governments, cities and enterprises run on: from decision intelligence and agentic AI to autonomous operations and connected infrastructure.",
-    "تصمّم كيونكس وتهندس وتنشر الأنظمة الذكية التي تعتمد عليها الحكومات والمدن والمؤسسات: من ذكاء القرار والذكاء الاصطناعي الوكيل إلى العمليات ذاتية التشغيل والبنية التحتية المتصلة."
+    "تصمّم كيونيكس وتهندس وتنشر الأنظمة الذكية التي تعتمد عليها الحكومات والمدن والمؤسسات: من ذكاء القرار والذكاء الاصطناعي الوكيل إلى العمليات ذاتية التشغيل والبنية التحتية المتصلة."
   ),
   columns: [
     {
@@ -163,7 +163,7 @@ export const FOOTER = {
     {
       h: T("Company", "الشركة"),
       links: [
-        { key: "about", label: T("About Qeonix", "عن كيونكس") },
+        { key: "about", label: T("About Qeonix", "عن كيونيكس") },
         { key: "contact", label: T("Contact", "تواصل معنا") },
         { key: "about", hash: "#delivery", label: T("How we deliver", "كيف ننفّذ") },
         { key: "about", hash: "#careers", label: T("Careers", "الوظائف") },
@@ -184,7 +184,7 @@ export const UI = {
   primaryNav: T("Primary", "التنقل الرئيسي"),
   home: T("Home", "الرئيسية"),
   contactCta: T("Start a conversation", "ابدأ محادثة"),
-  exploreCta: T("Explore Qeonix", "استكشف كيونكس"),
+  exploreCta: T("Explore Qeonix", "استكشف كيونيكس"),
   langSwitch: { en: "عربي", ar: "English" },
   langSwitchAria: T("Switch to Arabic", "التبديل إلى الإنجليزية"),
   offices: T("Offices", "المكاتب"),
