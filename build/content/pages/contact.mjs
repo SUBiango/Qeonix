@@ -9,6 +9,26 @@ const LABEL = T("Contact", "تواصل معنا");
 
 const HCAPTCHA_SITEKEY = "c3b84774-320a-413c-bd02-7b4e32eeefe2";
 
+/* Registered offices. Addresses stay in Latin script in both languages so
+   they remain usable for post and maps. */
+const REGISTERED = [
+  {
+    label: T("Qeonix | Abu Dhabi", "كيونيكس | أبوظبي"),
+    lang: "en",
+    address: "Raha Beach, Elite Business Tower, Office No. 405, 406, Al Rahah, RBW7",
+  },
+  {
+    label: T("Qeonix | France", "كيونيكس | فرنسا"),
+    lang: "fr",
+    address: "58 Rue de Monceau, 75008 Paris, France",
+  },
+  {
+    label: T("Qeonix | Oman", "كيونيكس | عُمان"),
+    lang: "en",
+    address: "Al Khawd, Al Seeb, Muscat Governorate, Oman",
+  },
+];
+
 const INTENTS = [
   { v: "strategic", label: T("Discuss a strategic initiative", "مناقشة مبادرة استراتيجية") },
   { v: "partnership", label: T("Explore a technology partnership", "استكشاف شراكة تقنية") },
@@ -158,6 +178,11 @@ ${section(`
           <span class="mono">${ar ? "المقر الرئيسي" : "Headquarters"}</span>
           <span>${tx(BRAND.hq, lang)}</span>
         </p>
+        ${REGISTERED.map((r) => `<p class="contact-line">
+          <span class="mono">${tx(r.label, lang)}</span>
+          <span>${ar ? "المكتب المسجّل" : "Registered office"}</span>
+          <span dir="ltr" lang="${r.lang}">${r.address}</span>
+        </p>`).join("")}
       </div>
       <div class="u-mt">
         <h3 class="mono">${ar ? "المكاتب" : "Offices"}</h3>
@@ -181,8 +206,8 @@ ${section(`
       "تواصل مع كيونيكس: ابدأ محادثة"
     ),
     description: T(
-      "Talk to Qeonix about a strategic initiative, a technology partnership or a role. Headquartered in Abu Dhabi with a presence in Paris; Muscat and Doha in progress.",
-      "تحدّث إلى كيونيكس بشأن مبادرة استراتيجية أو شراكة تقنية أو وظيفة. المقر الرئيسي في أبوظبي مع حضور في باريس؛ ومسقط والدوحة قيد التأسيس."
+      "Talk to Qeonix about a strategic initiative, a technology partnership or a role. Headquartered in Abu Dhabi with a presence in Paris and Muscat; Doha in progress.",
+      "تحدّث إلى كيونيكس بشأن مبادرة استراتيجية أو شراكة تقنية أو وظيفة. المقر الرئيسي في أبوظبي مع حضور في باريس ومسقط؛ والدوحة قيد التأسيس."
     ),
     og: "contact",
     body,

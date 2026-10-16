@@ -310,7 +310,7 @@ export function presenceMap(offices, statuses, lang) {
   ].join("");
 
   return `<figure class="pmap reveal" role="img"
-    aria-label="${ar ? "خريطة حضور كيونيكس: أبوظبي المقر الرئيسي، باريس مكتب، مسقط والدوحة قريبًا" : "Qeonix presence map: Abu Dhabi headquarters, Paris office, Muscat and Doha soon"}">
+    aria-label="${ar ? "خريطة حضور كيونيكس: أبوظبي المقر الرئيسي، مكاتب في دبي وباريس ومسقط، الدوحة قريبًا" : "Qeonix presence map: Abu Dhabi headquarters, offices in Dubai, Paris and Muscat, Doha soon"}">
   <svg viewBox="0 0 760 400" preserveAspectRatio="xMidYMid meet" focusable="false" aria-hidden="true">
     <g class="pm-grat">${grat}</g>
     ${arcs}
