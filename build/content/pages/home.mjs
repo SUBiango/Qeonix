@@ -115,7 +115,7 @@ const FAQS = [
   },
   {
     q: T("Where is Qeonix based?", "أين مقر كيونيكس؟"),
-    a: T("Headquarters are in Abu Dhabi, United Arab Emirates, with a presence in Paris, France. Offices in Muscat, Oman and Doha, Qatar are in progress.", "المقر الرئيسي في أبوظبي بالإمارات العربية المتحدة، مع حضور في باريس بفرنسا. ومكتبا مسقط في سلطنة عُمان والدوحة في قطر قيد التأسيس."),
+    a: T("Headquarters are in Abu Dhabi, United Arab Emirates, with a presence in Paris, France and Muscat, Oman. An office in Doha, Qatar is in progress.", "المقر الرئيسي في أبوظبي بالإمارات العربية المتحدة، مع حضور في باريس بفرنسا ومسقط في سلطنة عُمان. ومكتب الدوحة في قطر قيد التأسيس."),
   },
 ];
 

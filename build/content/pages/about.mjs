@@ -10,8 +10,8 @@ const LABEL = T("About Qeonix", "عن كيونيكس");
 
 const FACTS = [
   { k: T("Headquarters", "المقر الرئيسي"), v: T("Abu Dhabi, UAE", "أبوظبي، الإمارات") },
-  { k: T("Offices", "المكاتب"), v: T("Dubai · Paris", "دبي · باريس") },
-  { k: T("Expanding", "التوسّع"), v: T("Muscat & Doha, soon", "مسقط والدوحة، قريبًا") },
+  { k: T("Offices", "المكاتب"), v: T("Dubai · Paris · Muscat", "دبي · باريس · مسقط") },
+  { k: T("Expanding", "التوسّع"), v: T("Doha, soon", "الدوحة، قريبًا") },
   { k: T("Model", "النموذج"), v: T("Engineering-led, product-oriented", "هندسي القيادة، منتجيّ التوجّه") },
   { k: T("Certified", "الاعتمادات"), v: T("ISO/IEC 27001 · ISO/IEC 42001", "ISO/IEC 27001 · ISO/IEC 42001") },
 ];
@@ -29,7 +29,7 @@ const WHY_AD = [
   { icon: "building", h: T("Governments moving first", "حكومات تتحرّك أولًا"), p: T("The region's public sector is adopting AI and autonomous systems at a pace most markets are still debating, with the mandate and capital to deploy at national scale.", "يتبنّى القطاع العام في المنطقة الذكاء الاصطناعي والأنظمة ذاتية التشغيل بوتيرة لا تزال معظم الأسواق تناقشها، وبتفويض ورأس مال للنشر على نطاق وطني.") },
   { icon: "city", h: T("Cities as live programs", "مدن كبرامج حيّة"), p: T("Urban intelligence here is not a pilot district; it is operating policy. That produces real requirements, real load and real accountability.", "الذكاء الحضري هنا ليس حيًّا تجريبيًا؛ بل سياسة تشغيل. وهذا يولّد متطلّبات وحملًا ومساءلة حقيقية.") },
   { icon: "shield", h: T("Sovereignty as a requirement", "السيادة كمتطلّب"), p: T("Data residency and controlled deployment are procurement conditions in this region, which forces an architectural discipline most vendors defer.", "إقامة البيانات والنشر المحكوم شرطان في المشتريات بهذه المنطقة، ما يفرض انضباطًا هندسيًا يؤجّله معظم المورّدين.") },
-  { icon: "compass", h: T("Built here, aimed outward", "تُبنى هنا، وتتّجه للخارج"), p: T("Abu Dhabi is the headquarters and the standard-setter; Paris extends us into Europe, and Muscat and Doha are in progress. The systems are designed for international deployment from day one.", "أبوظبي هي المقر وواضعة المعيار؛ وباريس تمدّنا نحو أوروبا، ومسقط والدوحة قيد التأسيس. والأنظمة مصمّمة للنشر الدولي من اليوم الأول.") },
+  { icon: "compass", h: T("Built here, aimed outward", "تُبنى هنا، وتتّجه للخارج"), p: T("Abu Dhabi is the headquarters and the standard-setter; Paris extends us into Europe, Muscat is established and Doha is in progress. The systems are designed for international deployment from day one.", "أبوظبي هي المقر وواضعة المعيار؛ وباريس تمدّنا نحو أوروبا، ومسقط قائمة، والدوحة قيد التأسيس. والأنظمة مصمّمة للنشر الدولي من اليوم الأول.") },
 ];
 
 const DELIVERY = [
@@ -155,8 +155,8 @@ ${closer("about", lang)}
       "عن كيونيكس: شركة الذكاء الاصطناعي والأنظمة الذكية، أبوظبي"
     ),
     description: T(
-      "Qeonix is an Abu Dhabi-headquartered engineering company building AI, agentic systems, autonomous technology and smart city platforms for governments and enterprises, with a presence in Paris and offices in Muscat and Doha in progress.",
-      "كيونيكس شركة هندسية مقرّها أبوظبي تبني الذكاء الاصطناعي والأنظمة الوكيلة والتقنيات ذاتية التشغيل ومنصّات المدن الذكية للحكومات والمؤسسات، مع حضور في باريس ومكتبين قيد التأسيس في مسقط والدوحة."
+      "Qeonix is an Abu Dhabi-headquartered engineering company building AI, agentic systems, autonomous technology and smart city platforms for governments and enterprises, with a presence in Paris and Muscat and an office in Doha in progress.",
+      "كيونيكس شركة هندسية مقرّها أبوظبي تبني الذكاء الاصطناعي والأنظمة الوكيلة والتقنيات ذاتية التشغيل ومنصّات المدن الذكية للحكومات والمؤسسات، مع حضور في باريس ومسقط ومكتب قيد التأسيس في الدوحة."
     ),
     og: "about",
     body,

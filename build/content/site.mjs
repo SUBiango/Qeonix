@@ -113,8 +113,8 @@ export const OFFICES = [
     city: T("Muscat", "مسقط"),
     country: T("Oman", "عُمان"),
     cc: "OM",
-    status: "progress",
-    note: T("Establishing in-country presence.", "قيد التأسيس داخل السلطنة."),
+    status: "active",
+    note: T("In-country presence in the Sultanate.", "حضور داخل السلطنة."),
   },
   {
     id: "doh",

@@ -271,7 +271,7 @@ management) and ISO/IEC 42001 (AI management systems).
 - Abu Dhabi, United Arab Emirates: headquarters
 - Dubai, United Arab Emirates: office
 - Paris, France: office
-- Muscat, Oman: in progress
+- Muscat, Oman: office
 - Doha, Qatar: in progress
 
 ## Contact
