@@ -2,7 +2,6 @@ import { T, t, tx, esc } from "../../lib/html.mjs";
 import { icon } from "../../lib/icons.mjs";
 import { section, secHead } from "../../lib/components.mjs";
 import { heroFor } from "../../lib/page.mjs";
-import { officeList } from "../../lib/layout.mjs";
 import { BRAND } from "../site.mjs";
 
 const LABEL = T("Contact", "تواصل معنا");
@@ -15,17 +14,17 @@ const REGISTERED = [
   {
     label: T("Qeonix | Abu Dhabi", "كيونيكس | أبوظبي"),
     lang: "en",
-    address: "Raha Beach, Elite Business Tower, Office No. 405, 406, Al Rahah, RBW7",
+    address: "Raha Beach, Elite Business Tower, Office No. 405, 406, Al Rahah",
   },
   {
     label: T("Qeonix | France", "كيونيكس | فرنسا"),
     lang: "fr",
-    address: "58 Rue de Monceau, 75008 Paris, France",
+    address: "58 Rue de Monceau, 75008 Paris",
   },
   {
     label: T("Qeonix | Oman", "كيونيكس | عُمان"),
     lang: "en",
-    address: "Al Khawd, Al Seeb, Muscat Governorate, Oman",
+    address: "Al Khawd, Al Seeb, Muscat Governorate",
   },
 ];
 
@@ -180,13 +179,8 @@ ${section(`
         </p>
         ${REGISTERED.map((r) => `<p class="contact-line">
           <span class="mono">${tx(r.label, lang)}</span>
-          <span>${ar ? "المكتب المسجّل" : "Registered office"}</span>
           <span dir="ltr" lang="${r.lang}">${r.address}</span>
         </p>`).join("")}
-      </div>
-      <div class="u-mt">
-        <h3 class="mono">${ar ? "المكاتب" : "Offices"}</h3>
-        <div class="u-mt-s">${officeList(lang)}</div>
       </div>
     </div>
     <div class="reveal" data-d="1">
