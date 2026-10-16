@@ -26,6 +26,10 @@ const REGISTERED = [
     lang: "en",
     address: "Al Khawd, Al Seeb, Muscat Governorate",
   },
+  {
+    label: T("Doha | Qatar", "الدوحة | قطر"),
+    soon: T("Coming soon", "قريبًا"),
+  },
 ];
 
 const INTENTS = [
@@ -179,7 +183,7 @@ ${section(`
         </p>
         ${REGISTERED.map((r) => `<p class="contact-line">
           <span class="mono">${tx(r.label, lang)}</span>
-          <span dir="ltr" lang="${r.lang}">${r.address}</span>
+          ${r.soon ? `<span>${tx(r.soon, lang)}</span>` : `<span dir="ltr" lang="${r.lang}">${r.address}</span>`}
         </p>`).join("")}
       </div>
     </div>
