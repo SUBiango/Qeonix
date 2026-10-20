@@ -2,9 +2,19 @@
 
 ## Project
 
-QEONIX — a single-page static marketing site (AI · Robotics · Smart Cities).
+QEONIX — static marketing sites (AI · Robotics · Smart Cities).
 No build system and no JS framework: pure HTML with inline CSS and vanilla JS.
-Deployed on Netlify; production is https://qeonix.com.
+Deployed on Netlify. One repo, three Netlify sites, each with its own **base
+directory** and its own `netlify.toml`:
+
+| Base dir | Publish  | Domain              |
+|----------|----------|---------------------|
+| *(root)* | `site`   | qeonix.com          |
+| `sanad`  | `site`   | sanad.qeonix.com    |
+| `naseq`  | `site`   | naseq.qeonix.com    |
+
+Each site's `netlify.toml` sets `ignore = "git diff --quiet $CACHED_COMMIT_REF
+$COMMIT_REF -- ."` so a push touching only one site doesn't redeploy the others.
 
 ## Structure
 
@@ -24,6 +34,18 @@ function source, and docs at the repo root are never served.
   var, set per Netlify deploy context).
 - `netlify.toml` — functions directory + security headers (CSP, HSTS, etc.).
 - `favicon.svg`, `robots.txt`, `sitemap.xml`.
+
+### Subdomain sites
+
+- `sanad/site/index.html`, `naseq/site/index.html` — single self-contained
+  Arabic (RTL) product decks: inline `<style>` and one inline `<script>` each,
+  inline SVG, Google Fonts the only external resource. No forms, no network
+  calls, no shared assets with the main site.
+- Their CSP (in `sanad/netlify.toml` / `naseq/netlify.toml`) necessarily allows
+  `'unsafe-inline'` for both `script-src` and `style-src` — the pages carry
+  their CSS and JS inline and use ~150-220 `style=""` attributes, which no hash
+  or nonce can cover. Everything else stays as locked down as the main site.
+  Don't copy the root CSP onto them; it renders the decks blank and inert.
 
 ## Brand
 
@@ -48,6 +70,8 @@ function source, and docs at the repo root are never served.
   `site/index.html` directly via `file://` (or serving the repo root) shows no
   styles — it must be served with `site/` as the document root. `netlify dev`
   also serves `site/` (per `netlify.toml`) and runs the CRM function.
+- The subdomain decks are self-contained, so `python3 -m http.server 8000 -d
+  sanad/site` (or `naseq/site`) is enough; opening the file directly works too.
 - Honor `prefers-reduced-motion` (already handled) when adding animations.
 - The language toggle is hidden (English-only) until the Arabic translation
   ships — remove `hidden` from `#langToggle` to restore it.

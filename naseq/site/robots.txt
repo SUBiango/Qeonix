@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://naseq.qeonix.com/sitemap.xml
