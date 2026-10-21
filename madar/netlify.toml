@@ -1,5 +1,5 @@
-# Netlify site: naseq.qeonix.com
-# Base directory for this site is "naseq", so every path below is relative to it.
+# Netlify site: madar.qeonix.com
+# Base directory for this site is "madar", so every path below is relative to it.
 # Static, no build: the page is a single self-contained index.html.
 [build]
   publish = "site"
